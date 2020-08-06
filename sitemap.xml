@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zhengzp2019.github.io/2020/08/06/Qt%E5%85%A5%E9%97%A8/</loc>
+    
+    <lastmod>2020-08-06</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zhengzp2019.github.io/categories/index.html</loc>
     
     <lastmod>2020-08-06</lastmod>
@@ -10,13 +17,6 @@
   
   <url>
     <loc>http://zhengzp2019.github.io/tags/index.html</loc>
-    
-    <lastmod>2020-08-06</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zhengzp2019.github.io/2020/08/06/Qt%E5%85%A5%E9%97%A8/</loc>
     
     <lastmod>2020-08-06</lastmod>
     
@@ -52,20 +52,6 @@
   </url>
 
   
-  <url>
-    <loc>http://zhengzp2019.github.io/tags/Qt/</loc>
-    <lastmod>2020-08-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
 
-  
-  <url>
-    <loc>http://zhengzp2019.github.io/categories/Qt%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
-    <lastmod>2020-08-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
   
 </urlset>
