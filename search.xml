@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hello world</title>
+    <url>/2020/07/29/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>Qt入门</title>
     <url>/2020/08/06/Qt%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<h1 id="QT入门"><a href="#QT入门" class="headerlink" title="QT入门"></a>QT入门</h1><h3 id="1、程序运行框架"><a href="#1、程序运行框架" class="headerlink" title="1、程序运行框架"></a>1、程序运行框架</h3><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;QApplication&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="function">QApplication <span class="title">a</span><span class="params">(argc, argv)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> a.exec();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -54,65 +72,11 @@
       </tags>
   </entry>
   <entry>
-    <title>hello world</title>
-    <url>/2020/07/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>test</title>
     <url>/2020/08/04/test/</url>
     <content><![CDATA[
 <p><img src="/2020/08/04/test/.%5Ctest%5C207211.jpg"></p>
 ]]></content>
-  </entry>
-  <entry>
-    <title>the tag plugins demo</title>
-    <url>/2020/08/04/the-tag-plugins-demo/</url>
-    <content><![CDATA[<h2 id="引用块（quote）"><a href="#引用块（quote）" class="headerlink" title="引用块（quote）"></a>引用块（quote）</h2><h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote [author[, source]] [link] [source_link_title] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
-
-<a id="more"></a>
-
-<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><p><strong>没有提供参数，则只输出普通的blockquote</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote %&#125;</span><br><span class="line">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
-</blockquote>
-<p><strong>引用书上的句子</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote David Levithan, Wide Awake %&#125;</span><br><span class="line">Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
-<p><strong>David Levithan</strong>Wide Awake</p>
-</blockquote>
-<p><strong>引用Twitter</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote @DevDocs https:&#x2F;&#x2F;twitter.com&#x2F;devdocs&#x2F;status&#x2F;356095192085962752 %&#125;</span><br><span class="line">NEW: DevDocs now comes with syntax highlighting. http:&#x2F;&#x2F;devdocs.io</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>NEW: DevDocs now comes with syntax highlighting. </p>
-<p><strong>@DevDocs</strong><a href="https://twitter.com/devdocs/status/356095192085962752">twitter.com/devdocs/status/356095192085962752</a></p>
-</blockquote>
-<p><strong>引用网络上的文章</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote Seth Godin http:&#x2F;&#x2F;sethgodin.typepad.com&#x2F;seths_blog&#x2F;2009&#x2F;07&#x2F;welcome-to-island-marketing.html Welcome to Island Marketing %&#125;</span><br><span class="line">Every interaction is both precious and an opportunity to delight.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>Every interaction is both precious and an opportunity to delight.</p>
-<p><strong>Seth Godin</strong><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html">Welcome to Island Marketing</a></p>
-</blockquote>
-<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2>]]></content>
   </entry>
   <entry>
     <title>信号与槽机制</title>
@@ -123,7 +87,7 @@
 <p>GUI 程序设计的主要内容就是对界面上各组件的信号的响应，只需要知道什么情况下发射哪些信号，合理地去响应和处理这些信号就可以了。</p>
 <p> <strong>槽（Slot）</strong>就是对信号响应的函数。槽就是一个函数，与一般的C++函数是一样的，可以定义在类的任何部分（public、private 或 protected），可以具有任何参数，也可以被直接调用。槽函数与一般的函数不同的是：槽函数可以与一个信号关联，当信号被发射时，关联的槽函数被自动执行。==可以理解为用来处理信号返回事件的结果==</p>
 <p><strong>信号与槽（Signal &amp; Slot）</strong> 当一个事件发生时，会产生相应的信号，如果有对象对这个信号感兴趣，他就会使用连接函数（connect）将想要处理的信号和自己的一个函数（称为槽（slot））绑定来处理这个信号。当信号发出时连接的槽函数会自动被回调</p>
-
+<p><img src="/2020/08/06/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E6%A7%BD%E6%9C%BA%E5%88%B6/logo.jpg" alt="logo"></p>
 <h3 id="2、系统自带的信号与槽"><a href="#2、系统自带的信号与槽" class="headerlink" title="2、系统自带的信号与槽"></a>2、系统自带的信号与槽</h3><p>信号与槽关联是用 $QObject::connect() $函数实现的，其基本格式是：</p>
 <p><strong>$Qt4$写法：</strong><br><code>QObject::connect(sender, SIGNAL(signal()), receiver, SLOT(slot()));</code></p>
 <blockquote>
@@ -202,5 +166,41 @@
       <tags>
         <tag>Qt</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>the tag plugins demo</title>
+    <url>/2020/08/04/the-tag-plugins-demo/</url>
+    <content><![CDATA[<h2 id="引用块（quote）"><a href="#引用块（quote）" class="headerlink" title="引用块（quote）"></a>引用块（quote）</h2><h3 id="模板"><a href="#模板" class="headerlink" title="模板"></a>模板</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote [author[, source]] [link] [source_link_title] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h3 id="样例"><a href="#样例" class="headerlink" title="样例"></a>样例</h3><p><strong>没有提供参数，则只输出普通的blockquote</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote %&#125;</span><br><span class="line">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
+</blockquote>
+<p><strong>引用书上的句子</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote David Levithan, Wide Awake %&#125;</span><br><span class="line">Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
+<p><strong>David Levithan</strong>Wide Awake</p>
+</blockquote>
+<p><strong>引用Twitter</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote @DevDocs https:&#x2F;&#x2F;twitter.com&#x2F;devdocs&#x2F;status&#x2F;356095192085962752 %&#125;</span><br><span class="line">NEW: DevDocs now comes with syntax highlighting. http:&#x2F;&#x2F;devdocs.io</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>NEW: DevDocs now comes with syntax highlighting. </p>
+<p><strong>@DevDocs</strong><a href="https://twitter.com/devdocs/status/356095192085962752">twitter.com/devdocs/status/356095192085962752</a></p>
+</blockquote>
+<p><strong>引用网络上的文章</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote Seth Godin http:&#x2F;&#x2F;sethgodin.typepad.com&#x2F;seths_blog&#x2F;2009&#x2F;07&#x2F;welcome-to-island-marketing.html Welcome to Island Marketing %&#125;</span><br><span class="line">Every interaction is both precious and an opportunity to delight.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Every interaction is both precious and an opportunity to delight.</p>
+<p><strong>Seth Godin</strong><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html">Welcome to Island Marketing</a></p>
+</blockquote>
+<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2>]]></content>
   </entry>
 </search>
