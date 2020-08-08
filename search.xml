@@ -126,60 +126,6 @@
       </tags>
   </entry>
   <entry>
-    <title>hello world</title>
-    <url>/2020/07/29/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="quick-start"><a class="markdownIt-Anchor" href="#quick-start"></a> Quick Start</h2>
-<h3 id="create-a-new-post"><a class="markdownIt-Anchor" href="#create-a-new-post"></a> Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="run-server"><a class="markdownIt-Anchor" href="#run-server"></a> Run server</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="generate-static-files"><a class="markdownIt-Anchor" href="#generate-static-files"></a> Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="deploy-to-remote-sites"><a class="markdownIt-Anchor" href="#deploy-to-remote-sites"></a> Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>the tag plugins demo</title>
-    <url>/2020/08/04/the-tag-plugins-demo/</url>
-    <content><![CDATA[<h2 id="引用块quote"><a class="markdownIt-Anchor" href="#引用块quote"></a> 引用块（quote）</h2>
-<h3 id="模板"><a class="markdownIt-Anchor" href="#模板"></a> 模板</h3>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote [author[, source]] [link] [source_link_title] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
-<a id="more"></a>
-<h3 id="样例"><a class="markdownIt-Anchor" href="#样例"></a> 样例</h3>
-<p><strong>没有提供参数，则只输出普通的blockquote</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote %&#125;</span><br><span class="line">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
-</blockquote>
-<p><strong>引用书上的句子</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote David Levithan, Wide Awake %&#125;</span><br><span class="line">Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
-<p><strong>David Levithan</strong>Wide Awake</p>
-</blockquote>
-<p><strong>引用Twitter</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote @DevDocs https:&#x2F;&#x2F;twitter.com&#x2F;devdocs&#x2F;status&#x2F;356095192085962752 %&#125;</span><br><span class="line">NEW: DevDocs now comes with syntax highlighting. http:&#x2F;&#x2F;devdocs.io</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>NEW: DevDocs now comes with syntax highlighting.</p>
-<p><strong>@DevDocs</strong><a href="https://twitter.com/devdocs/status/356095192085962752">twitter.com/devdocs/status/356095192085962752</a></p>
-</blockquote>
-<p><strong>引用网络上的文章</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote Seth Godin http:&#x2F;&#x2F;sethgodin.typepad.com&#x2F;seths_blog&#x2F;2009&#x2F;07&#x2F;welcome-to-island-marketing.html Welcome to Island Marketing %&#125;</span><br><span class="line">Every interaction is both precious and an opportunity to delight.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>Every interaction is both precious and an opportunity to delight.</p>
-<p><strong>Seth Godin</strong><a href="http://sethgodin.typepad.com/seths_blog/2009/07/welcome-to-island-marketing.html">Welcome to Island Marketing</a></p>
-</blockquote>
-<h2 id="代码块"><a class="markdownIt-Anchor" href="#代码块"></a> 代码块</h2>
-]]></content>
-  </entry>
-  <entry>
     <title>信号与槽机制</title>
     <url>/2020/08/06/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E6%A7%BD%E6%9C%BA%E5%88%B6/</url>
     <content><![CDATA[<p><a href="http://c.biancheng.net/view/1823.html">参考文档</a></p>
@@ -190,7 +136,7 @@
 <p>GUI 程序设计的主要内容就是对界面上各组件的信号的响应，只需要知道什么情况下发射哪些信号，合理地去响应和处理这些信号就可以了。</p>
 <p><strong>槽(Slot)</strong> 就是对信号响应的函数。槽就是一个函数，与一般的C++函数是一样的，可以定义在类的任何部分（public、private 或 protected），可以具有任何参数，也可以被直接调用。槽函数与一般的函数不同的是：槽函数可以与一个信号关联，当信号被发射时，关联的槽函数被自动执行。<mark>可以理解为用来处理信号返回事件的结果</mark></p>
 <p><strong>信号与槽（Signal &amp; Slot）</strong> 当一个事件发生时，会产生相应的信号，如果有对象对这个信号感兴趣，他就会使用连接函数（connect）将想要处理的信号和自己的一个函数（称为槽（slot））绑定来处理这个信号。当信号发出时连接的槽函数会自动被回调</p>
-<p><img src="/2020/08/06/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E6%A7%BD%E6%9C%BA%E5%88%B6/logo.jpg" alt></p>
+<p><img src="/2020/08/06/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E6%A7%BD%E6%9C%BA%E5%88%B6/logo.JPG" alt></p>
 <a id="more"></a>
 <h3 id="2-系统自带的信号与槽"><a class="markdownIt-Anchor" href="#2-系统自带的信号与槽"></a> 2、系统自带的信号与槽</h3>
 <p>信号与槽关联是用<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mi>O</mi><mi>b</mi><mi>j</mi><mi>e</mi><mi>c</mi><mi>t</mi><mo>:</mo><mo>:</mo><mi>c</mi><mi>o</mi><mi>n</mi><mi>n</mi><mi>e</mi><mi>c</mi><mi>t</mi><mo stretchy="false">(</mo><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">QObject::connect()</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault">b</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mord mathdefault">e</span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">:</span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mrel">:</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">o</span><span class="mord mathdefault">n</span><span class="mord mathdefault">n</span><span class="mord mathdefault">e</span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mopen">(</span><span class="mclose">)</span></span></span></span>函数实现的，其基本格式是：</p>
