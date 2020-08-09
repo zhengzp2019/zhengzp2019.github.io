@@ -442,4 +442,126 @@
         <tag>Qt</tag>
       </tags>
   </entry>
+  <entry>
+    <title>数据测试之对拍</title>
+    <url>/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/</url>
+    <content><![CDATA[<h2 id="数据测试之对拍"><a class="markdownIt-Anchor" href="#数据测试之对拍"></a> 数据测试之对拍</h2>
+<h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+<blockquote>
+<p>最近在刷<code>OJ</code>，遇到很多题可以通过例题，但是程序仍然报错而且不容易找测试数据，就想看看有没有什么方法可以自动生成随机数字，找了下资料，发现有一种随机函数可以自动生成随机数据。同时一些<code>OJ</code>上的discuss可以找到正确的代码，但是仍然找不到自己程序的bug，那有什么办法可以用同一组数据测试自己的代码和正确的代码呢？于是发现了对拍技巧对，下面做如下总结</p>
+</blockquote>
+<blockquote>
+<p><strong>参考博客：</strong></p>
+<p><a href="https://blog.csdn.net/qq_36294918/article/details/103041906">https://blog.csdn.net/qq_36294918/article/details/103041906</a><br>
+<a href="https://blog.csdn.net/C20190102/article/details/60138907">https://blog.csdn.net/C20190102/article/details/60138907</a><br>
+<a href="https://blog.csdn.net/C20190102/article/details/82944384#_141">https://blog.csdn.net/C20190102/article/details/82944384#_141</a></p>
+</blockquote>
+<h3 id="什么是对拍"><a class="markdownIt-Anchor" href="#什么是对拍"></a> 什么是对拍</h3>
+<blockquote>
+<p>对拍就是将正确的程序与自己的程序在同样的输入文件下跑出的数据进行</p>
+<p>比较。输入文件的要随机，那么产生输入文件就需要使用随机函数写一个数据生成器，因此，需要四个程序，数据生成器，对拍器，正确的程序，你的程序</p>
+</blockquote>
+<h3 id="一-数据生成器"><a class="markdownIt-Anchor" href="#一-数据生成器"></a> 一、数据生成器</h3>
+<blockquote>
+<p>生成数据，需要使用随机数生成函数rand( )（包含在头文件<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>s</mi><mi>t</mi><mi>d</mi><mi>l</mi><mi>i</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">cstdlib</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault">b</span></span></span></span>中），这里的随机函数并非真正的随机，而是用使用一种算法，以时间为输入值得到的0~Random_MAX区间内的随机整数</p>
+<p>（注：随机数还可以用来测试模板）</p>
+<p>对于不同的程序需要不同的数据生成器，但对于不同的数据生成器，主要需要做如下三件事：</p>
+<p>1.模板<br>
+2.写出能构造相应数据的代码<br>
+3.按题目格式输出</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//这里主要写一下模板，2和3要根据对应的题目来写</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctime&gt;//time函数的头文件，必写</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;//srand和rand函数的头文件，必写</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    srand(time(<span class="literal">NULL</span>));<span class="comment">//用于初始化随机数种子，time(NULL)是为了初始化时间</span></span><br><span class="line">    <span class="comment">/*以下是你的构造方法*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注：</strong><br>
+构造方法根据题目的格式编写对应的构造代码</p>
+<p><strong>生成其他特殊的数据：</strong></p>
+<ul>
+<li>生成随机排列：先生成1~n，再random_shuffle()</li>
+<li>生成集合：用set</li>
+<li>生成无根树：随生成一条树边，并查集检验连通性，合法的加入，不合法的忽略，如果要限制每个结点的度，可加上deg[ ]数组，统计各点的度</li>
+<li>生成无向图：邻接矩阵存图，随机生成边，加在图上，做至少n*(n-1)/2次</li>
+<li>生成DAG：先生成无向图，再<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mi>F</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">DFS</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span>，输出编号小的结点指向编号大的结点的边</li>
+</ul>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">&#123;</span><br><span class="line">    sort(G[i].begin(), G[i].end());</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; G[i].size(); j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> k = G[i][j];</span><br><span class="line">        <span class="keyword">if</span>(k &gt; i)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>, i, k);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="二-对拍器"><a class="markdownIt-Anchor" href="#二-对拍器"></a> 二、对拍器</h3>
+<p>此处有两种方法：</p>
+<h4 id="第一种用c写"><a class="markdownIt-Anchor" href="#第一种用c写"></a> <strong>第一种</strong>：用C++写</h4>
+<blockquote>
+<p>优点：便于调试与控制对拍的次数，且便于输出结果信息<br>
+缺点：使用不方便，每次使用前需要编译<br>
+代码如下：</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">1000</span>;</span><br><span class="line">    <span class="comment">//注：比较两个文件t次，而不是比较my.exe和other.exe输出结果t次</span></span><br><span class="line">    <span class="keyword">while</span> (--t)</span><br><span class="line">    &#123;</span><br><span class="line">        system(<span class="string">&quot;rand.exe&gt;input&quot;</span>);</span><br><span class="line">        system(<span class="string">&quot;my.exe&lt;input&gt; output_my&quot;</span>);</span><br><span class="line">        system(<span class="string">&quot;other.exe&lt;input&gt; output_other&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (system(<span class="string">&quot;fc output_my output_other&quot;</span>))</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (t == <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;correctly\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;error\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    *   int t = 1000; //两程序对比次数</span></span><br><span class="line"><span class="comment">    *   while (--t)</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       system(&quot;我的程序&lt;输入文件&gt;我的输出文件&quot;);</span></span><br><span class="line"><span class="comment">    *       system(&quot;正确的程序&lt;输入文件&gt;正确的输出文件&quot;);</span></span><br><span class="line"><span class="comment">    *       if (system(&quot;fc 我的输出文件 正确的输出文件&quot;)) //比较两文件，相同返回0，不同返回1</span></span><br><span class="line"><span class="comment">    *           break;</span></span><br><span class="line"><span class="comment">    *   &#125;  </span></span><br><span class="line"><span class="comment">    *   if (t == 0)</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       printf(&quot;你的程序正确\n&quot;);</span></span><br><span class="line"><span class="comment">    *   &#125;</span></span><br><span class="line"><span class="comment">    *   else</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       printf(&quot;你的程序不正确\n&quot;);</span></span><br><span class="line"><span class="comment">    *   &#125;</span></span><br><span class="line"><span class="comment">    *   return 0;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="第二种编写脚本文件"><a class="markdownIt-Anchor" href="#第二种编写脚本文件"></a> <strong>第二种</strong>：编写脚本文件</h4>
+<blockquote>
+<p>优点：便于使用<br>
+缺点：涉及到系统，目前对系统理解的不透彻</p>
+</blockquote>
+<p>自己建立一个txt文件，编写脚本，将后缀名改为bat即可，脚本如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">:again</span><br><span class="line">makedata<span class="comment">#.exe &gt; input </span></span><br><span class="line">my.exe &lt; input &gt; output_my</span><br><span class="line">other.exe &lt; input &gt; output_other</span><br><span class="line"><span class="built_in">fc</span> output_my output_other </span><br><span class="line"><span class="keyword">if</span> not errorlevel 1 goto again</span><br><span class="line">pause</span><br><span class="line">@<span class="built_in">echo</span> on</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注</strong>：</p>
+<p><code>makedata#.exe</code>： 数据生成器</p>
+<p><code>input</code>：由数据生成器生成的输入文件</p>
+<p><code>my.exe</code>：我的程序</p>
+<p><code>output_my</code>: 我的输入文件</p>
+<p><code>other.exe</code>: 正确的程序</p>
+<p><code>output_other</code>: 正确的输入文件</p>
+</blockquote>
+<h3 id="三-使用对拍"><a class="markdownIt-Anchor" href="#三-使用对拍"></a> 三、使用对拍</h3>
+<blockquote>
+<p><strong>举个例子:</strong> 验证选择排序和冒泡排序的结果是否相同</p>
+</blockquote>
+<ol>
+<li>
+<p>数据生成器</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//数据生成器,makedata.cpp</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 100 <span class="comment">//生成的数据范围</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NUM 100   <span class="comment">//生成的数据数目</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    srand(time(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="comment">//构造方法</span></span><br><span class="line">    <span class="keyword">int</span> A;</span><br><span class="line">    <span class="comment">//随机生成100个数据</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= NUM; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        A = rand() % MAXN;</span><br><span class="line">        <span class="comment">//B = rand() % MAXN;</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, A);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>对拍</p>
+<ul>
+<li>
+<p>使用批处理程序</p>
+<blockquote>
+<p>先写好批处理程序，将数据生成器、我的程序、正确的程序，对拍程序放在一个文件夹下，直接运行对拍程序即可，也可使用命令行运行对拍程序，批处理程序如下：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">:again</span><br><span class="line">makedata<span class="comment">#.exe &gt; input</span></span><br><span class="line">bubble_sort.exe &lt; input &gt; output_my</span><br><span class="line">select_sort.exe &lt;input&gt; output_other</span><br><span class="line"><span class="built_in">fc</span> output_my output_other</span><br><span class="line"><span class="keyword">if</span> not errorlevel 1 goto again</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207214.jpg" alt></p>
+<blockquote>
+<p>因为在对拍程序中未写终止条件，所以只要两个文件内容相同，fc会一直比较下去</p>
+<p><strong>解释：</strong></p>
+<p><strong>注：</strong></p>
+<p>也可在命令行下逐步执行对拍程序中的命令，如下：</p>
+</blockquote>
+<p><img src="/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207213.jpg" alt></p>
+</li>
+<li>
+<p>使用C++对拍</p>
+<blockquote>
+<p>除了将上述的对拍程序用C++来写外，其余相同</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//dp.exe</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">while</span> (--t)</span><br><span class="line">    &#123;</span><br><span class="line">        system(<span class="string">&quot;makedata#.exe&gt;input&quot;</span>);</span><br><span class="line">        system(<span class="string">&quot;bubble_sort.exe&lt;input&gt; output_my&quot;</span>);</span><br><span class="line">        system(<span class="string">&quot;select_sort.exe&lt;input&gt; output_other&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (system(<span class="string">&quot;fc output_my output_other&quot;</span>))</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (t == <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;correctly\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;error\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    *   int t = 1000; //两程序对比次数</span></span><br><span class="line"><span class="comment">    *   while (--t)</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       system(&quot;我的程序&lt;输入文件&gt;我的输出文件&quot;);</span></span><br><span class="line"><span class="comment">    *       system(&quot;正确的程序&lt;输入文件&gt;正确的输出文件&quot;);</span></span><br><span class="line"><span class="comment">    *       if (system(&quot;fc 我的输出文件 正确的输出文件&quot;)) //比较两文件，相同返回0，不同返回1</span></span><br><span class="line"><span class="comment">    *           break;</span></span><br><span class="line"><span class="comment">    *   &#125;  </span></span><br><span class="line"><span class="comment">    *   if (t == 0)</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       printf(&quot;你的程序正确\n&quot;);</span></span><br><span class="line"><span class="comment">    *   &#125;</span></span><br><span class="line"><span class="comment">    *   else</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       printf(&quot;你的程序不正确\n&quot;);</span></span><br><span class="line"><span class="comment">    *   &#125;</span></span><br><span class="line"><span class="comment">    *   return 0;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注：运行dp.exe程序即可开始对拍，这里定义t为100，即比较两文件100次，最终得到结果，两程序运行结果完全一致</p>
+</blockquote>
+<p><img src="/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207215.png" alt></p>
+<p><img src="/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207216.png" alt></p>
+</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>算数</category>
+        <category>数据测试</category>
+        <category>数据测试</category>
+        <category>对拍</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>数据测试</tag>
+        <tag>对拍</tag>
+      </tags>
+  </entry>
 </search>
