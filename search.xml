@@ -458,9 +458,10 @@
 </blockquote>
 <h3 id="什么是对拍"><a class="markdownIt-Anchor" href="#什么是对拍"></a> 什么是对拍</h3>
 <blockquote>
-<p>对拍就是将正确的程序与自己的程序在同样的输入文件下跑出的数据进行</p>
-<p>比较。输入文件的要随机，那么产生输入文件就需要使用随机函数写一个数据生成器，因此，需要四个程序，数据生成器，对拍器，正确的程序，你的程序</p>
+<p>对拍就是将正确的程序与自己的程序在同样的输入文件下跑出的数据进行比较。<br>
+输入文件的要随机，那么产生输入文件就需要使用随机函数写一个数据生成器，因此，需要四个程序，数据生成器，对拍器，正确的程序，你的程序</p>
 </blockquote>
+<a id="more"></a>
 <h3 id="一-数据生成器"><a class="markdownIt-Anchor" href="#一-数据生成器"></a> 一、数据生成器</h3>
 <blockquote>
 <p>生成数据，需要使用随机数生成函数rand( )（包含在头文件<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>s</mi><mi>t</mi><mi>d</mi><mi>l</mi><mi>i</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">cstdlib</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault">b</span></span></span></span>中），这里的随机函数并非真正的随机，而是用使用一种算法，以时间为输入值得到的0~Random_MAX区间内的随机整数</p>
