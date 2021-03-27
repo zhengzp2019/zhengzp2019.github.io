@@ -316,10 +316,10 @@
 </ol>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>数据结构与算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
+        <tag>数据结构与算法</tag>
       </tags>
   </entry>
   <entry>
@@ -478,10 +478,10 @@
 </ul>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>数据结构与算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
+        <tag>数据结构与算法</tag>
       </tags>
   </entry>
   <entry>
@@ -742,15 +742,15 @@
 </ol>
 ]]></content>
       <categories>
-        <category>算法</category>
-        <category>数据测试</category>
         <category>数据测试</category>
         <category>对拍</category>
+        <category>数据结构与算法</category>
+        <category>数据测试</category>
       </categories>
       <tags>
-        <tag>算法</tag>
         <tag>数据测试</tag>
         <tag>对拍</tag>
+        <tag>数据结构与算法</tag>
       </tags>
   </entry>
   <entry>
@@ -838,10 +838,10 @@
 1+1+1+1+1+1</p>
 ]]></content>
       <categories>
-        <category>算法</category>
+        <category>数据结构与算法</category>
       </categories>
       <tags>
-        <tag>算法</tag>
+        <tag>数据结构与算法</tag>
       </tags>
   </entry>
   <entry>
@@ -1085,5 +1085,39 @@
 <li>快捷键“ctrl+C，D”。</li>
 </ol>
 ]]></content>
+  </entry>
+  <entry>
+    <title>链表</title>
+    <url>/2021/03/26/%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="1-单链表"><a class="markdownIt-Anchor" href="#1-单链表"></a> 1、单链表</h2>
+<h3 id="静态实现用数组模拟"><a class="markdownIt-Anchor" href="#静态实现用数组模拟"></a> 静态实现(用数组模拟)</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 数据结构</span></span><br><span class="line">E[N];   <span class="comment">//存储当前节点的值</span></span><br><span class="line">ne[N];  <span class="comment">//指向下一节点的指针(下标)</span></span><br><span class="line">head;   <span class="comment">//指向头节点</span></span><br><span class="line">id;    <span class="comment">//指向当前处理的节点</span></span><br><span class="line"><span class="comment">// 空节点下标用-1表示</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 操作方法</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span><span class="comment">//初始化</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    head=<span class="number">-1</span>;</span><br><span class="line">    id=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add_to_head</span><span class="params">(<span class="keyword">int</span> x)</span><span class="comment">//在头节点后插入一个数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    E[id]=x;</span><br><span class="line">    ne[id]=head;</span><br><span class="line">    head=id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> x)</span><span class="comment">//在下标k后面插入一个数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    E[id]=x;</span><br><span class="line">    ne[id]=ne[k];</span><br><span class="line">    ne[k]=id;</span><br><span class="line">    id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> k)</span><span class="comment">//删除下标是k的后面的一个点</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ne[k]=ne[ne[k]];</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="练习"><a class="markdownIt-Anchor" href="#练习"></a> 练习</h3>
+<p><a href="https://www.acwing.com/problem/content/828/">单链表</a></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span>  <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> M;</span><br><span class="line"><span class="keyword">int</span> e[N],ne[N],head,id;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    head=<span class="number">-1</span>;</span><br><span class="line">    id=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add_to_head</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[id]=x,ne[id]=head,head=id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[id]=x,ne[id]=ne[k],ne[k]=id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ne[k]=ne[ne[k]];    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;M;</span><br><span class="line">    <span class="keyword">char</span> op;</span><br><span class="line">    <span class="keyword">int</span> k,x;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">while</span>(M--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;op;</span><br><span class="line">        <span class="keyword">switch</span>(op)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;H&#x27;</span>:</span><br><span class="line">                <span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">                add_to_head(x);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;D&#x27;</span>:</span><br><span class="line">                <span class="built_in">cin</span>&gt;&gt;k;</span><br><span class="line">                <span class="keyword">if</span>(k==<span class="number">0</span>) head=ne[head];</span><br><span class="line">                <span class="keyword">else</span> <span class="built_in">remove</span>(k<span class="number">-1</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;I&#x27;</span>:</span><br><span class="line">                <span class="built_in">cin</span>&gt;&gt;k&gt;&gt;x;</span><br><span class="line">                add(k<span class="number">-1</span>,x);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// cout&lt;&lt;op&lt;&lt;endl;</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> p=head;p!=<span class="number">-1</span>;p=ne[p]) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,e[p]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-双链表"><a class="markdownIt-Anchor" href="#2-双链表"></a> 2、双链表</h2>
+<h3 id="静态实现用数组模拟-2"><a class="markdownIt-Anchor" href="#静态实现用数组模拟-2"></a> 静态实现(用数组模拟)</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 数据结构</span></span><br><span class="line"><span class="keyword">int</span> id;     <span class="comment">//指向当前节点</span></span><br><span class="line">E[N];       <span class="comment">//存储每个节点的值</span></span><br><span class="line">l[N];       <span class="comment">//指向前一个点的指针</span></span><br><span class="line">r[N];       <span class="comment">//指向后一个节点的指针</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 操作方法</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span><span class="comment">//初始化</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    r[<span class="number">0</span>]=<span class="number">1</span>,l[<span class="number">1</span>]=<span class="number">0</span>;<span class="comment">//尾指针存储在l[1]中，头指针存储在r[0]中</span></span><br><span class="line">    id=<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> x)</span><span class="comment">//在下标是k的右边插入一个值</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[id]=x;</span><br><span class="line">    r[id]=r[k];</span><br><span class="line">    l[id]=k;</span><br><span class="line">    l[r[id]]=id;</span><br><span class="line">    r[k]=id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> k)</span><span class="comment">//删除下标为k的节点</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    r[l[k]]=r[k];</span><br><span class="line">    l[r[k]]=l[k];</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="练习-2"><a class="markdownIt-Anchor" href="#练习-2"></a> 练习</h3>
+<p><a href="https://www.acwing.com/problem/content/829/">双链表</a></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> m;</span><br><span class="line"><span class="keyword">int</span> l[N],r[N],e[N],id;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    l[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    r[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    id=<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[id]=x;</span><br><span class="line">    l[id]=k;</span><br><span class="line">    r[id]=r[k];</span><br><span class="line">    l[r[id]]=id;</span><br><span class="line">    r[k]=id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    r[l[k]]=r[k];</span><br><span class="line">    l[r[k]]=l[k];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;m;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">while</span>(m--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">char</span> op[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">int</span> k,x;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,op);</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;L&quot;</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">            add(l[r[<span class="number">0</span>]],x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;R&quot;</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">            add(l[<span class="number">1</span>],x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;D&quot;</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;k;</span><br><span class="line">            <span class="built_in">remove</span>(k+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;IL&quot;</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;k&gt;&gt;x;</span><br><span class="line">            add(l[k+<span class="number">1</span>],x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;k&gt;&gt;x;</span><br><span class="line">            add(k+<span class="number">1</span>,x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> p=r[<span class="number">0</span>];p!=<span class="number">1</span>;p=r[p]) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,e[p]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>数据结构与算法</category>
+      </categories>
+      <tags>
+        <tag>数据结构与算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>栈和队列</title>
+    <url>/2021/03/27/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/</url>
+    <content><![CDATA[]]></content>
+      <categories>
+        <category>数据结构和算法</category>
+      </categories>
+      <tags>
+        <tag>数据结构和算法</tag>
+      </tags>
   </entry>
 </search>
