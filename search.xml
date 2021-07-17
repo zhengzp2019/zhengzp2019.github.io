@@ -348,8 +348,7 @@ find()<br>
 []   时间复杂度是 O(logn)<br>
 lower_bound()/upper_bound()</p>
 </blockquote>
-<h2 id="unordered_set-unordered_mapunordered_multiset"><a class="markdownIt-Anchor" href="#unordered_set-unordered_mapunordered_multiset"></a> unordered_set, unordered_map,unordered_multiset</h2>
-<h2 id="unordered_multimap基于哈希表动态维护无序序列"><a class="markdownIt-Anchor" href="#unordered_multimap基于哈希表动态维护无序序列"></a> unordered_multimap,基于哈希表，动态维护无序序列</h2>
+<h2 id="unordered_multisetunordered_multimapunordered_setunordered_map基于哈希表动态维护无序序列"><a class="markdownIt-Anchor" href="#unordered_multisetunordered_multimapunordered_setunordered_map基于哈希表动态维护无序序列"></a> unordered_multiset,unordered_multimap,unordered_set,unordered_map,基于哈希表,动态维护无序序列</h2>
 <blockquote>
 <p>和上面类似，增删改查的时间复杂度是 O(1)<br>
 不支持 lower_bound()/upper_bound()， 迭代器的++，- -</p>
