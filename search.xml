@@ -12,78 +12,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux系统安装</title>
-    <url>/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<blockquote>
-<p>最近两天终于完成了想了很久的事情，终于将之前又丑又难用的Ubuntu给换掉了。但是换什么呢？事先听室友的建议，安装了cestos，但是安装好后发现这完全是命令行界面啊，想用图形界面还需要自己安装，而且这个系统主要是面向服务器的，而且他的软件支持也比较少，吓得我又重新装了manjaro（这个系统也是咨询了一下我的同学，也是看了他装了这个系统，才促使我将想了很久的想法给做了），manjaro对个人笔记本的支持比较好，有较完善的系统，可使用的软件也比较多，但是会牺牲一定的性能，不过对于我只是想玩玩Linux来说，影响多少性能我也就感觉不出来了。对于各种Linux系统的特性，以及安装什么系统，读者可参考下面几篇文章：</p>
-</blockquote>
-<a id="more"></a>
-<blockquote>
-<p><a href="https://www.zhihu.com/question/348166499/answer/839058746">https://www.zhihu.com/question/348166499/answer/839058746</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/65629587">https://zhuanlan.zhihu.com/p/65629587</a></p>
-<blockquote>
-<p>简单介绍了八种常见的Linux发行版</p>
-</blockquote>
-<p><a href="https://www.zhihu.com/collection/580669416">https://www.zhihu.com/collection/580669416</a></p>
-<blockquote>
-<p>这里面介绍了绝大多数的Linux发行版</p>
-</blockquote>
-<p><a href="https://www.zhihu.com/collection/580669416">https://www.zhihu.com/collection/580669416</a></p>
-<blockquote>
-<p>介绍了几种Linux发行版的大类</p>
-</blockquote>
-</blockquote>
-<h2 id="1-我为什么要安装linux"><a class="markdownIt-Anchor" href="#1-我为什么要安装linux"></a> 1、我为什么要安装Linux</h2>
-<blockquote>
-<p>首先我要明确一个概念，Linux并不是等同于我们常说的操作系统，准确的说，Linux只是一种操作系统的内核，他是对于底层硬件的封装，只是为了让上层应用更加方便的使用硬件资源，而所谓的Linux发行版就是将Linux与一些应用包装起来发布的操作系统，这才是我们常用的操作系统，由于内核是操作系统最重要的部分，所以Linux就成了以Linux为内核的操作系统的统称。</p>
-<p>下面说下我为什么要安装Linux，我从学计算机至今一直以来都是用的Windows，一直也只是听别人说Linux性能比Windows好，确实Linux的性能要比Windows，因为Linux的用户是可以控制硬件资源的，所以可以直接使用硬件。其次Windows是面向大众的，所以他提供的功能比较完善，既然完善，那么必然封闭，Windows几乎所有软件都是靠微软的工程师维护的，当我们安装一个软件的时候完全不知道系统做了哪些事，这让我对系统以及底层的东西一无所知，也让我计算机的性能越差，维护起来也比较麻烦，再者，作为计算机专业的学生，当然要体现出我们的专业性啦，所以想要学习Linux也是我安装Linux的目的之一。</p>
-</blockquote>
-<h2 id="2-我为什么要选择manjaro"><a class="markdownIt-Anchor" href="#2-我为什么要选择manjaro"></a> 2、我为什么要选择manjaro</h2>
-<blockquote>
-<p>Linux的发行版是众多的，那我为什么要选择manjaro呢？</p>
-<ol>
-<li>来自同学推荐，因为他学的比我早，所以我有什么问题可以直接问（尽管后来我发现我们遇到的问题基本不一样）</li>
-<li>manjaro对图形界面支持比较好，从Windows转向Linux比较好上手，作为Linux小白还是需要从Windows的操作习惯慢慢改变的，这也是我使用双系统的原因</li>
-<li>manjaro的软件系统比较丰富，那对于没有的软件怎么办呢？这个。。。我也不清楚，希望有大佬解释以来啦</li>
-<li>还有一个重要原因就是好看！比我之前的Ubuntu好看很多</li>
-<li>由于我也是刚装好，目前感受就这么多</li>
-</ol>
-</blockquote>
-<p>下面进入正题：</p>
-<h2 id="3-如何安装"><a class="markdownIt-Anchor" href="#3-如何安装"></a> 3、如何安装？</h2>
-<blockquote>
-<p>安装的方法有很多，可以使用虚拟机安装，也可以安装单系统，我是用的是双系统安装，保留了先前的Windows，一方面我两个系统都要使用后，使用虚拟机的话性能太差，但是如果只是想学习Linux的一些操作不需要性能的话的话，推荐使用虚拟机，双系统风险有点大，我几次都差点把硬盘上数据搞没了，恢复数据花费的时间比装系统的时间多得多。要是第一动系统的话也建议使用虚拟机，事先了解一下安装系统的感觉，安装双系统的过程每个人可能遇到的问题不一样，即使是看着教程，也可能遇到不一样的问题，一旦自己遇到新的问题解决不好或者解决错了，真的可能就把另一个系统也给搞坏了。毕竟安装系统每个十遍以上，都不敢保证一定准确，我是以前有过安装系统的经验，就随便找了个教程，跟着做了，但还是充满风险的。对了，安装系统前我建议先把<a href="http://linux.vbird.org/">《鸟哥私房菜》</a>的前三章看了，这样可以让你对于系统的概念有一个更深刻的了解，下面具体讲一下我是怎么安装的。</p>
-</blockquote>
-<h3 id="1cestos"><a class="markdownIt-Anchor" href="#1cestos"></a> 1）Cestos</h3>
-<h4 id="第一步下载cestos-ios镜像"><a class="markdownIt-Anchor" href="#第一步下载cestos-ios镜像"></a> 第一步：下载Cestos ios镜像</h4>
-<p>可以直接到官网下，也可以到镜像网站上下，建议使用镜像网站下，速度确实快，相对于使用校园网，真的是快到爆啊！</p>
-<p>这里给出我是用的两镜像网站：（第二个安装manjaro要用，第一个没有）</p>
-<p><a href="http://ftp.twaren.net/Linux/CentOS/8/isos/x86_64/">国家高速网路中心</a></p>
-<p><a href="https://mirrors.ustc.edu.cn/manjaro-cd/">USTC中科大镜像</a></p>
-<h5 id="第二步制作启动盘"><a class="markdownIt-Anchor" href="#第二步制作启动盘"></a> 第二步：制作启动盘</h5>
-<p>工具：UltraIOS+4G以上的U盘</p>
-<p>注意：制作启动盘的过程中需要格式化U盘，对于U盘里重要的文件要事先保存</p>
-<p>做法如下：</p>
-<p><img src="/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829232219467.png" alt="image-20200829232219467"></p>
-<p>像这样</p>
-<p><img src="/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829230957699.png" alt="image-20200829230957699"></p>
-<p><img src="/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829231110060.png" alt="image-20200829231110060"></p>
-<p>之后的步骤，一直下一步到完成</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>系统安装</category>
-        <category>manjaro</category>
-        <category>cestos</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>双系统安装</tag>
-        <tag>manjaro</tag>
-        <tag>cestos</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Jordan标准型求解</title>
     <url>/2022/11/18/Jordan%E6%A0%87%E5%87%86%E5%9E%8B%E6%B1%82%E8%A7%A3/</url>
     <content><![CDATA[<h1 id="什么是jordan标准型"><a class="markdownIt-Anchor" href="#什么是jordan标准型"></a> 什么是Jordan标准型？</h1>
@@ -189,6 +117,78 @@
       <tags>
         <tag>数学</tag>
         <tag>矩阵分析</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux系统安装</title>
+    <url>/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<blockquote>
+<p>最近两天终于完成了想了很久的事情，终于将之前又丑又难用的Ubuntu给换掉了。但是换什么呢？事先听室友的建议，安装了cestos，但是安装好后发现这完全是命令行界面啊，想用图形界面还需要自己安装，而且这个系统主要是面向服务器的，而且他的软件支持也比较少，吓得我又重新装了manjaro（这个系统也是咨询了一下我的同学，也是看了他装了这个系统，才促使我将想了很久的想法给做了），manjaro对个人笔记本的支持比较好，有较完善的系统，可使用的软件也比较多，但是会牺牲一定的性能，不过对于我只是想玩玩Linux来说，影响多少性能我也就感觉不出来了。对于各种Linux系统的特性，以及安装什么系统，读者可参考下面几篇文章：</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p><a href="https://www.zhihu.com/question/348166499/answer/839058746">https://www.zhihu.com/question/348166499/answer/839058746</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/65629587">https://zhuanlan.zhihu.com/p/65629587</a></p>
+<blockquote>
+<p>简单介绍了八种常见的Linux发行版</p>
+</blockquote>
+<p><a href="https://www.zhihu.com/collection/580669416">https://www.zhihu.com/collection/580669416</a></p>
+<blockquote>
+<p>这里面介绍了绝大多数的Linux发行版</p>
+</blockquote>
+<p><a href="https://www.zhihu.com/collection/580669416">https://www.zhihu.com/collection/580669416</a></p>
+<blockquote>
+<p>介绍了几种Linux发行版的大类</p>
+</blockquote>
+</blockquote>
+<h2 id="1-我为什么要安装linux"><a class="markdownIt-Anchor" href="#1-我为什么要安装linux"></a> 1、我为什么要安装Linux</h2>
+<blockquote>
+<p>首先我要明确一个概念，Linux并不是等同于我们常说的操作系统，准确的说，Linux只是一种操作系统的内核，他是对于底层硬件的封装，只是为了让上层应用更加方便的使用硬件资源，而所谓的Linux发行版就是将Linux与一些应用包装起来发布的操作系统，这才是我们常用的操作系统，由于内核是操作系统最重要的部分，所以Linux就成了以Linux为内核的操作系统的统称。</p>
+<p>下面说下我为什么要安装Linux，我从学计算机至今一直以来都是用的Windows，一直也只是听别人说Linux性能比Windows好，确实Linux的性能要比Windows，因为Linux的用户是可以控制硬件资源的，所以可以直接使用硬件。其次Windows是面向大众的，所以他提供的功能比较完善，既然完善，那么必然封闭，Windows几乎所有软件都是靠微软的工程师维护的，当我们安装一个软件的时候完全不知道系统做了哪些事，这让我对系统以及底层的东西一无所知，也让我计算机的性能越差，维护起来也比较麻烦，再者，作为计算机专业的学生，当然要体现出我们的专业性啦，所以想要学习Linux也是我安装Linux的目的之一。</p>
+</blockquote>
+<h2 id="2-我为什么要选择manjaro"><a class="markdownIt-Anchor" href="#2-我为什么要选择manjaro"></a> 2、我为什么要选择manjaro</h2>
+<blockquote>
+<p>Linux的发行版是众多的，那我为什么要选择manjaro呢？</p>
+<ol>
+<li>来自同学推荐，因为他学的比我早，所以我有什么问题可以直接问（尽管后来我发现我们遇到的问题基本不一样）</li>
+<li>manjaro对图形界面支持比较好，从Windows转向Linux比较好上手，作为Linux小白还是需要从Windows的操作习惯慢慢改变的，这也是我使用双系统的原因</li>
+<li>manjaro的软件系统比较丰富，那对于没有的软件怎么办呢？这个。。。我也不清楚，希望有大佬解释以来啦</li>
+<li>还有一个重要原因就是好看！比我之前的Ubuntu好看很多</li>
+<li>由于我也是刚装好，目前感受就这么多</li>
+</ol>
+</blockquote>
+<p>下面进入正题：</p>
+<h2 id="3-如何安装"><a class="markdownIt-Anchor" href="#3-如何安装"></a> 3、如何安装？</h2>
+<blockquote>
+<p>安装的方法有很多，可以使用虚拟机安装，也可以安装单系统，我是用的是双系统安装，保留了先前的Windows，一方面我两个系统都要使用后，使用虚拟机的话性能太差，但是如果只是想学习Linux的一些操作不需要性能的话的话，推荐使用虚拟机，双系统风险有点大，我几次都差点把硬盘上数据搞没了，恢复数据花费的时间比装系统的时间多得多。要是第一动系统的话也建议使用虚拟机，事先了解一下安装系统的感觉，安装双系统的过程每个人可能遇到的问题不一样，即使是看着教程，也可能遇到不一样的问题，一旦自己遇到新的问题解决不好或者解决错了，真的可能就把另一个系统也给搞坏了。毕竟安装系统每个十遍以上，都不敢保证一定准确，我是以前有过安装系统的经验，就随便找了个教程，跟着做了，但还是充满风险的。对了，安装系统前我建议先把<a href="http://linux.vbird.org/">《鸟哥私房菜》</a>的前三章看了，这样可以让你对于系统的概念有一个更深刻的了解，下面具体讲一下我是怎么安装的。</p>
+</blockquote>
+<h3 id="1cestos"><a class="markdownIt-Anchor" href="#1cestos"></a> 1）Cestos</h3>
+<h4 id="第一步下载cestos-ios镜像"><a class="markdownIt-Anchor" href="#第一步下载cestos-ios镜像"></a> 第一步：下载Cestos ios镜像</h4>
+<p>可以直接到官网下，也可以到镜像网站上下，建议使用镜像网站下，速度确实快，相对于使用校园网，真的是快到爆啊！</p>
+<p>这里给出我是用的两镜像网站：（第二个安装manjaro要用，第一个没有）</p>
+<p><a href="http://ftp.twaren.net/Linux/CentOS/8/isos/x86_64/">国家高速网路中心</a></p>
+<p><a href="https://mirrors.ustc.edu.cn/manjaro-cd/">USTC中科大镜像</a></p>
+<h5 id="第二步制作启动盘"><a class="markdownIt-Anchor" href="#第二步制作启动盘"></a> 第二步：制作启动盘</h5>
+<p>工具：UltraIOS+4G以上的U盘</p>
+<p>注意：制作启动盘的过程中需要格式化U盘，对于U盘里重要的文件要事先保存</p>
+<p>做法如下：</p>
+<p><img src="/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829232219467.png" alt="image-20200829232219467"></p>
+<p>像这样</p>
+<p><img src="/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829230957699.png" alt="image-20200829230957699"></p>
+<p><img src="/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829231110060.png" alt="image-20200829231110060"></p>
+<p>之后的步骤，一直下一步到完成</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>系统安装</category>
+        <category>manjaro</category>
+        <category>cestos</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>双系统安装</tag>
+        <tag>manjaro</tag>
+        <tag>cestos</tag>
       </tags>
   </entry>
   <entry>
