@@ -119,6 +119,51 @@
       </tags>
   </entry>
   <entry>
+    <title>PML_SDM算法复现过程</title>
+    <url>/2023/02/27/PML-SDM%E7%AE%97%E6%B3%95%E5%A4%8D%E7%8E%B0%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<ol>
+<li>
+<p>导入数据</p>
+<ol>
+<li>Yeast</li>
+</ol>
+</li>
+<li>
+<p>清洗数据</p>
+<blockquote>
+<p>将样本集中标签全为1或者-1的样本删除</p>
+</blockquote>
+</li>
+</ol>
+<a id="more"></a>
+<ol start="3">
+<li>
+<p>训练模型——<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>k</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">⟨</mo><msub><mi>w</mi><mi>k</mi></msub><mo separator="true">,</mo><mi>x</mi><mo stretchy="false">⟩</mo><mo>+</mo><msub><mi>b</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">f(x,k)=\langle w_k,x\rangle+b_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⟨</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mclose">⟩</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+<blockquote>
+<p>完整的训练过程参考<a href="https://zhengzp2019.github.io/2022/11/18/%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3/">优化问题求解</a></p>
+<p>代码文件在<a href>这里</a></p>
+</blockquote>
+</li>
+<li>
+<p>测试模型</p>
+</li>
+<li>
+<p>计算指标</p>
+</li>
+<li>
+<p>分析结果</p>
+</li>
+<li>
+<p>实验过程</p>
+<ol>
+<li>实验数据集</li>
+<li>实验算法</li>
+</ol>
+</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
     <title>Linux系统安装</title>
     <url>/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<blockquote>
@@ -191,111 +236,6 @@
       </tags>
   </entry>
   <entry>
-    <title>PML_SDM算法复现过程</title>
-    <url>/2023/02/27/PML-SDM%E7%AE%97%E6%B3%95%E5%A4%8D%E7%8E%B0%E8%BF%87%E7%A8%8B/</url>
-    <content><![CDATA[<ol>
-<li>
-<p>导入数据</p>
-<ol>
-<li>Yeast</li>
-</ol>
-</li>
-<li>
-<p>清洗数据</p>
-<blockquote>
-<p>将样本集中标签全为1或者-1的样本删除</p>
-</blockquote>
-</li>
-</ol>
-<a id="more"></a>
-<ol start="3">
-<li>
-<p>训练模型——<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>k</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">⟨</mo><msub><mi>w</mi><mi>k</mi></msub><mo separator="true">,</mo><mi>x</mi><mo stretchy="false">⟩</mo><mo>+</mo><msub><mi>b</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">f(x,k)=\langle w_k,x\rangle+b_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⟨</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mclose">⟩</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
-<blockquote>
-<p>完整的训练过程参考<a href="https://zhengzp2019.github.io/2022/11/18/%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3/">优化问题求解</a></p>
-<p>代码文件在<a href>这里</a></p>
-</blockquote>
-</li>
-<li>
-<p>测试模型</p>
-</li>
-<li>
-<p>计算指标</p>
-</li>
-<li>
-<p>分析结果</p>
-</li>
-<li>
-<p>实验过程</p>
-<ol>
-<li>实验数据集</li>
-<li>实验算法</li>
-</ol>
-</li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
-    <title>QMainWindow</title>
-    <url>/2020/08/08/QMainWindow/</url>
-    <content><![CDATA[<p><a href="https://www.devbean.net/2012/08/qt-study-road-2-mainwindow/">参考文档</a></p>
-<h2 id="mainwindow"><a class="markdownIt-Anchor" href="#mainwindow"></a> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mi>a</mi><mi>i</mi><mi>n</mi><mi>W</mi><mi>i</mi><mi>n</mi><mi>d</mi><mi>o</mi><mi>w</mi></mrow><annotation encoding="application/x-tex">MainWindow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">a</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">d</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span></span></span></h2>
-<p><code>QMainWindow</code>是 Qt 框架带来的一个预定义好的主窗口类。所谓主窗口，就是一个普通意义上的应用程序（不是指游戏之类的那种）最顶层的窗口。比如你现在正在使用的浏览器，那么主窗口就是这个浏览器窗口。通常是由一个菜单栏，若干工具栏、一个状态栏、铆接部件（悬浮窗口）及中心窗口组成，是许多应用程序的基础 。</p>
-<p><img src="/2020/08/08/QMainWindow/mainwindowlayout.png" alt></p>
-<p><img src="/2020/08/08/QMainWindow/mw-struct.png" alt></p>
-<a id="more"></a>
-<ul>
-<li>
-<p>主窗口的最上面是 Window Title，也就是标题栏，通常用于显示标题和控制按钮，比如最大化、最小化和关闭等。通常，各个图形界面框架都会使用操作系统本地代码来生成一个窗口。所以，你会看到在 KDE 上面，主窗口的标题栏是 KDE 样式的；在 Windows 平台上，标题栏是 Windows 风格的。如果你不喜欢本地样式，比如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mi>Q</mi></mrow><annotation encoding="application/x-tex">QQ</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mord mathdefault">Q</span></span></span></span> 这种，它其实是自己将标题栏绘制出来，这种技术称为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mi>i</mi><mi>r</mi><mi>e</mi><mi>c</mi><mi>t</mi><mi>U</mi><mi>I</mi></mrow><annotation encoding="application/x-tex">DirectUI</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span></span></span></span>，也就是无句柄绘制</p>
-</li>
-<li>
-<p>Window Title 下面是 Menu Bar，也就是菜单栏，用于显示菜单。</p>
-</li>
-<li>
-<p>窗口最底部是 Status Bar，称为状态栏。当我们鼠标滑过某些组件时，可以在状态栏显示某些信息，比如浏览器中，鼠标滑过带有链接的文字，你会在底部看到链接的实际 URL。</p>
-</li>
-<li>
-<p>最外层称为 Tool Bar Area，用于显示工具条区域。之所以是矩形表示，是因为，Qt 的主窗口支持多个工具条。你可以将工具条拖放到不同的位置，因此这里说是 Area。我们可以把几个工具条并排显示在这里，就像 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi><mi>o</mi><mi>r</mi><mi>d</mi><mn>2003</mn></mrow><annotation encoding="application/x-tex">Word2003</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">d</span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span><span class="mord">3</span></span></span></span> 一样，也可以将其分别放置，类似 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>h</mi><mi>o</mi><mi>t</mi><mi>o</mi><mi>s</mi><mi>h</mi><mi>o</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">Photoshop</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord mathdefault">t</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord mathdefault">p</span></span></span></span>。</p>
-</li>
-<li>
-<p>在工具条区域内部是 Dock Widget Area，这是停靠窗口的显示区域。所谓停靠窗口，就像<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>h</mi><mi>o</mi><mi>t</mi><mi>o</mi><mi>s</mi><mi>h</mi><mi>o</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">Photoshop</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord mathdefault">t</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord mathdefault">p</span></span></span></span>的工具箱一样，可以停靠在主窗口的四周，也可以浮动显示。</p>
-</li>
-<li>
-<p>主窗口最中间称为 Central Widget，就是我们程序的工作区。通常我们会将程序最主要的工作区域放置在这里，类似 Word 的稿纸或者<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>h</mi><mi>o</mi><mi>t</mi><mi>o</mi><mi>s</mi><mi>h</mi><mi>o</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">Photoshop</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord mathdefault">t</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord mathdefault">p</span></span></span></span> 的画布等等。</p>
-</li>
-</ul>
-<p>对于一般的 Qt 应用程序，我们所需要做的，就是编写我们的主窗口代码，主要是向其中添加各种组件，比如菜单、工具栏等，当然，最重要的就是当中的工作区。当我们将这些都处理完毕之后，基本上程序的工具也可以很好地实现。</p>
-<h3 id="1-菜单栏qmenubar"><a class="markdownIt-Anchor" href="#1-菜单栏qmenubar"></a> 1、菜单栏(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mi>M</mi><mi>e</mi><mi>n</mi><mi>u</mi><mi>B</mi><mi>a</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">QMenuBar</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span>)</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;mainwindow.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenuBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenu&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QAction&gt;</span></span></span><br><span class="line"></span><br><span class="line">MainWindow::MainWindow(QWidget *parent)</span><br><span class="line">    : QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//取出菜单栏</span></span><br><span class="line">    QMenuBar *menu_bar1 = <span class="keyword">this</span>-&gt;menuBar();</span><br><span class="line">    <span class="comment">//向菜单栏添加菜单</span></span><br><span class="line">    QMenu *file_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;文件&quot;</span>);</span><br><span class="line">    QMenu *edit_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;编辑&quot;</span>);</span><br><span class="line">    <span class="comment">//向菜单中添加菜单项</span></span><br><span class="line">    QAction *open_action = file_menu-&gt;addAction(<span class="string">&quot;打开&quot;</span>);</span><br><span class="line">    file_menu-&gt;addSeparator();<span class="comment">//添加菜单项的分割线</span></span><br><span class="line">    QAction *save_action = file_menu-&gt;addAction(<span class="string">&quot;保存&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MainWindow::~MainWindow()</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2-工具栏qtoolbar"><a class="markdownIt-Anchor" href="#2-工具栏qtoolbar"></a> 2、工具栏(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mi>T</mi><mi>o</mi><mi>o</mi><mi>l</mi><mi>B</mi><mi>a</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">QToolBar</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault">o</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span>)</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;mainwindow.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenuBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenu&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QAction&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QToolBar&gt;</span></span></span><br><span class="line"></span><br><span class="line">MainWindow::MainWindow(QWidget *parent)</span><br><span class="line">    : QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//取出菜单栏</span></span><br><span class="line">    QMenuBar *menu_bar1 = <span class="keyword">this</span>-&gt;menuBar();</span><br><span class="line">    <span class="comment">//向菜单栏添加菜单</span></span><br><span class="line">    QMenu *file_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;文件&quot;</span>);</span><br><span class="line">    QMenu *edit_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;编辑&quot;</span>);</span><br><span class="line">    <span class="comment">//向菜单中添加菜单项</span></span><br><span class="line">    QAction *open_action = file_menu-&gt;addAction(<span class="string">&quot;打开&quot;</span>);</span><br><span class="line">    file_menu-&gt;addSeparator();<span class="comment">//添加菜单项的分割线</span></span><br><span class="line">    QAction *save_action = file_menu-&gt;addAction(<span class="string">&quot;保存&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取工具栏</span></span><br><span class="line">    QToolBar *tool_bar = <span class="keyword">this</span>-&gt;addToolBar(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    <span class="comment">//向工具栏中添加工具（获取菜单项）</span></span><br><span class="line">    tool_bar-&gt;addAction(open_action);</span><br><span class="line">    tool_bar-&gt;addAction(save_action);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MainWindow::~MainWindow()</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="3-状态栏qstatusbar"><a class="markdownIt-Anchor" href="#3-状态栏qstatusbar"></a> 3、状态栏(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mi>S</mi><mi>t</mi><mi>a</mi><mi>t</mi><mi>u</mi><mi>s</mi><mi>B</mi><mi>a</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">QStatusBar</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span>)</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;mainwindow.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenuBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenu&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QAction&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QToolBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QStatusBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QLabel&gt;</span></span></span><br><span class="line"></span><br><span class="line">MainWindow::MainWindow(QWidget *parent)</span><br><span class="line">    : QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">this</span>-&gt;resize(<span class="number">400</span>,<span class="number">300</span>);</span><br><span class="line">    <span class="comment">//取出菜单栏</span></span><br><span class="line">    QMenuBar *menu_bar1 = <span class="keyword">this</span>-&gt;menuBar();</span><br><span class="line">    <span class="comment">//向菜单栏添加菜单</span></span><br><span class="line">    QMenu *file_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;文件&quot;</span>);</span><br><span class="line">    QMenu *edit_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;编辑&quot;</span>);</span><br><span class="line">    <span class="comment">//向菜单中添加菜单项</span></span><br><span class="line">    QAction *open_action = file_menu-&gt;addAction(<span class="string">&quot;打开&quot;</span>);</span><br><span class="line">    file_menu-&gt;addSeparator();<span class="comment">//添加菜单项的分割线</span></span><br><span class="line">    QAction *save_action = file_menu-&gt;addAction(<span class="string">&quot;保存&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取工具栏</span></span><br><span class="line">    QToolBar *tool_bar = <span class="keyword">this</span>-&gt;addToolBar(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    <span class="comment">//向工具栏中添加工具（获取菜单项）</span></span><br><span class="line">    tool_bar-&gt;addAction(open_action);</span><br><span class="line">    tool_bar-&gt;addAction(save_action);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//取出状态栏</span></span><br><span class="line">    QStatusBar *status = <span class="keyword">this</span>-&gt;statusBar();</span><br><span class="line">    status-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="string">&quot;状态&quot;</span>));<span class="comment">//向状态栏添加控件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="4-铆接控件qdockwidget"><a class="markdownIt-Anchor" href="#4-铆接控件qdockwidget"></a> 4、铆接控件(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mi>D</mi><mi>o</mi><mi>c</mi><mi>k</mi><mi>W</mi><mi>i</mi><mi>d</mi><mi>g</mi><mi>e</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">QDockWidget</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault">o</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">e</span><span class="mord mathdefault">t</span></span></span></span>)</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;mainwindow.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenuBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenu&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QAction&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QToolBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QStatusBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QLabel&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QDockWidget&gt;</span></span></span><br><span class="line"></span><br><span class="line">MainWindow::MainWindow(QWidget *parent)</span><br><span class="line">    : QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">this</span>-&gt;resize(<span class="number">400</span>,<span class="number">300</span>);</span><br><span class="line">    <span class="comment">//取出菜单栏</span></span><br><span class="line">    QMenuBar *menu_bar1 = <span class="keyword">this</span>-&gt;menuBar();</span><br><span class="line">    <span class="comment">//向菜单栏添加菜单</span></span><br><span class="line">    QMenu *file_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;文件&quot;</span>);</span><br><span class="line">    QMenu *edit_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;编辑&quot;</span>);</span><br><span class="line">    <span class="comment">//向菜单中添加菜单项</span></span><br><span class="line">    QAction *open_action = file_menu-&gt;addAction(<span class="string">&quot;打开&quot;</span>);</span><br><span class="line">    file_menu-&gt;addSeparator();<span class="comment">//添加菜单项的分割线</span></span><br><span class="line">    QAction *save_action = file_menu-&gt;addAction(<span class="string">&quot;保存&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取工具栏</span></span><br><span class="line">    QToolBar *tool_bar = <span class="keyword">this</span>-&gt;addToolBar(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    <span class="comment">//向工具栏中添加工具（获取菜单项）</span></span><br><span class="line">    tool_bar-&gt;addAction(open_action);</span><br><span class="line">    tool_bar-&gt;addAction(save_action);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//取出状态栏</span></span><br><span class="line">    QStatusBar *status = <span class="keyword">this</span>-&gt;statusBar();</span><br><span class="line">    status-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="string">&quot;状态&quot;</span>));<span class="comment">//向状态栏添加控件</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//创建一个铆接部件</span></span><br><span class="line">    QDockWidget *dock_widget = <span class="keyword">new</span> QDockWidget(<span class="string">&quot;这是一个铆接部件&quot;</span>,<span class="keyword">this</span>);</span><br><span class="line">    <span class="comment">//将浮动窗口添加到mainwindow</span></span><br><span class="line">    <span class="keyword">this</span>-&gt;addDockWidget(Qt::TopDockWidgetArea,dock_widget);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="5-中心控件"><a class="markdownIt-Anchor" href="#5-中心控件"></a> 5、中心控件</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;mainwindow.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenuBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenu&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QAction&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QToolBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QStatusBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QLabel&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QDockWidget&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QTextEdit&gt;</span></span></span><br><span class="line"></span><br><span class="line">MainWindow::MainWindow(QWidget *parent)</span><br><span class="line">    : QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">this</span>-&gt;resize(<span class="number">400</span>,<span class="number">300</span>);</span><br><span class="line">    <span class="comment">//取出菜单栏</span></span><br><span class="line">    QMenuBar *menu_bar1 = <span class="keyword">this</span>-&gt;menuBar();</span><br><span class="line">    <span class="comment">//向菜单栏添加菜单</span></span><br><span class="line">    QMenu *file_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;文件&quot;</span>);</span><br><span class="line">    QMenu *edit_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;编辑&quot;</span>);</span><br><span class="line">    <span class="comment">//向菜单中添加菜单项</span></span><br><span class="line">    QAction *open_action = file_menu-&gt;addAction(<span class="string">&quot;打开&quot;</span>);</span><br><span class="line">    file_menu-&gt;addSeparator();<span class="comment">//添加菜单项的分割线</span></span><br><span class="line">    QAction *save_action = file_menu-&gt;addAction(<span class="string">&quot;保存&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取工具栏</span></span><br><span class="line">    QToolBar *tool_bar = <span class="keyword">this</span>-&gt;addToolBar(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    <span class="comment">//向工具栏中添加工具（获取菜单项）</span></span><br><span class="line">    tool_bar-&gt;addAction(open_action);</span><br><span class="line">    tool_bar-&gt;addAction(save_action);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//取出状态栏</span></span><br><span class="line">    QStatusBar *status = <span class="keyword">this</span>-&gt;statusBar();</span><br><span class="line">    status-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="string">&quot;状态&quot;</span>));<span class="comment">//向状态栏添加控件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//    创建一个铆接部件</span></span><br><span class="line"><span class="comment">//    QDockWidget *dock_widget = new QDockWidget(&quot;这是一个铆接部件&quot;,this);</span></span><br><span class="line"><span class="comment">//    将浮动窗口添加到mainwindow</span></span><br><span class="line"><span class="comment">//    this-&gt;addDockWidget(Qt::TopDockWidgetArea,dock_widget);</span></span><br><span class="line">    QTextEdit *text_edit = <span class="keyword">new</span> QTextEdit(<span class="string">&quot;文本编辑器&quot;</span>,<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">this</span>-&gt;setCentralWidget(text_edit);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="6-资源文件"><a class="markdownIt-Anchor" href="#6-资源文件"></a> 6、资源文件</h3>
-<blockquote>
-<p>Qt的资源系统是一个跨平台机制，用于将程序运行时所需要的资源以二进制的形式存储与可执行文件内部。如果你的程序需要加载特定的资源(图标，文本翻译等)，那么，将其放置在资源文件中，就不需要担心那些文件的丢失。也就是说，如果你将资源以资源文件的形式存储，它会编译到可执行程序的内部。</p>
-</blockquote>
-<blockquote>
-<p>使用Qt Creator创建资源文件:</p>
-<p>右击项目<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">-&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span></span></span>选择&quot;添加新文件&quot;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">-&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span></span></span>在Qt分类下找到&quot;Qt资源文件&quot;</p>
-<p>生成了一个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">.</mi><mi>q</mi><mi>r</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">.qrc</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord">.</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">c</span></span></span></span>文件</p>
-<p>注:本地文件必须在项目文件目录下,如下,在项目文件Menu下建立一个image文件夹存储图片</p>
-</blockquote>
-<p><img src="/2020/08/08/QMainWindow/image-20200718171622030.png" alt></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;mainwindow.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenuBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenu&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QAction&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QToolBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QStatusBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QLabel&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QDockWidget&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QTextEdit&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QPixmap&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QIcon&gt;</span></span></span><br><span class="line"></span><br><span class="line">MainWindow::MainWindow(QWidget *parent)</span><br><span class="line">    : QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">this</span>-&gt;resize(<span class="number">400</span>,<span class="number">300</span>);</span><br><span class="line">    <span class="comment">//取出菜单栏</span></span><br><span class="line">    QMenuBar *menu_bar1 = <span class="keyword">this</span>-&gt;menuBar();</span><br><span class="line">    <span class="comment">//向菜单栏添加菜单</span></span><br><span class="line">    QMenu *file_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;文件&quot;</span>);</span><br><span class="line">    QMenu *edit_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;编辑&quot;</span>);</span><br><span class="line">    <span class="comment">//向菜单中添加菜单项</span></span><br><span class="line">    QAction *open_action = file_menu-&gt;addAction(<span class="string">&quot;打开&quot;</span>);</span><br><span class="line">    file_menu-&gt;addSeparator();<span class="comment">//添加菜单项的分割线</span></span><br><span class="line">    QAction *save_action = file_menu-&gt;addAction(<span class="string">&quot;保存&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取工具栏</span></span><br><span class="line">    QToolBar *tool_bar = <span class="keyword">this</span>-&gt;addToolBar(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    <span class="comment">//向工具栏中添加工具（获取菜单项）</span></span><br><span class="line">    tool_bar-&gt;addAction(open_action);</span><br><span class="line">    tool_bar-&gt;addAction(save_action);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//取出状态栏</span></span><br><span class="line">    QStatusBar *status = <span class="keyword">this</span>-&gt;statusBar();</span><br><span class="line">    status-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="string">&quot;状态&quot;</span>));<span class="comment">//向状态栏添加控件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//    创建一个铆接部件</span></span><br><span class="line"><span class="comment">//    QDockWidget *dock_widget = new QDockWidget(&quot;这是一个铆接部件&quot;,this);</span></span><br><span class="line"><span class="comment">//    将浮动窗口添加到mainwindow</span></span><br><span class="line"><span class="comment">//    this-&gt;addDockWidget(Qt::TopDockWidgetArea,dock_widget);</span></span><br><span class="line">    QTextEdit *text_edit = <span class="keyword">new</span> QTextEdit(<span class="string">&quot;文本编辑器&quot;</span>,<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">this</span>-&gt;setCentralWidget(text_edit);</span><br><span class="line"></span><br><span class="line">    QPixmap pic;<span class="comment">//定义一个图片对象</span></span><br><span class="line"><span class="comment">//    :/new/prefix1/image/earth.jpg</span></span><br><span class="line">    pic.load(<span class="string">&quot;:/new/prefix1/image/earth.jpg&quot;</span>);<span class="comment">//给图片对象加载图片</span></span><br><span class="line">    open_action-&gt;setIcon(QIcon(pic));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Qt学习记录</category>
-      </categories>
-      <tags>
-        <tag>Qt</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Qt入门</title>
     <url>/2020/08/06/Qt%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<h1 id="qt入门"><a class="markdownIt-Anchor" href="#qt入门"></a> QT入门</h1>
@@ -352,6 +292,66 @@
 </blockquote>
 </li>
 </ul>
+]]></content>
+      <categories>
+        <category>Qt学习记录</category>
+      </categories>
+      <tags>
+        <tag>Qt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>QMainWindow</title>
+    <url>/2020/08/08/QMainWindow/</url>
+    <content><![CDATA[<p><a href="https://www.devbean.net/2012/08/qt-study-road-2-mainwindow/">参考文档</a></p>
+<h2 id="mainwindow"><a class="markdownIt-Anchor" href="#mainwindow"></a> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>M</mi><mi>a</mi><mi>i</mi><mi>n</mi><mi>W</mi><mi>i</mi><mi>n</mi><mi>d</mi><mi>o</mi><mi>w</mi></mrow><annotation encoding="application/x-tex">MainWindow</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">a</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">i</span><span class="mord mathdefault">n</span><span class="mord mathdefault">d</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span></span></span></span></h2>
+<p><code>QMainWindow</code>是 Qt 框架带来的一个预定义好的主窗口类。所谓主窗口，就是一个普通意义上的应用程序（不是指游戏之类的那种）最顶层的窗口。比如你现在正在使用的浏览器，那么主窗口就是这个浏览器窗口。通常是由一个菜单栏，若干工具栏、一个状态栏、铆接部件（悬浮窗口）及中心窗口组成，是许多应用程序的基础 。</p>
+<p><img src="/2020/08/08/QMainWindow/mainwindowlayout.png" alt></p>
+<p><img src="/2020/08/08/QMainWindow/mw-struct.png" alt></p>
+<a id="more"></a>
+<ul>
+<li>
+<p>主窗口的最上面是 Window Title，也就是标题栏，通常用于显示标题和控制按钮，比如最大化、最小化和关闭等。通常，各个图形界面框架都会使用操作系统本地代码来生成一个窗口。所以，你会看到在 KDE 上面，主窗口的标题栏是 KDE 样式的；在 Windows 平台上，标题栏是 Windows 风格的。如果你不喜欢本地样式，比如 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mi>Q</mi></mrow><annotation encoding="application/x-tex">QQ</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mord mathdefault">Q</span></span></span></span> 这种，它其实是自己将标题栏绘制出来，这种技术称为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mi>i</mi><mi>r</mi><mi>e</mi><mi>c</mi><mi>t</mi><mi>U</mi><mi>I</mi></mrow><annotation encoding="application/x-tex">DirectUI</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">e</span><span class="mord mathdefault">c</span><span class="mord mathdefault">t</span><span class="mord mathdefault" style="margin-right:0.10903em;">U</span><span class="mord mathdefault" style="margin-right:0.07847em;">I</span></span></span></span>，也就是无句柄绘制</p>
+</li>
+<li>
+<p>Window Title 下面是 Menu Bar，也就是菜单栏，用于显示菜单。</p>
+</li>
+<li>
+<p>窗口最底部是 Status Bar，称为状态栏。当我们鼠标滑过某些组件时，可以在状态栏显示某些信息，比如浏览器中，鼠标滑过带有链接的文字，你会在底部看到链接的实际 URL。</p>
+</li>
+<li>
+<p>最外层称为 Tool Bar Area，用于显示工具条区域。之所以是矩形表示，是因为，Qt 的主窗口支持多个工具条。你可以将工具条拖放到不同的位置，因此这里说是 Area。我们可以把几个工具条并排显示在这里，就像 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi><mi>o</mi><mi>r</mi><mi>d</mi><mn>2003</mn></mrow><annotation encoding="application/x-tex">Word2003</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">d</span><span class="mord">2</span><span class="mord">0</span><span class="mord">0</span><span class="mord">3</span></span></span></span> 一样，也可以将其分别放置，类似 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>h</mi><mi>o</mi><mi>t</mi><mi>o</mi><mi>s</mi><mi>h</mi><mi>o</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">Photoshop</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord mathdefault">t</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord mathdefault">p</span></span></span></span>。</p>
+</li>
+<li>
+<p>在工具条区域内部是 Dock Widget Area，这是停靠窗口的显示区域。所谓停靠窗口，就像<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>h</mi><mi>o</mi><mi>t</mi><mi>o</mi><mi>s</mi><mi>h</mi><mi>o</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">Photoshop</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord mathdefault">t</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord mathdefault">p</span></span></span></span>的工具箱一样，可以停靠在主窗口的四周，也可以浮动显示。</p>
+</li>
+<li>
+<p>主窗口最中间称为 Central Widget，就是我们程序的工作区。通常我们会将程序最主要的工作区域放置在这里，类似 Word 的稿纸或者<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mi>h</mi><mi>o</mi><mi>t</mi><mi>o</mi><mi>s</mi><mi>h</mi><mi>o</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">Photoshop</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord mathdefault">t</span><span class="mord mathdefault">o</span><span class="mord mathdefault">s</span><span class="mord mathdefault">h</span><span class="mord mathdefault">o</span><span class="mord mathdefault">p</span></span></span></span> 的画布等等。</p>
+</li>
+</ul>
+<p>对于一般的 Qt 应用程序，我们所需要做的，就是编写我们的主窗口代码，主要是向其中添加各种组件，比如菜单、工具栏等，当然，最重要的就是当中的工作区。当我们将这些都处理完毕之后，基本上程序的工具也可以很好地实现。</p>
+<h3 id="1-菜单栏qmenubar"><a class="markdownIt-Anchor" href="#1-菜单栏qmenubar"></a> 1、菜单栏(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mi>M</mi><mi>e</mi><mi>n</mi><mi>u</mi><mi>B</mi><mi>a</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">QMenuBar</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault">e</span><span class="mord mathdefault">n</span><span class="mord mathdefault">u</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span>)</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;mainwindow.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenuBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenu&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QAction&gt;</span></span></span><br><span class="line"></span><br><span class="line">MainWindow::MainWindow(QWidget *parent)</span><br><span class="line">    : QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//取出菜单栏</span></span><br><span class="line">    QMenuBar *menu_bar1 = <span class="keyword">this</span>-&gt;menuBar();</span><br><span class="line">    <span class="comment">//向菜单栏添加菜单</span></span><br><span class="line">    QMenu *file_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;文件&quot;</span>);</span><br><span class="line">    QMenu *edit_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;编辑&quot;</span>);</span><br><span class="line">    <span class="comment">//向菜单中添加菜单项</span></span><br><span class="line">    QAction *open_action = file_menu-&gt;addAction(<span class="string">&quot;打开&quot;</span>);</span><br><span class="line">    file_menu-&gt;addSeparator();<span class="comment">//添加菜单项的分割线</span></span><br><span class="line">    QAction *save_action = file_menu-&gt;addAction(<span class="string">&quot;保存&quot;</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MainWindow::~MainWindow()</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-工具栏qtoolbar"><a class="markdownIt-Anchor" href="#2-工具栏qtoolbar"></a> 2、工具栏(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mi>T</mi><mi>o</mi><mi>o</mi><mi>l</mi><mi>B</mi><mi>a</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">QToolBar</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mord mathdefault" style="margin-right:0.13889em;">T</span><span class="mord mathdefault">o</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span>)</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;mainwindow.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenuBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenu&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QAction&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QToolBar&gt;</span></span></span><br><span class="line"></span><br><span class="line">MainWindow::MainWindow(QWidget *parent)</span><br><span class="line">    : QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//取出菜单栏</span></span><br><span class="line">    QMenuBar *menu_bar1 = <span class="keyword">this</span>-&gt;menuBar();</span><br><span class="line">    <span class="comment">//向菜单栏添加菜单</span></span><br><span class="line">    QMenu *file_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;文件&quot;</span>);</span><br><span class="line">    QMenu *edit_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;编辑&quot;</span>);</span><br><span class="line">    <span class="comment">//向菜单中添加菜单项</span></span><br><span class="line">    QAction *open_action = file_menu-&gt;addAction(<span class="string">&quot;打开&quot;</span>);</span><br><span class="line">    file_menu-&gt;addSeparator();<span class="comment">//添加菜单项的分割线</span></span><br><span class="line">    QAction *save_action = file_menu-&gt;addAction(<span class="string">&quot;保存&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取工具栏</span></span><br><span class="line">    QToolBar *tool_bar = <span class="keyword">this</span>-&gt;addToolBar(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    <span class="comment">//向工具栏中添加工具（获取菜单项）</span></span><br><span class="line">    tool_bar-&gt;addAction(open_action);</span><br><span class="line">    tool_bar-&gt;addAction(save_action);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">MainWindow::~MainWindow()</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-状态栏qstatusbar"><a class="markdownIt-Anchor" href="#3-状态栏qstatusbar"></a> 3、状态栏(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mi>S</mi><mi>t</mi><mi>a</mi><mi>t</mi><mi>u</mi><mi>s</mi><mi>B</mi><mi>a</mi><mi>r</mi></mrow><annotation encoding="application/x-tex">QStatusBar</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8777699999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault">t</span><span class="mord mathdefault">a</span><span class="mord mathdefault">t</span><span class="mord mathdefault">u</span><span class="mord mathdefault">s</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord mathdefault">a</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span></span></span></span>)</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;mainwindow.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenuBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenu&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QAction&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QToolBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QStatusBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QLabel&gt;</span></span></span><br><span class="line"></span><br><span class="line">MainWindow::MainWindow(QWidget *parent)</span><br><span class="line">    : QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">this</span>-&gt;resize(<span class="number">400</span>,<span class="number">300</span>);</span><br><span class="line">    <span class="comment">//取出菜单栏</span></span><br><span class="line">    QMenuBar *menu_bar1 = <span class="keyword">this</span>-&gt;menuBar();</span><br><span class="line">    <span class="comment">//向菜单栏添加菜单</span></span><br><span class="line">    QMenu *file_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;文件&quot;</span>);</span><br><span class="line">    QMenu *edit_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;编辑&quot;</span>);</span><br><span class="line">    <span class="comment">//向菜单中添加菜单项</span></span><br><span class="line">    QAction *open_action = file_menu-&gt;addAction(<span class="string">&quot;打开&quot;</span>);</span><br><span class="line">    file_menu-&gt;addSeparator();<span class="comment">//添加菜单项的分割线</span></span><br><span class="line">    QAction *save_action = file_menu-&gt;addAction(<span class="string">&quot;保存&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取工具栏</span></span><br><span class="line">    QToolBar *tool_bar = <span class="keyword">this</span>-&gt;addToolBar(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    <span class="comment">//向工具栏中添加工具（获取菜单项）</span></span><br><span class="line">    tool_bar-&gt;addAction(open_action);</span><br><span class="line">    tool_bar-&gt;addAction(save_action);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//取出状态栏</span></span><br><span class="line">    QStatusBar *status = <span class="keyword">this</span>-&gt;statusBar();</span><br><span class="line">    status-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="string">&quot;状态&quot;</span>));<span class="comment">//向状态栏添加控件</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-铆接控件qdockwidget"><a class="markdownIt-Anchor" href="#4-铆接控件qdockwidget"></a> 4、铆接控件(<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mi>D</mi><mi>o</mi><mi>c</mi><mi>k</mi><mi>W</mi><mi>i</mi><mi>d</mi><mi>g</mi><mi>e</mi><mi>t</mi></mrow><annotation encoding="application/x-tex">QDockWidget</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">Q</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault">o</span><span class="mord mathdefault">c</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault" style="margin-right:0.13889em;">W</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">e</span><span class="mord mathdefault">t</span></span></span></span>)</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;mainwindow.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenuBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenu&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QAction&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QToolBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QStatusBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QLabel&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QDockWidget&gt;</span></span></span><br><span class="line"></span><br><span class="line">MainWindow::MainWindow(QWidget *parent)</span><br><span class="line">    : QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">this</span>-&gt;resize(<span class="number">400</span>,<span class="number">300</span>);</span><br><span class="line">    <span class="comment">//取出菜单栏</span></span><br><span class="line">    QMenuBar *menu_bar1 = <span class="keyword">this</span>-&gt;menuBar();</span><br><span class="line">    <span class="comment">//向菜单栏添加菜单</span></span><br><span class="line">    QMenu *file_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;文件&quot;</span>);</span><br><span class="line">    QMenu *edit_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;编辑&quot;</span>);</span><br><span class="line">    <span class="comment">//向菜单中添加菜单项</span></span><br><span class="line">    QAction *open_action = file_menu-&gt;addAction(<span class="string">&quot;打开&quot;</span>);</span><br><span class="line">    file_menu-&gt;addSeparator();<span class="comment">//添加菜单项的分割线</span></span><br><span class="line">    QAction *save_action = file_menu-&gt;addAction(<span class="string">&quot;保存&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取工具栏</span></span><br><span class="line">    QToolBar *tool_bar = <span class="keyword">this</span>-&gt;addToolBar(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    <span class="comment">//向工具栏中添加工具（获取菜单项）</span></span><br><span class="line">    tool_bar-&gt;addAction(open_action);</span><br><span class="line">    tool_bar-&gt;addAction(save_action);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//取出状态栏</span></span><br><span class="line">    QStatusBar *status = <span class="keyword">this</span>-&gt;statusBar();</span><br><span class="line">    status-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="string">&quot;状态&quot;</span>));<span class="comment">//向状态栏添加控件</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//创建一个铆接部件</span></span><br><span class="line">    QDockWidget *dock_widget = <span class="keyword">new</span> QDockWidget(<span class="string">&quot;这是一个铆接部件&quot;</span>,<span class="keyword">this</span>);</span><br><span class="line">    <span class="comment">//将浮动窗口添加到mainwindow</span></span><br><span class="line">    <span class="keyword">this</span>-&gt;addDockWidget(Qt::TopDockWidgetArea,dock_widget);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="5-中心控件"><a class="markdownIt-Anchor" href="#5-中心控件"></a> 5、中心控件</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;mainwindow.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenuBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenu&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QAction&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QToolBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QStatusBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QLabel&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QDockWidget&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QTextEdit&gt;</span></span></span><br><span class="line"></span><br><span class="line">MainWindow::MainWindow(QWidget *parent)</span><br><span class="line">    : QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">this</span>-&gt;resize(<span class="number">400</span>,<span class="number">300</span>);</span><br><span class="line">    <span class="comment">//取出菜单栏</span></span><br><span class="line">    QMenuBar *menu_bar1 = <span class="keyword">this</span>-&gt;menuBar();</span><br><span class="line">    <span class="comment">//向菜单栏添加菜单</span></span><br><span class="line">    QMenu *file_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;文件&quot;</span>);</span><br><span class="line">    QMenu *edit_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;编辑&quot;</span>);</span><br><span class="line">    <span class="comment">//向菜单中添加菜单项</span></span><br><span class="line">    QAction *open_action = file_menu-&gt;addAction(<span class="string">&quot;打开&quot;</span>);</span><br><span class="line">    file_menu-&gt;addSeparator();<span class="comment">//添加菜单项的分割线</span></span><br><span class="line">    QAction *save_action = file_menu-&gt;addAction(<span class="string">&quot;保存&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取工具栏</span></span><br><span class="line">    QToolBar *tool_bar = <span class="keyword">this</span>-&gt;addToolBar(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    <span class="comment">//向工具栏中添加工具（获取菜单项）</span></span><br><span class="line">    tool_bar-&gt;addAction(open_action);</span><br><span class="line">    tool_bar-&gt;addAction(save_action);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//取出状态栏</span></span><br><span class="line">    QStatusBar *status = <span class="keyword">this</span>-&gt;statusBar();</span><br><span class="line">    status-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="string">&quot;状态&quot;</span>));<span class="comment">//向状态栏添加控件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//    创建一个铆接部件</span></span><br><span class="line"><span class="comment">//    QDockWidget *dock_widget = new QDockWidget(&quot;这是一个铆接部件&quot;,this);</span></span><br><span class="line"><span class="comment">//    将浮动窗口添加到mainwindow</span></span><br><span class="line"><span class="comment">//    this-&gt;addDockWidget(Qt::TopDockWidgetArea,dock_widget);</span></span><br><span class="line">    QTextEdit *text_edit = <span class="keyword">new</span> QTextEdit(<span class="string">&quot;文本编辑器&quot;</span>,<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">this</span>-&gt;setCentralWidget(text_edit);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="6-资源文件"><a class="markdownIt-Anchor" href="#6-资源文件"></a> 6、资源文件</h3>
+<blockquote>
+<p>Qt的资源系统是一个跨平台机制，用于将程序运行时所需要的资源以二进制的形式存储与可执行文件内部。如果你的程序需要加载特定的资源(图标，文本翻译等)，那么，将其放置在资源文件中，就不需要担心那些文件的丢失。也就是说，如果你将资源以资源文件的形式存储，它会编译到可执行程序的内部。</p>
+</blockquote>
+<blockquote>
+<p>使用Qt Creator创建资源文件:</p>
+<p>右击项目<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">-&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span></span></span>选择&quot;添加新文件&quot;<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>−</mo><mo>&gt;</mo></mrow><annotation encoding="application/x-tex">-&gt;</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord">−</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span></span></span></span>在Qt分类下找到&quot;Qt资源文件&quot;</p>
+<p>生成了一个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">.</mi><mi>q</mi><mi>r</mi><mi>c</mi></mrow><annotation encoding="application/x-tex">.qrc</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord">.</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mord mathdefault" style="margin-right:0.02778em;">r</span><span class="mord mathdefault">c</span></span></span></span>文件</p>
+<p>注:本地文件必须在项目文件目录下,如下,在项目文件Menu下建立一个image文件夹存储图片</p>
+</blockquote>
+<p><img src="/2020/08/08/QMainWindow/image-20200718171622030.png" alt></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;mainwindow.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenuBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QMenu&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QAction&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QToolBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QStatusBar&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QLabel&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QDockWidget&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QTextEdit&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QPixmap&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QIcon&gt;</span></span></span><br><span class="line"></span><br><span class="line">MainWindow::MainWindow(QWidget *parent)</span><br><span class="line">    : QMainWindow(parent)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">this</span>-&gt;resize(<span class="number">400</span>,<span class="number">300</span>);</span><br><span class="line">    <span class="comment">//取出菜单栏</span></span><br><span class="line">    QMenuBar *menu_bar1 = <span class="keyword">this</span>-&gt;menuBar();</span><br><span class="line">    <span class="comment">//向菜单栏添加菜单</span></span><br><span class="line">    QMenu *file_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;文件&quot;</span>);</span><br><span class="line">    QMenu *edit_menu = menu_bar1-&gt;addMenu(<span class="string">&quot;编辑&quot;</span>);</span><br><span class="line">    <span class="comment">//向菜单中添加菜单项</span></span><br><span class="line">    QAction *open_action = file_menu-&gt;addAction(<span class="string">&quot;打开&quot;</span>);</span><br><span class="line">    file_menu-&gt;addSeparator();<span class="comment">//添加菜单项的分割线</span></span><br><span class="line">    QAction *save_action = file_menu-&gt;addAction(<span class="string">&quot;保存&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取工具栏</span></span><br><span class="line">    QToolBar *tool_bar = <span class="keyword">this</span>-&gt;addToolBar(<span class="string">&quot;&quot;</span>);</span><br><span class="line">    <span class="comment">//向工具栏中添加工具（获取菜单项）</span></span><br><span class="line">    tool_bar-&gt;addAction(open_action);</span><br><span class="line">    tool_bar-&gt;addAction(save_action);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//取出状态栏</span></span><br><span class="line">    QStatusBar *status = <span class="keyword">this</span>-&gt;statusBar();</span><br><span class="line">    status-&gt;addWidget(<span class="keyword">new</span> QLabel(<span class="string">&quot;状态&quot;</span>));<span class="comment">//向状态栏添加控件</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//    创建一个铆接部件</span></span><br><span class="line"><span class="comment">//    QDockWidget *dock_widget = new QDockWidget(&quot;这是一个铆接部件&quot;,this);</span></span><br><span class="line"><span class="comment">//    将浮动窗口添加到mainwindow</span></span><br><span class="line"><span class="comment">//    this-&gt;addDockWidget(Qt::TopDockWidgetArea,dock_widget);</span></span><br><span class="line">    QTextEdit *text_edit = <span class="keyword">new</span> QTextEdit(<span class="string">&quot;文本编辑器&quot;</span>,<span class="keyword">this</span>);</span><br><span class="line">    <span class="keyword">this</span>-&gt;setCentralWidget(text_edit);</span><br><span class="line"></span><br><span class="line">    QPixmap pic;<span class="comment">//定义一个图片对象</span></span><br><span class="line"><span class="comment">//    :/new/prefix1/image/earth.jpg</span></span><br><span class="line">    pic.load(<span class="string">&quot;:/new/prefix1/image/earth.jpg&quot;</span>);<span class="comment">//给图片对象加载图片</span></span><br><span class="line">    open_action-&gt;setIcon(QIcon(pic));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Qt学习记录</category>
@@ -508,6 +508,75 @@ lower_bound()/upper_bound()</p>
 ]]></content>
       <categories>
         <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>java数据结构</title>
+    <url>/2023/03/29/java%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/</url>
+    <content><![CDATA[<p>数据结构是用于存储和组织数据的存储结构。它是一种在计算机上组织数据以便可以有效访问和更新数据的方法。下图展示了数据结构的分类</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20220520182504/ClassificationofDataStructure-660x347.jpg" alt="Classification of Data Structure"></p>
+<p><strong>线性数据结构：</strong> 数据结构中的元素按照线性且连续的的方式存储，例如数组，栈，队列，列表等，而线性数据结构又分为静态数据结构和动态数据结构</p>
+<p><strong>非线性数据结构：</strong> 数据结构中元素不是按照线性且连续的方式存储的，例如树和图</p>
+<a id="more"></a>
+<h2 id="数组"><a class="markdownIt-Anchor" href="#数组"></a> 数组</h2>
+<p>数组把元素存储在连续内存位置的集合，如下图所示。</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20220721080308/array.png" alt="Array Data Structure"></p>
+<h3 id="数组的构造"><a class="markdownIt-Anchor" href="#数组的构造"></a> 数组的构造</h3>
+<p>数组在不同的语言中都是以基本的数据类型的形式存在的，所以在使用数组时，并不需要太复杂的构造方式，下面以java语言为例，展示数组的使用</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 声明一个整型数组</span></span><br><span class="line"><span class="keyword">int</span> []a;</span><br><span class="line"><span class="comment">// 为上述整型数组分配五个内存</span></span><br><span class="line">a = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br></pre></td></tr></table></figure>
+<h3 id="常用操作及分析"><a class="markdownIt-Anchor" href="#常用操作及分析"></a> 常用操作及分析</h3>
+<h4 id="数组排序"><a class="markdownIt-Anchor" href="#数组排序"></a> 数组排序</h4>
+<p><strong>操作过程（以选择排序为例）</strong></p>
+<ul>
+<li>依次遍历nums中每一个元素i</li>
+<li>对于元素i，从i开始直至结束选择其中最大的元素位置k</li>
+<li>判断k是否与i相等，不等则交换</li>
+<li>直至nums结束</li>
+</ul>
+<p><strong>时间复杂度：</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>n</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault">n</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
+<p><strong>空间复杂度：</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></p>
+<p><strong>示例</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 选择排序</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">selectSort</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>{</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) {</span><br><span class="line">        <span class="keyword">int</span> k = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt; nums.length; j++) {</span><br><span class="line">            <span class="keyword">if</span> (nums[j] &gt; nums[k]) k = j;</span><br><span class="line">        }</span><br><span class="line">        <span class="keyword">if</span> (k != i) {</span><br><span class="line">            <span class="keyword">int</span> tmp = nums[i];</span><br><span class="line">            nums[i] = nums[k];</span><br><span class="line">            nums[k] = tmp;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h4 id="搜索元素"><a class="markdownIt-Anchor" href="#搜索元素"></a> 搜索元素</h4>
+<p><strong>操作过程(以线性搜索为例)</strong></p>
+<ul>
+<li>循环遍历数组nums</li>
+<li>判断元素i与元素target是否相同</li>
+<li>若相同返回target的位置，反之返回-1</li>
+</ul>
+<p><strong>时间复杂度：</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></p>
+<p><strong>空间复杂度：</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></p>
+<p><strong>示例</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 线性搜索</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lineSearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>{</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> e : nums) {</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)</span><br><span class="line">            <span class="keyword">if</span> (nums[i] == target) <span class="keyword">return</span> i;</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h4 id="插入元素"><a class="markdownIt-Anchor" href="#插入元素"></a> 插入元素</h4>
+<p><strong>操作过程</strong></p>
+<ul>
+<li>找到需要插入的位置id</li>
+<li>将id后面的元素后移一位</li>
+<li>将元素插入id位置</li>
+</ul>
+<p><strong>时间复杂度：</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></p>
+<p><strong>空间复杂度：</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></p>
+<p><strong>示例</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//    在位置index插入一个元素k</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> index, <span class="keyword">int</span> k)</span> </span>{</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = nums.length - <span class="number">1</span>; i &gt;= <span class="number">1</span>; i--) {</span><br><span class="line">        nums[i] = nums[i - <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span> (i == index) {</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        }</span><br><span class="line">    }</span><br><span class="line">    nums[index] = k;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+<h4 id="删除元素"><a class="markdownIt-Anchor" href="#删除元素"></a> 删除元素</h4>
+<p><strong>操作过程</strong></p>
+<ul>
+<li>找到待删除元素</li>
+<li>把待删除元素后面的元素前移一位</li>
+</ul>
+<p><strong>时间复杂度：</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mi>N</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="mclose">)</span></span></span></span></p>
+<p><strong>空间复杂度：</strong> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></p>
+<p><strong>示例</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">//    删除元素target，并返回待删除元素位置</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">delete</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>{</span><br><span class="line">    <span class="keyword">int</span> pos = lineSearch(nums,target);</span><br><span class="line">    <span class="keyword">if</span>(pos==-<span class="number">1</span>) <span class="keyword">return</span> pos;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=pos;i&lt;nums.length-<span class="number">1</span>;i++)</span><br><span class="line">        nums[i]=nums[i+<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">return</span> pos;</span><br><span class="line">}</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+        <category>编程语言</category>
+        <category>java</category>
       </categories>
       <tags>
         <tag>数据结构</tag>
@@ -779,77 +848,6 @@ lower_bound()/upper_bound()</p>
       </tags>
   </entry>
   <entry>
-    <title>二分查找</title>
-    <url>/2020/09/27/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
-    <content><![CDATA[<h1 id="二分查找"><a class="markdownIt-Anchor" href="#二分查找"></a> 二分查找</h1>
-<h2 id="1-什么是二分查找"><a class="markdownIt-Anchor" href="#1-什么是二分查找"></a> 1、什么是二分查找</h2>
-<blockquote>
-<p>​	二分查找对具有指定左索引和右索引的连续序列进行操作。这就是所谓的查找空间。二分查找维护查找空间的左、右和中间指示符，并比较查找目标或将查找条件应用于集合的中间值；如果条件不满足或值不相等，则清除目标不可能存在的那一半，并在剩下的一半上继续查找，直到成功为止。如果查以空的一半结束，则无法满足条件，并且无法找到目标。</p>
-</blockquote>
-<a id="more"></a>
-<blockquote>
-<p>​	二进制搜索可以采用许多替代形式，并且可能并不总是直接搜索特定值。有时您希望应用特定条件或规则来确定接下来要搜索的哪一侧（左侧或右侧）。</p>
-<p>二分法的算法很简单，但在做题的过程中总是出现结果要么漏各一，要么循环条件不等号中少个等号。总的来说二分查找的<strong>思路简单，细节复杂</strong><br>
-**条件:**二分查找的查找序列必须是有序的，所一般使用之前都会对序列进行排序</p>
-</blockquote>
-<h2 id="2-二分查找的框架"><a class="markdownIt-Anchor" href="#2-二分查找的框架"></a> 2、二分查找的框架</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ****东哥模板****</span></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = ...;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(...) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;<span class="comment">//防止溢出</span></span><br><span class="line">        <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = ...</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">            right = ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ...;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ****yxc****</span></span><br><span class="line">    <span class="keyword">int</span> l=<span class="number">0</span>,r=n;</span><br><span class="line">    <span class="comment">// 第一种情况，check函数为判断mid性质的函数</span></span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(check(mid)) r=mid;</span><br><span class="line">        <span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 第二种情况</span></span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r+<span class="number">1</span>&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(check(mid)) l=mid;</span><br><span class="line">        <span class="keyword">else</span> r=mid<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>小技巧：不要出现else,所有的分类条件均放在else if后面<br>
-我的一些疑问<br>
-1、为什么使用第二种框架时mid=l+r+1&gt;&gt;1?<br>
-答：因为在C中整数相除是向下取整的，在缩小区间时l=mid这样当l与r很进时,l=mid=l就会造成死循环,故需要+1使得mid向上取整，这样无论在何时，区间都会缩小，循环总会结束。<br>
-2、上下两种模板有什么区别？<br>
-答：第一种模板需要考虑的细节比较多，例如：区间初始化，返回值，循环终止条件等等，而第二种模板只需要在具体的情况下考虑清楚判别性质的函数是什么就可以了。总的来说也就是两种模板思考问题的方式不同罢了。<br>
-3、二分搜索容易出现的错误与解决方式<br>
-a. 死循环：保证每次迭代后搜索区间都会缩小即可，使用第二种模板可以解决问题<br>
-b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜索前仔细思考<mark>我要查找的结果是什么</mark>，观察循环终止条件，考虑清楚循环在何种情况下结束。使用第二种模板，循环的终止条件已经固定在l==r时结束，故每次返回的结果也就很清晰了，所以使用第二种模板的话每次只需要考虑搜索策略就行了。<br>
-注：上述两种模板第一种用的比较少，不够熟练，所以一般对于二分的问题，尽量使用第二种模板的思路</p>
-</blockquote>
-<h2 id="3-模板例题"><a class="markdownIt-Anchor" href="#3-模板例题"></a> 3、模板&amp;例题</h2>
-<h3 id="1-查找一个数"><a class="markdownIt-Anchor" href="#1-查找一个数"></a> 1、查找一个数</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = nums.length<span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(...) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;<span class="comment">//防止溢出</span></span><br><span class="line">        <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">            right = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>查找空间：[left,right]</p>
-<p>终止条件：left = right + 1</p>
-<p>由于查找空间为左闭右闭，在进行区间划分时，已经判断过该值，故每次区间划分区间变化如下：</p>
-<p>向左查找：right = mid - 1</p>
-<p>向右查找：left = mid + 1</p>
-</blockquote>
-<ol>
-<li>
-<p>为什么终止条件是≤，而不是&lt;</p>
-<blockquote>
-<p>因为初始化 right 的赋值是 nums.length-1，即最后一个元素的索引，而不是 nums.length。前者相当于两端都闭区间 [left, right]，后者相当于左闭右开区间 [left, right],这个算法的搜索区间是 [left, right]，而结束条件是搜索空间为空时结束，若是&lt;，则结束后left==right,在搜索空间里有元素nums[left]没有被搜索</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="2-在一个有序的数组里给定一个数查找比给定数小的最大的数的下标"><a class="markdownIt-Anchor" href="#2-在一个有序的数组里给定一个数查找比给定数小的最大的数的下标"></a> 2、在一个有序的数组里，给定一个数，查找比给定数小的最大的数的下标</h3>
-<p><img src="/2020/09/27/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/image-20200927155830822.png" alt="image-20200927155830822"></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LowerBound</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> <span class="built_in">size</span>,<span class="keyword">int</span> p)</span> <span class="comment">//复杂度O(log(n))</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> L = <span class="number">0</span>; <span class="comment">//查找区间的左端点</span></span><br><span class="line">    <span class="keyword">int</span> R = <span class="built_in">size</span> - <span class="number">1</span>; <span class="comment">//查找区间的右端点</span></span><br><span class="line">    <span class="keyword">int</span> lastPos = <span class="number">-1</span>; <span class="comment">//到目前为止找到的最优解</span></span><br><span class="line">    <span class="keyword">while</span>( L &lt;= R) &#123; <span class="comment">//如果查找区间不为空就继续查找</span></span><br><span class="line">        <span class="keyword">int</span> mid = L+(R-L)/<span class="number">2</span>; <span class="comment">//取查找区间正中元素的下标</span></span><br><span class="line">        <span class="keyword">if</span>(a[mid]&gt;= p)</span><br><span class="line">        	R = mid - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            lastPos = mid;</span><br><span class="line">            L = mid+<span class="number">1</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     &#125;</span><br><span class="line">	<span class="keyword">return</span> lastPos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="3-用二分法查找方程的根"><a class="markdownIt-Anchor" href="#3-用二分法查找方程的根"></a> 3、用二分法查找方程的根</h3>
-<p><img src="/2020/09/27/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/image-20200927160918618.png" alt="image-20200927160918618"></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> EPS = <span class="number">1e-6</span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span> </span>&#123; <span class="keyword">return</span> x*x*x - <span class="number">5</span>*x*x + <span class="number">10</span>*x - <span class="number">80</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> root, x1 = <span class="number">0</span>, x2 = <span class="number">100</span>,y;</span><br><span class="line">    root = x1+(x2-x1)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> triedTimes = <span class="number">1</span>; <span class="comment">//记录一共尝试多少次，对求根来说不是必须的</span></span><br><span class="line">    y = f(root);</span><br><span class="line">    <span class="keyword">while</span>( <span class="built_in">fabs</span>(y) &gt; EPS) &#123;</span><br><span class="line">        <span class="keyword">if</span>( y &gt; <span class="number">0</span> ) </span><br><span class="line">            x2 = root;</span><br><span class="line">        <span class="keyword">else</span> x1 = root;</span><br><span class="line">        	root = x1+(x2 - x1)/<span class="number">2</span>;</span><br><span class="line">        y = f(root);</span><br><span class="line">        triedTimes ++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.8f\n&quot;</span>,root);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,triedTimes);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="4-习题"><a class="markdownIt-Anchor" href="#4-习题"></a> 4、习题</h2>
-<ol>
-<li>
-<p><a href="https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof/">查找0~n-1中缺失的数字</a></p>
-<p>题解：</p>
-</li>
-<li>
-<p><a href="https://leetcode-cn.com/problems/sqrtx/">x的平方根</a></p>
-<p>题解：</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>java基础</title>
     <url>/2023/03/24/java%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h2 id="基本术语"><a class="markdownIt-Anchor" href="#基本术语"></a> 基本术语</h2>
@@ -1108,8 +1106,8 @@ b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜�
 <li>println()是同步方法，当传递多个线程时可能导致低性能问题</li>
 <li>println()是较高层次的IO函数，性能较低</li>
 </ul>
-<h2 id="java中的字符串类string"><a class="markdownIt-Anchor" href="#java中的字符串类string"></a> Java中的字符串类——String</h2>
-<h2 id="java中的数组类array"><a class="markdownIt-Anchor" href="#java中的数组类array"></a> Java中的数组类——Array</h2>
+<h2 id="java中的字符串string"><a class="markdownIt-Anchor" href="#java中的字符串string"></a> Java中的字符串——String</h2>
+<h2 id="java中的数组array"><a class="markdownIt-Anchor" href="#java中的数组array"></a> Java中的数组——Array</h2>
 <p>Java数组的一些特性：</p>
 <ul>
 <li>Java中，数组是动态分配的</li>
@@ -1172,6 +1170,41 @@ b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜�
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Java program to demonstrate</span></span><br><span class="line"><span class="comment">// cloning of multi-dimensional arrays</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> intArray[][] = &#123; &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;, &#123; <span class="number">4</span>, <span class="number">5</span> &#125; &#125;;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> cloneArray[][] = intArray.clone();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// will print false</span></span><br><span class="line">		System.out.println(intArray == cloneArray);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// will print true as shallow copy is created</span></span><br><span class="line">		<span class="comment">// i.e. sub-arrays are shared</span></span><br><span class="line">		System.out.println(intArray[<span class="number">0</span>] == cloneArray[<span class="number">0</span>]);</span><br><span class="line">		System.out.println(intArray[<span class="number">1</span>] == cloneArray[<span class="number">1</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight mathematica"><table><tr><td class="code"><pre><span class="line">\\ 输出</span><br><span class="line">false</span><br><span class="line">true</span><br><span class="line">true</span><br></pre></td></tr></table></figure>
 <p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-12.jpeg" alt="Blank Diagram - Page 1 (12)"></p>
+<h3 id="arrays类"><a class="markdownIt-Anchor" href="#arrays类"></a> Arrays类</h3>
+<p><code>java.util</code>包中的Arrays数组是Java Collection框架中的一部分，该类提供了一些静态方法动态的创建和存储java数组。该类由一些静态方法和一些Object类中的方法构成，并且类中的方法全为静态的。</p>
+<p><strong>Arrays类中的一些方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Action Performed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>asList()</td>
+<td>Returns a fixed-size list backed by the specified Arrays</td>
+</tr>
+<tr>
+<td><a href="https://www.geeksforgeeks.org/array-class-in-java/">fill(originalArray, fillValue)</a></td>
+<td>Assigns this fill value to each index of this arrays.</td>
+</tr>
+<tr>
+<td>binarySearch()</td>
+<td>Searches for the specified element in the array with the help of the Binary Search Algorithm</td>
+</tr>
+<tr>
+<td>binarySearch(array, fromIndex, toIndex, key, Comparator)</td>
+<td>Searches a range of the specified array for the specified object using the Binary Search Algorithm</td>
+</tr>
+<tr>
+<td><a href="https://www.geeksforgeeks.org/array-class-in-java/">sort(T[] a, Comparator&lt; super T&gt; c)</a></td>
+<td>Sorts the specified array of objects according to the order induced by the specified comparator.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>排序和二分示例</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Java Program to Demonstrate Arrays Class</span></span><br><span class="line"><span class="comment">// Via binarySearch() method</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Importing Arrays utility class</span></span><br><span class="line"><span class="comment">// from java.util package</span></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Main class</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Main driver method</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Get the Array</span></span><br><span class="line">		<span class="keyword">int</span> intArr[] = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">35</span> &#125;;</span><br><span class="line"></span><br><span class="line">		Arrays.sort(intArr);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> intKey = <span class="number">22</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Print the key and corresponding index</span></span><br><span class="line">		System.out.println(</span><br><span class="line">			intKey + <span class="string">&quot; found at index = &quot;</span></span><br><span class="line">			+ Arrays.binarySearch(intArr, intKey));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="java文件操作"><a class="markdownIt-Anchor" href="#java文件操作"></a> Java文件操作</h2>
 <h3 id="file类"><a class="markdownIt-Anchor" href="#file类"></a> File类</h3>
 <p>File类在java实现了文件和目录名。File包含了诸多操作文件和目录的方法，其中包括删除，重命名，创建目录，列出包含的子目录以及一些文件和目录相关的属性等等。</p>
@@ -1561,27 +1594,19 @@ b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜�
 <td>Used to insert all of the elements starting at the specified position from a specific collection into the mentioned list.</td>
 </tr>
 <tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-clear-java-examples/">clear()</a></td>
-<td>This method is used to remove all the elements from any list.</td>
-</tr>
-<tr>
 <td><a href="https://www.geeksforgeeks.org/clone-method-in-java-2/">clone()</a></td>
 <td>This method is used to return a shallow copy of an ArrayList.</td>
 </tr>
 <tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-contains-java/">contains?(Object o)</a></td>
+<td><a href="https://www.geeksforgeeks.org/arraylist-contains-java/">contains(Object o)</a></td>
 <td>Returns true if this list contains the specified element.</td>
 </tr>
 <tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-ensurecapacity-method-in-java-with-examples/">ensureCapacity?(int minCapacity)</a></td>
-<td>Increases the capacity of this ArrayList instance, if necessary, to ensure that it can hold at least the number of elements specified by the minimum capacity argument.</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-foreach-method-in-java/">forEach?(Consumer action)</a></td>
+<td><a href="https://www.geeksforgeeks.org/arraylist-foreach-method-in-java/">forEach(Consumer action)</a></td>
 <td>Performs the given action for each element of the Iterable until all elements have been processed or the action throws an exception.</td>
 </tr>
 <tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-get-method-java-examples/">get?(int index)</a></td>
+<td><a href="https://www.geeksforgeeks.org/arraylist-get-method-java-examples/">get(int index)</a></td>
 <td>Returns the element at the specified position in this list.</td>
 </tr>
 <tr>
@@ -1589,76 +1614,20 @@ b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜�
 <td>The index the first occurrence of a specific element is either returned, or -1 in case the element is not in the list.</td>
 </tr>
 <tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-isempty-java-example/">isEmpty?()</a></td>
+<td><a href="https://www.geeksforgeeks.org/arraylist-isempty-java-example/">isEmpty()</a></td>
 <td>Returns true if this list contains no elements.</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-lastindexof-java-example/">lastIndexOf(Object O)</a></td>
-<td>The index of the last occurrence of a specific element is either returned or -1 in case the element is not in the list.</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-listiterator-method-in-java-with-examples/">listIterator?()</a></td>
-<td>Returns a list iterator over the elements in this list (in proper sequence).</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-listiterator-method-in-java-with-examples/">listIterator?(int index)</a></td>
-<td>Returns a list iterator over the elements in this list (in proper sequence), starting at the specified position in the list.</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-linkedlist-remove-methods-java-examples/">remove?(int index)</a></td>
-<td>Removes the element at the specified position in this list.</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-linkedlist-remove-methods-java-examples/">remove?(Object o)</a></td>
-<td>Removes the first occurrence of the specified element from this list, if it is present.</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-removeall-method-in-java-with-examples/">removeAll?(Collection c)</a></td>
-<td>Removes from this list all of its elements that are contained in the specified collection.</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-removeif-method-in-java/">removeIf?(Predicate filter)</a></td>
-<td>Removes all of the elements of this collection that satisfy the given predicate.</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-removerange-java-examples/">removeRange?(int fromIndex, int toIndex)</a></td>
-<td>Removes from this list all of the elements whose index is between fromIndex, inclusive, and toIndex, exclusive.</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-retainall-method-in-java/">retainAll?(Collection c)</a></td>
-<td>Retains only the elements in this list that are contained in the specified collection.</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-set-method-in-java-with-examples/">set?(int index, E element)</a></td>
-<td>Replaces the element at the specified position in this list with the specified element.</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-size-method-in-java-with-examples/">size?()</a></td>
-<td>Returns the number of elements in this list.</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-spliterator-method-in-java/">spliterator?()</a></td>
-<td>Creates a late-binding and fail-fast Spliterator over the elements in this list.</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/arraylist-sublist-method-in-java-with-examples/">subList?(int fromIndex, int toIndex)</a></td>
-<td>Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive.</td>
 </tr>
 <tr>
 <td><a href="https://www.geeksforgeeks.org/arraylist-array-conversion-java-toarray-methods/">toArray()</a></td>
 <td>This method is used to return an array containing all of the elements in the list in the correct order.</td>
 </tr>
 <tr>
-<td>[toArray(Object<a href="https://www.geeksforgeeks.org/arraylist-array-conversion-java-toarray-methods/">] O)</a></td>
+<td><a href="https://www.geeksforgeeks.org/arraylist-array-conversion-java-toarray-methods/">toArrayObject(O)</a></td>
 <td>It is also used to return an array containing all of the elements in this list in the correct order same as the previous method.</td>
 </tr>
 <tr>
 <td><a href="https://www.geeksforgeeks.org/arraylist-trimtosize-java-example/">trimToSize()</a></td>
 <td>This method is used to trim the capacity of the instance of the ArrayList to the list’s current size.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -1672,7 +1641,6 @@ b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜�
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">		list.add(<span class="number">2</span>);</span><br><span class="line">		list.add(<span class="number">4</span>);</span><br><span class="line">		list.add(<span class="number">3</span>);</span><br><span class="line">		list.add(<span class="number">1</span>);</span><br><span class="line">		System.out.println(<span class="string">&quot;Before sorting list:&quot;</span>);</span><br><span class="line">		System.out.println(list);</span><br><span class="line">		Collections.sort(list);</span><br><span class="line">		System.out.println(<span class="string">&quot;after sorting list:&quot;</span>);</span><br><span class="line">		System.out.println(list);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="vector"><a class="markdownIt-Anchor" href="#vector"></a> Vector</h3>
 <p>与<code>ArrayList</code>大致相同，主要区别在于Vector是线程同步的</p>
-<h3 id="linkedlist"><a class="markdownIt-Anchor" href="#linkedlist"></a> LinkedList</h3>
 <h3 id="stack"><a class="markdownIt-Anchor" href="#stack"></a> Stack</h3>
 <p>提供了一种栈数据结构，除了push和pop基础操作外，该类还提供了其他三种函数，empty,search,peek，Stack类扩展了Vector类，是Vector的子类，Stack的层次结构图如下：</p>
 <p><img src="https://media.geeksforgeeks.org/wp-content/uploads/Selection_028.png" alt="Stack Class in Java"></p>
@@ -1712,7 +1680,7 @@ b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜�
 <p><strong>使用ArrayList代替Stack</strong></p>
 <p>java中更推荐使用ArrayDeque作为Stack的实现，因为ArrayDeque具有更好的性能，实例如下：</p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// A Java Program to show implementation</span></span><br><span class="line"><span class="comment">// of Stack using ArrayDeque</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Deque&lt;Character&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;Character&gt;();</span><br><span class="line">		stack.push(<span class="string">&#x27;A&#x27;</span>);</span><br><span class="line">		stack.push(<span class="string">&#x27;B&#x27;</span>);</span><br><span class="line">		System.out.println(stack.peek());</span><br><span class="line">		System.out.println(stack.pop());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="linkedlist-2"><a class="markdownIt-Anchor" href="#linkedlist-2"></a> LinkedList</h3>
+<h3 id="linkedlist"><a class="markdownIt-Anchor" href="#linkedlist"></a> LinkedList</h3>
 <p>该类实现的链表数据结构，这是一个线性数据结构，每个元素之间的存储时不连续的，并且每个元素存储数据和地址部分，元素与元素之间由指针和地址链接，每个元素称之为节点(node)</p>
 <p>由于链表的动态性，相对于数组其更容易删除和插入，但链表不支持随机访问</p>
 <p><strong>LinkedList构造函数</strong></p>
@@ -1730,28 +1698,12 @@ b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜�
 </thead>
 <tbody>
 <tr>
-<td><a href="https://www.geeksforgeeks.org/java-util-linkedlist-add-method-in-java/">add(int index, E element)</a></td>
-<td>This method Inserts the specified element at the specified position in this list.</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/java-util-linkedlist-add-method-in-java/">add(E e)</a></td>
-<td>This method Appends the specified element to the end of this list.</td>
-</tr>
-<tr>
 <td><a href="https://www.geeksforgeeks.org/linkedlist-addfirst-method-in-java/">addFirst(E e)</a></td>
 <td>This method Inserts the specified element at the beginning of this list.</td>
 </tr>
 <tr>
 <td><a href="https://www.geeksforgeeks.org/linkedlist-addlast-method-in-java/">addLast(E e)</a></td>
 <td>This method Appends the specified element to the end of this list.</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/linkedlist-clear-method-in-java/">clear()</a></td>
-<td>This method removes all of the elements from this list.</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/linkedlist-get-method-in-java/">get(int index)</a></td>
-<td>This method returns the element at the specified position in this list.</td>
 </tr>
 <tr>
 <td><a href="https://www.geeksforgeeks.org/java-util-linkedlist-get-getfirst-getlast-java/">getFirst()</a></td>
@@ -1786,15 +1738,15 @@ b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜�
 <td>This method retrieves, but does not remove, the last element of this list, or returns null if this list is empty.</td>
 </tr>
 <tr>
-<td>[poll()](<a href="https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-">https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-</a> examples-java/)</td>
+<td><a href="https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-examples-java/">poll()</a></td>
 <td>This method retrieves and removes the head (first element) of this list.</td>
 </tr>
 <tr>
-<td>[pollFirst()](<a href="https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-">https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-</a> examples-java/)</td>
+<td><a href="https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-examples-java/">pollFirst()</a></td>
 <td>This method retrieves and removes the first element of this list, or returns null if this list is empty.</td>
 </tr>
 <tr>
-<td>[pollLast()](<a href="https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-">https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-</a> examples-java/)</td>
+<td><a href="https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-examples-java/">pollLast()</a></td>
 <td>This method retrieves and removes the last element of this list, or returns null if this list is empty.</td>
 </tr>
 <tr>
@@ -1804,10 +1756,6 @@ b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜�
 <tr>
 <td><a href="https://www.geeksforgeeks.org/linkedlist-push-method-in-java/">push(E e)</a></td>
 <td>This method pushes an element onto the stack represented by this list.</td>
-</tr>
-<tr>
-<td><a href="https://www.geeksforgeeks.org/linkedlist-remove-method-in-java/">remove()</a></td>
-<td>This method retrieves and removes the head (first element) of this list.</td>
 </tr>
 </tbody>
 </table>
@@ -1862,6 +1810,125 @@ b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜�
 <li>在线市场</li>
 </ul>
 <h3 id="arraydeque"><a class="markdownIt-Anchor" href="#arraydeque"></a> ArrayDeque</h3>
+<p>ArrayDeque应用可变长数组实现了Deque接口，该类提供了数组的双端操作，也就是所谓的双端队列，既可以当作栈使用也可以当作数组使用，在性能上比Stack效率更高。</p>
+<p><strong>ArrayDeque的一些优点</strong></p>
+<ul>
+<li>高性能，该类对于从两端插入元素和删除元素提供了常量时间性能的操作</li>
+<li>长度可变，该类的长度是可以随着元素的操作而改变的</li>
+<li>轻量的，该类是一种轻量型数据结构，不需要额外的开销，例如链表</li>
+<li>线程安全，该类不是线程安全的，但是可以使用<code>Collections.synchronizedDeque</code>方法创建一个线程安全版本的类</li>
+</ul>
+<p><strong>ArrayDeque的一些缺点</strong></p>
+<ul>
+<li>不支持同步，该类是不支持线程同步的，即多个线程可同时访问该类中的数据，这就造成了潜在的数据损坏的可能</li>
+<li>该类的容量是有限的</li>
+</ul>
+<p><strong>ArrayDeque类层次图</strong></p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20200909140302/ArrayDequeinJava.png" alt="ArrayDeque in Java"></p>
+<p><strong>构造函数</strong></p>
+<ul>
+<li><strong>ArrayDeque()</strong></li>
+<li><strong>ArrayDeque(Collection&lt;? extends E&gt; c)</strong></li>
+<li><strong>ArrayDeque(int numofElements)</strong></li>
+</ul>
+<p><strong>ArrayDeque中的一些方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>METHOD</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.geeksforgeeks.org/arraydeque-addfirst-method-in-java/">addFirst(Element e)</a></td>
+<td>The method inserts particular element at the start of the deque.</td>
+</tr>
+<tr>
+<td><a href="https://www.geeksforgeeks.org/arraydeque-addlast-method-in-java/">addLast(Element e) </a></td>
+<td>The method inserts a particular element at the end of the deque. It is similar to the add() method</td>
+</tr>
+<tr>
+<td><a href="https://www.geeksforgeeks.org/arraydeque-getfirst-method-in-java/">getFirst()</a></td>
+<td>The method returns first element of the deque</td>
+</tr>
+<tr>
+<td><a href="https://www.geeksforgeeks.org/arraydeque-getlast-method-in-java/">getLast()</a></td>
+<td>The method returns last element of the deque</td>
+</tr>
+<tr>
+<td><a href="https://www.geeksforgeeks.org/arraydeque-offer-method-in-java/">offer(Element e)</a></td>
+<td>The method inserts element at the end of deque.</td>
+</tr>
+<tr>
+<td><a href="https://www.geeksforgeeks.org/arraydeque-offerfirst-method-in-java/">offerFirst(Element e) </a></td>
+<td>The method inserts element at the front of deque.</td>
+</tr>
+<tr>
+<td><a href="https://www.geeksforgeeks.org/arraydeque-offerlast-method-in-java/">offerLast(Element e)</a></td>
+<td>The method inserts element at the end of the deque.</td>
+</tr>
+<tr>
+<td><a href="https://www.geeksforgeeks.org/arraydeque-peek-method-in-java/">peek()</a></td>
+<td>The method returns head element without removing it.</td>
+</tr>
+<tr>
+<td><a href="https://www.geeksforgeeks.org/arraydeque-poll-method-in-java/">poll()</a></td>
+<td>The method returns head element and also removes it</td>
+</tr>
+<tr>
+<td><a href="https://www.geeksforgeeks.org/arraydeque-pop-method-in-java/">pop()</a></td>
+<td>The method pops out an element for stack represented by deque</td>
+</tr>
+<tr>
+<td><a href="https://www.geeksforgeeks.org/arraydeque-push-method-in-java/">push(Element e)</a></td>
+<td>The method pushes an element onto stack represented by deque</td>
+</tr>
+</tbody>
+</table>
+<h3 id="java中的collections类"><a class="markdownIt-Anchor" href="#java中的collections类"></a> Java中的Collections类</h3>
+<p>Collections是Java集合框架中的通用类，位于<code>java.util</code>包中，该类中使用静态方法操作和返回集合，所有的方法抛出<code>NullPointerException</code>若操作的集合为空的话</p>
+<p><strong>Collections中的一些方法</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Methods</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://www.google.com/url?client=internal-element-cse&amp;cx=009682134359037907028:tj6eafkv_be&amp;q=https://www.geeksforgeeks.org/collections-binarysearch-java-examples/&amp;sa=U&amp;ved=2ahUKEwi6uP_199nsAhXj73MBHZbDDPMQFjAJegQIBRAC&amp;usg=AOvVaw3Z6NwOyP0de-c-hRasRUsf">binarySearch(List list, T key)</a></td>
+<td>This method searches the key using binary search in the specified list.</td>
+</tr>
+<tr>
+<td><a href="https://www.google.com/url?client=internal-element-cse&amp;cx=009682134359037907028:tj6eafkv_be&amp;q=https://www.geeksforgeeks.org/collections-binarysearch-java-examples/&amp;sa=U&amp;ved=2ahUKEwi6uP_199nsAhXj73MBHZbDDPMQFjAJegQIBRAC&amp;usg=AOvVaw3Z6NwOyP0de-c-hRasRUsf">binarySearch(List list, T key, Comparator c)</a></td>
+<td>This method searches the specified list for the specified object using the binary search algorithm.</td>
+</tr>
+<tr>
+<td><a href="https://www.google.com/url?client=internal-element-cse&amp;cx=009682134359037907028:tj6eafkv_be&amp;q=https://www.geeksforgeeks.org/collections-enumeration-method-in-java-with-examples/&amp;sa=U&amp;ved=2ahUKEwjKuPOa-NnsAhWF6XMBHV52Bxg4ChAWMAl6BAgAEAI&amp;usg=AOvVaw2zQdzpk5s0qYfnqwiTKmSC">enumeration(Collection c)</a></td>
+<td>This method returns an enumeration over the specified collection.</td>
+</tr>
+<tr>
+<td><a href="https://www.google.com/url?client=internal-element-cse&amp;cx=009682134359037907028:tj6eafkv_be&amp;q=https://www.geeksforgeeks.org/collections-fill-method-in-java-with-examples/&amp;sa=U&amp;ved=2ahUKEwi2_5_3-NnsAhWCheYKHZBvD4E4MhAWMAZ6BAgGEAI&amp;usg=AOvVaw1xqIqDpotyXSl0SNNWLwsG">fill(List list, T obj)</a></td>
+<td>This method replaces all of the elements of the specified list with the specified element.</td>
+</tr>
+<tr>
+<td><a href="https://www.google.com/url?client=internal-element-cse&amp;cx=009682134359037907028:tj6eafkv_be&amp;q=https://www.geeksforgeeks.org/collections-sort-java-examples/&amp;sa=U&amp;ved=2ahUKEwi6uP_199nsAhXj73MBHZbDDPMQFjADegQIBxAC&amp;usg=AOvVaw3LK6ysEznNr0ARFYCFDvYh">sort(List list)</a></td>
+<td>This method sorts the specified list into ascending order, according to the natural ordering of its elements.</td>
+</tr>
+<tr>
+<td>sort(List<T> list, Comparator<super t> c)</super></T></td>
+<td>This method sorts the specified list according to the order induced by the specified comparator.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>排序和二分示例</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Java Program to Demonstrate Binary Search</span></span><br><span class="line"><span class="comment">// Using Collections.binarySearch()</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Importing required classes</span></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Main class</span></span><br><span class="line"><span class="comment">// BinarySearchOnACollection</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Main driver method</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">// Creating a List</span></span><br><span class="line">		<span class="comment">// Declaring object of string type</span></span><br><span class="line">		List&lt;String&gt; items = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Adding elements to object</span></span><br><span class="line">		<span class="comment">// using add() method</span></span><br><span class="line">		items.add(<span class="string">&quot;Shoes&quot;</span>);</span><br><span class="line">		items.add(<span class="string">&quot;Toys&quot;</span>);</span><br><span class="line">		items.add(<span class="string">&quot;Horse&quot;</span>);</span><br><span class="line">		items.add(<span class="string">&quot;Ball&quot;</span>);</span><br><span class="line">		items.add(<span class="string">&quot;Grapes&quot;</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Sort the List</span></span><br><span class="line">		Collections.sort(items);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// BinarySearch on the List</span></span><br><span class="line">		System.out.println(</span><br><span class="line">			<span class="string">&quot;The index of Horse is &quot;</span></span><br><span class="line">			+ Collections.binarySearch(items, <span class="string">&quot;Horse&quot;</span>));</span><br><span class="line"></span><br><span class="line">		<span class="comment">// BinarySearch on the List</span></span><br><span class="line">		System.out.println(</span><br><span class="line">			<span class="string">&quot;The index of Dog is &quot;</span></span><br><span class="line">			+ Collections.binarySearch(items, <span class="string">&quot;Dog&quot;</span>));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="java中的comparator接口"><a class="markdownIt-Anchor" href="#java中的comparator接口"></a> Java中的Comparator接口</h3>
+<p>该接口方便用户对于自定义类的排序，比较器对象能够比较两个相同类的对象。该类存在于<code>java.util</code>包中，包含两个方法：compare(Object obj1, Object obj2)和equals(Object element)，其中compare()方法返回值为-1，0和1，若想基于compare()方法对给定集合排序，则必须实现Comparator接口</p>
+<p>下面示例展示了如何基于多个字段对集合进行排序，示例中集合为Student对象构成的集合，Student包含name，age等属性，首先根据name进行排序，name相同时根据age进行排序，如下：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Java Program to Demonstrate Working of</span></span><br><span class="line"><span class="comment">// Comparator Interface Via More than One Field</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Importing required classes</span></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.Comparator;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Class 1</span></span><br><span class="line"><span class="comment">// Helper class representing a Student</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Attributes of student</span></span><br><span class="line">	String Name;</span><br><span class="line">	<span class="keyword">int</span> Age;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Parameterized constructor</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String Name, Integer Age)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// This keyword refers to current instance itself</span></span><br><span class="line">		<span class="keyword">this</span>.Name = Name;</span><br><span class="line">		<span class="keyword">this</span>.Age = Age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Getter setter methods</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> Name; &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String Name)</span> </span>&#123; <span class="keyword">this</span>.Name = Name; &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Integer <span class="title">getAge</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> Age; &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(Integer Age)</span> </span>&#123; <span class="keyword">this</span>.Age = Age; &#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Method</span></span><br><span class="line">	<span class="comment">// Overriding toString() method</span></span><br><span class="line">	<span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;Customer&#123;&quot;</span></span><br><span class="line">			+ <span class="string">&quot;Name=&quot;</span> + Name + <span class="string">&quot;, Age=&quot;</span> + Age + <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Class 2</span></span><br><span class="line">	<span class="comment">// Helper class implementing Comparator interface</span></span><br><span class="line">	<span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomerSortingComparator</span></span></span><br><span class="line"><span class="class">		<span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">Student</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Method 1</span></span><br><span class="line">		<span class="comment">// To compare customers</span></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Student customer1,</span></span></span><br><span class="line"><span class="function"><span class="params">						Student customer2)</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line"></span><br><span class="line">			<span class="comment">// Comparing customers</span></span><br><span class="line">			<span class="keyword">int</span> NameCompare = customer1.getName().compareTo(</span><br><span class="line">				customer2.getName());</span><br><span class="line"></span><br><span class="line">			<span class="keyword">int</span> AgeCompare = customer1.getAge().compareTo(</span><br><span class="line">				customer2.getAge());</span><br><span class="line"></span><br><span class="line">			<span class="comment">// 2nd level comparison</span></span><br><span class="line">			<span class="keyword">return</span> (NameCompare == <span class="number">0</span>) ? AgeCompare</span><br><span class="line">									: NameCompare;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Method 2</span></span><br><span class="line">	<span class="comment">// Main driver method</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Create an empty ArrayList</span></span><br><span class="line">		<span class="comment">// to store Student</span></span><br><span class="line">		List&lt;Student&gt; al = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Create customer objects</span></span><br><span class="line">		<span class="comment">// using constructor initialization</span></span><br><span class="line">		Student obj1 = <span class="keyword">new</span> Student(<span class="string">&quot;Ajay&quot;</span>, <span class="number">27</span>);</span><br><span class="line">		Student obj2 = <span class="keyword">new</span> Student(<span class="string">&quot;Sneha&quot;</span>, <span class="number">23</span>);</span><br><span class="line">		Student obj3 = <span class="keyword">new</span> Student(<span class="string">&quot;Simran&quot;</span>, <span class="number">37</span>);</span><br><span class="line">		Student obj4 = <span class="keyword">new</span> Student(<span class="string">&quot;Ajay&quot;</span>, <span class="number">22</span>);</span><br><span class="line">		Student obj5 = <span class="keyword">new</span> Student(<span class="string">&quot;Ajay&quot;</span>, <span class="number">29</span>);</span><br><span class="line">		Student obj6 = <span class="keyword">new</span> Student(<span class="string">&quot;Sneha&quot;</span>, <span class="number">22</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Adding customer objects to ArrayList</span></span><br><span class="line">		<span class="comment">// using add() method</span></span><br><span class="line">		al.add(obj1);</span><br><span class="line">		al.add(obj2);</span><br><span class="line">		al.add(obj3);</span><br><span class="line">		al.add(obj4);</span><br><span class="line">		al.add(obj5);</span><br><span class="line">		al.add(obj6);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Iterating using Iterator</span></span><br><span class="line">		<span class="comment">// before Sorting ArrayList</span></span><br><span class="line">		Iterator&lt;Student&gt; custIterator = al.iterator();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Display message</span></span><br><span class="line">		System.out.println(<span class="string">&quot;Before Sorting:\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Holds true till there is single element</span></span><br><span class="line">		<span class="comment">// remaining in List</span></span><br><span class="line">		<span class="keyword">while</span> (custIterator.hasNext()) &#123;</span><br><span class="line"></span><br><span class="line">			<span class="comment">// Iterating using next() method</span></span><br><span class="line">			System.out.println(custIterator.next());</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Sorting using sort method of Collections class</span></span><br><span class="line">		Collections.sort(al,</span><br><span class="line">						<span class="keyword">new</span> CustomerSortingComparator());</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Display message only</span></span><br><span class="line">		System.out.println(<span class="string">&quot;\n\nAfter Sorting:\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Iterating using enhanced for-loop</span></span><br><span class="line">		<span class="comment">// after Sorting ArrayList</span></span><br><span class="line">		<span class="keyword">for</span> (Student customer : al) &#123;</span><br><span class="line">			System.out.println(customer);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>编程语言</category>
@@ -1869,6 +1936,77 @@ b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜�
       </categories>
       <tags>
         <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二分查找</title>
+    <url>/2020/09/27/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
+    <content><![CDATA[<h1 id="二分查找"><a class="markdownIt-Anchor" href="#二分查找"></a> 二分查找</h1>
+<h2 id="1-什么是二分查找"><a class="markdownIt-Anchor" href="#1-什么是二分查找"></a> 1、什么是二分查找</h2>
+<blockquote>
+<p>​	二分查找对具有指定左索引和右索引的连续序列进行操作。这就是所谓的查找空间。二分查找维护查找空间的左、右和中间指示符，并比较查找目标或将查找条件应用于集合的中间值；如果条件不满足或值不相等，则清除目标不可能存在的那一半，并在剩下的一半上继续查找，直到成功为止。如果查以空的一半结束，则无法满足条件，并且无法找到目标。</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>​	二进制搜索可以采用许多替代形式，并且可能并不总是直接搜索特定值。有时您希望应用特定条件或规则来确定接下来要搜索的哪一侧（左侧或右侧）。</p>
+<p>二分法的算法很简单，但在做题的过程中总是出现结果要么漏各一，要么循环条件不等号中少个等号。总的来说二分查找的<strong>思路简单，细节复杂</strong><br>
+**条件:**二分查找的查找序列必须是有序的，所一般使用之前都会对序列进行排序</p>
+</blockquote>
+<h2 id="2-二分查找的框架"><a class="markdownIt-Anchor" href="#2-二分查找的框架"></a> 2、二分查找的框架</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ****东哥模板****</span></span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = ...;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(...) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;<span class="comment">//防止溢出</span></span><br><span class="line">        <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = ...</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">            right = ...</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ...;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// ****yxc****</span></span><br><span class="line">    <span class="keyword">int</span> l=<span class="number">0</span>,r=n;</span><br><span class="line">    <span class="comment">// 第一种情况，check函数为判断mid性质的函数</span></span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(check(mid)) r=mid;</span><br><span class="line">        <span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 第二种情况</span></span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r+<span class="number">1</span>&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(check(mid)) l=mid;</span><br><span class="line">        <span class="keyword">else</span> r=mid<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>小技巧：不要出现else,所有的分类条件均放在else if后面<br>
+我的一些疑问<br>
+1、为什么使用第二种框架时mid=l+r+1&gt;&gt;1?<br>
+答：因为在C中整数相除是向下取整的，在缩小区间时l=mid这样当l与r很进时,l=mid=l就会造成死循环,故需要+1使得mid向上取整，这样无论在何时，区间都会缩小，循环总会结束。<br>
+2、上下两种模板有什么区别？<br>
+答：第一种模板需要考虑的细节比较多，例如：区间初始化，返回值，循环终止条件等等，而第二种模板只需要在具体的情况下考虑清楚判别性质的函数是什么就可以了。总的来说也就是两种模板思考问题的方式不同罢了。<br>
+3、二分搜索容易出现的错误与解决方式<br>
+a. 死循环：保证每次迭代后搜索区间都会缩小即可，使用第二种模板可以解决问题<br>
+b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜索前仔细思考<mark>我要查找的结果是什么</mark>，观察循环终止条件，考虑清楚循环在何种情况下结束。使用第二种模板，循环的终止条件已经固定在l==r时结束，故每次返回的结果也就很清晰了，所以使用第二种模板的话每次只需要考虑搜索策略就行了。<br>
+注：上述两种模板第一种用的比较少，不够熟练，所以一般对于二分的问题，尽量使用第二种模板的思路</p>
+</blockquote>
+<h2 id="3-模板例题"><a class="markdownIt-Anchor" href="#3-模板例题"></a> 3、模板&amp;例题</h2>
+<h3 id="1-查找一个数"><a class="markdownIt-Anchor" href="#1-查找一个数"></a> 1、查找一个数</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = nums.length<span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(...) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;<span class="comment">//防止溢出</span></span><br><span class="line">        <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">            right = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>查找空间：[left,right]</p>
+<p>终止条件：left = right + 1</p>
+<p>由于查找空间为左闭右闭，在进行区间划分时，已经判断过该值，故每次区间划分区间变化如下：</p>
+<p>向左查找：right = mid - 1</p>
+<p>向右查找：left = mid + 1</p>
+</blockquote>
+<ol>
+<li>
+<p>为什么终止条件是≤，而不是&lt;</p>
+<blockquote>
+<p>因为初始化 right 的赋值是 nums.length-1，即最后一个元素的索引，而不是 nums.length。前者相当于两端都闭区间 [left, right]，后者相当于左闭右开区间 [left, right],这个算法的搜索区间是 [left, right]，而结束条件是搜索空间为空时结束，若是&lt;，则结束后left==right,在搜索空间里有元素nums[left]没有被搜索</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="2-在一个有序的数组里给定一个数查找比给定数小的最大的数的下标"><a class="markdownIt-Anchor" href="#2-在一个有序的数组里给定一个数查找比给定数小的最大的数的下标"></a> 2、在一个有序的数组里，给定一个数，查找比给定数小的最大的数的下标</h3>
+<p><img src="/2020/09/27/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/image-20200927155830822.png" alt="image-20200927155830822"></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LowerBound</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> <span class="built_in">size</span>,<span class="keyword">int</span> p)</span> <span class="comment">//复杂度O(log(n))</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> L = <span class="number">0</span>; <span class="comment">//查找区间的左端点</span></span><br><span class="line">    <span class="keyword">int</span> R = <span class="built_in">size</span> - <span class="number">1</span>; <span class="comment">//查找区间的右端点</span></span><br><span class="line">    <span class="keyword">int</span> lastPos = <span class="number">-1</span>; <span class="comment">//到目前为止找到的最优解</span></span><br><span class="line">    <span class="keyword">while</span>( L &lt;= R) &#123; <span class="comment">//如果查找区间不为空就继续查找</span></span><br><span class="line">        <span class="keyword">int</span> mid = L+(R-L)/<span class="number">2</span>; <span class="comment">//取查找区间正中元素的下标</span></span><br><span class="line">        <span class="keyword">if</span>(a[mid]&gt;= p)</span><br><span class="line">        	R = mid - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            lastPos = mid;</span><br><span class="line">            L = mid+<span class="number">1</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     &#125;</span><br><span class="line">	<span class="keyword">return</span> lastPos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="3-用二分法查找方程的根"><a class="markdownIt-Anchor" href="#3-用二分法查找方程的根"></a> 3、用二分法查找方程的根</h3>
+<p><img src="/2020/09/27/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/image-20200927160918618.png" alt="image-20200927160918618"></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> EPS = <span class="number">1e-6</span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span> </span>&#123; <span class="keyword">return</span> x*x*x - <span class="number">5</span>*x*x + <span class="number">10</span>*x - <span class="number">80</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> root, x1 = <span class="number">0</span>, x2 = <span class="number">100</span>,y;</span><br><span class="line">    root = x1+(x2-x1)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> triedTimes = <span class="number">1</span>; <span class="comment">//记录一共尝试多少次，对求根来说不是必须的</span></span><br><span class="line">    y = f(root);</span><br><span class="line">    <span class="keyword">while</span>( <span class="built_in">fabs</span>(y) &gt; EPS) &#123;</span><br><span class="line">        <span class="keyword">if</span>( y &gt; <span class="number">0</span> ) </span><br><span class="line">            x2 = root;</span><br><span class="line">        <span class="keyword">else</span> x1 = root;</span><br><span class="line">        	root = x1+(x2 - x1)/<span class="number">2</span>;</span><br><span class="line">        y = f(root);</span><br><span class="line">        triedTimes ++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.8f\n&quot;</span>,root);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,triedTimes);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-习题"><a class="markdownIt-Anchor" href="#4-习题"></a> 4、习题</h2>
+<ol>
+<li>
+<p><a href="https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof/">查找0~n-1中缺失的数字</a></p>
+<p>题解：</p>
+</li>
+<li>
+<p><a href="https://leetcode-cn.com/problems/sqrtx/">x的平方根</a></p>
+<p>题解：</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -1999,6 +2137,7 @@ s.t.\ &amp;\alpha_{ikl}\in (0,\frac{C1\cdot \tilde{P}_{ikl}}{\gamma_i})\\
 <p>则b可以看成是由若干个上式等式构成的线性方程组的解，上述约束条件共有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><msup><mi>q</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">mq^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">m</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>个，而b是一个m维向量，故方程组可能无解，此时可以将上述线性方程组最小二乘的最优解近似为b。</p>
 <h4 id="优化方法-2"><a class="markdownIt-Anchor" href="#优化方法-2"></a> 优化方法</h4>
 <p>上述问题为线性方程组求解，由于方程组的数目远大于未知数的数目，故该方程组很可能是不相容的，可以使用numpy.linalg中lstsq函数求解目标方程组的最小二乘解。而该问题每<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mi>q</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">q^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span>个方程组可以视为一组，故可以按照上面的相同处理方式，将线性方程组分为m个组，每组求一次bias，最后将每组求的bias进行平均加权记为最终的bias。</p>
+<hr>
 <h2 id="目标函数2"><a class="markdownIt-Anchor" href="#目标函数2"></a> 目标函数2</h2>
 <blockquote>
 <p>目标函数中含有max算子的线性规划问题</p>
@@ -2037,6 +2176,7 @@ t_{ikl}\ge P_{ik}-P_{il}
 <blockquote>
 <p>该问题的参数数目为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>q</mi></mrow><annotation encoding="application/x-tex">mq</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span></span></span></span>，不等式系数矩阵的维度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><msup><mi>q</mi><mn>2</mn></msup><mo>∗</mo><mo stretchy="false">(</mo><mi>m</mi><msup><mi>q</mi><mn>2</mn></msup><mo>+</mo><mi>m</mi><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">mq^2*(mq^2+mq)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.008548em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">m</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">m</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault" style="margin-right:0.03588em;">q</span><span class="mclose">)</span></span></span></span>，在优化该问题的时候，当数据量和标签量过大的时候，内存放不下这么大的矩阵，所以要将数据分组，尽可能选择小的batch</p>
 </blockquote>
+<hr>
 <hr class="footnotes-sep">
 <section class="footnotes">
 <ol class="footnotes-list">
@@ -2051,6 +2191,70 @@ t_{ikl}\ge P_{ik}-P_{il}
       <tags>
         <tag>数学</tag>
         <tag>最优化理论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>动态规划</title>
+    <url>/2020/11/25/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
+    <content><![CDATA[<h2 id="1-动态规划解题的一般思路"><a class="markdownIt-Anchor" href="#1-动态规划解题的一般思路"></a> 1、动态规划解题的一般思路</h2>
+<ul>
+<li>
+<p>将原问题分解为子问题</p>
+</li>
+<li>
+<p>确定状态</p>
+</li>
+<li>
+<p>确定初始状态（边界状态）的值</p>
+</li>
+<li>
+<p>确定状态转移方程</p>
+</li>
+</ul>
+<a id="more"></a>
+<h2 id="2-例题"><a class="markdownIt-Anchor" href="#2-例题"></a> 2、例题</h2>
+<ul>
+<li><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/">买卖股票的最佳时机</a></li>
+</ul>
+<p>题解：</p>
+<p>DP的思路： 利用原问题与子问题的关系，将其变成 大问题的解 = 小问题的解的函数， 从而将问题变成size的扩展即可，当size到达最大后，原问题解决了</p>
+<p>DP的keypoint</p>
+<ol>
+<li>
+<p>转移方程（大问题与小问题的关系）</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1）定义状态：定义一个状态，例如f(i) &#x3D; 到a[i]为止到最小值</span><br><span class="line">2）设计转移方程：根据如上状态方程定义，则有 f(i+1) &#x3D; min(f(i), a[i+1])</span><br><span class="line"></span><br><span class="line">tip:</span><br><span class="line">转移方程的设计完全依赖于状态的定义，并不是什么样的状态定义，都能有状态转移方程，因此，状态定义决定了该DP方法能否实现</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>初始条件的设置： Dp本质还是迭代，总要有一个迭代的初值。</p>
+</li>
+<li>
+<p>特殊处理小size的问题：有些情况，由于size太小，没法带入转移方程中。</p>
+</li>
+</ol>
+<p>根据该问题，依次回答上述问题：</p>
+<ol>
+<li>
+<p>大问题与小问题的关系</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1）状态定义：我们定义max_profit为第i天的最大收益</span><br><span class="line">2）状态转移方程：</span><br><span class="line">第i天的最大收益和第i-1天的最大收益之间的关系：</span><br><span class="line">    i) 最大收益不是第i天抛出的，                        ---最大收益和第i天的价格无关</span><br><span class="line">    ii）最大收益是在第i-1天前某天买入的，并在第i天抛出的，  ---与第i天的价格有关</span><br><span class="line">   </span><br><span class="line">因此第i天的最大收益等于：第i天抛出所造成的最大收益 和 第i-1天之前的最大收益 中的最大值</span><br><span class="line">即：</span><br><span class="line">前i天的最大收益 &#x3D; max&#123;前i-1天的最大收益，第i天的价格-前i-1天中的最小价格&#125;</span><br><span class="line">其中：</span><br><span class="line">前i-1天中的最小价格需时时更新并记录</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>初始条件：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">min 和 max_profit</span><br><span class="line">min可以等于第一天的price</span><br><span class="line">max_profit可以等于0， 因为最大收益的最小值就是0， 用人话叫，最低也不能赔了</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>小于最小问题的特殊情况： 当list的长度为0 和 1 时， 没有办法带入转移公式中，需要特殊处理。</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProfit</span>(<span class="params">self, prices</span>) -&gt; int:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> len(prices) &lt;= <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        min_input = prices[<span class="number">0</span>]</span><br><span class="line">        max_profit = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> p <span class="keyword">in</span> prices[<span class="number">1</span>:]:</span><br><span class="line">            min_input = min(p, min_input)</span><br><span class="line">            max_profit = max(max_profit, p - min_input)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max_profit</span><br></pre></td></tr></table></figure>
+<ul>
+<li></li>
+</ul>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -2152,70 +2356,6 @@ t_{ikl}\ge P_{ik}-P_{il}
       </tags>
   </entry>
   <entry>
-    <title>动态规划</title>
-    <url>/2020/11/25/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/</url>
-    <content><![CDATA[<h2 id="1-动态规划解题的一般思路"><a class="markdownIt-Anchor" href="#1-动态规划解题的一般思路"></a> 1、动态规划解题的一般思路</h2>
-<ul>
-<li>
-<p>将原问题分解为子问题</p>
-</li>
-<li>
-<p>确定状态</p>
-</li>
-<li>
-<p>确定初始状态（边界状态）的值</p>
-</li>
-<li>
-<p>确定状态转移方程</p>
-</li>
-</ul>
-<a id="more"></a>
-<h2 id="2-例题"><a class="markdownIt-Anchor" href="#2-例题"></a> 2、例题</h2>
-<ul>
-<li><a href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/">买卖股票的最佳时机</a></li>
-</ul>
-<p>题解：</p>
-<p>DP的思路： 利用原问题与子问题的关系，将其变成 大问题的解 = 小问题的解的函数， 从而将问题变成size的扩展即可，当size到达最大后，原问题解决了</p>
-<p>DP的keypoint</p>
-<ol>
-<li>
-<p>转移方程（大问题与小问题的关系）</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1）定义状态：定义一个状态，例如f(i) &#x3D; 到a[i]为止到最小值</span><br><span class="line">2）设计转移方程：根据如上状态方程定义，则有 f(i+1) &#x3D; min(f(i), a[i+1])</span><br><span class="line"></span><br><span class="line">tip:</span><br><span class="line">转移方程的设计完全依赖于状态的定义，并不是什么样的状态定义，都能有状态转移方程，因此，状态定义决定了该DP方法能否实现</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>初始条件的设置： Dp本质还是迭代，总要有一个迭代的初值。</p>
-</li>
-<li>
-<p>特殊处理小size的问题：有些情况，由于size太小，没法带入转移方程中。</p>
-</li>
-</ol>
-<p>根据该问题，依次回答上述问题：</p>
-<ol>
-<li>
-<p>大问题与小问题的关系</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">1）状态定义：我们定义max_profit为第i天的最大收益</span><br><span class="line">2）状态转移方程：</span><br><span class="line">第i天的最大收益和第i-1天的最大收益之间的关系：</span><br><span class="line">    i) 最大收益不是第i天抛出的，                        ---最大收益和第i天的价格无关</span><br><span class="line">    ii）最大收益是在第i-1天前某天买入的，并在第i天抛出的，  ---与第i天的价格有关</span><br><span class="line">   </span><br><span class="line">因此第i天的最大收益等于：第i天抛出所造成的最大收益 和 第i-1天之前的最大收益 中的最大值</span><br><span class="line">即：</span><br><span class="line">前i天的最大收益 &#x3D; max&#123;前i-1天的最大收益，第i天的价格-前i-1天中的最小价格&#125;</span><br><span class="line">其中：</span><br><span class="line">前i-1天中的最小价格需时时更新并记录</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>初始条件：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">min 和 max_profit</span><br><span class="line">min可以等于第一天的price</span><br><span class="line">max_profit可以等于0， 因为最大收益的最小值就是0， 用人话叫，最低也不能赔了</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>小于最小问题的特殊情况： 当list的长度为0 和 1 时， 没有办法带入转移公式中，需要特殊处理。</p>
-</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProfit</span>(<span class="params">self, prices</span>) -&gt; int:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> len(prices) &lt;= <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        min_input = prices[<span class="number">0</span>]</span><br><span class="line">        max_profit = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> p <span class="keyword">in</span> prices[<span class="number">1</span>:]:</span><br><span class="line">            min_input = min(p, min_input)</span><br><span class="line">            max_profit = max(max_profit, p - min_input)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max_profit</span><br></pre></td></tr></table></figure>
-<ul>
-<li></li>
-</ul>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>图论</title>
     <url>/2021/07/25/%E5%9B%BE%E8%AE%BA/</url>
     <content><![CDATA[<h1 id="一-图的存储"><a class="markdownIt-Anchor" href="#一-图的存储"></a> 一、图的存储</h1>
@@ -2260,21 +2400,6 @@ t_{ikl}\ge P_{ik}-P_{il}
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">heap</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// h[N]存储堆中的值, h[1]是堆顶，x的左儿子是2x, 右儿子是2x + 1</span></span><br><span class="line"><span class="comment">// ph[k]存储第k个插入的点在堆中的位置</span></span><br><span class="line"><span class="comment">// hp[k]存储堆中下标是k的点是第几个插入的</span></span><br><span class="line"><span class="keyword">int</span> h[N], ph[N], hp[N], msize;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 交换两个点，及其映射关系</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heap_swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    swap(ph[hp[a]],ph[hp[b]]);</span><br><span class="line">    swap(hp[a], hp[b]);</span><br><span class="line">    swap(h[a], h[b]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="实现"><a class="markdownIt-Anchor" href="#实现"></a> 实现</h2>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 将下标为u的元素向下调整</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">down</span><span class="params">(<span class="keyword">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = u;<span class="comment">//t存储当前最小的元素的下标</span></span><br><span class="line">    <span class="keyword">if</span> (u * <span class="number">2</span> &lt;= msize &amp;&amp; h[u * <span class="number">2</span>] &lt; h[t]) t = u * <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (u * <span class="number">2</span> + <span class="number">1</span> &lt;= msize &amp;&amp; h[u * <span class="number">2</span> + <span class="number">1</span>] &lt; h[t]) t = u * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (u != t)</span><br><span class="line">    &#123;</span><br><span class="line">        heap_swap(u, mn);</span><br><span class="line">        <span class="comment">// swap(h[u],h[t]);</span></span><br><span class="line">        down(t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* void down(int u)//迭代</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">    int res = h[u];//产生一个空穴</span></span><br><span class="line"><span class="comment">    // u指向空穴处</span></span><br><span class="line"><span class="comment">    int child;</span></span><br><span class="line"><span class="comment">    while(2*u &lt;= msize)</span></span><br><span class="line"><span class="comment">    &#123;</span></span><br><span class="line"><span class="comment">        child = 2*u;</span></span><br><span class="line"><span class="comment">        if(child + 1 &lt;= msize &amp;&amp; h[child] &gt; h[child+1]) child++;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        if(res &lt; h[child]) break;</span></span><br><span class="line"><span class="comment">        else h[u] = h[child];</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    h[u] = res;</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将下标为u的元素向上调整</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">up</span><span class="params">(<span class="keyword">int</span> u)</span><span class="comment">//yxc</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (u / <span class="number">2</span> &gt;=<span class="number">1</span> &amp;&amp; h[u] &lt; h[u / <span class="number">2</span>])</span><br><span class="line">    &#123;</span><br><span class="line">        heap_swap(u, u / <span class="number">2</span>);</span><br><span class="line">        u &gt;&gt; = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* void up(int u)//zzp</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">    int res = h[u];//产生一个空穴</span></span><br><span class="line"><span class="comment">    //u表示需要上滤元素的下标</span></span><br><span class="line"><span class="comment">    while(u/2 &amp;&amp; h[u] &lt; h[u/2]) </span></span><br><span class="line"><span class="comment">    &#123;</span></span><br><span class="line"><span class="comment">        h[u] = h[u/2];</span></span><br><span class="line"><span class="comment">        u/=2;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    h[u] = res;</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*O(n)建堆：</span></span><br><span class="line"><span class="comment">    down(i)操作需要i的孩子均为堆，而n/2后面的元素均为叶子结点</span></span><br><span class="line"><span class="comment">    而叶子结点必为堆，故构建堆时从n/2开始，从下向上调整堆</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = n / <span class="number">2</span>; i; i -- ) down(i);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入一个数</span></span><br><span class="line">heap[++msize] = x; up(msize);</span><br><span class="line"><span class="comment">// 求集合中最小值</span></span><br><span class="line">heap[<span class="number">1</span>];</span><br><span class="line"><span class="comment">// 删除最小值</span></span><br><span class="line">heap[<span class="number">1</span>] = heap[msize]; msize--; down(<span class="number">1</span>);</span><br><span class="line"><span class="comment">// 删除任意一个元素</span></span><br><span class="line">heap[k] = heap[msize]; msize--; down(k); up(k);</span><br><span class="line"><span class="comment">// 修改任意一个元素</span></span><br><span class="line">heap[k] = x; down(k); up(k);</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>字符串</title>
-    <url>/2021/03/28/%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
-    <content><![CDATA[<h2 id="串匹配算法"><a class="markdownIt-Anchor" href="#串匹配算法"></a> 串匹配算法</h2>
-<h3 id="kmp算法"><a class="markdownIt-Anchor" href="#kmp算法"></a> KMP算法</h3>
-<a id="more"></a>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 求next数组，与匹配算法相同</span></span><br><span class="line"><span class="comment">// s[]是模式串，p[]是模板串, m是s的长度，n是p的长度</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (j &amp;&amp; p[i] != p[j + <span class="number">1</span>]) j = ne[j];</span><br><span class="line">        <span class="keyword">if</span> (p[i] == p[j + <span class="number">1</span>]) j ++ ;</span><br><span class="line">        ne[i] = j;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配算法</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, j = <span class="number">0</span>; i &lt;= m; i ++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (j &amp;&amp; s[i] != p[j + <span class="number">1</span>]) j = ne[j];<span class="comment">//j能后退，且字母匹配失败，j后移</span></span><br><span class="line">    <span class="keyword">if</span> (s[i] == p[j + <span class="number">1</span>]) j ++ ;<span class="comment">//字母匹配成功，j+1</span></span><br><span class="line">    <span class="keyword">if</span> (j == n)<span class="comment">//匹配成功</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, i - n);</span><br><span class="line">        j = ne[j];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>数据结构</category>
@@ -2524,6 +2649,21 @@ t_{ikl}\ge P_{ik}-P_{il}
 <li>快捷键“ctrl+C，D”。</li>
 </ol>
 ]]></content>
+  </entry>
+  <entry>
+    <title>字符串</title>
+    <url>/2021/03/28/%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
+    <content><![CDATA[<h2 id="串匹配算法"><a class="markdownIt-Anchor" href="#串匹配算法"></a> 串匹配算法</h2>
+<h3 id="kmp算法"><a class="markdownIt-Anchor" href="#kmp算法"></a> KMP算法</h3>
+<a id="more"></a>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 求next数组，与匹配算法相同</span></span><br><span class="line"><span class="comment">// s[]是模式串，p[]是模板串, m是s的长度，n是p的长度</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (j &amp;&amp; p[i] != p[j + <span class="number">1</span>]) j = ne[j];</span><br><span class="line">        <span class="keyword">if</span> (p[i] == p[j + <span class="number">1</span>]) j ++ ;</span><br><span class="line">        ne[i] = j;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配算法</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, j = <span class="number">0</span>; i &lt;= m; i ++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (j &amp;&amp; s[i] != p[j + <span class="number">1</span>]) j = ne[j];<span class="comment">//j能后退，且字母匹配失败，j后移</span></span><br><span class="line">    <span class="keyword">if</span> (s[i] == p[j + <span class="number">1</span>]) j ++ ;<span class="comment">//字母匹配成功，j+1</span></span><br><span class="line">    <span class="keyword">if</span> (j == n)<span class="comment">//匹配成功</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, i - n);</span><br><span class="line">        j = ne[j];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
   </entry>
   <entry>
     <title>对话框QDialog</title>
@@ -3039,28 +3179,6 @@ t_{ikl}\ge P_{ik}-P_{il}
       </tags>
   </entry>
   <entry>
-    <title>树</title>
-    <url>/2021/04/10/%E6%A0%91/</url>
-    <content><![CDATA[<h1 id="一-数的存储"><a class="markdownIt-Anchor" href="#一-数的存储"></a> 一、数的存储</h1>
-<h2 id="1-二叉树"><a class="markdownIt-Anchor" href="#1-二叉树"></a> 1、二叉树</h2>
-<h2 id="2-朴素树"><a class="markdownIt-Anchor" href="#2-朴素树"></a> 2、朴素树</h2>
-<h1 id="二-树的遍历"><a class="markdownIt-Anchor" href="#二-树的遍历"></a> 二、树的遍历</h1>
-<h2 id="1-二叉树-2"><a class="markdownIt-Anchor" href="#1-二叉树-2"></a> 1、二叉树</h2>
-<h3 id="11-先序遍历"><a class="markdownIt-Anchor" href="#11-先序遍历"></a> 1.1 先序遍历</h3>
-<h3 id="12-中序遍历"><a class="markdownIt-Anchor" href="#12-中序遍历"></a> 1.2 中序遍历</h3>
-<h3 id="13-后序遍历"><a class="markdownIt-Anchor" href="#13-后序遍历"></a> 1.3 后序遍历</h3>
-<h2 id="2-朴素树-2"><a class="markdownIt-Anchor" href="#2-朴素树-2"></a> 2、朴素树</h2>
-<h3 id="21-先序遍历"><a class="markdownIt-Anchor" href="#21-先序遍历"></a> 2.1 先序遍历</h3>
-<h3 id="22-后序遍历"><a class="markdownIt-Anchor" href="#22-后序遍历"></a> 2.2 后序遍历</h3>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>算法笔记</title>
     <url>/2021/04/03/%E7%AE%97%E6%B3%95%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<h2 id="一-快速排序"><a class="markdownIt-Anchor" href="#一-快速排序"></a> 一、快速排序</h2>
@@ -3093,6 +3211,28 @@ t_{ikl}\ge P_{ik}-P_{il}
       </categories>
       <tags>
         <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>树</title>
+    <url>/2021/04/10/%E6%A0%91/</url>
+    <content><![CDATA[<h1 id="一-数的存储"><a class="markdownIt-Anchor" href="#一-数的存储"></a> 一、数的存储</h1>
+<h2 id="1-二叉树"><a class="markdownIt-Anchor" href="#1-二叉树"></a> 1、二叉树</h2>
+<h2 id="2-朴素树"><a class="markdownIt-Anchor" href="#2-朴素树"></a> 2、朴素树</h2>
+<h1 id="二-树的遍历"><a class="markdownIt-Anchor" href="#二-树的遍历"></a> 二、树的遍历</h1>
+<h2 id="1-二叉树-2"><a class="markdownIt-Anchor" href="#1-二叉树-2"></a> 1、二叉树</h2>
+<h3 id="11-先序遍历"><a class="markdownIt-Anchor" href="#11-先序遍历"></a> 1.1 先序遍历</h3>
+<h3 id="12-中序遍历"><a class="markdownIt-Anchor" href="#12-中序遍历"></a> 1.2 中序遍历</h3>
+<h3 id="13-后序遍历"><a class="markdownIt-Anchor" href="#13-后序遍历"></a> 1.3 后序遍历</h3>
+<h2 id="2-朴素树-2"><a class="markdownIt-Anchor" href="#2-朴素树-2"></a> 2、朴素树</h2>
+<h3 id="21-先序遍历"><a class="markdownIt-Anchor" href="#21-先序遍历"></a> 2.1 先序遍历</h3>
+<h3 id="22-后序遍历"><a class="markdownIt-Anchor" href="#22-后序遍历"></a> 2.2 后序遍历</h3>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -3132,12 +3272,6 @@ t_{ikl}\ge P_{ik}-P_{il}
       </tags>
   </entry>
   <entry>
-    <title>解决Github：Support for password authentication was removed. Please use a personal access token instead</title>
-    <url>/2021/11/14/%E8%A7%A3%E5%86%B3Github%EF%BC%9ASupport-for-password-authentication-was-removed-Please-use-a-personal-access-token-instead/</url>
-    <content><![CDATA[<p><a href="https://stackoverflow.com/questions/68775869/support-for-password-authentication-was-removed-please-use-a-personal-access-to?answertab=votes#tab-top">参考链接</a></p>
-<a id="more"></a>]]></content>
-  </entry>
-  <entry>
     <title>递归和递推</title>
     <url>/2020/09/27/%E9%80%92%E5%BD%92%E5%92%8C%E9%80%92%E6%8E%A8/</url>
     <content><![CDATA[<h2 id="1-整数划分"><a class="markdownIt-Anchor" href="#1-整数划分"></a> 1、整数划分</h2>
@@ -3157,6 +3291,12 @@ t_{ikl}\ge P_{ik}-P_{il}
       <tags>
         <tag>算法</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>解决Github：Support for password authentication was removed. Please use a personal access token instead</title>
+    <url>/2021/11/14/%E8%A7%A3%E5%86%B3Github%EF%BC%9ASupport-for-password-authentication-was-removed-Please-use-a-personal-access-token-instead/</url>
+    <content><![CDATA[<p><a href="https://stackoverflow.com/questions/68775869/support-for-password-authentication-was-removed-please-use-a-personal-access-to?answertab=votes#tab-top">参考链接</a></p>
+<a id="more"></a>]]></content>
   </entry>
   <entry>
     <title>链表</title>

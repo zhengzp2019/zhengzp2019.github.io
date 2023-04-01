@@ -58,8 +58,9 @@
 <meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/uploads/20210908120146/ArrayListIntegerObjecttype-660x268.png">
 <meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/uploads/Selection_028.png">
 <meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200903183026/Queue-Deque-PriorityQueue-In-Java.png">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/uploads/20200909140302/ArrayDequeinJava.png">
 <meta property="article:published_time" content="2023-03-24T08:05:26.000Z">
-<meta property="article:modified_time" content="2023-03-25T14:37:25.790Z">
+<meta property="article:modified_time" content="2023-03-29T13:54:41.396Z">
 <meta property="article:author" content="dpbirder">
 <meta property="article:tag" content="编程">
 <meta name="twitter:card" content="summary">
@@ -177,7 +178,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">32</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">33</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -265,7 +266,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-03-25 22:37:25" itemprop="dateModified" datetime="2023-03-25T22:37:25+08:00">2023-03-25</time>
+                <time title="修改时间：2023-03-29 21:54:41" itemprop="dateModified" datetime="2023-03-29T21:54:41+08:00">2023-03-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -287,14 +288,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>30k</span>
+              <span>35k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>27 分钟</span>
+              <span>31 分钟</span>
             </span>
 
         </div>
@@ -562,8 +563,8 @@
 <li>println()是同步方法，当传递多个线程时可能导致低性能问题</li>
 <li>println()是较高层次的IO函数，性能较低</li>
 </ul>
-<h2 id="java中的字符串类string"><a class="markdownIt-Anchor" href="#java中的字符串类string"></a> Java中的字符串类——String</h2>
-<h2 id="java中的数组类array"><a class="markdownIt-Anchor" href="#java中的数组类array"></a> Java中的数组类——Array</h2>
+<h2 id="java中的字符串string"><a class="markdownIt-Anchor" href="#java中的字符串string"></a> Java中的字符串——String</h2>
+<h2 id="java中的数组array"><a class="markdownIt-Anchor" href="#java中的数组array"></a> Java中的数组——Array</h2>
 <p>Java数组的一些特性：</p>
 <ul>
 <li>Java中，数组是动态分配的</li>
@@ -626,6 +627,41 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java program to demonstrate</span></span><br><span class="line"><span class="comment">// cloning of multi-dimensional arrays</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> intArray[][] = &#123; &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;, &#123; <span class="number">4</span>, <span class="number">5</span> &#125; &#125;;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> cloneArray[][] = intArray.clone();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// will print false</span></span><br><span class="line">		System.out.println(intArray == cloneArray);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// will print true as shallow copy is created</span></span><br><span class="line">		<span class="comment">// i.e. sub-arrays are shared</span></span><br><span class="line">		System.out.println(intArray[<span class="number">0</span>] == cloneArray[<span class="number">0</span>]);</span><br><span class="line">		System.out.println(intArray[<span class="number">1</span>] == cloneArray[<span class="number">1</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\\ 输出</span><br><span class="line">false</span><br><span class="line">true</span><br><span class="line">true</span><br></pre></td></tr></table></figure>
 <p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-12.jpeg" alt="Blank Diagram - Page 1 (12)"></p>
+<h3 id="arrays类"><a class="markdownIt-Anchor" href="#arrays类"></a> Arrays类</h3>
+<p><code>java.util</code>包中的Arrays数组是Java Collection框架中的一部分，该类提供了一些静态方法动态的创建和存储java数组。该类由一些静态方法和一些Object类中的方法构成，并且类中的方法全为静态的。</p>
+<p><strong>Arrays类中的一些方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Action Performed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>asList()</td>
+<td>Returns a fixed-size list backed by the specified Arrays</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/array-class-in-java/">fill(originalArray, fillValue)</a></td>
+<td>Assigns this fill value to each index of this arrays.</td>
+</tr>
+<tr>
+<td>binarySearch()</td>
+<td>Searches for the specified element in the array with the help of the Binary Search Algorithm</td>
+</tr>
+<tr>
+<td>binarySearch(array, fromIndex, toIndex, key, Comparator)</td>
+<td>Searches a range of the specified array for the specified object using the Binary Search Algorithm</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/array-class-in-java/">sort(T[] a, Comparator&lt; super T&gt; c)</a></td>
+<td>Sorts the specified array of objects according to the order induced by the specified comparator.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>排序和二分示例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java Program to Demonstrate Arrays Class</span></span><br><span class="line"><span class="comment">// Via binarySearch() method</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Importing Arrays utility class</span></span><br><span class="line"><span class="comment">// from java.util package</span></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Main class</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Main driver method</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Get the Array</span></span><br><span class="line">		<span class="keyword">int</span> intArr[] = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">35</span> &#125;;</span><br><span class="line"></span><br><span class="line">		Arrays.sort(intArr);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> intKey = <span class="number">22</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Print the key and corresponding index</span></span><br><span class="line">		System.out.println(</span><br><span class="line">			intKey + <span class="string">&quot; found at index = &quot;</span></span><br><span class="line">			+ Arrays.binarySearch(intArr, intKey));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="java文件操作"><a class="markdownIt-Anchor" href="#java文件操作"></a> Java文件操作</h2>
 <h3 id="file类"><a class="markdownIt-Anchor" href="#file类"></a> File类</h3>
 <p>File类在java实现了文件和目录名。File包含了诸多操作文件和目录的方法，其中包括删除，重命名，创建目录，列出包含的子目录以及一些文件和目录相关的属性等等。</p>
@@ -1015,27 +1051,19 @@
 <td>Used to insert all of the elements starting at the specified position from a specific collection into the mentioned list.</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-clear-java-examples/">clear()</a></td>
-<td>This method is used to remove all the elements from any list.</td>
-</tr>
-<tr>
 <td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/clone-method-in-java-2/">clone()</a></td>
 <td>This method is used to return a shallow copy of an ArrayList.</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-contains-java/">contains?(Object o)</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-contains-java/">contains(Object o)</a></td>
 <td>Returns true if this list contains the specified element.</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-ensurecapacity-method-in-java-with-examples/">ensureCapacity?(int minCapacity)</a></td>
-<td>Increases the capacity of this ArrayList instance, if necessary, to ensure that it can hold at least the number of elements specified by the minimum capacity argument.</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-foreach-method-in-java/">forEach?(Consumer action)</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-foreach-method-in-java/">forEach(Consumer action)</a></td>
 <td>Performs the given action for each element of the Iterable until all elements have been processed or the action throws an exception.</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-get-method-java-examples/">get?(int index)</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-get-method-java-examples/">get(int index)</a></td>
 <td>Returns the element at the specified position in this list.</td>
 </tr>
 <tr>
@@ -1043,76 +1071,20 @@
 <td>The index the first occurrence of a specific element is either returned, or -1 in case the element is not in the list.</td>
 </tr>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-isempty-java-example/">isEmpty?()</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-isempty-java-example/">isEmpty()</a></td>
 <td>Returns true if this list contains no elements.</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-lastindexof-java-example/">lastIndexOf(Object O)</a></td>
-<td>The index of the last occurrence of a specific element is either returned or -1 in case the element is not in the list.</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-listiterator-method-in-java-with-examples/">listIterator?()</a></td>
-<td>Returns a list iterator over the elements in this list (in proper sequence).</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-listiterator-method-in-java-with-examples/">listIterator?(int index)</a></td>
-<td>Returns a list iterator over the elements in this list (in proper sequence), starting at the specified position in the list.</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-linkedlist-remove-methods-java-examples/">remove?(int index)</a></td>
-<td>Removes the element at the specified position in this list.</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-linkedlist-remove-methods-java-examples/">remove?(Object o)</a></td>
-<td>Removes the first occurrence of the specified element from this list, if it is present.</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-removeall-method-in-java-with-examples/">removeAll?(Collection c)</a></td>
-<td>Removes from this list all of its elements that are contained in the specified collection.</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-removeif-method-in-java/">removeIf?(Predicate filter)</a></td>
-<td>Removes all of the elements of this collection that satisfy the given predicate.</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-removerange-java-examples/">removeRange?(int fromIndex, int toIndex)</a></td>
-<td>Removes from this list all of the elements whose index is between fromIndex, inclusive, and toIndex, exclusive.</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-retainall-method-in-java/">retainAll?(Collection c)</a></td>
-<td>Retains only the elements in this list that are contained in the specified collection.</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-set-method-in-java-with-examples/">set?(int index, E element)</a></td>
-<td>Replaces the element at the specified position in this list with the specified element.</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-size-method-in-java-with-examples/">size?()</a></td>
-<td>Returns the number of elements in this list.</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-spliterator-method-in-java/">spliterator?()</a></td>
-<td>Creates a late-binding and fail-fast Spliterator over the elements in this list.</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-sublist-method-in-java-with-examples/">subList?(int fromIndex, int toIndex)</a></td>
-<td>Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive.</td>
 </tr>
 <tr>
 <td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-array-conversion-java-toarray-methods/">toArray()</a></td>
 <td>This method is used to return an array containing all of the elements in the list in the correct order.</td>
 </tr>
 <tr>
-<td>[toArray(Object<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-array-conversion-java-toarray-methods/">] O)</a></td>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-array-conversion-java-toarray-methods/">toArrayObject(O)</a></td>
 <td>It is also used to return an array containing all of the elements in this list in the correct order same as the previous method.</td>
 </tr>
 <tr>
 <td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-trimtosize-java-example/">trimToSize()</a></td>
 <td>This method is used to trim the capacity of the instance of the ArrayList to the list’s current size.</td>
-</tr>
-<tr>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
@@ -1126,7 +1098,6 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">		list.add(<span class="number">2</span>);</span><br><span class="line">		list.add(<span class="number">4</span>);</span><br><span class="line">		list.add(<span class="number">3</span>);</span><br><span class="line">		list.add(<span class="number">1</span>);</span><br><span class="line">		System.out.println(<span class="string">&quot;Before sorting list:&quot;</span>);</span><br><span class="line">		System.out.println(list);</span><br><span class="line">		Collections.sort(list);</span><br><span class="line">		System.out.println(<span class="string">&quot;after sorting list:&quot;</span>);</span><br><span class="line">		System.out.println(list);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="vector"><a class="markdownIt-Anchor" href="#vector"></a> Vector</h3>
 <p>与<code>ArrayList</code>大致相同，主要区别在于Vector是线程同步的</p>
-<h3 id="linkedlist"><a class="markdownIt-Anchor" href="#linkedlist"></a> LinkedList</h3>
 <h3 id="stack"><a class="markdownIt-Anchor" href="#stack"></a> Stack</h3>
 <p>提供了一种栈数据结构，除了push和pop基础操作外，该类还提供了其他三种函数，empty,search,peek，Stack类扩展了Vector类，是Vector的子类，Stack的层次结构图如下：</p>
 <p><img src="https://media.geeksforgeeks.org/wp-content/uploads/Selection_028.png" alt="Stack Class in Java"></p>
@@ -1166,7 +1137,7 @@
 <p><strong>使用ArrayList代替Stack</strong></p>
 <p>java中更推荐使用ArrayDeque作为Stack的实现，因为ArrayDeque具有更好的性能，实例如下：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// A Java Program to show implementation</span></span><br><span class="line"><span class="comment">// of Stack using ArrayDeque</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Deque&lt;Character&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;Character&gt;();</span><br><span class="line">		stack.push(<span class="string">&#x27;A&#x27;</span>);</span><br><span class="line">		stack.push(<span class="string">&#x27;B&#x27;</span>);</span><br><span class="line">		System.out.println(stack.peek());</span><br><span class="line">		System.out.println(stack.pop());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="linkedlist-2"><a class="markdownIt-Anchor" href="#linkedlist-2"></a> LinkedList</h3>
+<h3 id="linkedlist"><a class="markdownIt-Anchor" href="#linkedlist"></a> LinkedList</h3>
 <p>该类实现的链表数据结构，这是一个线性数据结构，每个元素之间的存储时不连续的，并且每个元素存储数据和地址部分，元素与元素之间由指针和地址链接，每个元素称之为节点(node)</p>
 <p>由于链表的动态性，相对于数组其更容易删除和插入，但链表不支持随机访问</p>
 <p><strong>LinkedList构造函数</strong></p>
@@ -1184,28 +1155,12 @@
 </thead>
 <tbody>
 <tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-add-method-in-java/">add(int index, E element)</a></td>
-<td>This method Inserts the specified element at the specified position in this list.</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-add-method-in-java/">add(E e)</a></td>
-<td>This method Appends the specified element to the end of this list.</td>
-</tr>
-<tr>
 <td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/linkedlist-addfirst-method-in-java/">addFirst(E e)</a></td>
 <td>This method Inserts the specified element at the beginning of this list.</td>
 </tr>
 <tr>
 <td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/linkedlist-addlast-method-in-java/">addLast(E e)</a></td>
 <td>This method Appends the specified element to the end of this list.</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/linkedlist-clear-method-in-java/">clear()</a></td>
-<td>This method removes all of the elements from this list.</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/linkedlist-get-method-in-java/">get(int index)</a></td>
-<td>This method returns the element at the specified position in this list.</td>
 </tr>
 <tr>
 <td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-get-getfirst-getlast-java/">getFirst()</a></td>
@@ -1240,15 +1195,15 @@
 <td>This method retrieves, but does not remove, the last element of this list, or returns null if this list is empty.</td>
 </tr>
 <tr>
-<td>[poll()](<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-">https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-</a> examples-java/)</td>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-examples-java/">poll()</a></td>
 <td>This method retrieves and removes the head (first element) of this list.</td>
 </tr>
 <tr>
-<td>[pollFirst()](<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-">https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-</a> examples-java/)</td>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-examples-java/">pollFirst()</a></td>
 <td>This method retrieves and removes the first element of this list, or returns null if this list is empty.</td>
 </tr>
 <tr>
-<td>[pollLast()](<a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-">https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-</a> examples-java/)</td>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-examples-java/">pollLast()</a></td>
 <td>This method retrieves and removes the last element of this list, or returns null if this list is empty.</td>
 </tr>
 <tr>
@@ -1258,10 +1213,6 @@
 <tr>
 <td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/linkedlist-push-method-in-java/">push(E e)</a></td>
 <td>This method pushes an element onto the stack represented by this list.</td>
-</tr>
-<tr>
-<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/linkedlist-remove-method-in-java/">remove()</a></td>
-<td>This method retrieves and removes the head (first element) of this list.</td>
 </tr>
 </tbody>
 </table>
@@ -1316,6 +1267,125 @@
 <li>在线市场</li>
 </ul>
 <h3 id="arraydeque"><a class="markdownIt-Anchor" href="#arraydeque"></a> ArrayDeque</h3>
+<p>ArrayDeque应用可变长数组实现了Deque接口，该类提供了数组的双端操作，也就是所谓的双端队列，既可以当作栈使用也可以当作数组使用，在性能上比Stack效率更高。</p>
+<p><strong>ArrayDeque的一些优点</strong></p>
+<ul>
+<li>高性能，该类对于从两端插入元素和删除元素提供了常量时间性能的操作</li>
+<li>长度可变，该类的长度是可以随着元素的操作而改变的</li>
+<li>轻量的，该类是一种轻量型数据结构，不需要额外的开销，例如链表</li>
+<li>线程安全，该类不是线程安全的，但是可以使用<code>Collections.synchronizedDeque</code>方法创建一个线程安全版本的类</li>
+</ul>
+<p><strong>ArrayDeque的一些缺点</strong></p>
+<ul>
+<li>不支持同步，该类是不支持线程同步的，即多个线程可同时访问该类中的数据，这就造成了潜在的数据损坏的可能</li>
+<li>该类的容量是有限的</li>
+</ul>
+<p><strong>ArrayDeque类层次图</strong></p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20200909140302/ArrayDequeinJava.png" alt="ArrayDeque in Java"></p>
+<p><strong>构造函数</strong></p>
+<ul>
+<li><strong>ArrayDeque()</strong></li>
+<li><strong>ArrayDeque(Collection&lt;? extends E&gt; c)</strong></li>
+<li><strong>ArrayDeque(int numofElements)</strong></li>
+</ul>
+<p><strong>ArrayDeque中的一些方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>METHOD</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-addfirst-method-in-java/">addFirst(Element e)</a></td>
+<td>The method inserts particular element at the start of the deque.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-addlast-method-in-java/">addLast(Element e) </a></td>
+<td>The method inserts a particular element at the end of the deque. It is similar to the add() method</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-getfirst-method-in-java/">getFirst()</a></td>
+<td>The method returns first element of the deque</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-getlast-method-in-java/">getLast()</a></td>
+<td>The method returns last element of the deque</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-offer-method-in-java/">offer(Element e)</a></td>
+<td>The method inserts element at the end of deque.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-offerfirst-method-in-java/">offerFirst(Element e) </a></td>
+<td>The method inserts element at the front of deque.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-offerlast-method-in-java/">offerLast(Element e)</a></td>
+<td>The method inserts element at the end of the deque.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-peek-method-in-java/">peek()</a></td>
+<td>The method returns head element without removing it.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-poll-method-in-java/">poll()</a></td>
+<td>The method returns head element and also removes it</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-pop-method-in-java/">pop()</a></td>
+<td>The method pops out an element for stack represented by deque</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-push-method-in-java/">push(Element e)</a></td>
+<td>The method pushes an element onto stack represented by deque</td>
+</tr>
+</tbody>
+</table>
+<h3 id="java中的collections类"><a class="markdownIt-Anchor" href="#java中的collections类"></a> Java中的Collections类</h3>
+<p>Collections是Java集合框架中的通用类，位于<code>java.util</code>包中，该类中使用静态方法操作和返回集合，所有的方法抛出<code>NullPointerException</code>若操作的集合为空的话</p>
+<p><strong>Collections中的一些方法</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Methods</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.google.com/url?client=internal-element-cse&amp;cx=009682134359037907028:tj6eafkv_be&amp;q=https://www.geeksforgeeks.org/collections-binarysearch-java-examples/&amp;sa=U&amp;ved=2ahUKEwi6uP_199nsAhXj73MBHZbDDPMQFjAJegQIBRAC&amp;usg=AOvVaw3Z6NwOyP0de-c-hRasRUsf">binarySearch(List list, T key)</a></td>
+<td>This method searches the key using binary search in the specified list.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.google.com/url?client=internal-element-cse&amp;cx=009682134359037907028:tj6eafkv_be&amp;q=https://www.geeksforgeeks.org/collections-binarysearch-java-examples/&amp;sa=U&amp;ved=2ahUKEwi6uP_199nsAhXj73MBHZbDDPMQFjAJegQIBRAC&amp;usg=AOvVaw3Z6NwOyP0de-c-hRasRUsf">binarySearch(List list, T key, Comparator c)</a></td>
+<td>This method searches the specified list for the specified object using the binary search algorithm.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.google.com/url?client=internal-element-cse&amp;cx=009682134359037907028:tj6eafkv_be&amp;q=https://www.geeksforgeeks.org/collections-enumeration-method-in-java-with-examples/&amp;sa=U&amp;ved=2ahUKEwjKuPOa-NnsAhWF6XMBHV52Bxg4ChAWMAl6BAgAEAI&amp;usg=AOvVaw2zQdzpk5s0qYfnqwiTKmSC">enumeration(Collection c)</a></td>
+<td>This method returns an enumeration over the specified collection.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.google.com/url?client=internal-element-cse&amp;cx=009682134359037907028:tj6eafkv_be&amp;q=https://www.geeksforgeeks.org/collections-fill-method-in-java-with-examples/&amp;sa=U&amp;ved=2ahUKEwi2_5_3-NnsAhWCheYKHZBvD4E4MhAWMAZ6BAgGEAI&amp;usg=AOvVaw1xqIqDpotyXSl0SNNWLwsG">fill(List list, T obj)</a></td>
+<td>This method replaces all of the elements of the specified list with the specified element.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.google.com/url?client=internal-element-cse&amp;cx=009682134359037907028:tj6eafkv_be&amp;q=https://www.geeksforgeeks.org/collections-sort-java-examples/&amp;sa=U&amp;ved=2ahUKEwi6uP_199nsAhXj73MBHZbDDPMQFjADegQIBxAC&amp;usg=AOvVaw3LK6ysEznNr0ARFYCFDvYh">sort(List list)</a></td>
+<td>This method sorts the specified list into ascending order, according to the natural ordering of its elements.</td>
+</tr>
+<tr>
+<td>sort(List<T> list, Comparator<super t> c)</super></T></td>
+<td>This method sorts the specified list according to the order induced by the specified comparator.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>排序和二分示例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java Program to Demonstrate Binary Search</span></span><br><span class="line"><span class="comment">// Using Collections.binarySearch()</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Importing required classes</span></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Main class</span></span><br><span class="line"><span class="comment">// BinarySearchOnACollection</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Main driver method</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">// Creating a List</span></span><br><span class="line">		<span class="comment">// Declaring object of string type</span></span><br><span class="line">		List&lt;String&gt; items = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Adding elements to object</span></span><br><span class="line">		<span class="comment">// using add() method</span></span><br><span class="line">		items.add(<span class="string">&quot;Shoes&quot;</span>);</span><br><span class="line">		items.add(<span class="string">&quot;Toys&quot;</span>);</span><br><span class="line">		items.add(<span class="string">&quot;Horse&quot;</span>);</span><br><span class="line">		items.add(<span class="string">&quot;Ball&quot;</span>);</span><br><span class="line">		items.add(<span class="string">&quot;Grapes&quot;</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Sort the List</span></span><br><span class="line">		Collections.sort(items);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// BinarySearch on the List</span></span><br><span class="line">		System.out.println(</span><br><span class="line">			<span class="string">&quot;The index of Horse is &quot;</span></span><br><span class="line">			+ Collections.binarySearch(items, <span class="string">&quot;Horse&quot;</span>));</span><br><span class="line"></span><br><span class="line">		<span class="comment">// BinarySearch on the List</span></span><br><span class="line">		System.out.println(</span><br><span class="line">			<span class="string">&quot;The index of Dog is &quot;</span></span><br><span class="line">			+ Collections.binarySearch(items, <span class="string">&quot;Dog&quot;</span>));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="java中的comparator接口"><a class="markdownIt-Anchor" href="#java中的comparator接口"></a> Java中的Comparator接口</h3>
+<p>该接口方便用户对于自定义类的排序，比较器对象能够比较两个相同类的对象。该类存在于<code>java.util</code>包中，包含两个方法：compare(Object obj1, Object obj2)和equals(Object element)，其中compare()方法返回值为-1，0和1，若想基于compare()方法对给定集合排序，则必须实现Comparator接口</p>
+<p>下面示例展示了如何基于多个字段对集合进行排序，示例中集合为Student对象构成的集合，Student包含name，age等属性，首先根据name进行排序，name相同时根据age进行排序，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java Program to Demonstrate Working of</span></span><br><span class="line"><span class="comment">// Comparator Interface Via More than One Field</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Importing required classes</span></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.Comparator;</span><br><span class="line"><span class="keyword">import</span> java.util.Iterator;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Class 1</span></span><br><span class="line"><span class="comment">// Helper class representing a Student</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Attributes of student</span></span><br><span class="line">	String Name;</span><br><span class="line">	<span class="keyword">int</span> Age;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Parameterized constructor</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Student</span><span class="params">(String Name, Integer Age)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// This keyword refers to current instance itself</span></span><br><span class="line">		<span class="keyword">this</span>.Name = Name;</span><br><span class="line">		<span class="keyword">this</span>.Age = Age;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Getter setter methods</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> Name; &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setName</span><span class="params">(String Name)</span> </span>&#123; <span class="keyword">this</span>.Name = Name; &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> Integer <span class="title">getAge</span><span class="params">()</span> </span>&#123; <span class="keyword">return</span> Age; &#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setAge</span><span class="params">(Integer Age)</span> </span>&#123; <span class="keyword">this</span>.Age = Age; &#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Method</span></span><br><span class="line">	<span class="comment">// Overriding toString() method</span></span><br><span class="line">	<span class="meta">@Override</span> <span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="string">&quot;Customer&#123;&quot;</span></span><br><span class="line">			+ <span class="string">&quot;Name=&quot;</span> + Name + <span class="string">&quot;, Age=&quot;</span> + Age + <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Class 2</span></span><br><span class="line">	<span class="comment">// Helper class implementing Comparator interface</span></span><br><span class="line">	<span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomerSortingComparator</span></span></span><br><span class="line"><span class="class">		<span class="keyword">implements</span> <span class="title">Comparator</span>&lt;<span class="title">Student</span>&gt; </span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Method 1</span></span><br><span class="line">		<span class="comment">// To compare customers</span></span><br><span class="line">		<span class="meta">@Override</span></span><br><span class="line">		<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Student customer1,</span></span></span><br><span class="line"><span class="function"><span class="params">						Student customer2)</span></span></span><br><span class="line"><span class="function">		</span>&#123;</span><br><span class="line"></span><br><span class="line">			<span class="comment">// Comparing customers</span></span><br><span class="line">			<span class="keyword">int</span> NameCompare = customer1.getName().compareTo(</span><br><span class="line">				customer2.getName());</span><br><span class="line"></span><br><span class="line">			<span class="keyword">int</span> AgeCompare = customer1.getAge().compareTo(</span><br><span class="line">				customer2.getAge());</span><br><span class="line"></span><br><span class="line">			<span class="comment">// 2nd level comparison</span></span><br><span class="line">			<span class="keyword">return</span> (NameCompare == <span class="number">0</span>) ? AgeCompare</span><br><span class="line">									: NameCompare;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Method 2</span></span><br><span class="line">	<span class="comment">// Main driver method</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Create an empty ArrayList</span></span><br><span class="line">		<span class="comment">// to store Student</span></span><br><span class="line">		List&lt;Student&gt; al = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Create customer objects</span></span><br><span class="line">		<span class="comment">// using constructor initialization</span></span><br><span class="line">		Student obj1 = <span class="keyword">new</span> Student(<span class="string">&quot;Ajay&quot;</span>, <span class="number">27</span>);</span><br><span class="line">		Student obj2 = <span class="keyword">new</span> Student(<span class="string">&quot;Sneha&quot;</span>, <span class="number">23</span>);</span><br><span class="line">		Student obj3 = <span class="keyword">new</span> Student(<span class="string">&quot;Simran&quot;</span>, <span class="number">37</span>);</span><br><span class="line">		Student obj4 = <span class="keyword">new</span> Student(<span class="string">&quot;Ajay&quot;</span>, <span class="number">22</span>);</span><br><span class="line">		Student obj5 = <span class="keyword">new</span> Student(<span class="string">&quot;Ajay&quot;</span>, <span class="number">29</span>);</span><br><span class="line">		Student obj6 = <span class="keyword">new</span> Student(<span class="string">&quot;Sneha&quot;</span>, <span class="number">22</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Adding customer objects to ArrayList</span></span><br><span class="line">		<span class="comment">// using add() method</span></span><br><span class="line">		al.add(obj1);</span><br><span class="line">		al.add(obj2);</span><br><span class="line">		al.add(obj3);</span><br><span class="line">		al.add(obj4);</span><br><span class="line">		al.add(obj5);</span><br><span class="line">		al.add(obj6);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Iterating using Iterator</span></span><br><span class="line">		<span class="comment">// before Sorting ArrayList</span></span><br><span class="line">		Iterator&lt;Student&gt; custIterator = al.iterator();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Display message</span></span><br><span class="line">		System.out.println(<span class="string">&quot;Before Sorting:\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Holds true till there is single element</span></span><br><span class="line">		<span class="comment">// remaining in List</span></span><br><span class="line">		<span class="keyword">while</span> (custIterator.hasNext()) &#123;</span><br><span class="line"></span><br><span class="line">			<span class="comment">// Iterating using next() method</span></span><br><span class="line">			System.out.println(custIterator.next());</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Sorting using sort method of Collections class</span></span><br><span class="line">		Collections.sort(al,</span><br><span class="line">						<span class="keyword">new</span> CustomerSortingComparator());</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Display message only</span></span><br><span class="line">		System.out.println(<span class="string">&quot;\n\nAfter Sorting:\n&quot;</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Iterating using enhanced for-loop</span></span><br><span class="line">		<span class="comment">// after Sorting ArrayList</span></span><br><span class="line">		<span class="keyword">for</span> (Student customer : al) &#123;</span><br><span class="line">			System.out.println(customer);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -1403,7 +1473,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD"><span class="nav-text"> 基本术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A%E4%B8%8E%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="nav-text"> 注释与命名规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hello-world%E7%A8%8B%E5%BA%8F%E8%A7%A3%E9%87%8A"><span class="nav-text"> Hello world程序解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E6%A0%87%E8%AF%86%E7%AC%A6%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="nav-text"> Java标识符命名规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text"> Java数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E5%8F%98%E9%87%8F"><span class="nav-text"> Java变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E5%8F%98%E9%87%8F"><span class="nav-text"> 声明一个变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%98%E9%87%8F"><span class="nav-text"> 初始化变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="nav-text"> Java中的变量类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E5%9C%A8java%E5%92%8Ccpp%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E4%B8%8E%E7%9B%B8%E5%90%8C"><span class="nav-text"> 静态变量在java和cpp中的不同与相同</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84wrapper%E7%B1%BB"><span class="nav-text"> Java中的Wrapper类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9C%80%E8%A6%81wrapper%E7%B1%BB%E7%9A%84%E5%9C%BA%E6%99%AF"><span class="nav-text"> 需要Wrapper类的场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%9B%B8%E5%BA%94%E7%9A%84wrapper%E7%B1%BB"><span class="nav-text"> 原始数据与相应的Wrapper类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%85%E8%A3%85autoboxing%E4%B8%8E%E8%A7%A3%E5%8C%85unboxing"><span class="nav-text"> 自动包装(autoboxing)与解包(unboxing)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text"> 变量的作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E7%B1%BB%E5%B1%82%E6%AC%A1%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text"> 成员变量（类层次的作用域）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E6%96%B9%E6%B3%95%E5%B1%82%E6%AC%A1%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text"> 局部变量(方法层次的作用域)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E5%8F%98%E9%87%8F%E5%9D%97%E5%B1%82%E7%BA%A7%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text"> 循环变量(块层级的作用域)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-text"> Java标准输入输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-text"> 输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-text"> 输出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BBstring"><span class="nav-text"> Java中的字符串类——String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84%E7%B1%BBarray"><span class="nav-text"> Java中的数组类——Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%A3%B0%E6%98%8E%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AD%98%E5%8F%96"><span class="nav-text"> 数组的声明，初始化，存取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-text"> 多维数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E6%88%90%E5%91%98"><span class="nav-text"> 数组的成员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E6%8B%B7%E8%B4%9D"><span class="nav-text"> 数组的拷贝</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-text"> Java文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#file%E7%B1%BB"><span class="nav-text"> File类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-text"> 写文件操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BB%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-text"> 读文件操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E9%9B%86%E5%90%88%E7%B1%BBcollection"><span class="nav-text"> Java集合类(Collection)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="nav-text"> 集合框架的层次结构图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8E%A5%E5%8F%A3"><span class="nav-text"> 集合中的一些接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arraylist"><span class="nav-text"> ArrayList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector"><span class="nav-text"> Vector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linkedlist"><span class="nav-text"> LinkedList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stack"><span class="nav-text"> Stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linkedlist-2"><span class="nav-text"> LinkedList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#priorityqueue"><span class="nav-text"> PriorityQueue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arraydeque"><span class="nav-text"> ArrayDeque</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD"><span class="nav-text"> 基本术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A%E4%B8%8E%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="nav-text"> 注释与命名规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hello-world%E7%A8%8B%E5%BA%8F%E8%A7%A3%E9%87%8A"><span class="nav-text"> Hello world程序解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E6%A0%87%E8%AF%86%E7%AC%A6%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="nav-text"> Java标识符命名规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text"> Java数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E5%8F%98%E9%87%8F"><span class="nav-text"> Java变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E5%8F%98%E9%87%8F"><span class="nav-text"> 声明一个变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%98%E9%87%8F"><span class="nav-text"> 初始化变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="nav-text"> Java中的变量类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E5%9C%A8java%E5%92%8Ccpp%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E4%B8%8E%E7%9B%B8%E5%90%8C"><span class="nav-text"> 静态变量在java和cpp中的不同与相同</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84wrapper%E7%B1%BB"><span class="nav-text"> Java中的Wrapper类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9C%80%E8%A6%81wrapper%E7%B1%BB%E7%9A%84%E5%9C%BA%E6%99%AF"><span class="nav-text"> 需要Wrapper类的场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%9B%B8%E5%BA%94%E7%9A%84wrapper%E7%B1%BB"><span class="nav-text"> 原始数据与相应的Wrapper类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%85%E8%A3%85autoboxing%E4%B8%8E%E8%A7%A3%E5%8C%85unboxing"><span class="nav-text"> 自动包装(autoboxing)与解包(unboxing)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text"> 变量的作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E7%B1%BB%E5%B1%82%E6%AC%A1%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text"> 成员变量（类层次的作用域）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E6%96%B9%E6%B3%95%E5%B1%82%E6%AC%A1%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text"> 局部变量(方法层次的作用域)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E5%8F%98%E9%87%8F%E5%9D%97%E5%B1%82%E7%BA%A7%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text"> 循环变量(块层级的作用域)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-text"> Java标准输入输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-text"> 输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-text"> 输出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2string"><span class="nav-text"> Java中的字符串——String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84array"><span class="nav-text"> Java中的数组——Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%A3%B0%E6%98%8E%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AD%98%E5%8F%96"><span class="nav-text"> 数组的声明，初始化，存取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-text"> 多维数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E6%88%90%E5%91%98"><span class="nav-text"> 数组的成员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E6%8B%B7%E8%B4%9D"><span class="nav-text"> 数组的拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arrays%E7%B1%BB"><span class="nav-text"> Arrays类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-text"> Java文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#file%E7%B1%BB"><span class="nav-text"> File类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-text"> 写文件操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BB%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-text"> 读文件操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E9%9B%86%E5%90%88%E7%B1%BBcollection"><span class="nav-text"> Java集合类(Collection)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="nav-text"> 集合框架的层次结构图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8E%A5%E5%8F%A3"><span class="nav-text"> 集合中的一些接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arraylist"><span class="nav-text"> ArrayList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector"><span class="nav-text"> Vector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stack"><span class="nav-text"> Stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linkedlist"><span class="nav-text"> LinkedList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#priorityqueue"><span class="nav-text"> PriorityQueue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arraydeque"><span class="nav-text"> ArrayDeque</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84collections%E7%B1%BB"><span class="nav-text"> Java中的Collections类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84comparator%E6%8E%A5%E5%8F%A3"><span class="nav-text"> Java中的Comparator接口</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1419,7 +1489,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1503,12 +1573,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">118k</span>
+    <span title="站点总字数">124k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">1:47</span>
+    <span title="站点阅读时长">1:53</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
