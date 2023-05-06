@@ -296,111 +296,6 @@
       </tags>
   </entry>
   <entry>
-    <title>STL</title>
-    <url>/2021/04/21/STL/</url>
-    <content><![CDATA[<h2 id="vecotr变长数组倍增思想"><a class="markdownIt-Anchor" href="#vecotr变长数组倍增思想"></a> vecotr(变长数组，倍增思想)</h2>
-<blockquote>
-<p>size()  返回元素个数<br>
-empty()  返回是否为空<br>
-clear()  清空<br>
-front()/back()<br>
-push_back()/pop_back()<br>
-begin()/end()<br>
-[]<br>
-支持比较运算，按字典序</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="pairintint"><a class="markdownIt-Anchor" href="#pairintint"></a> pair&lt;int,int&gt;</h2>
-<blockquote>
-<p>first<br>
-second<br>
-支持比较运算，以first为第一个关键字，以second为第二个关键字（字典序）</p>
-</blockquote>
-<h2 id="string字符串"><a class="markdownIt-Anchor" href="#string字符串"></a> string(字符串)</h2>
-<blockquote>
-<p>size()/length()  返回字符串长度<br>
-empty()<br>
-clear()<br>
-substr(起始下标，(子串长度))  返回子串<br>
-c_str()  返回字符串所在字符数组的起始地址</p>
-</blockquote>
-<h2 id="stack栈"><a class="markdownIt-Anchor" href="#stack栈"></a> stack(栈)</h2>
-<blockquote>
-<p>size()<br>
-empty()<br>
-push()  向栈顶插入一个元素<br>
-top()  返回栈顶元素<br>
-pop()  弹出栈顶元素</p>
-</blockquote>
-<h2 id="queue队列"><a class="markdownIt-Anchor" href="#queue队列"></a> queue(队列)</h2>
-<blockquote>
-<p>size()<br>
-empty()<br>
-push()  向队尾插入一个元素<br>
-front()  返回队头元素<br>
-back()  返回队尾元素<br>
-pop()  弹出队头元素</p>
-</blockquote>
-<h2 id="priority_queue优先队列默认时大根堆"><a class="markdownIt-Anchor" href="#priority_queue优先队列默认时大根堆"></a> priority_queue(优先队列,默认时大根堆)</h2>
-<blockquote>
-<p>push()  插入一个元素<br>
-top()  返回堆顶元素<br>
-pop()  弹出堆顶元素<br>
-定义成小根堆的方式：priority_queue&lt;int, vector<int>, greater<int>&gt; q;</int></int></p>
-</blockquote>
-<h2 id="deque双端队列"><a class="markdownIt-Anchor" href="#deque双端队列"></a> deque(双端队列)</h2>
-<blockquote>
-<p>size()<br>
-empty()<br>
-clear()<br>
-front()/back()<br>
-push_back()/pop_back()<br>
-push_front()/pop_front()<br>
-begin()/end()<br>
-[]</p>
-</blockquote>
-<h2 id="set-map-multiset-multimap-基于平衡二叉树红黑树动态维护有序序列"><a class="markdownIt-Anchor" href="#set-map-multiset-multimap-基于平衡二叉树红黑树动态维护有序序列"></a> set, map, multiset, multimap, 基于平衡二叉树（红黑树），动态维护有序序列</h2>
-<blockquote>
-<p>size()<br>
-empty()<br>
-clear()<br>
-begin()/end()<br>
-++, – 返回前驱和后继，时间复杂度 O(logn)</p>
-</blockquote>
-<h3 id="setmultiset"><a class="markdownIt-Anchor" href="#setmultiset"></a> set/multiset</h3>
-<blockquote>
-<p>insert()  插入一个数<br>
-find()  查找一个数<br>
-count()  返回某一个数的个数<br>
-erase()<br>
-(1) 输入是一个数x，删除所有x   O(k + logn)<br>
-(2) 输入一个迭代器，删除这个迭代器<br>
-lower_bound()/upper_bound()<br>
-lower_bound(x)  返回大于等于x的最小的数的迭代器<br>
-upper_bound(x)  返回大于x的最小的数的迭代器</p>
-</blockquote>
-<h3 id="mapmultimap"><a class="markdownIt-Anchor" href="#mapmultimap"></a> map/multimap</h3>
-<blockquote>
-<p>insert()  插入的数是一个pair<br>
-erase()  输入的参数是pair或者迭代器<br>
-find()<br>
-[]   时间复杂度是 O(logn)<br>
-lower_bound()/upper_bound()</p>
-</blockquote>
-<h2 id="unordered_multisetunordered_multimapunordered_setunordered_map基于哈希表动态维护无序序列"><a class="markdownIt-Anchor" href="#unordered_multisetunordered_multimapunordered_setunordered_map基于哈希表动态维护无序序列"></a> unordered_multiset,unordered_multimap,unordered_set,unordered_map,基于哈希表,动态维护无序序列</h2>
-<blockquote>
-<p>和上面类似，增删改查的时间复杂度是 O(1)<br>
-不支持 lower_bound()/upper_bound()， 迭代器的++，- -</p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Qt入门</title>
     <url>/2020/08/06/Qt%E5%85%A5%E9%97%A8/</url>
     <content><![CDATA[<h1 id="qt入门"><a class="markdownIt-Anchor" href="#qt入门"></a> QT入门</h1>
@@ -511,6 +406,111 @@ lower_bound()/upper_bound()</p>
       </categories>
       <tags>
         <tag>Qt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>STL</title>
+    <url>/2021/04/21/STL/</url>
+    <content><![CDATA[<h2 id="vecotr变长数组倍增思想"><a class="markdownIt-Anchor" href="#vecotr变长数组倍增思想"></a> vecotr(变长数组，倍增思想)</h2>
+<blockquote>
+<p>size()  返回元素个数<br>
+empty()  返回是否为空<br>
+clear()  清空<br>
+front()/back()<br>
+push_back()/pop_back()<br>
+begin()/end()<br>
+[]<br>
+支持比较运算，按字典序</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="pairintint"><a class="markdownIt-Anchor" href="#pairintint"></a> pair&lt;int,int&gt;</h2>
+<blockquote>
+<p>first<br>
+second<br>
+支持比较运算，以first为第一个关键字，以second为第二个关键字（字典序）</p>
+</blockquote>
+<h2 id="string字符串"><a class="markdownIt-Anchor" href="#string字符串"></a> string(字符串)</h2>
+<blockquote>
+<p>size()/length()  返回字符串长度<br>
+empty()<br>
+clear()<br>
+substr(起始下标，(子串长度))  返回子串<br>
+c_str()  返回字符串所在字符数组的起始地址</p>
+</blockquote>
+<h2 id="stack栈"><a class="markdownIt-Anchor" href="#stack栈"></a> stack(栈)</h2>
+<blockquote>
+<p>size()<br>
+empty()<br>
+push()  向栈顶插入一个元素<br>
+top()  返回栈顶元素<br>
+pop()  弹出栈顶元素</p>
+</blockquote>
+<h2 id="queue队列"><a class="markdownIt-Anchor" href="#queue队列"></a> queue(队列)</h2>
+<blockquote>
+<p>size()<br>
+empty()<br>
+push()  向队尾插入一个元素<br>
+front()  返回队头元素<br>
+back()  返回队尾元素<br>
+pop()  弹出队头元素</p>
+</blockquote>
+<h2 id="priority_queue优先队列默认时大根堆"><a class="markdownIt-Anchor" href="#priority_queue优先队列默认时大根堆"></a> priority_queue(优先队列,默认时大根堆)</h2>
+<blockquote>
+<p>push()  插入一个元素<br>
+top()  返回堆顶元素<br>
+pop()  弹出堆顶元素<br>
+定义成小根堆的方式：priority_queue&lt;int, vector<int>, greater<int>&gt; q;</int></int></p>
+</blockquote>
+<h2 id="deque双端队列"><a class="markdownIt-Anchor" href="#deque双端队列"></a> deque(双端队列)</h2>
+<blockquote>
+<p>size()<br>
+empty()<br>
+clear()<br>
+front()/back()<br>
+push_back()/pop_back()<br>
+push_front()/pop_front()<br>
+begin()/end()<br>
+[]</p>
+</blockquote>
+<h2 id="set-map-multiset-multimap-基于平衡二叉树红黑树动态维护有序序列"><a class="markdownIt-Anchor" href="#set-map-multiset-multimap-基于平衡二叉树红黑树动态维护有序序列"></a> set, map, multiset, multimap, 基于平衡二叉树（红黑树），动态维护有序序列</h2>
+<blockquote>
+<p>size()<br>
+empty()<br>
+clear()<br>
+begin()/end()<br>
+++, – 返回前驱和后继，时间复杂度 O(logn)</p>
+</blockquote>
+<h3 id="setmultiset"><a class="markdownIt-Anchor" href="#setmultiset"></a> set/multiset</h3>
+<blockquote>
+<p>insert()  插入一个数<br>
+find()  查找一个数<br>
+count()  返回某一个数的个数<br>
+erase()<br>
+(1) 输入是一个数x，删除所有x   O(k + logn)<br>
+(2) 输入一个迭代器，删除这个迭代器<br>
+lower_bound()/upper_bound()<br>
+lower_bound(x)  返回大于等于x的最小的数的迭代器<br>
+upper_bound(x)  返回大于x的最小的数的迭代器</p>
+</blockquote>
+<h3 id="mapmultimap"><a class="markdownIt-Anchor" href="#mapmultimap"></a> map/multimap</h3>
+<blockquote>
+<p>insert()  插入的数是一个pair<br>
+erase()  输入的参数是pair或者迭代器<br>
+find()<br>
+[]   时间复杂度是 O(logn)<br>
+lower_bound()/upper_bound()</p>
+</blockquote>
+<h2 id="unordered_multisetunordered_multimapunordered_setunordered_map基于哈希表动态维护无序序列"><a class="markdownIt-Anchor" href="#unordered_multisetunordered_multimapunordered_setunordered_map基于哈希表动态维护无序序列"></a> unordered_multiset,unordered_multimap,unordered_set,unordered_map,基于哈希表,动态维护无序序列</h2>
+<blockquote>
+<p>和上面类似，增删改查的时间复杂度是 O(1)<br>
+不支持 lower_bound()/upper_bound()， 迭代器的++，- -</p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -927,90 +927,6 @@ lower_bound()/upper_bound()</p>
       <tags>
         <tag>编程</tag>
         <tag>最优化理论</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>二分查找</title>
-    <url>/2020/09/27/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
-    <content><![CDATA[<h1 id="二分查找"><a class="markdownIt-Anchor" href="#二分查找"></a> 二分查找</h1>
-<h2 id="1-什么是二分查找"><a class="markdownIt-Anchor" href="#1-什么是二分查找"></a> 1、什么是二分查找</h2>
-<blockquote>
-<p>​	二分查找对具有指定左索引和右索引的连续序列进行操作。这就是所谓的查找空间。二分查找维护查找空间的左、右和中间指示符，并比较查找目标或将查找条件应用于集合的中间值；如果条件不满足或值不相等，则清除目标不可能存在的那一半，并在剩下的一半上继续查找，直到成功为止。如果查以空的一半结束，则无法满足条件，并且无法找到目标。</p>
-</blockquote>
-<a id="more"></a>
-<blockquote>
-<p>​	二进制搜索可以采用许多替代形式，并且可能并不总是直接搜索特定值。有时您希望应用特定条件或规则来确定接下来要搜索的哪一侧（左侧或右侧）。</p>
-<p>二分法的算法很简单，但在做题的过程中总是出现结果要么漏各一，要么循环条件不等号中少个等号。总的来说二分查找的<strong>思路简单，细节复杂</strong><br>
-<strong>条件:</strong> 二分查找的查找序列必须是有序的，所一般使用之前都会对序列进行排序</p>
-</blockquote>
-<h2 id="2-二分查找的框架"><a class="markdownIt-Anchor" href="#2-二分查找的框架"></a> 2、二分查找的框架</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ****yxc****</span></span><br><span class="line">    <span class="keyword">int</span> l=<span class="number">0</span>,r=n;</span><br><span class="line">    <span class="comment">// 第一种情况，check函数为判断mid性质的函数</span></span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(check(mid)) r=mid;</span><br><span class="line">        <span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 第二种情况</span></span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r+<span class="number">1</span>&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(check(mid)) l=mid;</span><br><span class="line">        <span class="keyword">else</span> r=mid<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>小技巧：不要出现else,所有的分类条件均放在else if后面<br>
-我的一些疑问<br>
-1、为什么使用第二种框架时mid=l+r+1&gt;&gt;1?<br>
-答：因为在C中整数相除是向下取整的，在缩小区间时l=mid这样当l与r很近时,l=mid=l就会造成死循环,故需要+1使得mid向上取整，这样无论在何时，区间都会缩小，循环总会结束。<br>
-2、二分搜索容易出现的错误与解决方式<br>
-a. 死循环：保证每次迭代后搜索区间都会缩小即可，使用第二种模板可以解决问题<br>
-b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜索前仔细思考<mark>我要查找的结果是什么</mark>，观察循环终止条件，考虑清楚循环在何种情况下结束。使用第二种模板，循环的终止条件已经固定在l==r时结束，故每次返回的结果也就很清晰了，所以使用第二种模板的话每次只需要考虑搜索策略就行了。</p>
-</blockquote>
-<h2 id="3-模板例题"><a class="markdownIt-Anchor" href="#3-模板例题"></a> 3、模板&amp;例题</h2>
-<h3 id="1-查找一个数"><a class="markdownIt-Anchor" href="#1-查找一个数"></a> 1、查找一个数</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = nums.length<span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(...) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;<span class="comment">//防止溢出</span></span><br><span class="line">        <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">            right = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>查找空间：[left,right]</p>
-<p>终止条件：left = right + 1</p>
-<p>由于查找空间为左闭右闭，在进行区间划分时，已经判断过该值，故每次区间划分区间变化如下：</p>
-<p>向左查找：right = mid - 1</p>
-<p>向右查找：left = mid + 1</p>
-</blockquote>
-<ol>
-<li>
-<p>为什么终止条件是≤，而不是&lt;</p>
-<blockquote>
-<p>因为初始化 right 的赋值是 nums.length-1，即最后一个元素的索引，而不是 nums.length。前者相当于两端都闭区间 [left, right]，后者相当于左闭右开区间 [left, right],这个算法的搜索区间是 [left, right]，而结束条件是搜索空间为空时结束，若是&lt;，则结束后left==right,在搜索空间里有元素nums[left]没有被搜索</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="2-在一个有序的数组里给定一个数查找比给定数小的最大的数的下标"><a class="markdownIt-Anchor" href="#2-在一个有序的数组里给定一个数查找比给定数小的最大的数的下标"></a> 2、在一个有序的数组里，给定一个数，查找比给定数小的最大的数的下标</h3>
-<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20200927155830822.png" alt="image-20200927155830822"></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LowerBound</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> <span class="built_in">size</span>,<span class="keyword">int</span> p)</span> <span class="comment">//复杂度O(log(n))</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> L = <span class="number">0</span>; <span class="comment">//查找区间的左端点</span></span><br><span class="line">    <span class="keyword">int</span> R = <span class="built_in">size</span> - <span class="number">1</span>; <span class="comment">//查找区间的右端点</span></span><br><span class="line">    <span class="keyword">int</span> lastPos = <span class="number">-1</span>; <span class="comment">//到目前为止找到的最优解</span></span><br><span class="line">    <span class="keyword">while</span>( L &lt;= R) &#123; <span class="comment">//如果查找区间不为空就继续查找</span></span><br><span class="line">        <span class="keyword">int</span> mid = L+(R-L)/<span class="number">2</span>; <span class="comment">//取查找区间正中元素的下标</span></span><br><span class="line">        <span class="keyword">if</span>(a[mid]&gt;= p)</span><br><span class="line">        	R = mid - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            lastPos = mid;</span><br><span class="line">            L = mid+<span class="number">1</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     &#125;</span><br><span class="line">	<span class="keyword">return</span> lastPos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="3-用二分法查找方程的根"><a class="markdownIt-Anchor" href="#3-用二分法查找方程的根"></a> 3、用二分法查找方程的根</h3>
-<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20200927160918618.png" alt="image-20200927160918618"></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> EPS = <span class="number">1e-6</span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span> </span>&#123; <span class="keyword">return</span> x*x*x - <span class="number">5</span>*x*x + <span class="number">10</span>*x - <span class="number">80</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> root, x1 = <span class="number">0</span>, x2 = <span class="number">100</span>,y;</span><br><span class="line">    root = x1+(x2-x1)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> triedTimes = <span class="number">1</span>; <span class="comment">//记录一共尝试多少次，对求根来说不是必须的</span></span><br><span class="line">    y = f(root);</span><br><span class="line">    <span class="keyword">while</span>( <span class="built_in">fabs</span>(y) &gt; EPS) &#123;</span><br><span class="line">        <span class="keyword">if</span>( y &gt; <span class="number">0</span> ) </span><br><span class="line">            x2 = root;</span><br><span class="line">        <span class="keyword">else</span> x1 = root;</span><br><span class="line">        	root = x1+(x2 - x1)/<span class="number">2</span>;</span><br><span class="line">        y = f(root);</span><br><span class="line">        triedTimes ++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.8f\n&quot;</span>,root);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,triedTimes);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="4-习题"><a class="markdownIt-Anchor" href="#4-习题"></a> 4、习题</h2>
-<table>
-<thead>
-<tr>
-<th>题目</th>
-<th>题解</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof/">查找0~n-1中缺失的数字</a></td>
-<td></td>
-</tr>
-<tr>
-<td>查找一个数</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="https://leetcode-cn.com/problems/sqrtx/">x的平方根</a></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
       </tags>
   </entry>
   <entry>
@@ -2159,6 +2075,90 @@ b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜�
       </tags>
   </entry>
   <entry>
+    <title>二分查找</title>
+    <url>/2020/09/27/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
+    <content><![CDATA[<h1 id="二分查找"><a class="markdownIt-Anchor" href="#二分查找"></a> 二分查找</h1>
+<h2 id="1-什么是二分查找"><a class="markdownIt-Anchor" href="#1-什么是二分查找"></a> 1、什么是二分查找</h2>
+<blockquote>
+<p>​	二分查找对具有指定左索引和右索引的连续序列进行操作。这就是所谓的查找空间。二分查找维护查找空间的左、右和中间指示符，并比较查找目标或将查找条件应用于集合的中间值；如果条件不满足或值不相等，则清除目标不可能存在的那一半，并在剩下的一半上继续查找，直到成功为止。如果查以空的一半结束，则无法满足条件，并且无法找到目标。</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>​	二进制搜索可以采用许多替代形式，并且可能并不总是直接搜索特定值。有时您希望应用特定条件或规则来确定接下来要搜索的哪一侧（左侧或右侧）。</p>
+<p>二分法的算法很简单，但在做题的过程中总是出现结果要么漏各一，要么循环条件不等号中少个等号。总的来说二分查找的<strong>思路简单，细节复杂</strong><br>
+<strong>条件:</strong> 二分查找的查找序列必须是有序的，所一般使用之前都会对序列进行排序</p>
+</blockquote>
+<h2 id="2-二分查找的框架"><a class="markdownIt-Anchor" href="#2-二分查找的框架"></a> 2、二分查找的框架</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ****yxc****</span></span><br><span class="line">    <span class="keyword">int</span> l=<span class="number">0</span>,r=n;</span><br><span class="line">    <span class="comment">// 第一种情况，check函数为判断mid性质的函数</span></span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(check(mid)) r=mid;</span><br><span class="line">        <span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 第二种情况</span></span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r+<span class="number">1</span>&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(check(mid)) l=mid;</span><br><span class="line">        <span class="keyword">else</span> r=mid<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>小技巧：不要出现else,所有的分类条件均放在else if后面<br>
+我的一些疑问<br>
+1、为什么使用第二种框架时mid=l+r+1&gt;&gt;1?<br>
+答：因为在C中整数相除是向下取整的，在缩小区间时l=mid这样当l与r很近时,l=mid=l就会造成死循环,故需要+1使得mid向上取整，这样无论在何时，区间都会缩小，循环总会结束。<br>
+2、二分搜索容易出现的错误与解决方式<br>
+a. 死循环：保证每次迭代后搜索区间都会缩小即可，使用第二种模板可以解决问题<br>
+b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜索前仔细思考<mark>我要查找的结果是什么</mark>，观察循环终止条件，考虑清楚循环在何种情况下结束。使用第二种模板，循环的终止条件已经固定在l==r时结束，故每次返回的结果也就很清晰了，所以使用第二种模板的话每次只需要考虑搜索策略就行了。</p>
+</blockquote>
+<h2 id="3-模板例题"><a class="markdownIt-Anchor" href="#3-模板例题"></a> 3、模板&amp;例题</h2>
+<h3 id="1-查找一个数"><a class="markdownIt-Anchor" href="#1-查找一个数"></a> 1、查找一个数</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = nums.length<span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(...) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;<span class="comment">//防止溢出</span></span><br><span class="line">        <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">            right = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>查找空间：[left,right]</p>
+<p>终止条件：left = right + 1</p>
+<p>由于查找空间为左闭右闭，在进行区间划分时，已经判断过该值，故每次区间划分区间变化如下：</p>
+<p>向左查找：right = mid - 1</p>
+<p>向右查找：left = mid + 1</p>
+</blockquote>
+<ol>
+<li>
+<p>为什么终止条件是≤，而不是&lt;</p>
+<blockquote>
+<p>因为初始化 right 的赋值是 nums.length-1，即最后一个元素的索引，而不是 nums.length。前者相当于两端都闭区间 [left, right]，后者相当于左闭右开区间 [left, right],这个算法的搜索区间是 [left, right]，而结束条件是搜索空间为空时结束，若是&lt;，则结束后left==right,在搜索空间里有元素nums[left]没有被搜索</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="2-在一个有序的数组里给定一个数查找比给定数小的最大的数的下标"><a class="markdownIt-Anchor" href="#2-在一个有序的数组里给定一个数查找比给定数小的最大的数的下标"></a> 2、在一个有序的数组里，给定一个数，查找比给定数小的最大的数的下标</h3>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20200927155830822.png" alt="image-20200927155830822"></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LowerBound</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> <span class="built_in">size</span>,<span class="keyword">int</span> p)</span> <span class="comment">//复杂度O(log(n))</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> L = <span class="number">0</span>; <span class="comment">//查找区间的左端点</span></span><br><span class="line">    <span class="keyword">int</span> R = <span class="built_in">size</span> - <span class="number">1</span>; <span class="comment">//查找区间的右端点</span></span><br><span class="line">    <span class="keyword">int</span> lastPos = <span class="number">-1</span>; <span class="comment">//到目前为止找到的最优解</span></span><br><span class="line">    <span class="keyword">while</span>( L &lt;= R) &#123; <span class="comment">//如果查找区间不为空就继续查找</span></span><br><span class="line">        <span class="keyword">int</span> mid = L+(R-L)/<span class="number">2</span>; <span class="comment">//取查找区间正中元素的下标</span></span><br><span class="line">        <span class="keyword">if</span>(a[mid]&gt;= p)</span><br><span class="line">        	R = mid - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            lastPos = mid;</span><br><span class="line">            L = mid+<span class="number">1</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     &#125;</span><br><span class="line">	<span class="keyword">return</span> lastPos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="3-用二分法查找方程的根"><a class="markdownIt-Anchor" href="#3-用二分法查找方程的根"></a> 3、用二分法查找方程的根</h3>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20200927160918618.png" alt="image-20200927160918618"></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> EPS = <span class="number">1e-6</span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span> </span>&#123; <span class="keyword">return</span> x*x*x - <span class="number">5</span>*x*x + <span class="number">10</span>*x - <span class="number">80</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> root, x1 = <span class="number">0</span>, x2 = <span class="number">100</span>,y;</span><br><span class="line">    root = x1+(x2-x1)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> triedTimes = <span class="number">1</span>; <span class="comment">//记录一共尝试多少次，对求根来说不是必须的</span></span><br><span class="line">    y = f(root);</span><br><span class="line">    <span class="keyword">while</span>( <span class="built_in">fabs</span>(y) &gt; EPS) &#123;</span><br><span class="line">        <span class="keyword">if</span>( y &gt; <span class="number">0</span> ) </span><br><span class="line">            x2 = root;</span><br><span class="line">        <span class="keyword">else</span> x1 = root;</span><br><span class="line">        	root = x1+(x2 - x1)/<span class="number">2</span>;</span><br><span class="line">        y = f(root);</span><br><span class="line">        triedTimes ++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.8f\n&quot;</span>,root);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,triedTimes);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-习题"><a class="markdownIt-Anchor" href="#4-习题"></a> 4、习题</h2>
+<table>
+<thead>
+<tr>
+<th>题目</th>
+<th>题解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof/">查找0~n-1中缺失的数字</a></td>
+<td></td>
+</tr>
+<tr>
+<td>查找一个数</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/sqrtx/">x的平方根</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>优化问题求解</title>
     <url>/2022/11/18/%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3/</url>
     <content><![CDATA[<h2 id="目标函数1"><a class="markdownIt-Anchor" href="#目标函数1"></a> 目标函数1</h2>
@@ -2505,6 +2505,43 @@ t_{ikl}\ge P_{ik}-P_{il}
       </tags>
   </entry>
   <entry>
+    <title>图论</title>
+    <url>/2021/07/25/%E5%9B%BE%E8%AE%BA/</url>
+    <content><![CDATA[<h1 id="一-图的存储"><a class="markdownIt-Anchor" href="#一-图的存储"></a> 一、图的存储</h1>
+<blockquote>
+<p>所有的内容以有向图为例，无向图可以理解为一种特殊的有向图，在存储时只需要以按照对称矩阵存储</p>
+</blockquote>
+<h2 id="1-稠密图邻接矩阵法"><a class="markdownIt-Anchor" href="#1-稠密图邻接矩阵法"></a> 1、稠密图（邻接矩阵法）</h2>
+<blockquote>
+<p>g[a][b] = eage;</p>
+</blockquote>
+<h2 id="2-稀疏图邻接表法"><a class="markdownIt-Anchor" href="#2-稀疏图邻接表法"></a> 2、稀疏图（邻接表法）</h2>
+<blockquote>
+<p>类似于哈希表的拉链法</p>
+</blockquote>
+<h1 id="二-图的遍历"><a class="markdownIt-Anchor" href="#二-图的遍历"></a> 二、图的遍历</h1>
+<a id="more"></a>
+<h2 id="1-深度优先遍历dfs"><a class="markdownIt-Anchor" href="#1-深度优先遍历dfs"></a> 1、深度优先遍历（dfs）</h2>
+<h2 id="2-广度优先遍历bfs"><a class="markdownIt-Anchor" href="#2-广度优先遍历bfs"></a> 2、广度优先遍历（bfs）</h2>
+<h1 id="三-最短路算法"><a class="markdownIt-Anchor" href="#三-最短路算法"></a> 三、最短路算法</h1>
+<h2 id="1-朴素dijkstra算法on2"><a class="markdownIt-Anchor" href="#1-朴素dijkstra算法on2"></a> 1、朴素Dijkstra算法–O(n^2)</h2>
+<h2 id="2-堆优化dijkstra算法omlogm"><a class="markdownIt-Anchor" href="#2-堆优化dijkstra算法omlogm"></a> 2、堆优化Dijkstra算法–O(mlogm)</h2>
+<h2 id="3-spfa算法omlogm"><a class="markdownIt-Anchor" href="#3-spfa算法omlogm"></a> 3、spfa算法–O(mlogm)</h2>
+<h1 id="四-最小生成树算法"><a class="markdownIt-Anchor" href="#四-最小生成树算法"></a> 四、最小生成树算法</h1>
+<h2 id="1-prim算法"><a class="markdownIt-Anchor" href="#1-prim算法"></a> 1、prim算法</h2>
+<h2 id="2-kruskal算法"><a class="markdownIt-Anchor" href="#2-kruskal算法"></a> 2、kruskal算法</h2>
+<h1 id="五-二分图算法"><a class="markdownIt-Anchor" href="#五-二分图算法"></a> 五、二分图算法</h1>
+<h2 id="1-染色法"><a class="markdownIt-Anchor" href="#1-染色法"></a> 1、染色法</h2>
+<h2 id="2-匈牙利算法"><a class="markdownIt-Anchor" href="#2-匈牙利算法"></a> 2、匈牙利算法</h2>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>堆</title>
     <url>/2021/04/10/%E5%A0%86/</url>
     <content><![CDATA[<h2 id="存储结构"><a class="markdownIt-Anchor" href="#存储结构"></a> 存储结构</h2>
@@ -2756,7 +2793,7 @@ t_{ikl}\ge P_{ik}-P_{il}
 </tr>
 <tr>
 <td><a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/">82. 删除排序链表中的重复元素 II</a></td>
-<td></td>
+<td><a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/solution/lei-bi-83shan-chu-pai-xu-lian-biao-zhong-92ix/">https://leetcode.cn/problems/remove-duplicates-from-sorted-list-ii/solution/lei-bi-83shan-chu-pai-xu-lian-biao-zhong-92ix/</a></td>
 </tr>
 <tr>
 <td><a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-list/description/">83. 删除排序链表中的重复元素</a></td>
@@ -2803,7 +2840,10 @@ t_{ikl}\ge P_{ik}-P_{il}
 <h4 id="题目描述-3"><a class="markdownIt-Anchor" href="#题目描述-3"></a> 题目描述</h4>
 <p><img src="/2021/04/03/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/image-20230506174705409.png" alt="image-20230506174705409"></p>
 <h4 id="题解-3"><a class="markdownIt-Anchor" href="#题解-3"></a> 题解</h4>
-<p>与<a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-list/description/">83. 删除排序链表中的重复元素</a>枚举每个节点的父节点</p>
+<h5 id="我的思路-3"><a class="markdownIt-Anchor" href="#我的思路-3"></a> 我的思路</h5>
+<p>与<a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-list/description/">83. 删除排序链表中的重复元素</a>思路大致相同，只不过这题需要将重复的元素都删除，枚举每个节点的父节点cur，当<code>cur.next.val==cur.next.next.val</code>时，说明val是重复元素，需要删除所有值为val的节点，当<code>cur.next.val==val</code>时删除下一元素，直至循环结束；反之枚举下一元素，当cur指向倒数第二个或者倒数第一个元素时结束。</p>
+<h5 id="我的代码-3"><a class="markdownIt-Anchor" href="#我的代码-3"></a> 我的代码</h5>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">deleteDuplicates</span><span class="params">(ListNode head)</span> </span>&#123;</span><br><span class="line">        ListNode dummy = <span class="keyword">new</span> ListNode(-<span class="number">101</span>, head);</span><br><span class="line">        ListNode cur = dummy;</span><br><span class="line">        <span class="keyword">while</span> (cur.next != <span class="keyword">null</span> &amp;&amp; cur.next.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> val = cur.next.val;</span><br><span class="line">            <span class="keyword">if</span> (val == cur.next.next.val) &#123;<span class="comment">// val是重复元素</span></span><br><span class="line">                <span class="keyword">while</span> (cur.next != <span class="keyword">null</span> &amp;&amp; cur.next.val == val)</span><br><span class="line">                    cur.next = cur.next.next;</span><br><span class="line">            &#125; <span class="keyword">else</span></span><br><span class="line">                cur = cur.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="反转链表"><a class="markdownIt-Anchor" href="#反转链表"></a> 反转链表</h2>
 <h3 id="题目汇总-2"><a class="markdownIt-Anchor" href="#题目汇总-2"></a> 题目汇总</h3>
 <table>
@@ -2849,17 +2889,17 @@ t_{ikl}\ge P_{ik}-P_{il}
 <h4 id="题目描述-5"><a class="markdownIt-Anchor" href="#题目描述-5"></a> 题目描述</h4>
 <p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230506163627287.png" alt="image-20230506163627287"></p>
 <h4 id="题解-5"><a class="markdownIt-Anchor" href="#题解-5"></a> 题解</h4>
-<h5 id="我的思路-3"><a class="markdownIt-Anchor" href="#我的思路-3"></a> 我的思路</h5>
+<h5 id="我的思路-4"><a class="markdownIt-Anchor" href="#我的思路-4"></a> 我的思路</h5>
 <p>这里与<a href="https://leetcode.cn/problems/reverse-linked-list/">206.反转链表</a>思路类似，只不过在反转前需要找到开始反转链表的位置，这里用p来保存待反转链表的父节点，但是当left==1时是没有父节点的，所以引入dummy节点保证当left取不同的值时代码的统一性。反转结束后，cur指向right后一个节点，pre指向right节点。然后修改p.next指向pre，p.next.next指向cur。</p>
-<h5 id="我的代码-3"><a class="markdownIt-Anchor" href="#我的代码-3"></a> 我的代码</h5>
+<h5 id="我的代码-4"><a class="markdownIt-Anchor" href="#我的代码-4"></a> 我的代码</h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseBetween</span><span class="params">(ListNode head, <span class="keyword">int</span> left, <span class="keyword">int</span> right)</span> </span>&#123;</span><br><span class="line">        ListNode dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>, head);</span><br><span class="line">        ListNode p = dummy;<span class="comment">// 指向left的父节点</span></span><br><span class="line">        <span class="comment">// 寻找p的位置,因为p为left的父节点所以找到left-1的位置</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= left - <span class="number">1</span>; i++)</span><br><span class="line">            p = p.next;</span><br><span class="line">        <span class="comment">// 反转[left,right]链表</span></span><br><span class="line">        ListNode cur = p0.next, pre = <span class="keyword">null</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= right - left + <span class="number">1</span>; i++) &#123;</span><br><span class="line">            ListNode tmp = cur.next;</span><br><span class="line">            cur.next = pre;</span><br><span class="line">            pre = cur;</span><br><span class="line">            cur = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">        p.next.next = cur;</span><br><span class="line">        p.next = pre;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="25k-个一组翻转链表"><a class="markdownIt-Anchor" href="#25k-个一组翻转链表"></a> 25.K 个一组翻转链表</h3>
 <h4 id="题目描述-6"><a class="markdownIt-Anchor" href="#题目描述-6"></a> 题目描述</h4>
 <p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230505223140112.png" alt="image-20230505223140112"></p>
 <h4 id="题解-6"><a class="markdownIt-Anchor" href="#题解-6"></a> 题解</h4>
-<h5 id="我的思路-4"><a class="markdownIt-Anchor" href="#我的思路-4"></a> 我的思路</h5>
+<h5 id="我的思路-5"><a class="markdownIt-Anchor" href="#我的思路-5"></a> 我的思路</h5>
 <p>这里每次需要反转k个节点，当节点不足k个时不反转，所以需要统计一下链表的节点数目length，每反转一组节点后，带反转数目length减少k，当节点数不足k个时，迭代结束。反转k个节点的思路与<a href="https://leetcode.cn/problems/reverse-linked-list-ii/">92.反转链表 II</a>过程完全相同，只是每反转一组后需要修改p指针的指向下一组待反转节点的父节点，而下一组节点的父节点为p.next，所以需要临时保存p.next，在反转结束后把p.next赋给p。</p>
-<h5 id="我的代码-4"><a class="markdownIt-Anchor" href="#我的代码-4"></a> 我的代码</h5>
+<h5 id="我的代码-5"><a class="markdownIt-Anchor" href="#我的代码-5"></a> 我的代码</h5>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">reverseKGroup</span><span class="params">(ListNode head, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> length = <span class="number">0</span>;</span><br><span class="line">        ListNode dummy = <span class="keyword">new</span> ListNode(<span class="number">0</span>, head);</span><br><span class="line">        ListNode p = dummy;</span><br><span class="line">        <span class="comment">// 计算链表数目length</span></span><br><span class="line">        <span class="keyword">while</span> (p.next != <span class="keyword">null</span>) &#123;</span><br><span class="line">            length++;</span><br><span class="line">            p = p.next;</span><br><span class="line">        &#125;</span><br><span class="line">        p = dummy;<span class="comment">// 指向每组第一个节点的父节点</span></span><br><span class="line">        <span class="keyword">while</span> (length &gt;= k) &#123;</span><br><span class="line">            length -= k;</span><br><span class="line">            ListNode cur = p.next, pre = <span class="keyword">null</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++) &#123;</span><br><span class="line">                ListNode tmp = cur.next;</span><br><span class="line">                cur.next = pre;</span><br><span class="line">                pre = cur;</span><br><span class="line">                cur = tmp;</span><br><span class="line">            &#125;</span><br><span class="line">            ListNode last = p.next;<span class="comment">// 为下一组带反转节点的父节点</span></span><br><span class="line">            p.next.next = cur;<span class="comment">// p的下一节点指向cur指向的节点</span></span><br><span class="line">            p.next = pre;<span class="comment">// p的下一节点为pre指向的节点</span></span><br><span class="line">            p = last;<span class="comment">// last为当前组最后一个节点</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dummy.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="链表相交"><a class="markdownIt-Anchor" href="#链表相交"></a> 链表相交</h2>
 <h2 id="环形链表双指针法"><a class="markdownIt-Anchor" href="#环形链表双指针法"></a> 环形链表(双指针法)</h2>
@@ -2912,43 +2952,6 @@ t_{ikl}\ge P_{ik}-P_{il}
       </categories>
       <tags>
         <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>图论</title>
-    <url>/2021/07/25/%E5%9B%BE%E8%AE%BA/</url>
-    <content><![CDATA[<h1 id="一-图的存储"><a class="markdownIt-Anchor" href="#一-图的存储"></a> 一、图的存储</h1>
-<blockquote>
-<p>所有的内容以有向图为例，无向图可以理解为一种特殊的有向图，在存储时只需要以按照对称矩阵存储</p>
-</blockquote>
-<h2 id="1-稠密图邻接矩阵法"><a class="markdownIt-Anchor" href="#1-稠密图邻接矩阵法"></a> 1、稠密图（邻接矩阵法）</h2>
-<blockquote>
-<p>g[a][b] = eage;</p>
-</blockquote>
-<h2 id="2-稀疏图邻接表法"><a class="markdownIt-Anchor" href="#2-稀疏图邻接表法"></a> 2、稀疏图（邻接表法）</h2>
-<blockquote>
-<p>类似于哈希表的拉链法</p>
-</blockquote>
-<h1 id="二-图的遍历"><a class="markdownIt-Anchor" href="#二-图的遍历"></a> 二、图的遍历</h1>
-<a id="more"></a>
-<h2 id="1-深度优先遍历dfs"><a class="markdownIt-Anchor" href="#1-深度优先遍历dfs"></a> 1、深度优先遍历（dfs）</h2>
-<h2 id="2-广度优先遍历bfs"><a class="markdownIt-Anchor" href="#2-广度优先遍历bfs"></a> 2、广度优先遍历（bfs）</h2>
-<h1 id="三-最短路算法"><a class="markdownIt-Anchor" href="#三-最短路算法"></a> 三、最短路算法</h1>
-<h2 id="1-朴素dijkstra算法on2"><a class="markdownIt-Anchor" href="#1-朴素dijkstra算法on2"></a> 1、朴素Dijkstra算法–O(n^2)</h2>
-<h2 id="2-堆优化dijkstra算法omlogm"><a class="markdownIt-Anchor" href="#2-堆优化dijkstra算法omlogm"></a> 2、堆优化Dijkstra算法–O(mlogm)</h2>
-<h2 id="3-spfa算法omlogm"><a class="markdownIt-Anchor" href="#3-spfa算法omlogm"></a> 3、spfa算法–O(mlogm)</h2>
-<h1 id="四-最小生成树算法"><a class="markdownIt-Anchor" href="#四-最小生成树算法"></a> 四、最小生成树算法</h1>
-<h2 id="1-prim算法"><a class="markdownIt-Anchor" href="#1-prim算法"></a> 1、prim算法</h2>
-<h2 id="2-kruskal算法"><a class="markdownIt-Anchor" href="#2-kruskal算法"></a> 2、kruskal算法</h2>
-<h1 id="五-二分图算法"><a class="markdownIt-Anchor" href="#五-二分图算法"></a> 五、二分图算法</h1>
-<h2 id="1-染色法"><a class="markdownIt-Anchor" href="#1-染色法"></a> 1、染色法</h2>
-<h2 id="2-匈牙利算法"><a class="markdownIt-Anchor" href="#2-匈牙利算法"></a> 2、匈牙利算法</h2>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
