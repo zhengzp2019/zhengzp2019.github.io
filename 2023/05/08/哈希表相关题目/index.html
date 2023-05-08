@@ -34,20 +34,18 @@
         if (d.head) d.head.appendChild(s);
     })(document, window, 'Chatra');
 </script>
-  <meta name="description" content="存储结构">
-<meta property="og:type" content="article">
-<meta property="og:title" content="堆">
-<meta property="og:url" content="http://zhengzp2019.github.io/2021/04/10/%E5%A0%86/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="哈希表相关题目">
+<meta property="og:url" content="http://zhengzp2019.github.io/2023/05/08/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/index.html">
 <meta property="og:site_name" content="dpBirder&#39;s Blog">
-<meta property="og:description" content="存储结构">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-10T01:20:56.000Z">
-<meta property="article:modified_time" content="2022-11-19T03:47:53.749Z">
+<meta property="article:published_time" content="2023-05-08T06:39:22.000Z">
+<meta property="article:modified_time" content="2023-05-08T06:46:21.242Z">
 <meta property="article:author" content="dpbirder">
-<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="个人技术博客">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://zhengzp2019.github.io/2021/04/10/%E5%A0%86/">
+<link rel="canonical" href="http://zhengzp2019.github.io/2023/05/08/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/">
 
 
 <script id="page-configurations">
@@ -69,7 +67,7 @@
         }
     })();
 </script>
-  <title>堆 | dpBirder's Blog</title>
+  <title>哈希表相关题目 | dpBirder's Blog</title>
   
 
 
@@ -217,7 +215,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://zhengzp2019.github.io/2021/04/10/%E5%A0%86/">
+    <link itemprop="mainEntityOfPage" href="http://zhengzp2019.github.io/2023/05/08/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/boy.jpg">
@@ -230,7 +228,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          堆
+          哈希表相关题目
         </h1>
 
         <div class="post-meta">
@@ -239,16 +237,10 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2021-04-10 09:20:56" itemprop="dateCreated datePublished" datetime="2021-04-10T09:20:56+08:00">2021-04-10</time>
+              <time title="创建时间：2023-05-08 14:39:22 / 修改时间：14:46:21" itemprop="dateCreated datePublished" datetime="2023-05-08T14:39:22+08:00">2023-05-08</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-19 11:47:53" itemprop="dateModified" datetime="2022-11-19T11:47:53+08:00">2022-11-19</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -256,6 +248,10 @@
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%93%88%E5%B8%8C%E8%A1%A8/" itemprop="url" rel="index"><span itemprop="name">哈希表</span></a>
                 </span>
             </span>
 
@@ -265,7 +261,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
+              <span>0</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -284,12 +280,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="存储结构"><a class="markdownIt-Anchor" href="#存储结构"></a> 存储结构</h2>
-<a id="more"></a>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">heap</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// h[N]存储堆中的值, h[1]是堆顶，x的左儿子是2x, 右儿子是2x + 1</span></span><br><span class="line"><span class="comment">// ph[k]存储第k个插入的点在堆中的位置</span></span><br><span class="line"><span class="comment">// hp[k]存储堆中下标是k的点是第几个插入的</span></span><br><span class="line"><span class="keyword">int</span> h[N], ph[N], hp[N], msize;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 交换两个点，及其映射关系</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heap_swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    swap(ph[hp[a]],ph[hp[b]]);</span><br><span class="line">    swap(hp[a], hp[b]);</span><br><span class="line">    swap(h[a], h[b]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="实现"><a class="markdownIt-Anchor" href="#实现"></a> 实现</h2>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将下标为u的元素向下调整</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">down</span><span class="params">(<span class="keyword">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = u;<span class="comment">//t存储当前最小的元素的下标</span></span><br><span class="line">    <span class="keyword">if</span> (u * <span class="number">2</span> &lt;= msize &amp;&amp; h[u * <span class="number">2</span>] &lt; h[t]) t = u * <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (u * <span class="number">2</span> + <span class="number">1</span> &lt;= msize &amp;&amp; h[u * <span class="number">2</span> + <span class="number">1</span>] &lt; h[t]) t = u * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (u != t)</span><br><span class="line">    &#123;</span><br><span class="line">        heap_swap(u, mn);</span><br><span class="line">        <span class="comment">// swap(h[u],h[t]);</span></span><br><span class="line">        down(t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* void down(int u)//迭代</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">    int res = h[u];//产生一个空穴</span></span><br><span class="line"><span class="comment">    // u指向空穴处</span></span><br><span class="line"><span class="comment">    int child;</span></span><br><span class="line"><span class="comment">    while(2*u &lt;= msize)</span></span><br><span class="line"><span class="comment">    &#123;</span></span><br><span class="line"><span class="comment">        child = 2*u;</span></span><br><span class="line"><span class="comment">        if(child + 1 &lt;= msize &amp;&amp; h[child] &gt; h[child+1]) child++;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        if(res &lt; h[child]) break;</span></span><br><span class="line"><span class="comment">        else h[u] = h[child];</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    h[u] = res;</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将下标为u的元素向上调整</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">up</span><span class="params">(<span class="keyword">int</span> u)</span><span class="comment">//yxc</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (u / <span class="number">2</span> &gt;=<span class="number">1</span> &amp;&amp; h[u] &lt; h[u / <span class="number">2</span>])</span><br><span class="line">    &#123;</span><br><span class="line">        heap_swap(u, u / <span class="number">2</span>);</span><br><span class="line">        u &gt;&gt; = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* void up(int u)//zzp</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">    int res = h[u];//产生一个空穴</span></span><br><span class="line"><span class="comment">    //u表示需要上滤元素的下标</span></span><br><span class="line"><span class="comment">    while(u/2 &amp;&amp; h[u] &lt; h[u/2]) </span></span><br><span class="line"><span class="comment">    &#123;</span></span><br><span class="line"><span class="comment">        h[u] = h[u/2];</span></span><br><span class="line"><span class="comment">        u/=2;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    h[u] = res;</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*O(n)建堆：</span></span><br><span class="line"><span class="comment">    down(i)操作需要i的孩子均为堆，而n/2后面的元素均为叶子结点</span></span><br><span class="line"><span class="comment">    而叶子结点必为堆，故构建堆时从n/2开始，从下向上调整堆</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = n / <span class="number">2</span>; i; i -- ) down(i);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入一个数</span></span><br><span class="line">heap[++msize] = x; up(msize);</span><br><span class="line"><span class="comment">// 求集合中最小值</span></span><br><span class="line">heap[<span class="number">1</span>];</span><br><span class="line"><span class="comment">// 删除最小值</span></span><br><span class="line">heap[<span class="number">1</span>] = heap[msize]; msize--; down(<span class="number">1</span>);</span><br><span class="line"><span class="comment">// 删除任意一个元素</span></span><br><span class="line">heap[k] = heap[msize]; msize--; down(k); up(k);</span><br><span class="line"><span class="comment">// 修改任意一个元素</span></span><br><span class="line">heap[k] = x; down(k); up(k);</span><br></pre></td></tr></table></figure>
-
+        <a id="more"></a>
     </div>
 
     
@@ -301,9 +292,6 @@
 </div>
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 数据结构</a>
-          </div>
 
         
 
@@ -311,12 +299,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/04/03/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/" rel="prev" title="基础算法">
-      <i class="fa fa-chevron-left"></i> 基础算法
+    <a href="/2023/05/08/%E9%98%9F%E5%88%97%E5%9F%BA%E7%A1%80/" rel="prev" title="队列基础">
+      <i class="fa fa-chevron-left"></i> 队列基础
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/04/10/%E6%A0%91/" rel="next" title="树">
-      树 <i class="fa fa-chevron-right"></i>
+    <a href="/2023/05/08/%E5%88%A0%E9%99%A4%E9%93%BE%E8%A1%A8%E5%85%83%E7%B4%A0/" rel="next" title="删除链表元素">
+      删除链表元素 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -376,7 +364,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E5%82%A8%E7%BB%93%E6%9E%84"><span class="nav-text"> 存储结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0"><span class="nav-text"> 实现</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -451,11 +438,11 @@
     </label>
     <select class="lang-select" data-canonical="">
       
-        <option value="zh-CN" data-href="/2021/04/10/%E5%A0%86/" selected="">
+        <option value="zh-CN" data-href="/2023/05/08/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/" selected="">
           简体中文
         </option>
       
-        <option value="en" data-href="/en/2021/04/10/%E5%A0%86/" selected="">
+        <option value="en" data-href="/en/2023/05/08/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/" selected="">
           English
         </option>
       
