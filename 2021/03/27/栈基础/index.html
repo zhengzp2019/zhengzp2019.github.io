@@ -34,20 +34,20 @@
         if (d.head) d.head.appendChild(s);
     })(document, window, 'Chatra');
 </script>
-  <meta name="description" content="一、栈  1、静态实现(用数组模拟)">
+  <meta name="description" content="一、栈  静态实现(用数组模拟)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="栈和队列">
-<meta property="og:url" content="http://zhengzp2019.github.io/2021/03/27/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/index.html">
+<meta property="og:title" content="栈基础">
+<meta property="og:url" content="http://zhengzp2019.github.io/2021/03/27/%E6%A0%88%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="dpBirder&#39;s Blog">
-<meta property="og:description" content="一、栈  1、静态实现(用数组模拟)">
+<meta property="og:description" content="一、栈  静态实现(用数组模拟)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-27T05:59:16.000Z">
-<meta property="article:modified_time" content="2023-05-08T03:08:07.029Z">
+<meta property="article:modified_time" content="2023-05-08T13:03:29.904Z">
 <meta property="article:author" content="dpbirder">
 <meta property="article:tag" content="个人技术博客">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://zhengzp2019.github.io/2021/03/27/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">
+<link rel="canonical" href="http://zhengzp2019.github.io/2021/03/27/%E6%A0%88%E5%9F%BA%E7%A1%80/">
 
 
 <script id="page-configurations">
@@ -69,7 +69,7 @@
         }
     })();
 </script>
-  <title>栈和队列 | dpBirder's Blog</title>
+  <title>栈基础 | dpBirder's Blog</title>
   
 
 
@@ -217,7 +217,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://zhengzp2019.github.io/2021/03/27/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">
+    <link itemprop="mainEntityOfPage" href="http://zhengzp2019.github.io/2021/03/27/%E6%A0%88%E5%9F%BA%E7%A1%80/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/boy.jpg">
@@ -230,7 +230,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          栈和队列
+          栈基础
         </h1>
 
         <div class="post-meta">
@@ -247,7 +247,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-08 11:08:07" itemprop="dateModified" datetime="2023-05-08T11:08:07+08:00">2023-05-08</time>
+                <time title="修改时间：2023-05-08 21:03:29" itemprop="dateModified" datetime="2023-05-08T21:03:29+08:00">2023-05-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -269,7 +269,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>648</span>
+              <span>646</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -289,7 +289,7 @@
 
       
         <h1 id="一-栈"><a class="markdownIt-Anchor" href="#一-栈"></a> 一、栈</h1>
-<h2 id="1-静态实现用数组模拟"><a class="markdownIt-Anchor" href="#1-静态实现用数组模拟"></a> 1、静态实现(用数组模拟)</h2>
+<h2 id="静态实现用数组模拟"><a class="markdownIt-Anchor" href="#静态实现用数组模拟"></a> 静态实现(用数组模拟)</h2>
 <a id="more"></a>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// tt指向栈顶,stk[0]不存元素</span></span><br><span class="line"><span class="keyword">int</span> stk[N], tt = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 向栈顶插入一个数</span></span><br><span class="line">stk[ ++ tt] = x;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从栈顶弹出一个数</span></span><br><span class="line">tt -- ;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 栈顶的值</span></span><br><span class="line">stk[tt];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断栈是否为空</span></span><br><span class="line"><span class="keyword">if</span> (tt &gt; <span class="number">0</span>) <span class="keyword">not</span> empty</span><br><span class="line"><span class="keyword">else</span> empty</span><br></pre></td></tr></table></figure>
 <h2 id="2-练习"><a class="markdownIt-Anchor" href="#2-练习"></a> 2、练习</h2>
@@ -386,7 +386,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-%E6%A0%88"><span class="nav-text"> 一、栈</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%9D%99%E6%80%81%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%95%B0%E7%BB%84%E6%A8%A1%E6%8B%9F"><span class="nav-text"> 1、静态实现(用数组模拟)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%BB%83%E4%B9%A0"><span class="nav-text"> 2、练习</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-%E6%A0%88"><span class="nav-text"> 一、栈</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%95%B0%E7%BB%84%E6%A8%A1%E6%8B%9F"><span class="nav-text"> 静态实现(用数组模拟)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%BB%83%E4%B9%A0"><span class="nav-text"> 2、练习</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -461,11 +461,11 @@
     </label>
     <select class="lang-select" data-canonical="">
       
-        <option value="zh-CN" data-href="/2021/03/27/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" selected="">
+        <option value="zh-CN" data-href="/2021/03/27/%E6%A0%88%E5%9F%BA%E7%A1%80/" selected="">
           简体中文
         </option>
       
-        <option value="en" data-href="/en/2021/03/27/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/" selected="">
+        <option value="en" data-href="/en/2021/03/27/%E6%A0%88%E5%9F%BA%E7%A1%80/" selected="">
           English
         </option>
       
@@ -486,12 +486,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">142k</span>
+    <span title="站点总字数">145k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:09</span>
+    <span title="站点阅读时长">2:12</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
