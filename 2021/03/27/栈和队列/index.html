@@ -42,9 +42,9 @@
 <meta property="og:description" content="一、栈  1、静态实现(用数组模拟)">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-03-27T05:59:16.000Z">
-<meta property="article:modified_time" content="2022-11-19T03:47:53.764Z">
+<meta property="article:modified_time" content="2023-05-08T03:08:07.029Z">
 <meta property="article:author" content="dpbirder">
-<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="个人技术博客">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://zhengzp2019.github.io/2021/03/27/%E6%A0%88%E5%92%8C%E9%98%9F%E5%88%97/">
@@ -154,12 +154,12 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">15</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">23</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">33</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">36</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -247,7 +247,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-19 11:47:53" itemprop="dateModified" datetime="2022-11-19T11:47:53+08:00">2022-11-19</time>
+                <time title="修改时间：2023-05-08 11:08:07" itemprop="dateModified" datetime="2023-05-08T11:08:07+08:00">2023-05-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -257,6 +257,10 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
                 </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">栈</span></a>
+                </span>
             </span>
 
           <br>
@@ -265,14 +269,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.2k</span>
+              <span>648</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -297,20 +301,7 @@
 </ul>
 <blockquote>
 <p>单调栈常用模型：找出每个数左边离它最近的比它大/小的数</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> tt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (tt &amp;&amp; check(q[tt], i)) tt -- ;</span><br><span class="line">		stk[ ++ tt] = i;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<h1 id="二-队列"><a class="markdownIt-Anchor" href="#二-队列"></a> 二、队列</h1>
-<h2 id="1-静态实现用数组模拟-2"><a class="markdownIt-Anchor" href="#1-静态实现用数组模拟-2"></a> 1、静态实现(用数组模拟)</h2>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// hh 表示队头，tt表示队尾</span></span><br><span class="line"><span class="keyword">int</span> q[N], hh = <span class="number">0</span>, tt = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 向队尾插入一个数</span></span><br><span class="line">q[ ++ tt] = x;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从队头弹出一个数</span></span><br><span class="line">hh ++ ;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 队头的值</span></span><br><span class="line">q[hh];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断队列是否为空</span></span><br><span class="line"><span class="keyword">if</span> (hh &lt;= tt) <span class="keyword">not</span> empty</span><br><span class="line"><span class="keyword">else</span> empty</span><br></pre></td></tr></table></figure>
-<h2 id="2-练习-2"><a class="markdownIt-Anchor" href="#2-练习-2"></a> 2、练习</h2>
-<p><a target="_blank" rel="noopener" href="https://www.acwing.com/activity/content/problem/content/866/1/">模拟队列</a></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> m;</span><br><span class="line"><span class="keyword">int</span> q[N],hh=<span class="number">0</span>,tt=<span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;m);</span><br><span class="line">    <span class="keyword">while</span>(m--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">char</span> op[<span class="number">10</span>];</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,op);</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;push&quot;</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> x;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);</span><br><span class="line">            q[++tt]=x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;empty&quot;</span>)) hh&lt;=tt?<span class="built_in">printf</span>(<span class="string">&quot;NO\n&quot;</span>):<span class="built_in">printf</span>(<span class="string">&quot;YES\n&quot;</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;pop&quot;</span>)) hh++;</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,q[hh]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/156/">滑动窗口(单调队列)</a></p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e6</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> q[N],hh=<span class="number">0</span>,tt=<span class="number">-1</span>;</span><br><span class="line"><span class="keyword">int</span> a[N],n,k;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++) <span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//判断队头是否已经划出窗口</span></span><br><span class="line">        <span class="keyword">if</span>( hh &lt;= tt &amp;&amp; i-k+<span class="number">1</span> &gt; q[hh]) hh++;</span><br><span class="line">        <span class="keyword">while</span>(hh&lt;=tt &amp;&amp; a[q[tt]] &gt;= a[i]) tt--;</span><br><span class="line">        q[++tt]=i;</span><br><span class="line">        <span class="keyword">if</span>(i &gt;= k<span class="number">-1</span>) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,a[q[hh]]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">    </span><br><span class="line">    hh=<span class="number">0</span>,tt=<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// 判断队头是否已经划出窗口</span></span><br><span class="line">        <span class="keyword">if</span>( hh &lt;= tt &amp;&amp; i-k+<span class="number">1</span> &gt; q[hh]) hh++;</span><br><span class="line">        <span class="keyword">while</span>( hh &lt;= tt &amp;&amp; a[q[tt]] &lt;= a[i]) tt--;</span><br><span class="line">        q[++tt]=i;</span><br><span class="line">        <span class="keyword">if</span>(i &gt;= k<span class="number">-1</span>) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,a[q[hh]]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>单调队列常见模型：找出滑动窗口中的最大值/最小值</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> hh = <span class="number">0</span>, tt = <span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (hh &lt;= tt &amp;&amp; check_out(q[hh])) hh ++ ;  <span class="comment">// 判断队头是否滑出窗口</span></span><br><span class="line">		<span class="keyword">while</span> (hh &lt;= tt &amp;&amp; check(q[tt], i)) tt -- ;</span><br><span class="line">		q[ ++ tt] = i;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> tt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (tt &amp;&amp; check(q[tt], i)) tt -- ;</span><br><span class="line">		stk[ ++ tt] = i;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></blockquote>
 
     </div>
 
@@ -323,9 +314,6 @@
 </div>
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 数据结构</a>
-          </div>
 
         
 
@@ -398,7 +386,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-%E6%A0%88"><span class="nav-text"> 一、栈</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%9D%99%E6%80%81%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%95%B0%E7%BB%84%E6%A8%A1%E6%8B%9F"><span class="nav-text"> 1、静态实现(用数组模拟)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%BB%83%E4%B9%A0"><span class="nav-text"> 2、练习</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C-%E9%98%9F%E5%88%97"><span class="nav-text"> 二、队列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%9D%99%E6%80%81%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%95%B0%E7%BB%84%E6%A8%A1%E6%8B%9F-2"><span class="nav-text"> 1、静态实现(用数组模拟)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%BB%83%E4%B9%A0-2"><span class="nav-text"> 2、练习</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-%E6%A0%88"><span class="nav-text"> 一、栈</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E9%9D%99%E6%80%81%E5%AE%9E%E7%8E%B0%E7%94%A8%E6%95%B0%E7%BB%84%E6%A8%A1%E6%8B%9F"><span class="nav-text"> 1、静态实现(用数组模拟)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%BB%83%E4%B9%A0"><span class="nav-text"> 2、练习</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -414,14 +402,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">33</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">23</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -498,12 +486,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">140k</span>
+    <span title="站点总字数">142k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:07</span>
+    <span title="站点阅读时长">2:09</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
