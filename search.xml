@@ -12,78 +12,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Linux系统安装</title>
-    <url>/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</url>
-    <content><![CDATA[<blockquote>
-<p>最近两天终于完成了想了很久的事情，终于将之前又丑又难用的Ubuntu给换掉了。但是换什么呢？事先听室友的建议，安装了cestos，但是安装好后发现这完全是命令行界面啊，想用图形界面还需要自己安装，而且这个系统主要是面向服务器的，而且他的软件支持也比较少，吓得我又重新装了manjaro（这个系统也是咨询了一下我的同学，也是看了他装了这个系统，才促使我将想了很久的想法给做了），manjaro对个人笔记本的支持比较好，有较完善的系统，可使用的软件也比较多，但是会牺牲一定的性能，不过对于我只是想玩玩Linux来说，影响多少性能我也就感觉不出来了。对于各种Linux系统的特性，以及安装什么系统，读者可参考下面几篇文章：</p>
-</blockquote>
-<a id="more"></a>
-<blockquote>
-<p><a href="https://www.zhihu.com/question/348166499/answer/839058746">https://www.zhihu.com/question/348166499/answer/839058746</a></p>
-<p><a href="https://zhuanlan.zhihu.com/p/65629587">https://zhuanlan.zhihu.com/p/65629587</a></p>
-<blockquote>
-<p>简单介绍了八种常见的Linux发行版</p>
-</blockquote>
-<p><a href="https://www.zhihu.com/collection/580669416">https://www.zhihu.com/collection/580669416</a></p>
-<blockquote>
-<p>这里面介绍了绝大多数的Linux发行版</p>
-</blockquote>
-<p><a href="https://www.zhihu.com/collection/580669416">https://www.zhihu.com/collection/580669416</a></p>
-<blockquote>
-<p>介绍了几种Linux发行版的大类</p>
-</blockquote>
-</blockquote>
-<h2 id="1-我为什么要安装linux"><a class="markdownIt-Anchor" href="#1-我为什么要安装linux"></a> 1、我为什么要安装Linux</h2>
-<blockquote>
-<p>首先我要明确一个概念，Linux并不是等同于我们常说的操作系统，准确的说，Linux只是一种操作系统的内核，他是对于底层硬件的封装，只是为了让上层应用更加方便的使用硬件资源，而所谓的Linux发行版就是将Linux与一些应用包装起来发布的操作系统，这才是我们常用的操作系统，由于内核是操作系统最重要的部分，所以Linux就成了以Linux为内核的操作系统的统称。</p>
-<p>下面说下我为什么要安装Linux，我从学计算机至今一直以来都是用的Windows，一直也只是听别人说Linux性能比Windows好，确实Linux的性能要比Windows，因为Linux的用户是可以控制硬件资源的，所以可以直接使用硬件。其次Windows是面向大众的，所以他提供的功能比较完善，既然完善，那么必然封闭，Windows几乎所有软件都是靠微软的工程师维护的，当我们安装一个软件的时候完全不知道系统做了哪些事，这让我对系统以及底层的东西一无所知，也让我计算机的性能越差，维护起来也比较麻烦，再者，作为计算机专业的学生，当然要体现出我们的专业性啦，所以想要学习Linux也是我安装Linux的目的之一。</p>
-</blockquote>
-<h2 id="2-我为什么要选择manjaro"><a class="markdownIt-Anchor" href="#2-我为什么要选择manjaro"></a> 2、我为什么要选择manjaro</h2>
-<blockquote>
-<p>Linux的发行版是众多的，那我为什么要选择manjaro呢？</p>
-<ol>
-<li>来自同学推荐，因为他学的比我早，所以我有什么问题可以直接问（尽管后来我发现我们遇到的问题基本不一样）</li>
-<li>manjaro对图形界面支持比较好，从Windows转向Linux比较好上手，作为Linux小白还是需要从Windows的操作习惯慢慢改变的，这也是我使用双系统的原因</li>
-<li>manjaro的软件系统比较丰富，那对于没有的软件怎么办呢？这个。。。我也不清楚，希望有大佬解释以来啦</li>
-<li>还有一个重要原因就是好看！比我之前的Ubuntu好看很多</li>
-<li>由于我也是刚装好，目前感受就这么多</li>
-</ol>
-</blockquote>
-<p>下面进入正题：</p>
-<h2 id="3-如何安装"><a class="markdownIt-Anchor" href="#3-如何安装"></a> 3、如何安装？</h2>
-<blockquote>
-<p>安装的方法有很多，可以使用虚拟机安装，也可以安装单系统，我是用的是双系统安装，保留了先前的Windows，一方面我两个系统都要使用后，使用虚拟机的话性能太差，但是如果只是想学习Linux的一些操作不需要性能的话的话，推荐使用虚拟机，双系统风险有点大，我几次都差点把硬盘上数据搞没了，恢复数据花费的时间比装系统的时间多得多。要是第一动系统的话也建议使用虚拟机，事先了解一下安装系统的感觉，安装双系统的过程每个人可能遇到的问题不一样，即使是看着教程，也可能遇到不一样的问题，一旦自己遇到新的问题解决不好或者解决错了，真的可能就把另一个系统也给搞坏了。毕竟安装系统每个十遍以上，都不敢保证一定准确，我是以前有过安装系统的经验，就随便找了个教程，跟着做了，但还是充满风险的。对了，安装系统前我建议先把<a href="http://linux.vbird.org/">《鸟哥私房菜》</a>的前三章看了，这样可以让你对于系统的概念有一个更深刻的了解，下面具体讲一下我是怎么安装的。</p>
-</blockquote>
-<h3 id="1cestos"><a class="markdownIt-Anchor" href="#1cestos"></a> 1）Cestos</h3>
-<h4 id="第一步下载cestos-ios镜像"><a class="markdownIt-Anchor" href="#第一步下载cestos-ios镜像"></a> 第一步：下载Cestos ios镜像</h4>
-<p>可以直接到官网下，也可以到镜像网站上下，建议使用镜像网站下，速度确实快，相对于使用校园网，真的是快到爆啊！</p>
-<p>这里给出我是用的两镜像网站：（第二个安装manjaro要用，第一个没有）</p>
-<p><a href="http://ftp.twaren.net/Linux/CentOS/8/isos/x86_64/">国家高速网路中心</a></p>
-<p><a href="https://mirrors.ustc.edu.cn/manjaro-cd/">USTC中科大镜像</a></p>
-<h5 id="第二步制作启动盘"><a class="markdownIt-Anchor" href="#第二步制作启动盘"></a> 第二步：制作启动盘</h5>
-<p>工具：UltraIOS+4G以上的U盘</p>
-<p>注意：制作启动盘的过程中需要格式化U盘，对于U盘里重要的文件要事先保存</p>
-<p>做法如下：</p>
-<p><img src="/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829232219467.png" alt="image-20200829232219467"></p>
-<p>像这样</p>
-<p><img src="/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829230957699.png" alt="image-20200829230957699"></p>
-<p><img src="/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829231110060.png" alt="image-20200829231110060"></p>
-<p>之后的步骤，一直下一步到完成</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>系统安装</category>
-        <category>manjaro</category>
-        <category>cestos</category>
-      </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>双系统安装</tag>
-        <tag>manjaro</tag>
-        <tag>cestos</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Jordan标准型求解</title>
     <url>/2022/11/18/Jordan%E6%A0%87%E5%87%86%E5%9E%8B%E6%B1%82%E8%A7%A3/</url>
     <content><![CDATA[<h1 id="什么是jordan标准型"><a class="markdownIt-Anchor" href="#什么是jordan标准型"></a> 什么是Jordan标准型？</h1>
@@ -188,6 +116,78 @@
       </categories>
       <tags>
         <tag>数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Linux系统安装</title>
+    <url>/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</url>
+    <content><![CDATA[<blockquote>
+<p>最近两天终于完成了想了很久的事情，终于将之前又丑又难用的Ubuntu给换掉了。但是换什么呢？事先听室友的建议，安装了cestos，但是安装好后发现这完全是命令行界面啊，想用图形界面还需要自己安装，而且这个系统主要是面向服务器的，而且他的软件支持也比较少，吓得我又重新装了manjaro（这个系统也是咨询了一下我的同学，也是看了他装了这个系统，才促使我将想了很久的想法给做了），manjaro对个人笔记本的支持比较好，有较完善的系统，可使用的软件也比较多，但是会牺牲一定的性能，不过对于我只是想玩玩Linux来说，影响多少性能我也就感觉不出来了。对于各种Linux系统的特性，以及安装什么系统，读者可参考下面几篇文章：</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p><a href="https://www.zhihu.com/question/348166499/answer/839058746">https://www.zhihu.com/question/348166499/answer/839058746</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/65629587">https://zhuanlan.zhihu.com/p/65629587</a></p>
+<blockquote>
+<p>简单介绍了八种常见的Linux发行版</p>
+</blockquote>
+<p><a href="https://www.zhihu.com/collection/580669416">https://www.zhihu.com/collection/580669416</a></p>
+<blockquote>
+<p>这里面介绍了绝大多数的Linux发行版</p>
+</blockquote>
+<p><a href="https://www.zhihu.com/collection/580669416">https://www.zhihu.com/collection/580669416</a></p>
+<blockquote>
+<p>介绍了几种Linux发行版的大类</p>
+</blockquote>
+</blockquote>
+<h2 id="1-我为什么要安装linux"><a class="markdownIt-Anchor" href="#1-我为什么要安装linux"></a> 1、我为什么要安装Linux</h2>
+<blockquote>
+<p>首先我要明确一个概念，Linux并不是等同于我们常说的操作系统，准确的说，Linux只是一种操作系统的内核，他是对于底层硬件的封装，只是为了让上层应用更加方便的使用硬件资源，而所谓的Linux发行版就是将Linux与一些应用包装起来发布的操作系统，这才是我们常用的操作系统，由于内核是操作系统最重要的部分，所以Linux就成了以Linux为内核的操作系统的统称。</p>
+<p>下面说下我为什么要安装Linux，我从学计算机至今一直以来都是用的Windows，一直也只是听别人说Linux性能比Windows好，确实Linux的性能要比Windows，因为Linux的用户是可以控制硬件资源的，所以可以直接使用硬件。其次Windows是面向大众的，所以他提供的功能比较完善，既然完善，那么必然封闭，Windows几乎所有软件都是靠微软的工程师维护的，当我们安装一个软件的时候完全不知道系统做了哪些事，这让我对系统以及底层的东西一无所知，也让我计算机的性能越差，维护起来也比较麻烦，再者，作为计算机专业的学生，当然要体现出我们的专业性啦，所以想要学习Linux也是我安装Linux的目的之一。</p>
+</blockquote>
+<h2 id="2-我为什么要选择manjaro"><a class="markdownIt-Anchor" href="#2-我为什么要选择manjaro"></a> 2、我为什么要选择manjaro</h2>
+<blockquote>
+<p>Linux的发行版是众多的，那我为什么要选择manjaro呢？</p>
+<ol>
+<li>来自同学推荐，因为他学的比我早，所以我有什么问题可以直接问（尽管后来我发现我们遇到的问题基本不一样）</li>
+<li>manjaro对图形界面支持比较好，从Windows转向Linux比较好上手，作为Linux小白还是需要从Windows的操作习惯慢慢改变的，这也是我使用双系统的原因</li>
+<li>manjaro的软件系统比较丰富，那对于没有的软件怎么办呢？这个。。。我也不清楚，希望有大佬解释以来啦</li>
+<li>还有一个重要原因就是好看！比我之前的Ubuntu好看很多</li>
+<li>由于我也是刚装好，目前感受就这么多</li>
+</ol>
+</blockquote>
+<p>下面进入正题：</p>
+<h2 id="3-如何安装"><a class="markdownIt-Anchor" href="#3-如何安装"></a> 3、如何安装？</h2>
+<blockquote>
+<p>安装的方法有很多，可以使用虚拟机安装，也可以安装单系统，我是用的是双系统安装，保留了先前的Windows，一方面我两个系统都要使用后，使用虚拟机的话性能太差，但是如果只是想学习Linux的一些操作不需要性能的话的话，推荐使用虚拟机，双系统风险有点大，我几次都差点把硬盘上数据搞没了，恢复数据花费的时间比装系统的时间多得多。要是第一动系统的话也建议使用虚拟机，事先了解一下安装系统的感觉，安装双系统的过程每个人可能遇到的问题不一样，即使是看着教程，也可能遇到不一样的问题，一旦自己遇到新的问题解决不好或者解决错了，真的可能就把另一个系统也给搞坏了。毕竟安装系统每个十遍以上，都不敢保证一定准确，我是以前有过安装系统的经验，就随便找了个教程，跟着做了，但还是充满风险的。对了，安装系统前我建议先把<a href="http://linux.vbird.org/">《鸟哥私房菜》</a>的前三章看了，这样可以让你对于系统的概念有一个更深刻的了解，下面具体讲一下我是怎么安装的。</p>
+</blockquote>
+<h3 id="1cestos"><a class="markdownIt-Anchor" href="#1cestos"></a> 1）Cestos</h3>
+<h4 id="第一步下载cestos-ios镜像"><a class="markdownIt-Anchor" href="#第一步下载cestos-ios镜像"></a> 第一步：下载Cestos ios镜像</h4>
+<p>可以直接到官网下，也可以到镜像网站上下，建议使用镜像网站下，速度确实快，相对于使用校园网，真的是快到爆啊！</p>
+<p>这里给出我是用的两镜像网站：（第二个安装manjaro要用，第一个没有）</p>
+<p><a href="http://ftp.twaren.net/Linux/CentOS/8/isos/x86_64/">国家高速网路中心</a></p>
+<p><a href="https://mirrors.ustc.edu.cn/manjaro-cd/">USTC中科大镜像</a></p>
+<h5 id="第二步制作启动盘"><a class="markdownIt-Anchor" href="#第二步制作启动盘"></a> 第二步：制作启动盘</h5>
+<p>工具：UltraIOS+4G以上的U盘</p>
+<p>注意：制作启动盘的过程中需要格式化U盘，对于U盘里重要的文件要事先保存</p>
+<p>做法如下：</p>
+<p><img src="/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829232219467.png" alt="image-20200829232219467"></p>
+<p>像这样</p>
+<p><img src="/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829230957699.png" alt="image-20200829230957699"></p>
+<p><img src="/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829231110060.png" alt="image-20200829231110060"></p>
+<p>之后的步骤，一直下一步到完成</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>系统安装</category>
+        <category>manjaro</category>
+        <category>cestos</category>
+      </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>双系统安装</tag>
+        <tag>manjaro</tag>
+        <tag>cestos</tag>
       </tags>
   </entry>
   <entry>
@@ -928,204 +928,6 @@ lower_bound()/upper_bound()</p>
         <tag>编程</tag>
         <tag>最优化理论</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>二分查找</title>
-    <url>/2020/09/27/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
-    <content><![CDATA[<h1 id="二分查找"><a class="markdownIt-Anchor" href="#二分查找"></a> 二分查找</h1>
-<h2 id="1-什么是二分查找"><a class="markdownIt-Anchor" href="#1-什么是二分查找"></a> 1、什么是二分查找</h2>
-<blockquote>
-<p>​	二分查找对具有指定左索引和右索引的连续序列进行操作。这就是所谓的查找空间。二分查找维护查找空间的左、右和中间指示符，并比较查找目标或将查找条件应用于集合的中间值；如果条件不满足或值不相等，则清除目标不可能存在的那一半，并在剩下的一半上继续查找，直到成功为止。如果查以空的一半结束，则无法满足条件，并且无法找到目标。</p>
-</blockquote>
-<a id="more"></a>
-<blockquote>
-<p>​	二进制搜索可以采用许多替代形式，并且可能并不总是直接搜索特定值。有时您希望应用特定条件或规则来确定接下来要搜索的哪一侧（左侧或右侧）。</p>
-<p>二分法的算法很简单，但在做题的过程中总是出现结果要么漏各一，要么循环条件不等号中少个等号。总的来说二分查找的<strong>思路简单，细节复杂</strong><br>
-<strong>条件:</strong> 二分查找的查找序列必须是有序的，所一般使用之前都会对序列进行排序</p>
-</blockquote>
-<h2 id="2-二分查找的框架"><a class="markdownIt-Anchor" href="#2-二分查找的框架"></a> 2、二分查找的框架</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ****yxc****</span></span><br><span class="line">    <span class="keyword">int</span> l=<span class="number">0</span>,r=n;</span><br><span class="line">    <span class="comment">// 第一种情况，check函数为判断mid性质的函数</span></span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(check(mid)) r=mid;</span><br><span class="line">        <span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 第二种情况</span></span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r+<span class="number">1</span>&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(check(mid)) l=mid;</span><br><span class="line">        <span class="keyword">else</span> r=mid<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>小技巧：不要出现else,所有的分类条件均放在else if后面<br>
-我的一些疑问<br>
-1、为什么使用第二种框架时mid=l+r+1&gt;&gt;1?<br>
-答：因为在C中整数相除是向下取整的，在缩小区间时l=mid这样当l与r很近时,l=mid=l就会造成死循环,故需要+1使得mid向上取整，这样无论在何时，区间都会缩小，循环总会结束。<br>
-2、二分搜索容易出现的错误与解决方式<br>
-a. 死循环：保证每次迭代后搜索区间都会缩小即可，使用第二种模板可以解决问题<br>
-b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜索前仔细思考<mark>我要查找的结果是什么</mark>，观察循环终止条件，考虑清楚循环在何种情况下结束。使用第二种模板，循环的终止条件已经固定在l==r时结束，故每次返回的结果也就很清晰了，所以使用第二种模板的话每次只需要考虑搜索策略就行了。</p>
-</blockquote>
-<h2 id="3-模板例题"><a class="markdownIt-Anchor" href="#3-模板例题"></a> 3、模板&amp;例题</h2>
-<h3 id="1-查找一个数"><a class="markdownIt-Anchor" href="#1-查找一个数"></a> 1、查找一个数</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = nums.length<span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(...) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;<span class="comment">//防止溢出</span></span><br><span class="line">        <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">            right = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>查找空间：[left,right]</p>
-<p>终止条件：left = right + 1</p>
-<p>由于查找空间为左闭右闭，在进行区间划分时，已经判断过该值，故每次区间划分区间变化如下：</p>
-<p>向左查找：right = mid - 1</p>
-<p>向右查找：left = mid + 1</p>
-</blockquote>
-<ol>
-<li>
-<p>为什么终止条件是≤，而不是&lt;</p>
-<blockquote>
-<p>因为初始化 right 的赋值是 nums.length-1，即最后一个元素的索引，而不是 nums.length。前者相当于两端都闭区间 [left, right]，后者相当于左闭右开区间 [left, right],这个算法的搜索区间是 [left, right]，而结束条件是搜索空间为空时结束，若是&lt;，则结束后left==right,在搜索空间里有元素nums[left]没有被搜索</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="2-在一个有序的数组里给定一个数查找比给定数小的最大的数的下标"><a class="markdownIt-Anchor" href="#2-在一个有序的数组里给定一个数查找比给定数小的最大的数的下标"></a> 2、在一个有序的数组里，给定一个数，查找比给定数小的最大的数的下标</h3>
-<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20200927155830822.png" alt="image-20200927155830822"></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LowerBound</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> <span class="built_in">size</span>,<span class="keyword">int</span> p)</span> <span class="comment">//复杂度O(log(n))</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> L = <span class="number">0</span>; <span class="comment">//查找区间的左端点</span></span><br><span class="line">    <span class="keyword">int</span> R = <span class="built_in">size</span> - <span class="number">1</span>; <span class="comment">//查找区间的右端点</span></span><br><span class="line">    <span class="keyword">int</span> lastPos = <span class="number">-1</span>; <span class="comment">//到目前为止找到的最优解</span></span><br><span class="line">    <span class="keyword">while</span>( L &lt;= R) &#123; <span class="comment">//如果查找区间不为空就继续查找</span></span><br><span class="line">        <span class="keyword">int</span> mid = L+(R-L)/<span class="number">2</span>; <span class="comment">//取查找区间正中元素的下标</span></span><br><span class="line">        <span class="keyword">if</span>(a[mid]&gt;= p)</span><br><span class="line">        	R = mid - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            lastPos = mid;</span><br><span class="line">            L = mid+<span class="number">1</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     &#125;</span><br><span class="line">	<span class="keyword">return</span> lastPos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="3-用二分法查找方程的根"><a class="markdownIt-Anchor" href="#3-用二分法查找方程的根"></a> 3、用二分法查找方程的根</h3>
-<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20200927160918618.png" alt="image-20200927160918618"></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> EPS = <span class="number">1e-6</span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span> </span>&#123; <span class="keyword">return</span> x*x*x - <span class="number">5</span>*x*x + <span class="number">10</span>*x - <span class="number">80</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> root, x1 = <span class="number">0</span>, x2 = <span class="number">100</span>,y;</span><br><span class="line">    root = x1+(x2-x1)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> triedTimes = <span class="number">1</span>; <span class="comment">//记录一共尝试多少次，对求根来说不是必须的</span></span><br><span class="line">    y = f(root);</span><br><span class="line">    <span class="keyword">while</span>( <span class="built_in">fabs</span>(y) &gt; EPS) &#123;</span><br><span class="line">        <span class="keyword">if</span>( y &gt; <span class="number">0</span> ) </span><br><span class="line">            x2 = root;</span><br><span class="line">        <span class="keyword">else</span> x1 = root;</span><br><span class="line">        	root = x1+(x2 - x1)/<span class="number">2</span>;</span><br><span class="line">        y = f(root);</span><br><span class="line">        triedTimes ++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.8f\n&quot;</span>,root);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,triedTimes);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="4-习题"><a class="markdownIt-Anchor" href="#4-习题"></a> 4、习题</h2>
-<table>
-<thead>
-<tr>
-<th>题目</th>
-<th>题解</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof/">查找0~n-1中缺失的数字</a></td>
-<td></td>
-</tr>
-<tr>
-<td>查找一个数</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="https://leetcode-cn.com/problems/sqrtx/">x的平方根</a></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>算法</category>
-        <category>二分查找</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>二叉树</title>
-    <url>/2021/04/10/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
-    <content><![CDATA[<h2 id="二叉树介绍"><a class="markdownIt-Anchor" href="#二叉树介绍"></a> 二叉树介绍</h2>
-<p>二叉树被定义为树形结构，每个节点有且只有两个孩子，一个是左孩子，一个是右孩子，如下图所示。</p>
-<p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png" alt="Binary Tree Data Structure"></p>
-<p>二叉树的顶部节点称为根节点，底部节点成为叶子节点。二叉树可以视为跟在顶部，叶子在底部的层次结构。二叉树应用广泛，除了可以用于数据存储和恢复，表达式求值，网络恢复等等，还可以用于各种搜索，排序和图算法。</p>
-<a id="more"></a>
-<h3 id="满二叉树"><a class="markdownIt-Anchor" href="#满二叉树"></a> 满二叉树</h3>
-<p>如果一个二叉树只有度为0和度为2的节点，并且度为0的节点在同一层上，则这颗二叉树称为满二叉树，如下图所示，若树的深度为k，则这棵树有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^k-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.932438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>个节点</p>
-<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20200806185805576.png" alt="img"></p>
-<h3 id="完全二叉树"><a class="markdownIt-Anchor" href="#完全二叉树"></a> 完全二叉树</h3>
-<p>在完全二叉树中，除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 h 层，则该层包含 1~<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mrow><mo stretchy="false">(</mo><mi>h</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">2^{(h-1)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8879999999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight">h</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span></span>个节点。堆就是一个完全二叉树</p>
-<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20200920221638903.png" alt="img"></p>
-<h3 id="二叉搜索树"><a class="markdownIt-Anchor" href="#二叉搜索树"></a> 二叉搜索树</h3>
-<p>二叉搜索树是一个有序树，且具有如下性质：</p>
-<ul>
-<li>若左子树不空，则左子树上所有节点的值均小于根节点的值</li>
-<li>若右子树不空，则右子树上所有节点的值均大于根节点的值</li>
-<li>它的左子树和右子树也分别为二叉排序树</li>
-</ul>
-<p>下图都是二叉搜索树</p>
-<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20200806190304693.png" alt="img"></p>
-<h3 id="平衡二叉搜索树avl"><a class="markdownIt-Anchor" href="#平衡二叉搜索树avl"></a> 平衡二叉搜索树(AVL)</h3>
-<p>树的高度为log(N)，其中n为节点的数目，左右子树深度相差最多为1。如下图所示，左边的是平衡二叉树，右边的不是平衡二叉树。</p>
-<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20220612212939/UntitledDiagramdrawio-660x371.png" alt="img"></p>
-<p>平衡二叉树保证树的查找，插入和删除的时间复杂度保持在O(log N)</p>
-<h3 id="红黑树"><a class="markdownIt-Anchor" href="#红黑树"></a> 红黑树</h3>
-<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20221125114012/typesdrawio.png" alt="Binary Tree Special cases"></p>
-<h2 id="二叉树的表示"><a class="markdownIt-Anchor" href="#二叉树的表示"></a> 二叉树的表示</h2>
-<p>每一个树节点都包含如下部分</p>
-<ul>
-<li>数据部分</li>
-<li>指向左子树的指针</li>
-<li>指向右子树的指针</li>
-</ul>
-<h3 id="二叉树的链表实现"><a class="markdownIt-Anchor" href="#二叉树的链表实现"></a> 二叉树的链表实现</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Class containing left and right child</span></span><br><span class="line"><span class="comment">// of current node and key value</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> key;</span><br><span class="line">	Node left, right;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> item)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		key = item;</span><br><span class="line">		left = right = <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="二叉树的数组实现"><a class="markdownIt-Anchor" href="#二叉树的数组实现"></a> 二叉树的数组实现</h3>
-<h2 id="二叉树的一些性质"><a class="markdownIt-Anchor" href="#二叉树的一些性质"></a> 二叉树的一些性质</h2>
-<h2 id="二叉树的一些操作"><a class="markdownIt-Anchor" href="#二叉树的一些操作"></a> 二叉树的一些操作</h2>
-<h3 id="基本操作"><a class="markdownIt-Anchor" href="#基本操作"></a> 基本操作</h3>
-<ul>
-<li>插入元素</li>
-<li>移动元素</li>
-<li>查找元素</li>
-<li>删除元素</li>
-<li>遍历元素</li>
-</ul>
-<h3 id="二叉树的其他操作"><a class="markdownIt-Anchor" href="#二叉树的其他操作"></a> 二叉树的其他操作</h3>
-<ul>
-<li>求树的高度</li>
-<li>求树的宽度</li>
-<li>求节点数</li>
-</ul>
-<h2 id="二叉树的遍历"><a class="markdownIt-Anchor" href="#二叉树的遍历"></a> 二叉树的遍历</h2>
-<h3 id="先序遍历"><a class="markdownIt-Anchor" href="#先序遍历"></a> 先序遍历</h3>
-<p>先处理根节点，然后处理左子树，最后处理右子树</p>
-<h4 id="递归法"><a class="markdownIt-Anchor" href="#递归法"></a> 递归法</h4>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preorder</span><span class="params">(TreeNode root, List&lt;Integer&gt; ans)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    ans.add(root.val);</span><br><span class="line">    inorder(root.left, ans);</span><br><span class="line">    inorder(root.right, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="迭代法"><a class="markdownIt-Anchor" href="#迭代法"></a> 迭代法</h4>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; ans = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="keyword">null</span>)</span><br><span class="line">        stack.push(root);</span><br><span class="line">    <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">        TreeNode node = stack.pop();</span><br><span class="line">        ans.add(node.val);</span><br><span class="line">        <span class="keyword">if</span> (node.right != <span class="keyword">null</span>)</span><br><span class="line">            stack.push(node.right);</span><br><span class="line">        <span class="keyword">if</span> (node.left != <span class="keyword">null</span>)</span><br><span class="line">            stack.push(node.left);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="中序遍历"><a class="markdownIt-Anchor" href="#中序遍历"></a> 中序遍历</h3>
-<p>先处理左子树，然后处理根节点，最后处理右子树</p>
-<h4 id="递归法-2"><a class="markdownIt-Anchor" href="#递归法-2"></a> 递归法</h4>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inorder</span><span class="params">(TreeNode root, List&lt;Integer&gt; ans)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    inorder(root.left, ans);</span><br><span class="line">    ans.add(root.val);</span><br><span class="line">    inorder(root.right, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="迭代法-2"><a class="markdownIt-Anchor" href="#迭代法-2"></a> 迭代法</h4>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; ans = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    TreeNode cur = root;</span><br><span class="line">    <span class="keyword">while</span> (cur != <span class="keyword">null</span> || !stack.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 左子树未结束，入栈</span></span><br><span class="line">            stack.push(cur);</span><br><span class="line">            <span class="comment">// 一直向左子树移动</span></span><br><span class="line">            cur = cur.left;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 左子树结束，出栈</span></span><br><span class="line">            cur = stack.pop();</span><br><span class="line">            <span class="comment">// 处理中间节点</span></span><br><span class="line">            ans.add(cur.val);</span><br><span class="line">            <span class="comment">// 移动到右子树</span></span><br><span class="line">            cur = cur.right;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="后序遍历"><a class="markdownIt-Anchor" href="#后序遍历"></a> 后序遍历</h3>
-<p>先处理左子树，然后处理右子树，最后处理根节点</p>
-<h4 id="递归法-3"><a class="markdownIt-Anchor" href="#递归法-3"></a> 递归法</h4>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">postorder</span><span class="params">(TreeNode root, List&lt;Integer&gt; ans)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    postorder(root.left, ans);</span><br><span class="line">    postorder(root.right, ans);</span><br><span class="line">    ans.add(root.val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="迭代法-3"><a class="markdownIt-Anchor" href="#迭代法-3"></a> 迭代法</h4>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 迭代法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; ans = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="keyword">null</span>)</span><br><span class="line">        stack.push(root);</span><br><span class="line">    <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">        TreeNode node = stack.pop();</span><br><span class="line">        ans.add(node.val);</span><br><span class="line">        <span class="keyword">if</span> (node.left != <span class="keyword">null</span>)</span><br><span class="line">            stack.push(node.left);</span><br><span class="line">        <span class="keyword">if</span> (node.right != <span class="keyword">null</span>)</span><br><span class="line">            stack.push(node.right);</span><br><span class="line">    &#125;</span><br><span class="line">    Collections.reverse(ans);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="层序遍历"><a class="markdownIt-Anchor" href="#层序遍历"></a> 层序遍历</h3>
-<p>按照树的层次结构遍历，需要用队列辅助遍历</p>
-<h4 id="迭代法-4"><a class="markdownIt-Anchor" href="#迭代法-4"></a> 迭代法</h4>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
-<h2 id="二叉树的应用"><a class="markdownIt-Anchor" href="#二叉树的应用"></a> 二叉树的应用</h2>
-<ul>
-<li>搜索算法——二叉搜索</li>
-<li>排序算法——二叉排序</li>
-<li>实现数据库系统</li>
-<li>实现文件系统，例如B树，B+树</li>
-<li>实现决策树算法</li>
-<li>HTML的DOM</li>
-<li>文件查找器</li>
-<li>作为Excel的基础数据结构</li>
-<li>表达书求值</li>
-<li>路由算法</li>
-</ul>
-<h2 id="二叉树的优缺点"><a class="markdownIt-Anchor" href="#二叉树的优缺点"></a> 二叉树的优缺点</h2>
-<h3 id="优点"><a class="markdownIt-Anchor" href="#优点"></a> 优点</h3>
-<ul>
-<li>查找效率高，时间复杂度为O(log n)</li>
-<li>遍历操作是有序的，例如先序遍历，中序遍历，后序遍历</li>
-<li>存储效率高，相对于其他树形结构，二叉树的存储效率是最高的，因为每个节点只有两个指针</li>
-<li>插入和删除效率高，时间复杂度为O(N)</li>
-<li>可以用于排序，例如堆排序和二叉搜索排序</li>
-</ul>
-<h3 id="缺点"><a class="markdownIt-Anchor" href="#缺点"></a> 缺点</h3>
-<ul>
-<li>结构固定，每个父节点只有两个子节点</li>
-<li>不平衡结构，当一个节点只有一个子节点时，查找效率会退化成O(N)</li>
-<li>相对于线性数据结构而言，存储效率低，因为每个节点需要两个额外空间存储子节点的指针</li>
-<li>使树保持平衡的算法复杂，例如AVL树，红黑树等等</li>
-</ul>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-        <category>树</category>
-      </categories>
   </entry>
   <entry>
     <title>java基础</title>
@@ -2273,6 +2075,204 @@ b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜�
       </tags>
   </entry>
   <entry>
+    <title>二分查找</title>
+    <url>/2020/09/27/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
+    <content><![CDATA[<h1 id="二分查找"><a class="markdownIt-Anchor" href="#二分查找"></a> 二分查找</h1>
+<h2 id="1-什么是二分查找"><a class="markdownIt-Anchor" href="#1-什么是二分查找"></a> 1、什么是二分查找</h2>
+<blockquote>
+<p>​	二分查找对具有指定左索引和右索引的连续序列进行操作。这就是所谓的查找空间。二分查找维护查找空间的左、右和中间指示符，并比较查找目标或将查找条件应用于集合的中间值；如果条件不满足或值不相等，则清除目标不可能存在的那一半，并在剩下的一半上继续查找，直到成功为止。如果查以空的一半结束，则无法满足条件，并且无法找到目标。</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>​	二进制搜索可以采用许多替代形式，并且可能并不总是直接搜索特定值。有时您希望应用特定条件或规则来确定接下来要搜索的哪一侧（左侧或右侧）。</p>
+<p>二分法的算法很简单，但在做题的过程中总是出现结果要么漏各一，要么循环条件不等号中少个等号。总的来说二分查找的<strong>思路简单，细节复杂</strong><br>
+<strong>条件:</strong> 二分查找的查找序列必须是有序的，所一般使用之前都会对序列进行排序</p>
+</blockquote>
+<h2 id="2-二分查找的框架"><a class="markdownIt-Anchor" href="#2-二分查找的框架"></a> 2、二分查找的框架</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ****yxc****</span></span><br><span class="line">    <span class="keyword">int</span> l=<span class="number">0</span>,r=n;</span><br><span class="line">    <span class="comment">// 第一种情况，check函数为判断mid性质的函数</span></span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(check(mid)) r=mid;</span><br><span class="line">        <span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 第二种情况</span></span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r+<span class="number">1</span>&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(check(mid)) l=mid;</span><br><span class="line">        <span class="keyword">else</span> r=mid<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>小技巧：不要出现else,所有的分类条件均放在else if后面<br>
+我的一些疑问<br>
+1、为什么使用第二种框架时mid=l+r+1&gt;&gt;1?<br>
+答：因为在C中整数相除是向下取整的，在缩小区间时l=mid这样当l与r很近时,l=mid=l就会造成死循环,故需要+1使得mid向上取整，这样无论在何时，区间都会缩小，循环总会结束。<br>
+2、二分搜索容易出现的错误与解决方式<br>
+a. 死循环：保证每次迭代后搜索区间都会缩小即可，使用第二种模板可以解决问题<br>
+b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜索前仔细思考<mark>我要查找的结果是什么</mark>，观察循环终止条件，考虑清楚循环在何种情况下结束。使用第二种模板，循环的终止条件已经固定在l==r时结束，故每次返回的结果也就很清晰了，所以使用第二种模板的话每次只需要考虑搜索策略就行了。</p>
+</blockquote>
+<h2 id="3-模板例题"><a class="markdownIt-Anchor" href="#3-模板例题"></a> 3、模板&amp;例题</h2>
+<h3 id="1-查找一个数"><a class="markdownIt-Anchor" href="#1-查找一个数"></a> 1、查找一个数</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = nums.length<span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(...) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;<span class="comment">//防止溢出</span></span><br><span class="line">        <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">            right = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>查找空间：[left,right]</p>
+<p>终止条件：left = right + 1</p>
+<p>由于查找空间为左闭右闭，在进行区间划分时，已经判断过该值，故每次区间划分区间变化如下：</p>
+<p>向左查找：right = mid - 1</p>
+<p>向右查找：left = mid + 1</p>
+</blockquote>
+<ol>
+<li>
+<p>为什么终止条件是≤，而不是&lt;</p>
+<blockquote>
+<p>因为初始化 right 的赋值是 nums.length-1，即最后一个元素的索引，而不是 nums.length。前者相当于两端都闭区间 [left, right]，后者相当于左闭右开区间 [left, right],这个算法的搜索区间是 [left, right]，而结束条件是搜索空间为空时结束，若是&lt;，则结束后left==right,在搜索空间里有元素nums[left]没有被搜索</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="2-在一个有序的数组里给定一个数查找比给定数小的最大的数的下标"><a class="markdownIt-Anchor" href="#2-在一个有序的数组里给定一个数查找比给定数小的最大的数的下标"></a> 2、在一个有序的数组里，给定一个数，查找比给定数小的最大的数的下标</h3>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20200927155830822.png" alt="image-20200927155830822"></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LowerBound</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> <span class="built_in">size</span>,<span class="keyword">int</span> p)</span> <span class="comment">//复杂度O(log(n))</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> L = <span class="number">0</span>; <span class="comment">//查找区间的左端点</span></span><br><span class="line">    <span class="keyword">int</span> R = <span class="built_in">size</span> - <span class="number">1</span>; <span class="comment">//查找区间的右端点</span></span><br><span class="line">    <span class="keyword">int</span> lastPos = <span class="number">-1</span>; <span class="comment">//到目前为止找到的最优解</span></span><br><span class="line">    <span class="keyword">while</span>( L &lt;= R) &#123; <span class="comment">//如果查找区间不为空就继续查找</span></span><br><span class="line">        <span class="keyword">int</span> mid = L+(R-L)/<span class="number">2</span>; <span class="comment">//取查找区间正中元素的下标</span></span><br><span class="line">        <span class="keyword">if</span>(a[mid]&gt;= p)</span><br><span class="line">        	R = mid - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            lastPos = mid;</span><br><span class="line">            L = mid+<span class="number">1</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     &#125;</span><br><span class="line">	<span class="keyword">return</span> lastPos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="3-用二分法查找方程的根"><a class="markdownIt-Anchor" href="#3-用二分法查找方程的根"></a> 3、用二分法查找方程的根</h3>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20200927160918618.png" alt="image-20200927160918618"></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> EPS = <span class="number">1e-6</span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span> </span>&#123; <span class="keyword">return</span> x*x*x - <span class="number">5</span>*x*x + <span class="number">10</span>*x - <span class="number">80</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> root, x1 = <span class="number">0</span>, x2 = <span class="number">100</span>,y;</span><br><span class="line">    root = x1+(x2-x1)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> triedTimes = <span class="number">1</span>; <span class="comment">//记录一共尝试多少次，对求根来说不是必须的</span></span><br><span class="line">    y = f(root);</span><br><span class="line">    <span class="keyword">while</span>( <span class="built_in">fabs</span>(y) &gt; EPS) &#123;</span><br><span class="line">        <span class="keyword">if</span>( y &gt; <span class="number">0</span> ) </span><br><span class="line">            x2 = root;</span><br><span class="line">        <span class="keyword">else</span> x1 = root;</span><br><span class="line">        	root = x1+(x2 - x1)/<span class="number">2</span>;</span><br><span class="line">        y = f(root);</span><br><span class="line">        triedTimes ++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.8f\n&quot;</span>,root);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,triedTimes);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-习题"><a class="markdownIt-Anchor" href="#4-习题"></a> 4、习题</h2>
+<table>
+<thead>
+<tr>
+<th>题目</th>
+<th>题解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof/">查找0~n-1中缺失的数字</a></td>
+<td></td>
+</tr>
+<tr>
+<td>查找一个数</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/sqrtx/">x的平方根</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>算法</category>
+        <category>二分查找</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>二叉树</title>
+    <url>/2021/04/10/%E4%BA%8C%E5%8F%89%E6%A0%91/</url>
+    <content><![CDATA[<h2 id="二叉树介绍"><a class="markdownIt-Anchor" href="#二叉树介绍"></a> 二叉树介绍</h2>
+<p>二叉树被定义为树形结构，每个节点有且只有两个孩子，一个是左孩子，一个是右孩子，如下图所示。</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/binary-tree-to-DLL.png" alt="Binary Tree Data Structure"></p>
+<p>二叉树的顶部节点称为根节点，底部节点成为叶子节点。二叉树可以视为跟在顶部，叶子在底部的层次结构。二叉树应用广泛，除了可以用于数据存储和恢复，表达式求值，网络恢复等等，还可以用于各种搜索，排序和图算法。</p>
+<a id="more"></a>
+<h3 id="满二叉树"><a class="markdownIt-Anchor" href="#满二叉树"></a> 满二叉树</h3>
+<p>如果一个二叉树只有度为0和度为2的节点，并且度为0的节点在同一层上，则这颗二叉树称为满二叉树，如下图所示，若树的深度为k，则这棵树有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mi>k</mi></msup><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">2^k-1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.932438em;vertical-align:-0.08333em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.849108em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>个节点</p>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20200806185805576.png" alt="img"></p>
+<h3 id="完全二叉树"><a class="markdownIt-Anchor" href="#完全二叉树"></a> 完全二叉树</h3>
+<p>在完全二叉树中，除了最底层节点可能没填满外，其余每层节点数都达到最大值，并且最下面一层的节点都集中在该层最左边的若干位置。若最底层为第 h 层，则该层包含 1~<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msup><mn>2</mn><mrow><mo stretchy="false">(</mo><mi>h</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup></mrow><annotation encoding="application/x-tex">2^{(h-1)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8879999999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8879999999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathdefault mtight">h</span><span class="mbin mtight">−</span><span class="mord mtight">1</span><span class="mclose mtight">)</span></span></span></span></span></span></span></span></span></span></span></span>个节点。堆就是一个完全二叉树</p>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20200920221638903.png" alt="img"></p>
+<h3 id="二叉搜索树"><a class="markdownIt-Anchor" href="#二叉搜索树"></a> 二叉搜索树</h3>
+<p>二叉搜索树是一个有序树，且具有如下性质：</p>
+<ul>
+<li>若左子树不空，则左子树上所有节点的值均小于根节点的值</li>
+<li>若右子树不空，则右子树上所有节点的值均大于根节点的值</li>
+<li>它的左子树和右子树也分别为二叉排序树</li>
+</ul>
+<p>下图都是二叉搜索树</p>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20200806190304693.png" alt="img"></p>
+<h3 id="平衡二叉搜索树avl"><a class="markdownIt-Anchor" href="#平衡二叉搜索树avl"></a> 平衡二叉搜索树(AVL)</h3>
+<p>树的高度为log(N)，其中n为节点的数目，左右子树深度相差最多为1。如下图所示，左边的是平衡二叉树，右边的不是平衡二叉树。</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20220612212939/UntitledDiagramdrawio-660x371.png" alt="img"></p>
+<p>平衡二叉树保证树的查找，插入和删除的时间复杂度保持在O(log N)</p>
+<h3 id="红黑树"><a class="markdownIt-Anchor" href="#红黑树"></a> 红黑树</h3>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20221125114012/typesdrawio.png" alt="Binary Tree Special cases"></p>
+<h2 id="二叉树的表示"><a class="markdownIt-Anchor" href="#二叉树的表示"></a> 二叉树的表示</h2>
+<p>每一个树节点都包含如下部分</p>
+<ul>
+<li>数据部分</li>
+<li>指向左子树的指针</li>
+<li>指向右子树的指针</li>
+</ul>
+<h3 id="二叉树的链表实现"><a class="markdownIt-Anchor" href="#二叉树的链表实现"></a> 二叉树的链表实现</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Class containing left and right child</span></span><br><span class="line"><span class="comment">// of current node and key value</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Node</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> key;</span><br><span class="line">	Node left, right;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Node</span><span class="params">(<span class="keyword">int</span> item)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		key = item;</span><br><span class="line">		left = right = <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="二叉树的数组实现"><a class="markdownIt-Anchor" href="#二叉树的数组实现"></a> 二叉树的数组实现</h3>
+<h2 id="二叉树的一些性质"><a class="markdownIt-Anchor" href="#二叉树的一些性质"></a> 二叉树的一些性质</h2>
+<h2 id="二叉树的一些操作"><a class="markdownIt-Anchor" href="#二叉树的一些操作"></a> 二叉树的一些操作</h2>
+<h3 id="基本操作"><a class="markdownIt-Anchor" href="#基本操作"></a> 基本操作</h3>
+<ul>
+<li>插入元素</li>
+<li>移动元素</li>
+<li>查找元素</li>
+<li>删除元素</li>
+<li>遍历元素</li>
+</ul>
+<h3 id="二叉树的其他操作"><a class="markdownIt-Anchor" href="#二叉树的其他操作"></a> 二叉树的其他操作</h3>
+<ul>
+<li>求树的高度</li>
+<li>求树的宽度</li>
+<li>求节点数</li>
+</ul>
+<h2 id="二叉树的遍历"><a class="markdownIt-Anchor" href="#二叉树的遍历"></a> 二叉树的遍历</h2>
+<h3 id="先序遍历"><a class="markdownIt-Anchor" href="#先序遍历"></a> 先序遍历</h3>
+<p>先处理根节点，然后处理左子树，最后处理右子树</p>
+<h4 id="递归法"><a class="markdownIt-Anchor" href="#递归法"></a> 递归法</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">preorder</span><span class="params">(TreeNode root, List&lt;Integer&gt; ans)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    ans.add(root.val);</span><br><span class="line">    inorder(root.left, ans);</span><br><span class="line">    inorder(root.right, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="迭代法"><a class="markdownIt-Anchor" href="#迭代法"></a> 迭代法</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">preorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; ans = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="keyword">null</span>)</span><br><span class="line">        stack.push(root);</span><br><span class="line">    <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">        TreeNode node = stack.pop();</span><br><span class="line">        ans.add(node.val);</span><br><span class="line">        <span class="keyword">if</span> (node.right != <span class="keyword">null</span>)</span><br><span class="line">            stack.push(node.right);</span><br><span class="line">        <span class="keyword">if</span> (node.left != <span class="keyword">null</span>)</span><br><span class="line">            stack.push(node.left);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="中序遍历"><a class="markdownIt-Anchor" href="#中序遍历"></a> 中序遍历</h3>
+<p>先处理左子树，然后处理根节点，最后处理右子树</p>
+<h4 id="递归法-2"><a class="markdownIt-Anchor" href="#递归法-2"></a> 递归法</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">inorder</span><span class="params">(TreeNode root, List&lt;Integer&gt; ans)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    inorder(root.left, ans);</span><br><span class="line">    ans.add(root.val);</span><br><span class="line">    inorder(root.right, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="迭代法-2"><a class="markdownIt-Anchor" href="#迭代法-2"></a> 迭代法</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">inorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; ans = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    TreeNode cur = root;</span><br><span class="line">    <span class="keyword">while</span> (cur != <span class="keyword">null</span> || !stack.isEmpty()) &#123;</span><br><span class="line">        <span class="keyword">if</span> (cur != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="comment">// 左子树未结束，入栈</span></span><br><span class="line">            stack.push(cur);</span><br><span class="line">            <span class="comment">// 一直向左子树移动</span></span><br><span class="line">            cur = cur.left;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 左子树结束，出栈</span></span><br><span class="line">            cur = stack.pop();</span><br><span class="line">            <span class="comment">// 处理中间节点</span></span><br><span class="line">            ans.add(cur.val);</span><br><span class="line">            <span class="comment">// 移动到右子树</span></span><br><span class="line">            cur = cur.right;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="后序遍历"><a class="markdownIt-Anchor" href="#后序遍历"></a> 后序遍历</h3>
+<p>先处理左子树，然后处理右子树，最后处理根节点</p>
+<h4 id="递归法-3"><a class="markdownIt-Anchor" href="#递归法-3"></a> 递归法</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">postorder</span><span class="params">(TreeNode root, List&lt;Integer&gt; ans)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    postorder(root.left, ans);</span><br><span class="line">    postorder(root.right, ans);</span><br><span class="line">    ans.add(root.val);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="迭代法-3"><a class="markdownIt-Anchor" href="#迭代法-3"></a> 迭代法</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 迭代法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> List&lt;Integer&gt; <span class="title">postorderTraversal</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    List&lt;Integer&gt; ans = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    Deque&lt;TreeNode&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    <span class="keyword">if</span> (root != <span class="keyword">null</span>)</span><br><span class="line">        stack.push(root);</span><br><span class="line">    <span class="keyword">while</span> (!stack.isEmpty()) &#123;</span><br><span class="line">        TreeNode node = stack.pop();</span><br><span class="line">        ans.add(node.val);</span><br><span class="line">        <span class="keyword">if</span> (node.left != <span class="keyword">null</span>)</span><br><span class="line">            stack.push(node.left);</span><br><span class="line">        <span class="keyword">if</span> (node.right != <span class="keyword">null</span>)</span><br><span class="line">            stack.push(node.right);</span><br><span class="line">    &#125;</span><br><span class="line">    Collections.reverse(ans);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="层序遍历"><a class="markdownIt-Anchor" href="#层序遍历"></a> 层序遍历</h3>
+<p>按照树的层次结构遍历，需要用队列辅助遍历</p>
+<h4 id="迭代法-4"><a class="markdownIt-Anchor" href="#迭代法-4"></a> 迭代法</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="二叉树的应用"><a class="markdownIt-Anchor" href="#二叉树的应用"></a> 二叉树的应用</h2>
+<ul>
+<li>搜索算法——二叉搜索</li>
+<li>排序算法——二叉排序</li>
+<li>实现数据库系统</li>
+<li>实现文件系统，例如B树，B+树</li>
+<li>实现决策树算法</li>
+<li>HTML的DOM</li>
+<li>文件查找器</li>
+<li>作为Excel的基础数据结构</li>
+<li>表达书求值</li>
+<li>路由算法</li>
+</ul>
+<h2 id="二叉树的优缺点"><a class="markdownIt-Anchor" href="#二叉树的优缺点"></a> 二叉树的优缺点</h2>
+<h3 id="优点"><a class="markdownIt-Anchor" href="#优点"></a> 优点</h3>
+<ul>
+<li>查找效率高，时间复杂度为O(log n)</li>
+<li>遍历操作是有序的，例如先序遍历，中序遍历，后序遍历</li>
+<li>存储效率高，相对于其他树形结构，二叉树的存储效率是最高的，因为每个节点只有两个指针</li>
+<li>插入和删除效率高，时间复杂度为O(N)</li>
+<li>可以用于排序，例如堆排序和二叉搜索排序</li>
+</ul>
+<h3 id="缺点"><a class="markdownIt-Anchor" href="#缺点"></a> 缺点</h3>
+<ul>
+<li>结构固定，每个父节点只有两个子节点</li>
+<li>不平衡结构，当一个节点只有一个子节点时，查找效率会退化成O(N)</li>
+<li>相对于线性数据结构而言，存储效率低，因为每个节点需要两个额外空间存储子节点的指针</li>
+<li>使树保持平衡的算法复杂，例如AVL树，红黑树等等</li>
+</ul>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+        <category>树</category>
+      </categories>
+  </entry>
+  <entry>
     <title>优化问题求解</title>
     <url>/2022/11/18/%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3/</url>
     <content><![CDATA[<h2 id="目标函数1"><a class="markdownIt-Anchor" href="#目标函数1"></a> 目标函数1</h2>
@@ -2748,7 +2748,7 @@ t_{ikl}\ge P_{ik}-P_{il}
 <a id="more"></a>
 <h2 id="202快乐数"><a class="markdownIt-Anchor" href="#202快乐数"></a> 202.快乐数</h2>
 <h3 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h3>
-<p><img src="/2023/05/08/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/image-20230509103438433.png" alt="image-20230509103438433"></p>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230509104243152.png" alt="image-20230509103438433"></p>
 <h3 id="题解"><a class="markdownIt-Anchor" href="#题解"></a> 题解</h3>
 <h4 id="我的思路"><a class="markdownIt-Anchor" href="#我的思路"></a> 我的思路</h4>
 <p>这题要求判断n是不是快乐数，当满足题目条件时为快乐数，若不为快乐数，则陷入无限循环，说明若n不为快乐数，则每位数字的平方和一定会重复出现，所以当每位数字的平方和重复出现时n不为快乐数。这里用一个集合记录每次n的每位数字的平方和，若平方和重复出现则n不是快乐数，反之是快乐数。</p>
@@ -2756,7 +2756,7 @@ t_{ikl}\ge P_{ik}-P_{il}
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 统计每个位置上的数字平方和</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">getNextSum</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (n &gt; <span class="number">0</span>) &#123;</span><br><span class="line">            ans += (n % <span class="number">10</span>) * (n % <span class="number">10</span>);</span><br><span class="line">            n /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">isHappy</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        Set&lt;Integer&gt; set = <span class="keyword">new</span> HashSet&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> sum = getNextSum(n);</span><br><span class="line">        <span class="keyword">while</span> (sum != <span class="number">1</span> &amp;&amp; !set.contains(sum)) &#123;</span><br><span class="line">            set.add(sum);</span><br><span class="line">            sum = getNextSum(sum);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum == <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="454四数相加ii"><a class="markdownIt-Anchor" href="#454四数相加ii"></a> 454.四数相加II</h2>
 <h3 id="题目描述-2"><a class="markdownIt-Anchor" href="#题目描述-2"></a> 题目描述</h3>
-<p><img src="/2023/05/08/%E5%93%88%E5%B8%8C%E8%A1%A8%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/image-20230509104243152.png" alt="image-20230509104243152"></p>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230509103438433.png" alt="image-20230509104243152"></p>
 <h3 id="题解-2"><a class="markdownIt-Anchor" href="#题解-2"></a> 题解</h3>
 <h4 id="我的思路-2"><a class="markdownIt-Anchor" href="#我的思路-2"></a> 我的思路</h4>
 <p>这题要求计算四数和为0的元组个数，可以考虑两数和，将nums1+nums2和nums3+nums4分别看成一组，使用哈希表记录nums1+nums2不同的和以及每个和出现的次数，在枚举nums3+nums4和的时候判断之前是否出现过他的负数，若出现过则满足要求加入答案，反之继续枚举。</p>
@@ -3272,6 +3272,21 @@ t_{ikl}\ge P_{ik}-P_{il}
       </tags>
   </entry>
   <entry>
+    <title>字符串</title>
+    <url>/2021/03/28/%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
+    <content><![CDATA[<h1 id="相关算法"><a class="markdownIt-Anchor" href="#相关算法"></a> 相关算法</h1>
+<h2 id="串匹配算法"><a class="markdownIt-Anchor" href="#串匹配算法"></a> 串匹配算法</h2>
+<h3 id="kmp算法"><a class="markdownIt-Anchor" href="#kmp算法"></a> KMP算法</h3>
+<a id="more"></a>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 求next数组，与匹配算法相同</span></span><br><span class="line"><span class="comment">// s[]是模式串，p[]是模板串, m是s的长度，n是p的长度</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (j &amp;&amp; p[i] != p[j + <span class="number">1</span>]) j = ne[j];</span><br><span class="line">        <span class="keyword">if</span> (p[i] == p[j + <span class="number">1</span>]) j ++ ;</span><br><span class="line">        ne[i] = j;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配算法</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, j = <span class="number">0</span>; i &lt;= m; i ++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (j &amp;&amp; s[i] != p[j + <span class="number">1</span>]) j = ne[j];<span class="comment">//j能后退，且字母匹配失败，j后移</span></span><br><span class="line">    <span class="keyword">if</span> (s[i] == p[j + <span class="number">1</span>]) j ++ ;<span class="comment">//字母匹配成功，j+1</span></span><br><span class="line">    <span class="keyword">if</span> (j == n)<span class="comment">//匹配成功</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, i - n);</span><br><span class="line">        j = ne[j];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="相关题目"><a class="markdownIt-Anchor" href="#相关题目"></a> 相关题目</h1>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+        <category>字符串</category>
+      </categories>
+  </entry>
+  <entry>
     <title>学生管理系统</title>
     <url>/2020/12/14/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/</url>
     <content><![CDATA[<h1 id="学生管理系统"><a class="markdownIt-Anchor" href="#学生管理系统"></a> 学生管理系统</h1>
@@ -3512,21 +3527,6 @@ t_{ikl}\ge P_{ik}-P_{il}
 <li>快捷键“ctrl+C，D”。</li>
 </ol>
 ]]></content>
-  </entry>
-  <entry>
-    <title>字符串</title>
-    <url>/2021/03/28/%E5%AD%97%E7%AC%A6%E4%B8%B2/</url>
-    <content><![CDATA[<h1 id="相关算法"><a class="markdownIt-Anchor" href="#相关算法"></a> 相关算法</h1>
-<h2 id="串匹配算法"><a class="markdownIt-Anchor" href="#串匹配算法"></a> 串匹配算法</h2>
-<h3 id="kmp算法"><a class="markdownIt-Anchor" href="#kmp算法"></a> KMP算法</h3>
-<a id="more"></a>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 求next数组，与匹配算法相同</span></span><br><span class="line"><span class="comment">// s[]是模式串，p[]是模板串, m是s的长度，n是p的长度</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>, j = <span class="number">0</span>; i &lt;= n; i ++ )</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span> (j &amp;&amp; p[i] != p[j + <span class="number">1</span>]) j = ne[j];</span><br><span class="line">        <span class="keyword">if</span> (p[i] == p[j + <span class="number">1</span>]) j ++ ;</span><br><span class="line">        ne[i] = j;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 匹配算法</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>, j = <span class="number">0</span>; i &lt;= m; i ++ )</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">while</span> (j &amp;&amp; s[i] != p[j + <span class="number">1</span>]) j = ne[j];<span class="comment">//j能后退，且字母匹配失败，j后移</span></span><br><span class="line">    <span class="keyword">if</span> (s[i] == p[j + <span class="number">1</span>]) j ++ ;<span class="comment">//字母匹配成功，j+1</span></span><br><span class="line">    <span class="keyword">if</span> (j == n)<span class="comment">//匹配成功</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, i - n);</span><br><span class="line">        j = ne[j];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="相关题目"><a class="markdownIt-Anchor" href="#相关题目"></a> 相关题目</h1>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-        <category>字符串</category>
-      </categories>
   </entry>
   <entry>
     <title>对话框QDialog</title>
@@ -4004,64 +4004,6 @@ t_{ikl}\ge P_{ik}-P_{il}
       </tags>
   </entry>
   <entry>
-    <title>栈基础</title>
-    <url>/2021/03/27/%E6%A0%88%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<p>栈是一种遵循某种顺序的数据结构，是一种先入后出或者后入先出的顺序结构，如下图所示<br>
-<img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221219100314/stack.drawio2.png" alt></p>
-<a id="more"></a>
-<h2 id="栈的基本操作"><a class="markdownIt-Anchor" href="#栈的基本操作"></a> 栈的基本操作</h2>
-<blockquote>
-<p>这些操作的时间复杂度都是O(1)的</p>
-</blockquote>
-<ul>
-<li>push: 压栈操作</li>
-<li>pop: 弹栈操作</li>
-<li>top: 取栈顶元素操作</li>
-<li>isEmpty: 判空操作</li>
-<li>size: 求栈长度</li>
-</ul>
-<h2 id="栈的一些优缺点"><a class="markdownIt-Anchor" href="#栈的一些优缺点"></a> 栈的一些优缺点</h2>
-<h3 id="优点"><a class="markdownIt-Anchor" href="#优点"></a> 优点</h3>
-<ul>
-<li>容易实现</li>
-<li>空间利用效率高</li>
-<li>支持撤销和重做操作</li>
-<li>在函数调用中很有用</li>
-</ul>
-<h3 id="缺点"><a class="markdownIt-Anchor" href="#缺点"></a> 缺点</h3>
-<ul>
-<li>不支持随机存取</li>
-<li>不易管理空间</li>
-</ul>
-<h2 id="栈的一些应用"><a class="markdownIt-Anchor" href="#栈的一些应用"></a> 栈的一些应用</h2>
-<ul>
-<li>函数调用和递归</li>
-<li>撤销和重做操作</li>
-<li>表达式求值</li>
-<li>浏览历史</li>
-<li>平衡括号</li>
-<li>回溯算法</li>
-</ul>
-<h2 id="单调栈介绍"><a class="markdownIt-Anchor" href="#单调栈介绍"></a> 单调栈介绍</h2>
-<h2 id="静态实现用数组模拟"><a class="markdownIt-Anchor" href="#静态实现用数组模拟"></a> 静态实现(用数组模拟)</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// tt指向栈顶,stk[0]不存元素</span></span><br><span class="line"><span class="keyword">int</span> stk[N], tt = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 向栈顶插入一个数</span></span><br><span class="line">stk[ ++ tt] = x;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从栈顶弹出一个数</span></span><br><span class="line">tt -- ;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 栈顶的值</span></span><br><span class="line">stk[tt];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断栈是否为空</span></span><br><span class="line"><span class="keyword">if</span> (tt &gt; <span class="number">0</span>) <span class="keyword">not</span> empty</span><br><span class="line"><span class="keyword">else</span> empty</span><br></pre></td></tr></table></figure>
-<h2 id="练习"><a class="markdownIt-Anchor" href="#练习"></a> 练习</h2>
-<ul>
-<li>
-<p><a href="https://www.acwing.com/problem/content/832/">单调栈</a></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> stk[N],tt=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);</span><br><span class="line">        <span class="keyword">while</span>(tt&amp;&amp;stk[tt]&gt;=x) tt--;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(tt) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,stk[tt]);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;-1 &quot;</span>);</span><br><span class="line">        </span><br><span class="line">        stk[++tt]=x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>单调栈常用模型：找出每个数左边离它最近的比它大/小的数</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> tt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (tt &amp;&amp; check(q[tt], i)) tt -- ;</span><br><span class="line">		stk[ ++ tt] = i;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></blockquote>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-        <category>栈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>数组基础</title>
     <url>/2023/05/08/%E6%95%B0%E7%BB%84%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h2 id="数组"><a class="markdownIt-Anchor" href="#数组"></a> 数组</h2>
@@ -4143,6 +4085,64 @@ t_{ikl}\ge P_{ik}-P_{il}
       </categories>
   </entry>
   <entry>
+    <title>栈基础</title>
+    <url>/2021/03/27/%E6%A0%88%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<p>栈是一种遵循某种顺序的数据结构，是一种先入后出或者后入先出的顺序结构，如下图所示<br>
+<img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221219100314/stack.drawio2.png" alt></p>
+<a id="more"></a>
+<h2 id="栈的基本操作"><a class="markdownIt-Anchor" href="#栈的基本操作"></a> 栈的基本操作</h2>
+<blockquote>
+<p>这些操作的时间复杂度都是O(1)的</p>
+</blockquote>
+<ul>
+<li>push: 压栈操作</li>
+<li>pop: 弹栈操作</li>
+<li>top: 取栈顶元素操作</li>
+<li>isEmpty: 判空操作</li>
+<li>size: 求栈长度</li>
+</ul>
+<h2 id="栈的一些优缺点"><a class="markdownIt-Anchor" href="#栈的一些优缺点"></a> 栈的一些优缺点</h2>
+<h3 id="优点"><a class="markdownIt-Anchor" href="#优点"></a> 优点</h3>
+<ul>
+<li>容易实现</li>
+<li>空间利用效率高</li>
+<li>支持撤销和重做操作</li>
+<li>在函数调用中很有用</li>
+</ul>
+<h3 id="缺点"><a class="markdownIt-Anchor" href="#缺点"></a> 缺点</h3>
+<ul>
+<li>不支持随机存取</li>
+<li>不易管理空间</li>
+</ul>
+<h2 id="栈的一些应用"><a class="markdownIt-Anchor" href="#栈的一些应用"></a> 栈的一些应用</h2>
+<ul>
+<li>函数调用和递归</li>
+<li>撤销和重做操作</li>
+<li>表达式求值</li>
+<li>浏览历史</li>
+<li>平衡括号</li>
+<li>回溯算法</li>
+</ul>
+<h2 id="单调栈介绍"><a class="markdownIt-Anchor" href="#单调栈介绍"></a> 单调栈介绍</h2>
+<h2 id="静态实现用数组模拟"><a class="markdownIt-Anchor" href="#静态实现用数组模拟"></a> 静态实现(用数组模拟)</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// tt指向栈顶,stk[0]不存元素</span></span><br><span class="line"><span class="keyword">int</span> stk[N], tt = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 向栈顶插入一个数</span></span><br><span class="line">stk[ ++ tt] = x;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从栈顶弹出一个数</span></span><br><span class="line">tt -- ;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 栈顶的值</span></span><br><span class="line">stk[tt];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断栈是否为空</span></span><br><span class="line"><span class="keyword">if</span> (tt &gt; <span class="number">0</span>) <span class="keyword">not</span> empty</span><br><span class="line"><span class="keyword">else</span> empty</span><br></pre></td></tr></table></figure>
+<h2 id="练习"><a class="markdownIt-Anchor" href="#练习"></a> 练习</h2>
+<ul>
+<li>
+<p><a href="https://www.acwing.com/problem/content/832/">单调栈</a></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> stk[N],tt=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);</span><br><span class="line">        <span class="keyword">while</span>(tt&amp;&amp;stk[tt]&gt;=x) tt--;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(tt) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,stk[tt]);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;-1 &quot;</span>);</span><br><span class="line">        </span><br><span class="line">        stk[++tt]=x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>单调栈常用模型：找出每个数左边离它最近的比它大/小的数</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> tt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (tt &amp;&amp; check(q[tt], i)) tt -- ;</span><br><span class="line">		stk[ ++ tt] = i;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></blockquote>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+        <category>栈</category>
+      </categories>
+  </entry>
+  <entry>
     <title>栈相关题</title>
     <url>/2023/05/09/%E6%A0%88%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/</url>
     <content><![CDATA[<h2 id="题目汇总"><a class="markdownIt-Anchor" href="#题目汇总"></a> 题目汇总</h2>
@@ -4182,7 +4182,7 @@ t_{ikl}\ge P_{ik}-P_{il}
 </table>
 <h2 id="232用栈实现队列"><a class="markdownIt-Anchor" href="#232用栈实现队列"></a> 232.用栈实现队列</h2>
 <h3 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h3>
-<p><img src="/2023/05/09/%E6%A0%88%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/image-20230509200203596.png" alt="image-20230509200203596"></p>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230509200203596.png" alt="image-20230509200203596"></p>
 <h3 id="题解"><a class="markdownIt-Anchor" href="#题解"></a> 题解</h3>
 <h4 id="我的思路"><a class="markdownIt-Anchor" href="#我的思路"></a> 我的思路</h4>
 <p>这题要求使用两个栈，实现队列的基本操作。队列元素满足先入先出的原则，使用栈模拟时，在pop和peek操作的时候想清楚取的是入栈的第一个元素即可。</p>
@@ -4191,7 +4191,7 @@ t_{ikl}\ge P_{ik}-P_{il}
 <h2 id="20有效的括号"><a class="markdownIt-Anchor" href="#20有效的括号"></a> 20.有效的括号</h2>
 <h2 id="150逆波兰表达式"><a class="markdownIt-Anchor" href="#150逆波兰表达式"></a> 150.逆波兰表达式</h2>
 <h3 id="题目描述-2"><a class="markdownIt-Anchor" href="#题目描述-2"></a> 题目描述</h3>
-<p><img src="/2023/05/09/%E6%A0%88%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/image-20230509205416560.png" alt="image-20230509205416560"></p>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230509205416560.png" alt="image-20230509205416560"></p>
 <h3 id="题解-2"><a class="markdownIt-Anchor" href="#题解-2"></a> 题解</h3>
 <h4 id="算法过程"><a class="markdownIt-Anchor" href="#算法过程"></a> 算法过程</h4>
 <ul>
@@ -4436,7 +4436,7 @@ t_{ikl}\ge P_{ik}-P_{il}
 </table>
 <h2 id="225用队列实现栈"><a class="markdownIt-Anchor" href="#225用队列实现栈"></a> 225.用队列实现栈</h2>
 <h3 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h3>
-<p><img src="/2023/05/09/%E9%98%9F%E5%88%97%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/image-20230509201111450.png" alt="image-20230509201111450"></p>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230509201111450.png" alt="image-20230509201111450"></p>
 <h3 id="题解"><a class="markdownIt-Anchor" href="#题解"></a> 题解</h3>
 <h4 id="我的思路"><a class="markdownIt-Anchor" href="#我的思路"></a> 我的思路</h4>
 <p>这题要求用两个队列实现一个栈，一个队列即可完成题目要求。只需在每次pop和top操作的时候，明白操作的是队尾元素即可。使用一个循环将队列中元素出队，然后在入队直至到开始的队尾元素未知，然后再将队列复原即可。</p>
