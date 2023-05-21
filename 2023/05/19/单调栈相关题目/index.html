@@ -43,10 +43,11 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230514171606312.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230512120002246.png">
-<meta property="og:image" content="http://zhengzp2019.github.io/2023/05/19/%E5%8D%95%E8%B0%83%E6%A0%88%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/image-20230519172345474.png">
-<meta property="og:image" content="http://zhengzp2019.github.io/2023/05/19/%E5%8D%95%E8%B0%83%E6%A0%88%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/image-20230519173358221.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230519172345474.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230520171345851.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230519173358221.png">
 <meta property="article:published_time" content="2023-05-19T09:24:43.000Z">
-<meta property="article:modified_time" content="2023-05-19T16:47:02.424Z">
+<meta property="article:modified_time" content="2023-05-20T09:55:21.755Z">
 <meta property="article:author" content="dpbirder">
 <meta property="article:tag" content="个人技术博客">
 <meta name="twitter:card" content="summary">
@@ -252,7 +253,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-20 00:47:02" itemprop="dateModified" datetime="2023-05-20T00:47:02+08:00">2023-05-20</time>
+                <time title="修改时间：2023-05-20 17:55:21" itemprop="dateModified" datetime="2023-05-20T17:55:21+08:00">2023-05-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,14 +275,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>6.8k</span>
+              <span>8.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>6 分钟</span>
+              <span>8 分钟</span>
             </span>
 
         </div>
@@ -377,17 +378,80 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] nextGreaterElement(<span class="keyword">int</span>[] nums1, <span class="keyword">int</span>[] nums2) &#123;</span><br><span class="line">        <span class="keyword">int</span> hh = <span class="number">0</span>, n = nums2.length;</span><br><span class="line">        <span class="keyword">int</span>[] stack = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">10</span>];</span><br><span class="line">        Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">while</span> (hh != <span class="number">0</span> &amp;&amp; nums2[stack[hh]] &lt; nums2[i]) &#123;</span><br><span class="line">                <span class="keyword">int</span> id = stack[hh];</span><br><span class="line">                map.put(nums2[id], nums2[i]);</span><br><span class="line">                hh--;</span><br><span class="line">            &#125;</span><br><span class="line">            stack[++hh] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span>[] ans = <span class="keyword">new</span> <span class="keyword">int</span>[nums1.length];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums1.length; i++)&#123;</span><br><span class="line">            ans[i] = -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span>(map.containsKey(nums1[i])) ans[i] = map.get(nums1[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="503下一个更大元素ii"><a class="markdownIt-Anchor" href="#503下一个更大元素ii"></a> 503.下一个更大元素II</h2>
 <h3 id="题目描述-3"><a class="markdownIt-Anchor" href="#题目描述-3"></a> 题目描述</h3>
-<p><img src="/2023/05/19/%E5%8D%95%E8%B0%83%E6%A0%88%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/image-20230519172345474.png" alt="image-20230519172345474"></p>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230519172345474.png" alt="image-20230519172345474"></p>
 <h3 id="题解-3"><a class="markdownIt-Anchor" href="#题解-3"></a> 题解</h3>
 <h4 id="我的思路-3"><a class="markdownIt-Anchor" href="#我的思路-3"></a> 我的思路</h4>
 <p>这题与<a target="_blank" rel="noopener" href="https://leetcode.cn/problems/next-greater-element-i/">496.下一个更大元素 I</a>基本一致，只不过给定的是一个循环数组，所以在遍历数组的时候要模拟遍历一个循环数组，可以使用如下方式循环遍历一个数组。</p>
 <h4 id="我的代码-3"><a class="markdownIt-Anchor" href="#我的代码-3"></a> 我的代码</h4>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] nextGreaterElements(<span class="keyword">int</span>[] nums) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.length;</span><br><span class="line">        <span class="keyword">int</span>[] ans = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        <span class="keyword">int</span> hh = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span>[] stack = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">2</span> * n + <span class="number">5</span>];</span><br><span class="line">        Arrays.fill(ans, -<span class="number">1</span>);</span><br><span class="line">        <span class="comment">// 用一个循环变量循环遍历数组</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span> * n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">            <span class="keyword">while</span> (hh != <span class="number">0</span> &amp;&amp; nums[stack[hh]] &lt; nums[i % n]) &#123;</span><br><span class="line">                <span class="keyword">int</span> id = stack[hh];</span><br><span class="line">                hh--;</span><br><span class="line">                ans[id] = nums[i % n];</span><br><span class="line">            &#125;</span><br><span class="line">            stack[++hh] = i % n;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="84柱状图中最大的矩形"><a class="markdownIt-Anchor" href="#84柱状图中最大的矩形"></a> 84.柱状图中最大的矩形</h2>
+<h2 id="42-接雨水"><a class="markdownIt-Anchor" href="#42-接雨水"></a> 42. 接雨水</h2>
 <h3 id="题目描述-4"><a class="markdownIt-Anchor" href="#题目描述-4"></a> 题目描述</h3>
-<p><img src="/2023/05/19/%E5%8D%95%E8%B0%83%E6%A0%88%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/image-20230519173358221.png" alt="image-20230519173358221"></p>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230520171345851.png" alt="image-20230520171345851"></p>
 <h3 id="题解-4"><a class="markdownIt-Anchor" href="#题解-4"></a> 题解</h3>
 <h4 id="我的思路-4"><a class="markdownIt-Anchor" href="#我的思路-4"></a> 我的思路</h4>
+<p>本题要计算接雨水的数目，首先要明确按照行的顺序还是按照列的顺序来计算，并且只有当柱子位于缺口中的时候才能够接到雨水。按列计算可以使用暴力、动态规划、双指针方法，按行计算可以使用单调栈方法。</p>
+<p><strong>暴力法</strong></p>
+<p>可以想象每个柱子下面都有个接水的水桶，左右两边为桶的边。若柱子i能够接水，首先要保证柱子i处于缺口中，而柱子i左右两边的板子可以看成左右两边的最大元素left和right，那么柱子i能接的雨水数目num=min(pre_max, suf_max)-heights[i]。所有柱子的接水的累积量即为最终答案。</p>
+<p>时间复杂度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo stretchy="false">(</mo><msup><mi>N</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">O(N^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.10903em;">N</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></p>
+<p><strong>前后缀分解法</strong></p>
+<p>暴力解法的时间消耗主要在于内循环有大量的重复操作，这里可以预处理每个元素的后缀最大元素并存储在数组suf_max中，并且在枚举元素时计算元素i的前缀最大值pre_max。这样在枚举所有柱子的时候以O(1)的时间获得每个柱子的前缀最大值和后缀最大值。</p>
+<p>时间复杂度O(N)</p>
+<p><strong>双指针法</strong></p>
+<p>对于前后缀分解时间复杂度上无法进一步优化，但是在空间复杂度上仍然可以进行优化。对于前后缀分解的空间上需要一个额外的数组来存储后缀最大值。</p>
+<p>考虑对于柱子i已经知道i前缀的最大值pre_max，但不知道后缀最大值；对于柱子j已经知道j后缀的最大值，但是不知道j前缀的最大值。那么当i前缀最大值小于j的后缀最大值时，i能接水的最大高度为前缀最大值，那么i能接的雨水数目就知道了；反之当i的前缀最大值大于j的后缀最大值时，j能接水的最大值为后缀最大值，那么j能接的雨水数目就知道了。出于这样的考虑就可以使用双指针的方法来解决。</p>
+<p><strong>单调栈法</strong></p>
+<h4 id="算法过程-3"><a class="markdownIt-Anchor" href="#算法过程-3"></a> 算法过程</h4>
+<p><strong>暴力法</strong></p>
+<ul>
+<li>枚举所有柱子
+<ul>
+<li>对于元素i</li>
+<li>计算元素i左边的最大元素left</li>
+<li>计算元素i右边的最大元素right</li>
+<li>元素i能够的接的雨水数为 num=min(pre_max, suf_max)-height[i]</li>
+<li>更新答案</li>
+</ul>
+</li>
+<li>枚举结束，返回答案</li>
+</ul>
+<p><strong>前后缀分解法</strong></p>
+<ul>
+<li>预处理所有柱子的后缀最大值，并存储在suf_max中</li>
+<li>枚举所有柱子
+<ul>
+<li>对于柱子i</li>
+<li>计算柱子i的前缀最大值pre_max = max(pre_max,height[i])</li>
+<li>计算柱子能够接的雨水数num = min(pre_max, suf_max[i]) - height[i]</li>
+<li>更新答案</li>
+</ul>
+</li>
+<li>枚举结束，返回答案</li>
+</ul>
+<p><strong>双指针法</strong></p>
+<ul>
+<li>定义左右指针left=0和right=n-1</li>
+<li>定义前后缀最大值pre_max，suf_max</li>
+<li>相向双指针
+<ul>
+<li>计算left的前缀最大值pre_max和right的后缀最大值suf_max</li>
+<li>若pre_max &gt; suf_max，计算right接的雨水量，right–</li>
+<li>若pre_max &lt;= suf_max，计算left接的雨水量，left++</li>
+</ul>
+</li>
+<li>两指针在最高点相遇，返回答案</li>
+</ul>
+<h4 id="我的代码-4"><a class="markdownIt-Anchor" href="#我的代码-4"></a> 我的代码</h4>
+<p><strong>暴力法</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 暴力枚举</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, n = height.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> pre_max = height[i];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--)</span><br><span class="line">                pre_max = Math.max(pre_max, height[j]);</span><br><span class="line">            <span class="keyword">int</span> suf_max = height[i];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">                suf_max = Math.max(suf_max, height[j]);</span><br><span class="line">            ans += Math.min(pre_max, suf_max) - height[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>前后缀分解</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 前后缀分解</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, n = height.length;</span><br><span class="line">        <span class="keyword">int</span>[] suf_max = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        suf_max[n - <span class="number">1</span>] = height[n - <span class="number">1</span>];</span><br><span class="line">        <span class="comment">// 预处理：后缀最大值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">            suf_max[i] = Math.max(suf_max[i + <span class="number">1</span>], height[i]);</span><br><span class="line">        <span class="keyword">int</span> pre_max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            pre_max = Math.max(pre_max, height[i]);</span><br><span class="line">            ans += Math.min(pre_max, suf_max[i]) - height[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>双指针</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="84柱状图中最大的矩形"><a class="markdownIt-Anchor" href="#84柱状图中最大的矩形"></a> 84.柱状图中最大的矩形</h2>
+<h3 id="题目描述-5"><a class="markdownIt-Anchor" href="#题目描述-5"></a> 题目描述</h3>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230519173358221.png" alt="image-20230519173358221"></p>
+<h3 id="题解-5"><a class="markdownIt-Anchor" href="#题解-5"></a> 题解</h3>
+<h4 id="我的思路-5"><a class="markdownIt-Anchor" href="#我的思路-5"></a> 我的思路</h4>
 <p><strong>暴力解法</strong></p>
 <p>枚举所有柱子，对于柱子i所能勾勒出的最大矩形高度h为当前柱子高度height[i]，从位置i向右延伸到下一个更矮的柱子r为止，并且向左延伸到下一个更矮的柱子l为止，则宽度w=r-l-1。以当前柱子能勾勒出的最大矩形面积为h*w，枚举所有柱子计算最大值即可。时间复杂度O(N)。</p>
 <p><strong>双指针法</strong></p>
@@ -421,7 +485,7 @@
 </li>
 </ul>
 <p>时间复杂度O(N)</p>
-<h4 id="算法过程-3"><a class="markdownIt-Anchor" href="#算法过程-3"></a> 算法过程</h4>
+<h4 id="算法过程-4"><a class="markdownIt-Anchor" href="#算法过程-4"></a> 算法过程</h4>
 <p><strong>暴力解法</strong></p>
 <ul>
 <li>枚举所有柱子
@@ -480,7 +544,7 @@
 </blockquote>
 </li>
 </ul>
-<h4 id="我的代码-4"><a class="markdownIt-Anchor" href="#我的代码-4"></a> 我的代码</h4>
+<h4 id="我的代码-5"><a class="markdownIt-Anchor" href="#我的代码-5"></a> 我的代码</h4>
 <p><strong>暴力解法</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">largestRectangleArea</span><span class="params">(<span class="keyword">int</span>[] heights)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, n = heights.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> l = i;<span class="comment">// l指向i左边下一个更小的元素</span></span><br><span class="line">            <span class="keyword">while</span> (l &gt;= <span class="number">0</span> &amp;&amp; heights[l] &gt;= heights[i])</span><br><span class="line">                l--;</span><br><span class="line">            <span class="keyword">int</span> r = i; <span class="comment">// r指向i右边下一个更小的元素</span></span><br><span class="line">            <span class="keyword">while</span> (r &lt; n &amp;&amp; heights[r] &gt;= heights[i])</span><br><span class="line">                r++;</span><br><span class="line">            <span class="keyword">int</span> area = heights[i] * (r - l - <span class="number">1</span>);</span><br><span class="line">            ans = Math.max(ans, area);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>双指针法</strong></p>
@@ -568,7 +632,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB"><span class="nav-text"> 题目汇总</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#739-%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6"><span class="nav-text"> 739. 每日温度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-text"> 题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-text"> 题解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E6%80%9D%E8%B7%AF"><span class="nav-text"> 我的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E8%BF%87%E7%A8%8B"><span class="nav-text"> 算法过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="nav-text"> 我的代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#496%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A0i"><span class="nav-text"> 496.下一个更大元素I</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-2"><span class="nav-text"> 题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-2"><span class="nav-text"> 题解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E6%80%9D%E8%B7%AF-2"><span class="nav-text"> 我的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E8%BF%87%E7%A8%8B-2"><span class="nav-text"> 算法过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E4%BB%A3%E7%A0%81-2"><span class="nav-text"> 我的代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#503%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A0ii"><span class="nav-text"> 503.下一个更大元素II</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-3"><span class="nav-text"> 题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-3"><span class="nav-text"> 题解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E6%80%9D%E8%B7%AF-3"><span class="nav-text"> 我的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E4%BB%A3%E7%A0%81-3"><span class="nav-text"> 我的代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#84%E6%9F%B1%E7%8A%B6%E5%9B%BE%E4%B8%AD%E6%9C%80%E5%A4%A7%E7%9A%84%E7%9F%A9%E5%BD%A2"><span class="nav-text"> 84.柱状图中最大的矩形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-4"><span class="nav-text"> 题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-4"><span class="nav-text"> 题解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E6%80%9D%E8%B7%AF-4"><span class="nav-text"> 我的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E8%BF%87%E7%A8%8B-3"><span class="nav-text"> 算法过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E4%BB%A3%E7%A0%81-4"><span class="nav-text"> 我的代码</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%B1%87%E6%80%BB"><span class="nav-text"> 题目汇总</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#739-%E6%AF%8F%E6%97%A5%E6%B8%A9%E5%BA%A6"><span class="nav-text"> 739. 每日温度</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0"><span class="nav-text"> 题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3"><span class="nav-text"> 题解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E6%80%9D%E8%B7%AF"><span class="nav-text"> 我的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E8%BF%87%E7%A8%8B"><span class="nav-text"> 算法过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="nav-text"> 我的代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#496%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A0i"><span class="nav-text"> 496.下一个更大元素I</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-2"><span class="nav-text"> 题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-2"><span class="nav-text"> 题解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E6%80%9D%E8%B7%AF-2"><span class="nav-text"> 我的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E8%BF%87%E7%A8%8B-2"><span class="nav-text"> 算法过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E4%BB%A3%E7%A0%81-2"><span class="nav-text"> 我的代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#503%E4%B8%8B%E4%B8%80%E4%B8%AA%E6%9B%B4%E5%A4%A7%E5%85%83%E7%B4%A0ii"><span class="nav-text"> 503.下一个更大元素II</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-3"><span class="nav-text"> 题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-3"><span class="nav-text"> 题解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E6%80%9D%E8%B7%AF-3"><span class="nav-text"> 我的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E4%BB%A3%E7%A0%81-3"><span class="nav-text"> 我的代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#42-%E6%8E%A5%E9%9B%A8%E6%B0%B4"><span class="nav-text"> 42. 接雨水</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-4"><span class="nav-text"> 题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-4"><span class="nav-text"> 题解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E6%80%9D%E8%B7%AF-4"><span class="nav-text"> 我的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E8%BF%87%E7%A8%8B-3"><span class="nav-text"> 算法过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E4%BB%A3%E7%A0%81-4"><span class="nav-text"> 我的代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#84%E6%9F%B1%E7%8A%B6%E5%9B%BE%E4%B8%AD%E6%9C%80%E5%A4%A7%E7%9A%84%E7%9F%A9%E5%BD%A2"><span class="nav-text"> 84.柱状图中最大的矩形</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E7%9B%AE%E6%8F%8F%E8%BF%B0-5"><span class="nav-text"> 题目描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A2%98%E8%A7%A3-5"><span class="nav-text"> 题解</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E6%80%9D%E8%B7%AF-5"><span class="nav-text"> 我的思路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E8%BF%87%E7%A8%8B-4"><span class="nav-text"> 算法过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E4%BB%A3%E7%A0%81-5"><span class="nav-text"> 我的代码</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -668,12 +732,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">161k</span>
+    <span title="站点总字数">163k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:26</span>
+    <span title="站点阅读时长">2:28</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
