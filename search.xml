@@ -2737,11 +2737,11 @@ t_{ikl}\ge P_{ik}-P_{il}
 </tr>
 <tr>
 <td><a href="https://leetcode.cn/problems/trapping-rain-water/">42.接雨水</a></td>
-<td></td>
+<td><a href="https://leetcode.cn/problems/trapping-rain-water/solutions/2278600/bao-li-dong-tai-gui-hua-shuang-zhi-zhen-l4gr1/">https://leetcode.cn/problems/trapping-rain-water/solutions/2278600/bao-li-dong-tai-gui-hua-shuang-zhi-zhen-l4gr1/</a></td>
 </tr>
 <tr>
 <td><a href="https://leetcode.cn/problems/largest-rectangle-in-histogram/">84.柱状图中最大的矩形</a></td>
-<td></td>
+<td><a href="https://leetcode.cn/problems/largest-rectangle-in-histogram/solutions/2276667/bao-li-shuang-zhi-zhen-dan-diao-zhan-shi-xdw0/">https://leetcode.cn/problems/largest-rectangle-in-histogram/solutions/2276667/bao-li-shuang-zhi-zhen-dan-diao-zhan-shi-xdw0/</a></td>
 </tr>
 </tbody>
 </table>
@@ -2818,8 +2818,45 @@ t_{ikl}\ge P_{ik}-P_{il}
 <p>时间复杂度O(N)</p>
 <p><strong>双指针法</strong></p>
 <p>对于前后缀分解时间复杂度上无法进一步优化，但是在空间复杂度上仍然可以进行优化。对于前后缀分解的空间上需要一个额外的数组来存储后缀最大值。</p>
-<p>考虑对于柱子i已经知道i前缀的最大值pre_max，但不知道后缀最大值；对于柱子j已经知道j后缀的最大值，但是不知道j前缀的最大值。那么当i前缀最大值小于j的后缀最大值时，i能接水的最大高度为前缀最大值，那么i能接的雨水数目就知道了；反之当i的前缀最大值大于j的后缀最大值时，j能接水的最大值为后缀最大值，那么j能接的雨水数目就知道了。出于这样的考虑就可以使用双指针的方法来解决。</p>
+<p>考虑对柱子i，已经知道i前缀的最大值pre_max，但不知道后缀最大值；柱子j已经知道j后缀的最大值，但是不知道j前缀的最大值。那么当i前缀最大值小于j的后缀最大值时，i能接水的最大高度为前缀最大值，那么i能接的雨水数目就知道了；反之当i的前缀最大值大于j的后缀最大值时，j能接水的最大值为后缀最大值，那么j能接的雨水数目就知道了。出于这样的考虑就可以使用双指针的方法来解决。</p>
+<p>时间复杂度O(N)</p>
 <p><strong>单调栈法</strong></p>
+<p>该方法按照行的顺序计算接雨水的数目，如下图</p>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/stack.png" alt="stack"></p>
+<p>前面说过柱子若想要接到雨水，必须位于缺口中，即对于任意柱子mid能接到雨水必须知道mid下一个更大元素位置r和上一个更大元素位置，那么mid上面行接到的雨水宽度w = r - l - 1，高度h = min(height[l], height[r]) - height[mid]，则mid上面行接到的雨水数目为w*h，而单调栈可以高效的计算元素下一个更大值，考虑下面三个问题：</p>
+<p>1、栈中存储的元素是什么？</p>
+<blockquote>
+<p>由于需要寻找当前元素下一个更大元素和上一个更大元素的位置，所以栈中应当存储数组下标</p>
+</blockquote>
+<p>2、单调栈的顺序是什么？</p>
+<blockquote>
+<p>由于需要寻找下一个更大元素所以单调栈中元素从栈底到栈顶应当是递减的</p>
+</blockquote>
+<p>3、对于下述三种情况的处理方式？</p>
+<ul>
+<li>
+<p>当前元素等于栈顶元素</p>
+<blockquote>
+<p>当前元素不是栈顶元素下一个更大元素，入栈</p>
+</blockquote>
+</li>
+<li>
+<p>当前元素小于栈顶元素</p>
+<blockquote>
+<p>当前元素不是栈顶元素下一个更大元素，入栈</p>
+</blockquote>
+</li>
+<li>
+<p>当前元素大于栈顶元素</p>
+<blockquote>
+<p>当前元素是栈顶元素下一个更大元素，栈顶出栈，mid = stack[hh]</p>
+<p>此时mid下一个更大元素为当前元素i，上一个更大元素为栈底元素stack[hh]，</p>
+<p>mid上面行接到的雨水数目为w*h，w和h的计算思路所示。</p>
+<p>不断迭代该过程，直至栈顶元素大于等于当前元素为止，当前元素入栈</p>
+</blockquote>
+</li>
+</ul>
+<p>时间复杂度O(N)</p>
 <h4 id="算法过程-3"><a class="markdownIt-Anchor" href="#算法过程-3"></a> 算法过程</h4>
 <p><strong>暴力法</strong></p>
 <ul>
@@ -2860,13 +2897,31 @@ t_{ikl}\ge P_{ik}-P_{il}
 </li>
 <li>两指针在最高点相遇，返回答案</li>
 </ul>
+<p><strong>单调栈</strong></p>
+<ul>
+<li>枚举所有元素</li>
+<li>若当前元素小于等于栈顶元素，入栈</li>
+<li>若当前元素大于栈顶元素
+<ul>
+<li>mid = stack[hh]</li>
+<li>栈顶出栈hh–</li>
+<li>w = i - stack[hh] - 1, h = min(height[i], height[stack[hh]]) - height[mid]</li>
+<li>mid上一行接的雨水数为 w*h</li>
+<li>更新答案，不断迭代该过程，直至当前元素小于等于栈顶元素为止</li>
+</ul>
+</li>
+<li>当前元素入栈</li>
+<li>枚举结束，返回结果</li>
+</ul>
 <h4 id="我的代码-4"><a class="markdownIt-Anchor" href="#我的代码-4"></a> 我的代码</h4>
 <p><strong>暴力法</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 暴力枚举</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, n = height.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> pre_max = height[i];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--)</span><br><span class="line">                pre_max = Math.max(pre_max, height[j]);</span><br><span class="line">            <span class="keyword">int</span> suf_max = height[i];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">                suf_max = Math.max(suf_max, height[j]);</span><br><span class="line">            ans += Math.min(pre_max, suf_max) - height[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>前后缀分解</strong></p>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 前后缀分解</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, n = height.length;</span><br><span class="line">        <span class="keyword">int</span>[] suf_max = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        suf_max[n - <span class="number">1</span>] = height[n - <span class="number">1</span>];</span><br><span class="line">        <span class="comment">// 预处理：后缀最大值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">            suf_max[i] = Math.max(suf_max[i + <span class="number">1</span>], height[i]);</span><br><span class="line">        <span class="keyword">int</span> pre_max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            pre_max = Math.max(pre_max, height[i]);</span><br><span class="line">            ans += Math.min(pre_max, suf_max[i]) - height[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>双指针</strong></p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 双指针</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, n = height.length;</span><br><span class="line">        <span class="keyword">int</span> pre_max = <span class="number">0</span>, suf_max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            pre_max = Math.max(pre_max, height[left]);</span><br><span class="line">            suf_max = Math.max(suf_max, height[right]);</span><br><span class="line">            <span class="keyword">if</span>(pre_max &lt; suf_max)&#123;</span><br><span class="line">                ans += pre_max-height[left];</span><br><span class="line">                left++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                ans += suf_max - height[right];</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>单调栈</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 版本一，将上述三种情况分别用分支语句描述</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 单调栈</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, n = height.length;</span><br><span class="line">        <span class="keyword">int</span> hh = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span>[] stack = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">10</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="comment">// 情况一和情况二</span></span><br><span class="line">            <span class="keyword">if</span> (height[i] &lt;= height[stack[hh]])</span><br><span class="line">                stack[++hh] = i;</span><br><span class="line">            <span class="keyword">else</span> &#123;<span class="comment">// 情况三</span></span><br><span class="line">                <span class="keyword">while</span> (hh != <span class="number">0</span> &amp;&amp; height[stack[hh]] &lt; height[i]) &#123;</span><br><span class="line">                    <span class="keyword">int</span> mid = stack[hh--];</span><br><span class="line">                    <span class="comment">// mid 有上一个更小元素</span></span><br><span class="line">                    <span class="keyword">if</span> (hh != <span class="number">0</span>) &#123;</span><br><span class="line">                        <span class="keyword">int</span> w = i - stack[hh] - <span class="number">1</span>;</span><br><span class="line">                        <span class="keyword">int</span> h = Math.min(height[i], height[stack[hh]]) - height[mid];</span><br><span class="line">                        ans += w * h;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                stack[++hh] = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 版本二：版本一的缩减版</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 单调栈</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, n = height.length;</span><br><span class="line">        <span class="keyword">int</span> hh = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span>[] stack = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">10</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="comment">// 情况三</span></span><br><span class="line">            <span class="keyword">while</span> (hh != <span class="number">0</span> &amp;&amp; height[stack[hh]] &lt; height[i]) &#123;</span><br><span class="line">                <span class="keyword">int</span> mid = stack[hh--];</span><br><span class="line">                <span class="comment">// mid上一个更小元素存在</span></span><br><span class="line">                <span class="keyword">if</span> (hh != <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">int</span> w = i - stack[hh] - <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">int</span> h = Math.min(height[i], height[stack[hh]]) - height[mid];</span><br><span class="line">                    ans += w * h;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 情况一和情况二</span></span><br><span class="line">            stack[++hh] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="84柱状图中最大的矩形"><a class="markdownIt-Anchor" href="#84柱状图中最大的矩形"></a> 84.柱状图中最大的矩形</h2>
 <h3 id="题目描述-5"><a class="markdownIt-Anchor" href="#题目描述-5"></a> 题目描述</h3>
 <p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230519173358221.png" alt="image-20230519173358221"></p>
@@ -4327,7 +4382,7 @@ t_{ikl}\ge P_{ik}-P_{il}
 <h3 id="830单调栈"><a class="markdownIt-Anchor" href="#830单调栈"></a> 830.单调栈</h3>
 <p><a href="https://www.acwing.com/problem/content/832/">单调栈</a></p>
 <h4 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h4>
-<p><img src="/2021/03/27/%E6%A0%88%E5%9F%BA%E7%A1%80/image-20230512114731318.png" alt="image-20230512114731318"></p>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230512114731318.png" alt="image-20230512114731318"></p>
 <h4 id="我的代码"><a class="markdownIt-Anchor" href="#我的代码"></a> 我的代码</h4>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> stk[N],tt=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);</span><br><span class="line">        <span class="keyword">while</span>(tt&amp;&amp;stk[tt]&gt;=x) tt--;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(tt) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,stk[tt]);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;-1 &quot;</span>);</span><br><span class="line">        </span><br><span class="line">        stk[++tt]=x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -4690,10 +4745,48 @@ t_{ikl}\ge P_{ik}-P_{il}
   <entry>
     <title>队列基础</title>
     <url>/2023/05/08/%E9%98%9F%E5%88%97%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<h2 id="1-静态实现用数组模拟"><a class="markdownIt-Anchor" href="#1-静态实现用数组模拟"></a> 1、静态实现(用数组模拟)</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// hh 表示队头，tt表示队尾</span></span><br><span class="line"><span class="keyword">int</span> q[N], hh = <span class="number">0</span>, tt = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 向队尾插入一个数</span></span><br><span class="line">q[ ++ tt] = x;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从队头弹出一个数</span></span><br><span class="line">hh ++ ;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 队头的值</span></span><br><span class="line">q[hh];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断队列是否为空</span></span><br><span class="line"><span class="keyword">if</span> (hh &lt;= tt) <span class="keyword">not</span> empty</span><br><span class="line"><span class="keyword">else</span> empty</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<p>队列是一种元素遵循先入先出的顺序的一种数据结构，如下图所示，元素从一段进入，从另一端出去。</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20220805131014/fifo.png" alt="FIFO property of queue"></p>
 <a id="more"></a>
-<h2 id="2-练习"><a class="markdownIt-Anchor" href="#2-练习"></a> 2、练习</h2>
+<h2 id="队列的特性"><a class="markdownIt-Anchor" href="#队列的特性"></a> 队列的特性</h2>
+<ul>
+<li>队列可以处理多个数据</li>
+<li>可以从两端读取数据</li>
+<li>灵活，快速</li>
+</ul>
+<h2 id="队列的两种实现方式"><a class="markdownIt-Anchor" href="#队列的两种实现方式"></a> 队列的两种实现方式</h2>
+<h3 id="数组实现"><a class="markdownIt-Anchor" href="#数组实现"></a> 数组实现</h3>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// hh 表示队头，tt表示队尾</span></span><br><span class="line"><span class="keyword">int</span> q[N], hh = <span class="number">0</span>, tt = <span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 向队尾插入一个数</span></span><br><span class="line">q[ ++ tt] = x;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从队头弹出一个数</span></span><br><span class="line">hh ++ ;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 队头的值</span></span><br><span class="line">q[hh];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断队列是否为空</span></span><br><span class="line"><span class="keyword">if</span> (hh &lt;= tt) <span class="keyword">not</span> empty</span><br><span class="line"><span class="keyword">else</span> empty</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// A structure to represent a queue</span></span><br><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Queue</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> front, rear, size;</span><br><span class="line">    <span class="keyword">int</span> cap;</span><br><span class="line">    <span class="keyword">int</span> arr[];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Function to create a queue of given capacity</span></span><br><span class="line"><span class="comment">// It initializes size of queue as 0</span></span><br><span class="line"><span class="function">Queue <span class="title">createQueue</span><span class="params">(<span class="keyword">int</span> cap)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Queue queue = <span class="keyword">new</span> Queue();</span><br><span class="line">    queue.cap = cap;</span><br><span class="line">    queue.front = <span class="number">0</span>;</span><br><span class="line">    queue.size = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    queue.rear = cap - <span class="number">1</span>;</span><br><span class="line">    queue.arr = <span class="keyword">new</span> <span class="keyword">int</span>[queue.cap];</span><br><span class="line">    <span class="keyword">return</span> queue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="链表实现"><a class="markdownIt-Anchor" href="#链表实现"></a> 链表实现</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">QNode</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> data;</span><br><span class="line">    QNode next;</span><br><span class="line"></span><br><span class="line">    QNode(<span class="keyword">int</span> data)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">this</span>.data = data;</span><br><span class="line">        next = <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">Queue</span> </span>&#123;</span><br><span class="line">    QNode front, rear;</span><br><span class="line">    Queue()</span><br><span class="line">    &#123;</span><br><span class="line">        front = <span class="keyword">null</span>;</span><br><span class="line">        rear = <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="队列类型"><a class="markdownIt-Anchor" href="#队列类型"></a> 队列类型</h2>
+<ul>
+<li>输入限制队列：一种简单队列，只能从一段输入，但是可以从两端输出</li>
+<li>输出限制队列：一种简单队列，只能从一段输出，但是可以从两端输入</li>
+<li>循环队列：队尾与队头相连</li>
+<li>双端队列：可以从两端删除和插入元素</li>
+<li>优先队列：按照定义的优先级读取元素，用堆实现</li>
+</ul>
+<h2 id="队列的一些操作"><a class="markdownIt-Anchor" href="#队列的一些操作"></a> 队列的一些操作</h2>
+<ul>
+<li>Enqueue()：元素入队</li>
+<li>Dequeue()：删除一个元素</li>
+<li>Peek() 或 front()：取对头元素，但不删除元素</li>
+<li>rear()：取队尾元素，但不删除元素</li>
+<li>isFull()：判满操作</li>
+<li>isNull()：判空操作</li>
+</ul>
+<h2 id="队列的应用"><a class="markdownIt-Anchor" href="#队列的应用"></a> 队列的应用</h2>
+<ul>
+<li>多线程</li>
+<li>一个生产者多个消费者</li>
+<li>作业调度</li>
+<li>快速与慢速设备之间的同步</li>
+<li>共享资源</li>
+</ul>
+<h2 id="如何使用一个数组实现k个队列"><a class="markdownIt-Anchor" href="#如何使用一个数组实现k个队列"></a> 如何使用一个数组实现k个队列</h2>
+<h2 id="练习"><a class="markdownIt-Anchor" href="#练习"></a> 练习</h2>
 <p><a href="https://www.acwing.com/activity/content/problem/content/866/1/">模拟队列</a></p>
 <figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> m;</span><br><span class="line"><span class="keyword">int</span> q[N],hh=<span class="number">0</span>,tt=<span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;m);</span><br><span class="line">    <span class="keyword">while</span>(m--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">char</span> op[<span class="number">10</span>];</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,op);</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;push&quot;</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> x;</span><br><span class="line">            <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);</span><br><span class="line">            q[++tt]=x;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;empty&quot;</span>)) hh&lt;=tt?<span class="built_in">printf</span>(<span class="string">&quot;NO\n&quot;</span>):<span class="built_in">printf</span>(<span class="string">&quot;YES\n&quot;</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;pop&quot;</span>)) hh++;</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>,q[hh]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><a href="https://www.acwing.com/problem/content/156/">滑动窗口(单调队列)</a></p>
@@ -4722,14 +4815,14 @@ t_{ikl}\ge P_{ik}-P_{il}
 <tbody>
 <tr>
 <td><a href="https://leetcode.cn/problems/implement-stack-using-queues/">225.用队列实现栈</a></td>
+<td><a href="https://leetcode.cn/problems/implement-stack-using-queues/solutions/2279557/dui-lie-de-ji-ben-shi-yong-by-dpbirder-a3oz/">https://leetcode.cn/problems/implement-stack-using-queues/solutions/2279557/dui-lie-de-ji-ben-shi-yong-by-dpbirder-a3oz/</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/sliding-window-maximum/">239. 滑动窗口最大值</a></td>
 <td></td>
 </tr>
 <tr>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
+<td><a href="https://leetcode.cn/problems/top-k-frequent-elements/">347.前 K 个高频元素</a></td>
 <td></td>
 </tr>
 </tbody>
@@ -4743,6 +4836,17 @@ t_{ikl}\ge P_{ik}-P_{il}
 <p>这题要求用两个队列实现一个栈，一个队列即可完成题目要求。只需在每次pop和top操作的时候，明白操作的是队尾元素即可。使用一个循环将队列中元素出队，然后在入队直至到开始的队尾元素未知，然后再将队列复原即可。</p>
 <h4 id="我的代码"><a class="markdownIt-Anchor" href="#我的代码"></a> 我的代码</h4>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyStack</span> </span>&#123;</span><br><span class="line">    Deque&lt;Integer&gt; queue;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyStack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        queue = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        queue.push(x);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> size = queue.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size - <span class="number">1</span>; i++)</span><br><span class="line">            queue.push(queue.poll());</span><br><span class="line">        <span class="keyword">return</span> queue.poll();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> size = queue.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size - <span class="number">1</span>; i++)</span><br><span class="line">            queue.push(queue.poll());</span><br><span class="line">        <span class="keyword">int</span> ans = queue.peek();</span><br><span class="line">        queue.push(queue.poll());</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> queue.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="239滑动窗口最大值"><a class="markdownIt-Anchor" href="#239滑动窗口最大值"></a> 239.滑动窗口最大值</h2>
+<h3 id="题目描述-2"><a class="markdownIt-Anchor" href="#题目描述-2"></a> 题目描述</h3>
+<p><img src="/2023/05/09/%E9%98%9F%E5%88%97%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/image-20230523195052889.png" alt="image-20230523195052889"></p>
+<h3 id="题解-2"><a class="markdownIt-Anchor" href="#题解-2"></a> 题解</h3>
+<h4 id="我的思路-2"><a class="markdownIt-Anchor" href="#我的思路-2"></a> 我的思路</h4>
+<h4 id="我的代码-2"><a class="markdownIt-Anchor" href="#我的代码-2"></a> 我的代码</h4>
+<h2 id="347前-k-个高频元素"><a class="markdownIt-Anchor" href="#347前-k-个高频元素"></a> 347.前 K 个高频元素</h2>
+<h3 id="题目描述-3"><a class="markdownIt-Anchor" href="#题目描述-3"></a> 题目描述</h3>
+<h3 id="题解-3"><a class="markdownIt-Anchor" href="#题解-3"></a> 题解</h3>
+<h4 id="我的思路-3"><a class="markdownIt-Anchor" href="#我的思路-3"></a> 我的思路</h4>
+<h4 id="我的代码-3"><a class="markdownIt-Anchor" href="#我的代码-3"></a> 我的代码</h4>
 ]]></content>
       <categories>
         <category>数据结构</category>

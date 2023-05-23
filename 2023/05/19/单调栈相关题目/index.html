@@ -45,9 +45,10 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230512120002246.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230519172345474.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230520171345851.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/zhengzp2019/Image/main/stack.png">
 <meta property="og:image" content="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230519173358221.png">
 <meta property="article:published_time" content="2023-05-19T09:24:43.000Z">
-<meta property="article:modified_time" content="2023-05-20T09:55:21.755Z">
+<meta property="article:modified_time" content="2023-05-21T14:36:24.700Z">
 <meta property="article:author" content="dpbirder">
 <meta property="article:tag" content="个人技术博客">
 <meta name="twitter:card" content="summary">
@@ -253,7 +254,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-20 17:55:21" itemprop="dateModified" datetime="2023-05-20T17:55:21+08:00">2023-05-20</time>
+                <time title="修改时间：2023-05-21 22:36:24" itemprop="dateModified" datetime="2023-05-21T22:36:24+08:00">2023-05-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,14 +276,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>8.7k</span>
+              <span>11k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>8 分钟</span>
+              <span>10 分钟</span>
             </span>
 
         </div>
@@ -317,11 +318,11 @@
 </tr>
 <tr>
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/trapping-rain-water/">42.接雨水</a></td>
-<td></td>
+<td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/trapping-rain-water/solutions/2278600/bao-li-dong-tai-gui-hua-shuang-zhi-zhen-l4gr1/">https://leetcode.cn/problems/trapping-rain-water/solutions/2278600/bao-li-dong-tai-gui-hua-shuang-zhi-zhen-l4gr1/</a></td>
 </tr>
 <tr>
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/largest-rectangle-in-histogram/">84.柱状图中最大的矩形</a></td>
-<td></td>
+<td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/largest-rectangle-in-histogram/solutions/2276667/bao-li-shuang-zhi-zhen-dan-diao-zhan-shi-xdw0/">https://leetcode.cn/problems/largest-rectangle-in-histogram/solutions/2276667/bao-li-shuang-zhi-zhen-dan-diao-zhan-shi-xdw0/</a></td>
 </tr>
 </tbody>
 </table>
@@ -398,8 +399,45 @@
 <p>时间复杂度O(N)</p>
 <p><strong>双指针法</strong></p>
 <p>对于前后缀分解时间复杂度上无法进一步优化，但是在空间复杂度上仍然可以进行优化。对于前后缀分解的空间上需要一个额外的数组来存储后缀最大值。</p>
-<p>考虑对于柱子i已经知道i前缀的最大值pre_max，但不知道后缀最大值；对于柱子j已经知道j后缀的最大值，但是不知道j前缀的最大值。那么当i前缀最大值小于j的后缀最大值时，i能接水的最大高度为前缀最大值，那么i能接的雨水数目就知道了；反之当i的前缀最大值大于j的后缀最大值时，j能接水的最大值为后缀最大值，那么j能接的雨水数目就知道了。出于这样的考虑就可以使用双指针的方法来解决。</p>
+<p>考虑对柱子i，已经知道i前缀的最大值pre_max，但不知道后缀最大值；柱子j已经知道j后缀的最大值，但是不知道j前缀的最大值。那么当i前缀最大值小于j的后缀最大值时，i能接水的最大高度为前缀最大值，那么i能接的雨水数目就知道了；反之当i的前缀最大值大于j的后缀最大值时，j能接水的最大值为后缀最大值，那么j能接的雨水数目就知道了。出于这样的考虑就可以使用双指针的方法来解决。</p>
+<p>时间复杂度O(N)</p>
 <p><strong>单调栈法</strong></p>
+<p>该方法按照行的顺序计算接雨水的数目，如下图</p>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/stack.png" alt="stack"></p>
+<p>前面说过柱子若想要接到雨水，必须位于缺口中，即对于任意柱子mid能接到雨水必须知道mid下一个更大元素位置r和上一个更大元素位置，那么mid上面行接到的雨水宽度w = r - l - 1，高度h = min(height[l], height[r]) - height[mid]，则mid上面行接到的雨水数目为w*h，而单调栈可以高效的计算元素下一个更大值，考虑下面三个问题：</p>
+<p>1、栈中存储的元素是什么？</p>
+<blockquote>
+<p>由于需要寻找当前元素下一个更大元素和上一个更大元素的位置，所以栈中应当存储数组下标</p>
+</blockquote>
+<p>2、单调栈的顺序是什么？</p>
+<blockquote>
+<p>由于需要寻找下一个更大元素所以单调栈中元素从栈底到栈顶应当是递减的</p>
+</blockquote>
+<p>3、对于下述三种情况的处理方式？</p>
+<ul>
+<li>
+<p>当前元素等于栈顶元素</p>
+<blockquote>
+<p>当前元素不是栈顶元素下一个更大元素，入栈</p>
+</blockquote>
+</li>
+<li>
+<p>当前元素小于栈顶元素</p>
+<blockquote>
+<p>当前元素不是栈顶元素下一个更大元素，入栈</p>
+</blockquote>
+</li>
+<li>
+<p>当前元素大于栈顶元素</p>
+<blockquote>
+<p>当前元素是栈顶元素下一个更大元素，栈顶出栈，mid = stack[hh]</p>
+<p>此时mid下一个更大元素为当前元素i，上一个更大元素为栈底元素stack[hh]，</p>
+<p>mid上面行接到的雨水数目为w*h，w和h的计算思路所示。</p>
+<p>不断迭代该过程，直至栈顶元素大于等于当前元素为止，当前元素入栈</p>
+</blockquote>
+</li>
+</ul>
+<p>时间复杂度O(N)</p>
 <h4 id="算法过程-3"><a class="markdownIt-Anchor" href="#算法过程-3"></a> 算法过程</h4>
 <p><strong>暴力法</strong></p>
 <ul>
@@ -440,13 +478,31 @@
 </li>
 <li>两指针在最高点相遇，返回答案</li>
 </ul>
+<p><strong>单调栈</strong></p>
+<ul>
+<li>枚举所有元素</li>
+<li>若当前元素小于等于栈顶元素，入栈</li>
+<li>若当前元素大于栈顶元素
+<ul>
+<li>mid = stack[hh]</li>
+<li>栈顶出栈hh–</li>
+<li>w = i - stack[hh] - 1, h = min(height[i], height[stack[hh]]) - height[mid]</li>
+<li>mid上一行接的雨水数为 w*h</li>
+<li>更新答案，不断迭代该过程，直至当前元素小于等于栈顶元素为止</li>
+</ul>
+</li>
+<li>当前元素入栈</li>
+<li>枚举结束，返回结果</li>
+</ul>
 <h4 id="我的代码-4"><a class="markdownIt-Anchor" href="#我的代码-4"></a> 我的代码</h4>
 <p><strong>暴力法</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 暴力枚举</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, n = height.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="keyword">int</span> pre_max = height[i];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i - <span class="number">1</span>; j &gt;= <span class="number">0</span>; j--)</span><br><span class="line">                pre_max = Math.max(pre_max, height[j]);</span><br><span class="line">            <span class="keyword">int</span> suf_max = height[i];</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = i + <span class="number">1</span>; j &lt; n; j++)</span><br><span class="line">                suf_max = Math.max(suf_max, height[j]);</span><br><span class="line">            ans += Math.min(pre_max, suf_max) - height[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>前后缀分解</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 前后缀分解</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, n = height.length;</span><br><span class="line">        <span class="keyword">int</span>[] suf_max = <span class="keyword">new</span> <span class="keyword">int</span>[n];</span><br><span class="line">        suf_max[n - <span class="number">1</span>] = height[n - <span class="number">1</span>];</span><br><span class="line">        <span class="comment">// 预处理：后缀最大值</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">2</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">            suf_max[i] = Math.max(suf_max[i + <span class="number">1</span>], height[i]);</span><br><span class="line">        <span class="keyword">int</span> pre_max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            pre_max = Math.max(pre_max, height[i]);</span><br><span class="line">            ans += Math.min(pre_max, suf_max[i]) - height[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>双指针</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 双指针</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, n = height.length;</span><br><span class="line">        <span class="keyword">int</span> pre_max = <span class="number">0</span>, suf_max = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> left = <span class="number">0</span>, right = n - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right) &#123;</span><br><span class="line">            pre_max = Math.max(pre_max, height[left]);</span><br><span class="line">            suf_max = Math.max(suf_max, height[right]);</span><br><span class="line">            <span class="keyword">if</span>(pre_max &lt; suf_max)&#123;</span><br><span class="line">                ans += pre_max-height[left];</span><br><span class="line">                left++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                ans += suf_max - height[right];</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>单调栈</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 版本一，将上述三种情况分别用分支语句描述</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 单调栈</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, n = height.length;</span><br><span class="line">        <span class="keyword">int</span> hh = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span>[] stack = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">10</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="comment">// 情况一和情况二</span></span><br><span class="line">            <span class="keyword">if</span> (height[i] &lt;= height[stack[hh]])</span><br><span class="line">                stack[++hh] = i;</span><br><span class="line">            <span class="keyword">else</span> &#123;<span class="comment">// 情况三</span></span><br><span class="line">                <span class="keyword">while</span> (hh != <span class="number">0</span> &amp;&amp; height[stack[hh]] &lt; height[i]) &#123;</span><br><span class="line">                    <span class="keyword">int</span> mid = stack[hh--];</span><br><span class="line">                    <span class="comment">// mid 有上一个更小元素</span></span><br><span class="line">                    <span class="keyword">if</span> (hh != <span class="number">0</span>) &#123;</span><br><span class="line">                        <span class="keyword">int</span> w = i - stack[hh] - <span class="number">1</span>;</span><br><span class="line">                        <span class="keyword">int</span> h = Math.min(height[i], height[stack[hh]]) - height[mid];</span><br><span class="line">                        ans += w * h;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                stack[++hh] = i;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 版本二：版本一的缩减版</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 单调栈</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">trap</span><span class="params">(<span class="keyword">int</span>[] height)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>, n = height.length;</span><br><span class="line">        <span class="keyword">int</span> hh = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span>[] stack = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">10</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="comment">// 情况三</span></span><br><span class="line">            <span class="keyword">while</span> (hh != <span class="number">0</span> &amp;&amp; height[stack[hh]] &lt; height[i]) &#123;</span><br><span class="line">                <span class="keyword">int</span> mid = stack[hh--];</span><br><span class="line">                <span class="comment">// mid上一个更小元素存在</span></span><br><span class="line">                <span class="keyword">if</span> (hh != <span class="number">0</span>) &#123;</span><br><span class="line">                    <span class="keyword">int</span> w = i - stack[hh] - <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">int</span> h = Math.min(height[i], height[stack[hh]]) - height[mid];</span><br><span class="line">                    ans += w * h;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 情况一和情况二</span></span><br><span class="line">            stack[++hh] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="84柱状图中最大的矩形"><a class="markdownIt-Anchor" href="#84柱状图中最大的矩形"></a> 84.柱状图中最大的矩形</h2>
 <h3 id="题目描述-5"><a class="markdownIt-Anchor" href="#题目描述-5"></a> 题目描述</h3>
 <p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230519173358221.png" alt="image-20230519173358221"></p>
@@ -732,12 +788,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">163k</span>
+    <span title="站点总字数">166k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">2:28</span>
+    <span title="站点阅读时长">2:31</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
