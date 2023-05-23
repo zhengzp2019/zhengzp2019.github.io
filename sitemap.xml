@@ -475,13 +475,6 @@
   </url>
   
   <url>
-    <loc>http://zhengzp2019.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/</loc>
-    <lastmod>2023-05-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://zhengzp2019.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/</loc>
     <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
@@ -553,6 +546,13 @@
   
   <url>
     <loc>http://zhengzp2019.github.io/categories/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2023-05-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://zhengzp2019.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/</loc>
     <lastmod>2023-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
