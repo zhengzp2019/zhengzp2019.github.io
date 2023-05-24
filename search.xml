@@ -119,51 +119,6 @@
       </tags>
   </entry>
   <entry>
-    <title>PML_SDM算法复现过程</title>
-    <url>/2023/02/27/PML-SDM%E7%AE%97%E6%B3%95%E5%A4%8D%E7%8E%B0%E8%BF%87%E7%A8%8B/</url>
-    <content><![CDATA[<ol>
-<li>
-<p>导入数据</p>
-<ol>
-<li>Yeast</li>
-</ol>
-</li>
-<li>
-<p>清洗数据</p>
-<blockquote>
-<p>将样本集中标签全为1或者-1的样本删除</p>
-</blockquote>
-</li>
-</ol>
-<a id="more"></a>
-<ol start="3">
-<li>
-<p>训练模型——<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>k</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">⟨</mo><msub><mi>w</mi><mi>k</mi></msub><mo separator="true">,</mo><mi>x</mi><mo stretchy="false">⟩</mo><mo>+</mo><msub><mi>b</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">f(x,k)=\langle w_k,x\rangle+b_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⟨</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mclose">⟩</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
-<blockquote>
-<p>完整的训练过程参考<a href="https://zhengzp2019.github.io/2022/11/18/%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3/">优化问题求解</a></p>
-<p>代码文件在<a href>这里</a></p>
-</blockquote>
-</li>
-<li>
-<p>测试模型</p>
-</li>
-<li>
-<p>计算指标</p>
-</li>
-<li>
-<p>分析结果</p>
-</li>
-<li>
-<p>实验过程</p>
-<ol>
-<li>实验数据集</li>
-<li>实验算法</li>
-</ol>
-</li>
-</ol>
-]]></content>
-  </entry>
-  <entry>
     <title>Linux系统安装</title>
     <url>/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</url>
     <content><![CDATA[<blockquote>
@@ -234,6 +189,51 @@
         <tag>manjaro</tag>
         <tag>cestos</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>PML_SDM算法复现过程</title>
+    <url>/2023/02/27/PML-SDM%E7%AE%97%E6%B3%95%E5%A4%8D%E7%8E%B0%E8%BF%87%E7%A8%8B/</url>
+    <content><![CDATA[<ol>
+<li>
+<p>导入数据</p>
+<ol>
+<li>Yeast</li>
+</ol>
+</li>
+<li>
+<p>清洗数据</p>
+<blockquote>
+<p>将样本集中标签全为1或者-1的样本删除</p>
+</blockquote>
+</li>
+</ol>
+<a id="more"></a>
+<ol start="3">
+<li>
+<p>训练模型——<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>f</mi><mo stretchy="false">(</mo><mi>x</mi><mo separator="true">,</mo><mi>k</mi><mo stretchy="false">)</mo><mo>=</mo><mo stretchy="false">⟨</mo><msub><mi>w</mi><mi>k</mi></msub><mo separator="true">,</mo><mi>x</mi><mo stretchy="false">⟩</mo><mo>+</mo><msub><mi>b</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">f(x,k)=\langle w_k,x\rangle+b_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.10764em;">f</span><span class="mopen">(</span><span class="mord mathdefault">x</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">⟨</span><span class="mord"><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.02691em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">x</span><span class="mclose">⟩</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">b</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span></p>
+<blockquote>
+<p>完整的训练过程参考<a href="https://zhengzp2019.github.io/2022/11/18/%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98%E6%B1%82%E8%A7%A3/">优化问题求解</a></p>
+<p>代码文件在<a href>这里</a></p>
+</blockquote>
+</li>
+<li>
+<p>测试模型</p>
+</li>
+<li>
+<p>计算指标</p>
+</li>
+<li>
+<p>分析结果</p>
+</li>
+<li>
+<p>实验过程</p>
+<ol>
+<li>实验数据集</li>
+<li>实验算法</li>
+</ol>
+</li>
+</ol>
+]]></content>
   </entry>
   <entry>
     <title>QMainWindow</title>
@@ -3127,6 +3127,22 @@ t_{ikl}\ge P_{ik}-P_{il}
       </tags>
   </entry>
   <entry>
+    <title>堆</title>
+    <url>/2021/04/10/%E5%A0%86/</url>
+    <content><![CDATA[<h2 id="存储结构"><a class="markdownIt-Anchor" href="#存储结构"></a> 存储结构</h2>
+<a id="more"></a>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">heap</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// h[N]存储堆中的值, h[1]是堆顶，x的左儿子是2x, 右儿子是2x + 1</span></span><br><span class="line"><span class="comment">// ph[k]存储第k个插入的点在堆中的位置</span></span><br><span class="line"><span class="comment">// hp[k]存储堆中下标是k的点是第几个插入的</span></span><br><span class="line"><span class="keyword">int</span> h[N], ph[N], hp[N], msize;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 交换两个点，及其映射关系</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heap_swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    swap(ph[hp[a]],ph[hp[b]]);</span><br><span class="line">    swap(hp[a], hp[b]);</span><br><span class="line">    swap(h[a], h[b]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="实现"><a class="markdownIt-Anchor" href="#实现"></a> 实现</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 将下标为u的元素向下调整</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">down</span><span class="params">(<span class="keyword">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = u;<span class="comment">//t存储当前最小的元素的下标</span></span><br><span class="line">    <span class="keyword">if</span> (u * <span class="number">2</span> &lt;= msize &amp;&amp; h[u * <span class="number">2</span>] &lt; h[t]) t = u * <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (u * <span class="number">2</span> + <span class="number">1</span> &lt;= msize &amp;&amp; h[u * <span class="number">2</span> + <span class="number">1</span>] &lt; h[t]) t = u * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (u != t)</span><br><span class="line">    &#123;</span><br><span class="line">        heap_swap(u, mn);</span><br><span class="line">        <span class="comment">// swap(h[u],h[t]);</span></span><br><span class="line">        down(t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* void down(int u)//迭代</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">    int res = h[u];//产生一个空穴</span></span><br><span class="line"><span class="comment">    // u指向空穴处</span></span><br><span class="line"><span class="comment">    int child;</span></span><br><span class="line"><span class="comment">    while(2*u &lt;= msize)</span></span><br><span class="line"><span class="comment">    &#123;</span></span><br><span class="line"><span class="comment">        child = 2*u;</span></span><br><span class="line"><span class="comment">        if(child + 1 &lt;= msize &amp;&amp; h[child] &gt; h[child+1]) child++;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        if(res &lt; h[child]) break;</span></span><br><span class="line"><span class="comment">        else h[u] = h[child];</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    h[u] = res;</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将下标为u的元素向上调整</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">up</span><span class="params">(<span class="keyword">int</span> u)</span><span class="comment">//yxc</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (u / <span class="number">2</span> &gt;=<span class="number">1</span> &amp;&amp; h[u] &lt; h[u / <span class="number">2</span>])</span><br><span class="line">    &#123;</span><br><span class="line">        heap_swap(u, u / <span class="number">2</span>);</span><br><span class="line">        u &gt;&gt; = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* void up(int u)//zzp</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">    int res = h[u];//产生一个空穴</span></span><br><span class="line"><span class="comment">    //u表示需要上滤元素的下标</span></span><br><span class="line"><span class="comment">    while(u/2 &amp;&amp; h[u] &lt; h[u/2]) </span></span><br><span class="line"><span class="comment">    &#123;</span></span><br><span class="line"><span class="comment">        h[u] = h[u/2];</span></span><br><span class="line"><span class="comment">        u/=2;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    h[u] = res;</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*O(n)建堆：</span></span><br><span class="line"><span class="comment">    down(i)操作需要i的孩子均为堆，而n/2后面的元素均为叶子结点</span></span><br><span class="line"><span class="comment">    而叶子结点必为堆，故构建堆时从n/2开始，从下向上调整堆</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = n / <span class="number">2</span>; i; i -- ) down(i);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入一个数</span></span><br><span class="line">heap[++msize] = x; up(msize);</span><br><span class="line"><span class="comment">// 求集合中最小值</span></span><br><span class="line">heap[<span class="number">1</span>];</span><br><span class="line"><span class="comment">// 删除最小值</span></span><br><span class="line">heap[<span class="number">1</span>] = heap[msize]; msize--; down(<span class="number">1</span>);</span><br><span class="line"><span class="comment">// 删除任意一个元素</span></span><br><span class="line">heap[k] = heap[msize]; msize--; down(k); up(k);</span><br><span class="line"><span class="comment">// 修改任意一个元素</span></span><br><span class="line">heap[k] = x; down(k); up(k);</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基础算法</title>
     <url>/2021/04/03/%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95/</url>
     <content><![CDATA[<h1 id="数组相关算法"><a class="markdownIt-Anchor" href="#数组相关算法"></a> 数组相关算法</h1>
@@ -3574,22 +3590,6 @@ t_{ikl}\ge P_{ik}-P_{il}
       </categories>
       <tags>
         <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>堆</title>
-    <url>/2021/04/10/%E5%A0%86/</url>
-    <content><![CDATA[<h2 id="存储结构"><a class="markdownIt-Anchor" href="#存储结构"></a> 存储结构</h2>
-<a id="more"></a>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">heap</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// h[N]存储堆中的值, h[1]是堆顶，x的左儿子是2x, 右儿子是2x + 1</span></span><br><span class="line"><span class="comment">// ph[k]存储第k个插入的点在堆中的位置</span></span><br><span class="line"><span class="comment">// hp[k]存储堆中下标是k的点是第几个插入的</span></span><br><span class="line"><span class="keyword">int</span> h[N], ph[N], hp[N], msize;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 交换两个点，及其映射关系</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">heap_swap</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    swap(ph[hp[a]],ph[hp[b]]);</span><br><span class="line">    swap(hp[a], hp[b]);</span><br><span class="line">    swap(h[a], h[b]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="实现"><a class="markdownIt-Anchor" href="#实现"></a> 实现</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 将下标为u的元素向下调整</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">down</span><span class="params">(<span class="keyword">int</span> u)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = u;<span class="comment">//t存储当前最小的元素的下标</span></span><br><span class="line">    <span class="keyword">if</span> (u * <span class="number">2</span> &lt;= msize &amp;&amp; h[u * <span class="number">2</span>] &lt; h[t]) t = u * <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (u * <span class="number">2</span> + <span class="number">1</span> &lt;= msize &amp;&amp; h[u * <span class="number">2</span> + <span class="number">1</span>] &lt; h[t]) t = u * <span class="number">2</span> + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">if</span> (u != t)</span><br><span class="line">    &#123;</span><br><span class="line">        heap_swap(u, mn);</span><br><span class="line">        <span class="comment">// swap(h[u],h[t]);</span></span><br><span class="line">        down(t);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* void down(int u)//迭代</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">    int res = h[u];//产生一个空穴</span></span><br><span class="line"><span class="comment">    // u指向空穴处</span></span><br><span class="line"><span class="comment">    int child;</span></span><br><span class="line"><span class="comment">    while(2*u &lt;= msize)</span></span><br><span class="line"><span class="comment">    &#123;</span></span><br><span class="line"><span class="comment">        child = 2*u;</span></span><br><span class="line"><span class="comment">        if(child + 1 &lt;= msize &amp;&amp; h[child] &gt; h[child+1]) child++;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">        if(res &lt; h[child]) break;</span></span><br><span class="line"><span class="comment">        else h[u] = h[child];</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    h[u] = res;</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 将下标为u的元素向上调整</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">up</span><span class="params">(<span class="keyword">int</span> u)</span><span class="comment">//yxc</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (u / <span class="number">2</span> &gt;=<span class="number">1</span> &amp;&amp; h[u] &lt; h[u / <span class="number">2</span>])</span><br><span class="line">    &#123;</span><br><span class="line">        heap_swap(u, u / <span class="number">2</span>);</span><br><span class="line">        u &gt;&gt; = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* void up(int u)//zzp</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">    int res = h[u];//产生一个空穴</span></span><br><span class="line"><span class="comment">    //u表示需要上滤元素的下标</span></span><br><span class="line"><span class="comment">    while(u/2 &amp;&amp; h[u] &lt; h[u/2]) </span></span><br><span class="line"><span class="comment">    &#123;</span></span><br><span class="line"><span class="comment">        h[u] = h[u/2];</span></span><br><span class="line"><span class="comment">        u/=2;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    h[u] = res;</span></span><br><span class="line"><span class="comment">&#125; */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/*O(n)建堆：</span></span><br><span class="line"><span class="comment">    down(i)操作需要i的孩子均为堆，而n/2后面的元素均为叶子结点</span></span><br><span class="line"><span class="comment">    而叶子结点必为堆，故构建堆时从n/2开始，从下向上调整堆</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = n / <span class="number">2</span>; i; i -- ) down(i);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 插入一个数</span></span><br><span class="line">heap[++msize] = x; up(msize);</span><br><span class="line"><span class="comment">// 求集合中最小值</span></span><br><span class="line">heap[<span class="number">1</span>];</span><br><span class="line"><span class="comment">// 删除最小值</span></span><br><span class="line">heap[<span class="number">1</span>] = heap[msize]; msize--; down(<span class="number">1</span>);</span><br><span class="line"><span class="comment">// 删除任意一个元素</span></span><br><span class="line">heap[k] = heap[msize]; msize--; down(k); up(k);</span><br><span class="line"><span class="comment">// 修改任意一个元素</span></span><br><span class="line">heap[k] = x; down(k); up(k);</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -4325,76 +4325,6 @@ t_{ikl}\ge P_{ik}-P_{il}
       </tags>
   </entry>
   <entry>
-    <title>栈基础</title>
-    <url>/2021/03/27/%E6%A0%88%E5%9F%BA%E7%A1%80/</url>
-    <content><![CDATA[<p>栈是一种遵循某种顺序的数据结构，是一种先入后出或者后入先出的顺序结构，如下图所示<br>
-<img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221219100314/stack.drawio2.png" alt></p>
-<a id="more"></a>
-<h2 id="栈的基本操作"><a class="markdownIt-Anchor" href="#栈的基本操作"></a> 栈的基本操作</h2>
-<blockquote>
-<p>这些操作的时间复杂度都是O(1)的</p>
-</blockquote>
-<ul>
-<li>push: 压栈操作</li>
-<li>pop: 弹栈操作</li>
-<li>top: 取栈顶元素操作</li>
-<li>isEmpty: 判空操作</li>
-<li>size: 求栈长度</li>
-</ul>
-<h2 id="栈的一些优缺点"><a class="markdownIt-Anchor" href="#栈的一些优缺点"></a> 栈的一些优缺点</h2>
-<h3 id="优点"><a class="markdownIt-Anchor" href="#优点"></a> 优点</h3>
-<ul>
-<li>容易实现</li>
-<li>空间利用效率高</li>
-<li>支持撤销和重做操作</li>
-<li>在函数调用中很有用</li>
-</ul>
-<h3 id="缺点"><a class="markdownIt-Anchor" href="#缺点"></a> 缺点</h3>
-<ul>
-<li>不支持随机存取</li>
-<li>不易管理空间</li>
-</ul>
-<h2 id="栈的一些应用"><a class="markdownIt-Anchor" href="#栈的一些应用"></a> 栈的一些应用</h2>
-<ul>
-<li>函数调用和递归</li>
-<li>撤销和重做操作</li>
-<li>表达式求值</li>
-<li>浏览历史</li>
-<li>平衡括号</li>
-<li>回溯算法</li>
-</ul>
-<h2 id="单调栈介绍"><a class="markdownIt-Anchor" href="#单调栈介绍"></a> 单调栈介绍</h2>
-<h3 id="什么是单调栈"><a class="markdownIt-Anchor" href="#什么是单调栈"></a> 什么是单调栈</h3>
-<p>单调栈是一种基于栈的数据结构，主要使用于查找数组中下一个更大或者更小元素的相关问题。在单调栈中，被压入栈中的元素与栈顶元素往往满足一种固定的顺序。</p>
-<p>例如，如果想要查找数组中下一个更大的元素，我们可以维护一个单调减小的栈。在压入新的元素前，栈中所有小于等于该元素的元素全部出栈，直到栈顶元素大于该元素为止。这是因为出栈的元素不会在成为数组中未访问元素的下一个更大的元素，因为他们都比当前元素小，查找下一个更小的元素也是同样道理。</p>
-<h3 id="单调栈的种类"><a class="markdownIt-Anchor" href="#单调栈的种类"></a> 单调栈的种类</h3>
-<ul>
-<li>单调递增栈：其中元素从栈底到栈顶依次递增</li>
-<li>单调递减栈：其中元素从栈底到栈顶依次递</li>
-</ul>
-<h2 id="静态实现栈用数组模拟"><a class="markdownIt-Anchor" href="#静态实现栈用数组模拟"></a> 静态实现栈(用数组模拟)</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// tt指向栈顶,stk[0]不存元素</span></span><br><span class="line"><span class="keyword">int</span> stk[N], tt = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 向栈顶插入一个数</span></span><br><span class="line">stk[ ++ tt] = x;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从栈顶弹出一个数</span></span><br><span class="line">tt -- ;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 栈顶的值</span></span><br><span class="line">stk[tt];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断栈是否为空</span></span><br><span class="line"><span class="keyword">if</span> (tt &gt; <span class="number">0</span>) <span class="keyword">not</span> empty</span><br><span class="line"><span class="keyword">else</span> empty</span><br></pre></td></tr></table></figure>
-<h2 id="练习"><a class="markdownIt-Anchor" href="#练习"></a> 练习</h2>
-<p>下一个更大的元素(单调递减)</p>
-<p>下一个更小的元素(单调递增)</p>
-<p>前一个更大的元素(单调递增)</p>
-<p>前一个更小的元素(单调递减)</p>
-<h3 id="830单调栈"><a class="markdownIt-Anchor" href="#830单调栈"></a> 830.单调栈</h3>
-<p><a href="https://www.acwing.com/problem/content/832/">单调栈</a></p>
-<h4 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h4>
-<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230512114731318.png" alt="image-20230512114731318"></p>
-<h4 id="我的代码"><a class="markdownIt-Anchor" href="#我的代码"></a> 我的代码</h4>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> stk[N],tt=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);</span><br><span class="line">        <span class="keyword">while</span>(tt&amp;&amp;stk[tt]&gt;=x) tt--;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(tt) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,stk[tt]);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;-1 &quot;</span>);</span><br><span class="line">        </span><br><span class="line">        stk[++tt]=x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>单调栈常用模型：找出每个数左边离它最近的比它大/小的数</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> tt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (tt &amp;&amp; check(q[tt], i)) tt -- ;</span><br><span class="line">		stk[ ++ tt] = i;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></blockquote>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-        <category>栈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>数组基础</title>
     <url>/2023/05/08/%E6%95%B0%E7%BB%84%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<h2 id="数组"><a class="markdownIt-Anchor" href="#数组"></a> 数组</h2>
@@ -4473,6 +4403,76 @@ t_{ikl}\ge P_{ik}-P_{il}
       <categories>
         <category>数据结构</category>
         <category>数组</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>栈基础</title>
+    <url>/2021/03/27/%E6%A0%88%E5%9F%BA%E7%A1%80/</url>
+    <content><![CDATA[<p>栈是一种遵循某种顺序的数据结构，是一种先入后出或者后入先出的顺序结构，如下图所示<br>
+<img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221219100314/stack.drawio2.png" alt></p>
+<a id="more"></a>
+<h2 id="栈的基本操作"><a class="markdownIt-Anchor" href="#栈的基本操作"></a> 栈的基本操作</h2>
+<blockquote>
+<p>这些操作的时间复杂度都是O(1)的</p>
+</blockquote>
+<ul>
+<li>push: 压栈操作</li>
+<li>pop: 弹栈操作</li>
+<li>top: 取栈顶元素操作</li>
+<li>isEmpty: 判空操作</li>
+<li>size: 求栈长度</li>
+</ul>
+<h2 id="栈的一些优缺点"><a class="markdownIt-Anchor" href="#栈的一些优缺点"></a> 栈的一些优缺点</h2>
+<h3 id="优点"><a class="markdownIt-Anchor" href="#优点"></a> 优点</h3>
+<ul>
+<li>容易实现</li>
+<li>空间利用效率高</li>
+<li>支持撤销和重做操作</li>
+<li>在函数调用中很有用</li>
+</ul>
+<h3 id="缺点"><a class="markdownIt-Anchor" href="#缺点"></a> 缺点</h3>
+<ul>
+<li>不支持随机存取</li>
+<li>不易管理空间</li>
+</ul>
+<h2 id="栈的一些应用"><a class="markdownIt-Anchor" href="#栈的一些应用"></a> 栈的一些应用</h2>
+<ul>
+<li>函数调用和递归</li>
+<li>撤销和重做操作</li>
+<li>表达式求值</li>
+<li>浏览历史</li>
+<li>平衡括号</li>
+<li>回溯算法</li>
+</ul>
+<h2 id="单调栈介绍"><a class="markdownIt-Anchor" href="#单调栈介绍"></a> 单调栈介绍</h2>
+<h3 id="什么是单调栈"><a class="markdownIt-Anchor" href="#什么是单调栈"></a> 什么是单调栈</h3>
+<p>单调栈是一种基于栈的数据结构，主要使用于查找数组中下一个更大或者更小元素的相关问题。在单调栈中，被压入栈中的元素与栈顶元素往往满足一种固定的顺序。</p>
+<p>例如，如果想要查找数组中下一个更大的元素，我们可以维护一个单调减小的栈。在压入新的元素前，栈中所有小于等于该元素的元素全部出栈，直到栈顶元素大于该元素为止。这是因为出栈的元素不会在成为数组中未访问元素的下一个更大的元素，因为他们都比当前元素小，查找下一个更小的元素也是同样道理。</p>
+<h3 id="单调栈的种类"><a class="markdownIt-Anchor" href="#单调栈的种类"></a> 单调栈的种类</h3>
+<ul>
+<li>单调递增栈：其中元素从栈底到栈顶依次递增</li>
+<li>单调递减栈：其中元素从栈底到栈顶依次递</li>
+</ul>
+<h2 id="静态实现栈用数组模拟"><a class="markdownIt-Anchor" href="#静态实现栈用数组模拟"></a> 静态实现栈(用数组模拟)</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// tt指向栈顶,stk[0]不存元素</span></span><br><span class="line"><span class="keyword">int</span> stk[N], tt = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 向栈顶插入一个数</span></span><br><span class="line">stk[ ++ tt] = x;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从栈顶弹出一个数</span></span><br><span class="line">tt -- ;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 栈顶的值</span></span><br><span class="line">stk[tt];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 判断栈是否为空</span></span><br><span class="line"><span class="keyword">if</span> (tt &gt; <span class="number">0</span>) <span class="keyword">not</span> empty</span><br><span class="line"><span class="keyword">else</span> empty</span><br></pre></td></tr></table></figure>
+<h2 id="练习"><a class="markdownIt-Anchor" href="#练习"></a> 练习</h2>
+<p>下一个更大的元素(单调递减)</p>
+<p>下一个更小的元素(单调递增)</p>
+<p>前一个更大的元素(单调递增)</p>
+<p>前一个更小的元素(单调递减)</p>
+<h3 id="830单调栈"><a class="markdownIt-Anchor" href="#830单调栈"></a> 830.单调栈</h3>
+<p><a href="https://www.acwing.com/problem/content/832/">单调栈</a></p>
+<h4 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h4>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230512114731318.png" alt="image-20230512114731318"></p>
+<h4 id="我的代码"><a class="markdownIt-Anchor" href="#我的代码"></a> 我的代码</h4>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="keyword">int</span> stk[N],tt=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;x);</span><br><span class="line">        <span class="keyword">while</span>(tt&amp;&amp;stk[tt]&gt;=x) tt--;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(tt) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,stk[tt]);</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">printf</span>(<span class="string">&quot;-1 &quot;</span>);</span><br><span class="line">        </span><br><span class="line">        stk[++tt]=x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>单调栈常用模型：找出每个数左边离它最近的比它大/小的数</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> tt = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i ++ )</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">while</span> (tt &amp;&amp; check(q[tt], i)) tt -- ;</span><br><span class="line">		stk[ ++ tt] = i;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure></blockquote>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+        <category>栈</category>
       </categories>
   </entry>
   <entry>
@@ -4625,6 +4625,28 @@ t_{ikl}\ge P_{ik}-P_{il}
       </categories>
   </entry>
   <entry>
+    <title>链表</title>
+    <url>/2021/03/26/%E9%93%BE%E8%A1%A8/</url>
+    <content><![CDATA[<h2 id="1-单链表"><a class="markdownIt-Anchor" href="#1-单链表"></a> 1、单链表</h2>
+<h3 id="静态实现用数组模拟"><a class="markdownIt-Anchor" href="#静态实现用数组模拟"></a> 静态实现(用数组模拟)</h3>
+<a id="more"></a>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 数据结构</span></span><br><span class="line">E[N];   <span class="comment">//存储当前节点的值</span></span><br><span class="line">ne[N];  <span class="comment">//指向下一节点的指针(下标)</span></span><br><span class="line">head;   <span class="comment">//指向头节点</span></span><br><span class="line">id;    <span class="comment">//指向当前处理的节点</span></span><br><span class="line"><span class="comment">// 空节点下标用-1表示</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 操作方法</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span><span class="comment">//初始化</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    head=<span class="number">-1</span>;</span><br><span class="line">    id=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add_to_head</span><span class="params">(<span class="keyword">int</span> x)</span><span class="comment">//在头节点后插入一个数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    E[id]=x;</span><br><span class="line">    ne[id]=head;</span><br><span class="line">    head=id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> x)</span><span class="comment">//在下标k后面插入一个数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    E[id]=x;</span><br><span class="line">    ne[id]=ne[k];</span><br><span class="line">    ne[k]=id;</span><br><span class="line">    id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> k)</span><span class="comment">//删除下标是k的后面的一个点</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ne[k]=ne[ne[k]];</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="练习"><a class="markdownIt-Anchor" href="#练习"></a> 练习</h3>
+<p><a href="https://www.acwing.com/problem/content/828/">单链表</a></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span>  <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> M;</span><br><span class="line"><span class="keyword">int</span> e[N],ne[N],head,id;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    head=<span class="number">-1</span>;</span><br><span class="line">    id=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add_to_head</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[id]=x,ne[id]=head,head=id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[id]=x,ne[id]=ne[k],ne[k]=id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ne[k]=ne[ne[k]];    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;M;</span><br><span class="line">    <span class="keyword">char</span> op;</span><br><span class="line">    <span class="keyword">int</span> k,x;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">while</span>(M--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;op;</span><br><span class="line">        <span class="keyword">switch</span>(op)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;H&#x27;</span>:</span><br><span class="line">                <span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">                add_to_head(x);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;D&#x27;</span>:</span><br><span class="line">                <span class="built_in">cin</span>&gt;&gt;k;</span><br><span class="line">                <span class="keyword">if</span>(k==<span class="number">0</span>) head=ne[head];</span><br><span class="line">                <span class="keyword">else</span> <span class="built_in">remove</span>(k<span class="number">-1</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;I&#x27;</span>:</span><br><span class="line">                <span class="built_in">cin</span>&gt;&gt;k&gt;&gt;x;</span><br><span class="line">                add(k<span class="number">-1</span>,x);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// cout&lt;&lt;op&lt;&lt;endl;</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> p=head;p!=<span class="number">-1</span>;p=ne[p]) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,e[p]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="2-双链表"><a class="markdownIt-Anchor" href="#2-双链表"></a> 2、双链表</h2>
+<h3 id="静态实现用数组模拟-2"><a class="markdownIt-Anchor" href="#静态实现用数组模拟-2"></a> 静态实现(用数组模拟)</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 数据结构</span></span><br><span class="line"><span class="keyword">int</span> id;     <span class="comment">//指向当前节点</span></span><br><span class="line">E[N];       <span class="comment">//存储每个节点的值</span></span><br><span class="line">l[N];       <span class="comment">//指向前一个点的指针</span></span><br><span class="line">r[N];       <span class="comment">//指向后一个节点的指针</span></span><br><span class="line">r[<span class="number">0</span>];       <span class="comment">//指向最左端节点</span></span><br><span class="line">l[<span class="number">1</span>];       <span class="comment">//指向最右端节点</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 操作方法</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span><span class="comment">//初始化</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    r[<span class="number">0</span>]=<span class="number">1</span>,l[<span class="number">1</span>]=<span class="number">0</span>;<span class="comment">//尾指针存储在l[1]中，头指针存储在r[0]中</span></span><br><span class="line">    id=<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> x)</span><span class="comment">//在下标是k的右边插入一个值</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[id]=x;</span><br><span class="line">    r[id]=r[k];</span><br><span class="line">    l[id]=k;</span><br><span class="line">    l[r[id]]=id;</span><br><span class="line">    r[k]=id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> k)</span><span class="comment">//删除下标为k的节点</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    r[l[k]]=r[k];</span><br><span class="line">    l[r[k]]=l[k];</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="练习-2"><a class="markdownIt-Anchor" href="#练习-2"></a> 练习</h3>
+<p><a href="https://www.acwing.com/problem/content/829/">双链表</a></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> m;</span><br><span class="line"><span class="keyword">int</span> l[N],r[N],e[N],id;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    l[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    r[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    id=<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[id]=x;</span><br><span class="line">    l[id]=k;</span><br><span class="line">    r[id]=r[k];</span><br><span class="line">    l[r[id]]=id;</span><br><span class="line">    r[k]=id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    r[l[k]]=r[k];</span><br><span class="line">    l[r[k]]=l[k];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;m;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">while</span>(m--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">char</span> op[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">int</span> k,x;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,op);</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;L&quot;</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">            add(l[r[<span class="number">0</span>]],x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;R&quot;</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">            add(l[<span class="number">1</span>],x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;D&quot;</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;k;</span><br><span class="line">            <span class="built_in">remove</span>(k+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;IL&quot;</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;k&gt;&gt;x;</span><br><span class="line">            add(l[k+<span class="number">1</span>],x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;k&gt;&gt;x;</span><br><span class="line">            add(k+<span class="number">1</span>,x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> p=r[<span class="number">0</span>];p!=<span class="number">1</span>;p=r[p]) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,e[p]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>数据结构</category>
+        <category>链表</category>
+      </categories>
+  </entry>
+  <entry>
     <title>链表基础</title>
     <url>/2023/05/08/%E9%93%BE%E8%A1%A8%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<p>链表是一种线性数据结构，其中的元素存储在不连续位置，元素与元素之间由指针连接，如下图所示：</p>
@@ -4721,28 +4743,6 @@ t_{ikl}\ge P_{ik}-P_{il}
       </categories>
   </entry>
   <entry>
-    <title>链表</title>
-    <url>/2021/03/26/%E9%93%BE%E8%A1%A8/</url>
-    <content><![CDATA[<h2 id="1-单链表"><a class="markdownIt-Anchor" href="#1-单链表"></a> 1、单链表</h2>
-<h3 id="静态实现用数组模拟"><a class="markdownIt-Anchor" href="#静态实现用数组模拟"></a> 静态实现(用数组模拟)</h3>
-<a id="more"></a>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// 数据结构</span></span><br><span class="line">E[N];   <span class="comment">//存储当前节点的值</span></span><br><span class="line">ne[N];  <span class="comment">//指向下一节点的指针(下标)</span></span><br><span class="line">head;   <span class="comment">//指向头节点</span></span><br><span class="line">id;    <span class="comment">//指向当前处理的节点</span></span><br><span class="line"><span class="comment">// 空节点下标用-1表示</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 操作方法</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span><span class="comment">//初始化</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    head=<span class="number">-1</span>;</span><br><span class="line">    id=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add_to_head</span><span class="params">(<span class="keyword">int</span> x)</span><span class="comment">//在头节点后插入一个数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    E[id]=x;</span><br><span class="line">    ne[id]=head;</span><br><span class="line">    head=id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> x)</span><span class="comment">//在下标k后面插入一个数</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    E[id]=x;</span><br><span class="line">    ne[id]=ne[k];</span><br><span class="line">    ne[k]=id;</span><br><span class="line">    id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> k)</span><span class="comment">//删除下标是k的后面的一个点</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ne[k]=ne[ne[k]];</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="练习"><a class="markdownIt-Anchor" href="#练习"></a> 练习</h3>
-<p><a href="https://www.acwing.com/problem/content/828/">单链表</a></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span>  <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> M;</span><br><span class="line"><span class="keyword">int</span> e[N],ne[N],head,id;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    head=<span class="number">-1</span>;</span><br><span class="line">    id=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add_to_head</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[id]=x,ne[id]=head,head=id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[id]=x,ne[id]=ne[k],ne[k]=id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ne[k]=ne[ne[k]];    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;M;</span><br><span class="line">    <span class="keyword">char</span> op;</span><br><span class="line">    <span class="keyword">int</span> k,x;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">while</span>(M--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;op;</span><br><span class="line">        <span class="keyword">switch</span>(op)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;H&#x27;</span>:</span><br><span class="line">                <span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">                add_to_head(x);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;D&#x27;</span>:</span><br><span class="line">                <span class="built_in">cin</span>&gt;&gt;k;</span><br><span class="line">                <span class="keyword">if</span>(k==<span class="number">0</span>) head=ne[head];</span><br><span class="line">                <span class="keyword">else</span> <span class="built_in">remove</span>(k<span class="number">-1</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;I&#x27;</span>:</span><br><span class="line">                <span class="built_in">cin</span>&gt;&gt;k&gt;&gt;x;</span><br><span class="line">                add(k<span class="number">-1</span>,x);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// cout&lt;&lt;op&lt;&lt;endl;</span></span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> p=head;p!=<span class="number">-1</span>;p=ne[p]) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,e[p]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="2-双链表"><a class="markdownIt-Anchor" href="#2-双链表"></a> 2、双链表</h2>
-<h3 id="静态实现用数组模拟-2"><a class="markdownIt-Anchor" href="#静态实现用数组模拟-2"></a> 静态实现(用数组模拟)</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 数据结构</span></span><br><span class="line"><span class="keyword">int</span> id;     <span class="comment">//指向当前节点</span></span><br><span class="line">E[N];       <span class="comment">//存储每个节点的值</span></span><br><span class="line">l[N];       <span class="comment">//指向前一个点的指针</span></span><br><span class="line">r[N];       <span class="comment">//指向后一个节点的指针</span></span><br><span class="line">r[<span class="number">0</span>];       <span class="comment">//指向最左端节点</span></span><br><span class="line">l[<span class="number">1</span>];       <span class="comment">//指向最右端节点</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 操作方法</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span><span class="comment">//初始化</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    r[<span class="number">0</span>]=<span class="number">1</span>,l[<span class="number">1</span>]=<span class="number">0</span>;<span class="comment">//尾指针存储在l[1]中，头指针存储在r[0]中</span></span><br><span class="line">    id=<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> x)</span><span class="comment">//在下标是k的右边插入一个值</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[id]=x;</span><br><span class="line">    r[id]=r[k];</span><br><span class="line">    l[id]=k;</span><br><span class="line">    l[r[id]]=id;</span><br><span class="line">    r[k]=id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> k)</span><span class="comment">//删除下标为k的节点</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    r[l[k]]=r[k];</span><br><span class="line">    l[r[k]]=l[k];</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="练习-2"><a class="markdownIt-Anchor" href="#练习-2"></a> 练习</h3>
-<p><a href="https://www.acwing.com/problem/content/829/">双链表</a></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">1e5</span>+<span class="number">100</span>;</span><br><span class="line"><span class="keyword">int</span> m;</span><br><span class="line"><span class="keyword">int</span> l[N],r[N],e[N],id;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    l[<span class="number">1</span>]=<span class="number">0</span>;</span><br><span class="line">    r[<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    id=<span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> k,<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    e[id]=x;</span><br><span class="line">    l[id]=k;</span><br><span class="line">    r[id]=r[k];</span><br><span class="line">    l[r[id]]=id;</span><br><span class="line">    r[k]=id++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    r[l[k]]=r[k];</span><br><span class="line">    l[r[k]]=l[k];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;m;</span><br><span class="line">    init();</span><br><span class="line">    <span class="keyword">while</span>(m--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">char</span> op[<span class="number">2</span>];</span><br><span class="line">        <span class="keyword">int</span> k,x;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,op);</span><br><span class="line">        <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;L&quot;</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">            add(l[r[<span class="number">0</span>]],x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;R&quot;</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;x;</span><br><span class="line">            add(l[<span class="number">1</span>],x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;D&quot;</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;k;</span><br><span class="line">            <span class="built_in">remove</span>(k+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(!<span class="built_in">strcmp</span>(op,<span class="string">&quot;IL&quot;</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;k&gt;&gt;x;</span><br><span class="line">            add(l[k+<span class="number">1</span>],x);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;k&gt;&gt;x;</span><br><span class="line">            add(k+<span class="number">1</span>,x);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> p=r[<span class="number">0</span>];p!=<span class="number">1</span>;p=r[p]) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,e[p]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>数据结构</category>
-        <category>链表</category>
-      </categories>
-  </entry>
-  <entry>
     <title>队列基础</title>
     <url>/2023/05/08/%E9%98%9F%E5%88%97%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[<p>队列是一种元素遵循先入先出的顺序的一种数据结构，如下图所示，元素从一段进入，从另一端出去。</p>
@@ -4819,11 +4819,11 @@ t_{ikl}\ge P_{ik}-P_{il}
 </tr>
 <tr>
 <td><a href="https://leetcode.cn/problems/sliding-window-maximum/">239. 滑动窗口最大值</a></td>
-<td></td>
+<td><a href="https://leetcode.cn/problems/sliding-window-maximum/solutions/2282435/shu-zu-mo-ni-dan-diao-dui-lie-qiu-jie-hu-mz24/">https://leetcode.cn/problems/sliding-window-maximum/solutions/2282435/shu-zu-mo-ni-dan-diao-dui-lie-qiu-jie-hu-mz24/</a></td>
 </tr>
 <tr>
 <td><a href="https://leetcode.cn/problems/top-k-frequent-elements/">347.前 K 个高频元素</a></td>
-<td></td>
+<td><a href="https://leetcode.cn/problems/top-k-frequent-elements/solutions/2282455/fen-bie-shi-yong-da-gen-dui-he-xiao-gen-kuof2/">https://leetcode.cn/problems/top-k-frequent-elements/solutions/2282455/fen-bie-shi-yong-da-gen-dui-he-xiao-gen-kuof2/</a></td>
 </tr>
 </tbody>
 </table>
@@ -4838,15 +4838,79 @@ t_{ikl}\ge P_{ik}-P_{il}
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyStack</span> </span>&#123;</span><br><span class="line">    Deque&lt;Integer&gt; queue;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">MyStack</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        queue = <span class="keyword">new</span> ArrayDeque&lt;&gt;();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        queue.push(x);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> size = queue.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size - <span class="number">1</span>; i++)</span><br><span class="line">            queue.push(queue.poll());</span><br><span class="line">        <span class="keyword">return</span> queue.poll();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">top</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> size = queue.size();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; size - <span class="number">1</span>; i++)</span><br><span class="line">            queue.push(queue.poll());</span><br><span class="line">        <span class="keyword">int</span> ans = queue.peek();</span><br><span class="line">        queue.push(queue.poll());</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> queue.isEmpty();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="239滑动窗口最大值"><a class="markdownIt-Anchor" href="#239滑动窗口最大值"></a> 239.滑动窗口最大值</h2>
 <h3 id="题目描述-2"><a class="markdownIt-Anchor" href="#题目描述-2"></a> 题目描述</h3>
-<p><img src="/2023/05/09/%E9%98%9F%E5%88%97%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/image-20230523195052889.png" alt="image-20230523195052889"></p>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230523195052889.png" alt="image-20230523195052889"></p>
 <h3 id="题解-2"><a class="markdownIt-Anchor" href="#题解-2"></a> 题解</h3>
 <h4 id="我的思路-2"><a class="markdownIt-Anchor" href="#我的思路-2"></a> 我的思路</h4>
+<p>考虑暴力解法，枚举每一个窗口的起始点，在窗口内查找元素最大值，需要的时间复杂度为O(nk)。在窗口内部每次每次查找最大元素拥有大量的冗余操作，这里可以使用单调队列优化这个过程，是队头一直是窗口的最大值，所以每次可以使用O(1)的时间复杂度，考虑下面几个问题：</p>
+<p>1、单调队列中存储的元素是什么</p>
+<blockquote>
+<p>因为每次需要判断对头元素是否滑出窗口，所以存储的为元素下标，每次通过判断i-k+1与队头元素的大小关系，判断队头元素是否滑出窗口</p>
+</blockquote>
+<p>2、单调队列中元素顺序是什么</p>
+<blockquote>
+<p>因为队头是窗口内最大元素，所以元素顺序从队头到队尾应该是单调减小的</p>
+</blockquote>
+<p>3、如下三种情况如何处理</p>
+<ul>
+<li>
+<p>当前元素小于队尾元素</p>
+<blockquote>
+<p>当前元素可能成为最大元素，入队</p>
+</blockquote>
+</li>
+<li>
+<p>当前元素等于队尾元素</p>
+<blockquote>
+<p>当前元素比队尾元素存在更久，队尾出队</p>
+</blockquote>
+</li>
+<li>
+<p>当前元素大于队尾元素</p>
+<blockquote>
+<p>当前元素存在队尾元素就不可能是最大的，队尾出队</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="算法过程"><a class="markdownIt-Anchor" href="#算法过程"></a> 算法过程</h4>
+<p>因为是滑动窗口问题，所以这里使用滑动窗口框架</p>
+<ul>
+<li>维护一个双端队列，枚举所有窗口起点</li>
+<li>扩大窗口</li>
+<li>缩小窗口
+<ul>
+<li>若当前值大于等于队尾元素</li>
+<li>队尾元素出栈</li>
+<li>重复该过程，直至当前值小于队尾元素</li>
+<li>当前元素入队</li>
+</ul>
+</li>
+<li>若当前起点大于等于k，维护答案</li>
+<li>枚举结束，返回结果</li>
+</ul>
 <h4 id="我的代码-2"><a class="markdownIt-Anchor" href="#我的代码-2"></a> 我的代码</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] maxSlidingWindow(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="keyword">int</span> n = nums.length;</span><br><span class="line">        <span class="comment">// 数组模拟队列</span></span><br><span class="line">        <span class="keyword">int</span> hh = <span class="number">0</span>, tt = -<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span>[] q = <span class="keyword">new</span> <span class="keyword">int</span>[n + <span class="number">10</span>];</span><br><span class="line">        <span class="keyword">int</span>[] ans = <span class="keyword">new</span> <span class="keyword">int</span>[n - k + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">            <span class="comment">// 扩大窗口</span></span><br><span class="line">            <span class="keyword">while</span> (hh &lt;= tt &amp;&amp; nums[q[tt]] &lt;= nums[i])</span><br><span class="line">                tt--;</span><br><span class="line">            q[++tt] = i;</span><br><span class="line">            <span class="comment">// 缩小窗口</span></span><br><span class="line">            <span class="keyword">if</span> (q[hh] &lt; i - k + <span class="number">1</span>)</span><br><span class="line">                hh++;</span><br><span class="line">            <span class="comment">// 更新答案</span></span><br><span class="line">            <span class="keyword">if</span> (i &gt;= k - <span class="number">1</span>)</span><br><span class="line">                ans[i - k + <span class="number">1</span>] = nums[q[hh]];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="347前-k-个高频元素"><a class="markdownIt-Anchor" href="#347前-k-个高频元素"></a> 347.前 K 个高频元素</h2>
 <h3 id="题目描述-3"><a class="markdownIt-Anchor" href="#题目描述-3"></a> 题目描述</h3>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20230524213700235.png" alt="image-20230524213700235"></p>
 <h3 id="题解-3"><a class="markdownIt-Anchor" href="#题解-3"></a> 题解</h3>
 <h4 id="我的思路-3"><a class="markdownIt-Anchor" href="#我的思路-3"></a> 我的思路</h4>
+<p>首先考虑暴力解法，统计所有元素出现次数，然后对次数进行排序，返回前k个结果，当所有元素次数都为1时时间复杂度是O(nlogn)的。</p>
+<p>由于这题只需要返回前k个元素，而使用堆可以以O(1)的时间复杂度获得最大值或者最小值。首先考虑使用大根堆，需要根据不同元素数目m维护一个m个节点的堆，建立完堆之后，返回前k个元素即为答案，建堆的时间复杂度为O(mlogm)，返回k个元素的时间复杂度为O(klogm)，最差时间复杂度为O(nlogn)。</p>
+<p>考虑使用小根堆，这样只需要维护一个k个节点的堆即可，当堆节点数大于k时，删除最小值，然后调整堆，这样最终留下的堆即为前k个元素，不过在最后更新答案时需要从后向前更新。每插入一个元素的时间复杂度为O(logk)共有m个元素，所以时间复杂度为O(mlogk)，最差时间复杂度为O(nlogk)。</p>
+<h4 id="算法过程-2"><a class="markdownIt-Anchor" href="#算法过程-2"></a> 算法过程</h4>
+<p>维护小根堆的算法过程：</p>
+<ul>
+<li>维护一个哈希表，统计每个元素出现的次数，其中key：num，value：times</li>
+<li>枚举所有不同的次数，维护一个堆
+<ul>
+<li>当前元素入堆</li>
+<li>若堆元素大于k，删除最小元素</li>
+</ul>
+</li>
+<li>枚举结束，从后向前更新答案</li>
+</ul>
 <h4 id="我的代码-3"><a class="markdownIt-Anchor" href="#我的代码-3"></a> 我的代码</h4>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Pair</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> times;</span><br><span class="line">    <span class="keyword">int</span> nums;</span><br><span class="line"></span><br><span class="line">    Pair(<span class="keyword">int</span> nums, <span class="keyword">int</span> times) &#123;</span><br><span class="line">        <span class="keyword">this</span>.times = times;</span><br><span class="line">        <span class="keyword">this</span>.nums = nums;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用小根堆计算</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] topKFrequent(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="comment">// 统计次数，并存储在map中,key: nums[i] value: times</span></span><br><span class="line">        Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)</span><br><span class="line">            map.put(nums[i], map.getOrDefault(nums[i], <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        <span class="comment">// 构建一个小根堆对象</span></span><br><span class="line">        PriorityQueue&lt;Pair&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;&gt;((p1, p2) -&gt; &#123;</span><br><span class="line">            <span class="keyword">return</span> p1.times - p2.times;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">// 迭代哈希表，将元素出现的次数和元素的值入堆</span></span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;Integer, Integer&gt; entry : map.entrySet()) &#123;</span><br><span class="line">            pq.add(<span class="keyword">new</span> Pair(entry.getKey(), entry.getValue()));</span><br><span class="line">            <span class="keyword">if</span> (pq.size() &gt; k)</span><br><span class="line">                pq.poll();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 堆中元素倒着输出</span></span><br><span class="line">        <span class="keyword">int</span>[] ans = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = k - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)</span><br><span class="line">            ans[i] = pq.poll().nums;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用大根堆计算</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[] topKFrequent(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> k) &#123;</span><br><span class="line">        <span class="comment">// 统计次数，并存储在map中</span></span><br><span class="line">        Map&lt;Integer, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)</span><br><span class="line">            map.put(nums[i], map.getOrDefault(nums[i], <span class="number">0</span>) + <span class="number">1</span>);</span><br><span class="line">        <span class="comment">// 构建一个大根堆对象</span></span><br><span class="line">        PriorityQueue&lt;Pair&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;&gt;((p1, p2) -&gt; &#123;</span><br><span class="line">            <span class="keyword">return</span> p2.times - p1.times;</span><br><span class="line">        &#125;);</span><br><span class="line">        <span class="comment">// 迭代哈希表，将元素出现的次数和元素的值入堆</span></span><br><span class="line">        <span class="keyword">for</span> (Map.Entry&lt;Integer, Integer&gt; entry : map.entrySet()) &#123;</span><br><span class="line">            pq.add(<span class="keyword">new</span> Pair(entry.getValue(), entry.getKey()));</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 取堆前k个元素</span></span><br><span class="line">        <span class="keyword">int</span>[] ans = <span class="keyword">new</span> <span class="keyword">int</span>[k];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; k; i++)</span><br><span class="line">            ans[i] = pq.poll().nums;</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>数据结构</category>
