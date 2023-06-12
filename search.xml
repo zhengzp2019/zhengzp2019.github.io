@@ -2189,7 +2189,7 @@ b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜�
 </tr>
 <tr>
 <td><a href="https://leetcode.cn/problems/convert-bst-to-greater-tree/">538.把二叉搜索树转换为累加树</a></td>
-<td></td>
+<td><a href="https://leetcode.cn/problems/convert-bst-to-greater-tree/solutions/2300969/you-zhong-zuo-bian-li-lei-zhong-xu-bian-d969n/">https://leetcode.cn/problems/convert-bst-to-greater-tree/solutions/2300969/you-zhong-zuo-bian-li-lei-zhong-xu-bian-d969n/</a></td>
 </tr>
 </tbody>
 </table>
@@ -2377,11 +2377,11 @@ b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜�
 <tbody>
 <tr>
 <td><a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/">236. 二叉树的最近公共祖先</a></td>
-<td></td>
+<td><a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/solutions/2303133/hou-xu-bian-li-hui-su-shi-jian-fu-za-du-x54ok/">https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/solutions/2303133/hou-xu-bian-li-hui-su-shi-jian-fu-za-du-x54ok/</a></td>
 </tr>
 <tr>
 <td><a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/">235. 二叉搜索树的最近公共祖先</a></td>
-<td></td>
+<td><a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/solutions/2306710/li-yong-bstde-you-xu-xing-shi-yong-zhong-me9y/">https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/solutions/2306710/li-yong-bstde-you-xu-xing-shi-yong-zhong-me9y/</a></td>
 </tr>
 </tbody>
 </table>
@@ -2390,13 +2390,55 @@ b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜�
 <h3 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h3>
 <p><img src="/2023/06/06/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%E9%97%AE%E9%A2%98/image-20230607203144656.png" alt="image-20230607203144656"></p>
 <h3 id="我的思路"><a class="markdownIt-Anchor" href="#我的思路"></a> 我的思路</h3>
+<p>想要查找两节点的最近公共祖先，可见暴力的方法是从下向上枚举，所以需要使用回溯的方法查找两节点的最近公共祖先，而树的后序遍历就是一种回溯的方法，接下来考虑如何使用后序遍历。</p>
+<p>先考虑能够成为公共祖先的有哪些情况：</p>
+<p><strong>情况一：</strong> p和q分别分布在root的左右子树中</p>
+<p><strong>情况二：</strong> p和q有一个位于根节点root，另一个位于root子树中</p>
+<p>下面考虑递归函数四部曲</p>
+<ul>
+<li>
+<p>函数的定义</p>
+<blockquote>
+<p>查找树root中节点p或者节点q的位置或者p和q的最近公共祖先，若查找到p或q，则返回p，q位置；若查找到p和q的公共祖先，则返回他们公共祖先的位置；若上述都没有找到，则返回null。</p>
+<p>后序遍历下，p和q一定比公共祖先先找到，而最先找到的公共祖先一定是最近公共祖先。</p>
+</blockquote>
+</li>
+<li>
+<p>函数的输入输出</p>
+<blockquote>
+<p>输入为root，p，q</p>
+<p>输出为p，q的位置或者p，q的最近公共祖先</p>
+</blockquote>
+</li>
+<li>
+<p>终止条件</p>
+<blockquote>
+<p>root为空时，返回空</p>
+<p>root等于p或q时，返回p或q的位置</p>
+</blockquote>
+</li>
+<li>
+<p>单个节点的处理逻辑</p>
+<blockquote>
+<p>由于是后序遍历，所以先遍历左右子树，然后在处理中间节点</p>
+<p>左右子树遍历完后，需要用两个变量left和right接受函数的返回结果，接下来就需要根据函数的返回结果来处理中间节点的逻辑</p>
+<p>1、left和right都不为空时，说明p和q分布在左右子树中，那么root为最近公共祖先，返回root</p>
+<p>2、left为空时，说明左子树没有公共祖先和p，q节点，返回右子树查找结果</p>
+<p>3、right为空时，说明右子树没有公共祖先和p，q节点，返回左子树查找结果</p>
+<p>4、left和right都为空时，说明左右子树都没有公共祖先和p，q节点，返回null(由于该逻辑包含在情况2和3中所以无需单独处理)</p>
+<p>说明：根据单层处理逻辑来看，最近公共祖先只有一个节点，在最近公共祖先查找到之前，会出现情况1，而当公共祖先查找到之后剩余未访问的节点只会处理情况1、2的逻辑，所以查找到的最近公共祖先会不断地向根节点返回，最终的处理结果就是答案。</p>
+</blockquote>
+</li>
+</ul>
 <h3 id="我的代码"><a class="markdownIt-Anchor" href="#我的代码"></a> 我的代码</h3>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 终止条件，先序</span></span><br><span class="line">        <span class="keyword">if</span>(root == <span class="keyword">null</span> || root == q || root == p) <span class="keyword">return</span> root;</span><br><span class="line">        <span class="comment">// 解决子问题</span></span><br><span class="line">        TreeNode left = lowestCommonAncestor(root.left, p, q);</span><br><span class="line">        TreeNode right = lowestCommonAncestor(root.right, p, q);</span><br><span class="line">        <span class="comment">// 回溯</span></span><br><span class="line">        <span class="keyword">if</span>(left == <span class="keyword">null</span>) <span class="keyword">return</span> right;</span><br><span class="line">        <span class="keyword">if</span>(right == <span class="keyword">null</span>) <span class="keyword">return</span> left;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="235-二叉搜索树的最近公共祖先"><a class="markdownIt-Anchor" href="#235-二叉搜索树的最近公共祖先"></a> 235. 二叉搜索树的最近公共祖先</h2>
 <h3 id="题目描述-2"><a class="markdownIt-Anchor" href="#题目描述-2"></a> 题目描述</h3>
 <p><img src="/2023/06/06/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%E9%97%AE%E9%A2%98/image-20230607203054244.png" alt="image-20230607203054244"></p>
 <h3 id="我的思路-2"><a class="markdownIt-Anchor" href="#我的思路-2"></a> 我的思路</h3>
-<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20201016173414722.png" alt="236. 二叉树的最近公共祖先"></p>
+<p>这题可以完全照搬<a href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/">236. 二叉树的最近公共祖先</a>的代码，但是没有利用上BST的有序性，考虑在BST下两节点公共祖先的性质，公共祖先的节点值一定是位于两节点值的区间内的。</p>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20201018172243602.png" alt="235. 二叉搜索树的最近公共祖先"></p>
+<p>那么p、q的中间节点中，哪一个节点才是祖先节点呢？答案是使用中序遍历第一个遍历到值位于p和q之间的节点就是祖先节点。如上图所示，查找0和5的公共祖先，第一个中间节点是2，在往后遍历无论是向左遍历还是向右遍历都会错过一个节点的祖先。代码可以照搬中序遍历的框架，第一次遇到p和q的中间节点返回结果答案。</p>
 <h3 id="我的代码-2"><a class="markdownIt-Anchor" href="#我的代码-2"></a> 我的代码</h3>
 <h4 id="递归法"><a class="markdownIt-Anchor" href="#递归法"></a> 递归法</h4>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 递归</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> TreeNode <span class="title">lowestCommonAncestor</span><span class="params">(TreeNode root, TreeNode p, TreeNode q)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (root.val &gt; p.val &amp;&amp; root.val &gt; q.val)</span><br><span class="line">            <span class="keyword">return</span> lowestCommonAncestor(root.left, p, q);</span><br><span class="line">        <span class="keyword">if</span> (root.val &lt; p.val &amp;&amp; root.val &lt; q.val)</span><br><span class="line">            <span class="keyword">return</span> lowestCommonAncestor(root.right, p, q);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
