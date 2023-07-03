@@ -34,20 +34,20 @@
         if (d.head) d.head.appendChild(s);
     })(document, window, 'Chatra');
 </script>
-  <meta name="description" content="目前研一就读于西安电子科技大学">
+  <meta name="description" content="什么是回溯算法 回溯算法是一种通过尝试逐步构建解决方案来递归解决问题的算法，一次一个删除那些在任何时间都无法满足问题约束的解决方案，可以看作是一种高级的暴力算法。  如何理解回溯算法 回溯算法解决的问题都可以抽象成树形结构，因为回溯算法都是在集合中找子集，集合的大小构成了树的宽度，递归的深度构成了树的深度，递归要终止就要有终止条件，所以必然是一颗高度有限的N叉树。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Git基础">
-<meta property="og:url" content="http://zhengzp2019.github.io/2020/08/25/Git%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="回溯算法介绍">
+<meta property="og:url" content="http://zhengzp2019.github.io/2023/06/12/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/index.html">
 <meta property="og:site_name" content="dpBirder&#39;s Blog">
-<meta property="og:description" content="目前研一就读于西安电子科技大学">
+<meta property="og:description" content="什么是回溯算法 回溯算法是一种通过尝试逐步构建解决方案来递归解决问题的算法，一次一个删除那些在任何时间都无法满足问题约束的解决方案，可以看作是一种高级的暴力算法。  如何理解回溯算法 回溯算法解决的问题都可以抽象成树形结构，因为回溯算法都是在集合中找子集，集合的大小构成了树的宽度，递归的深度构成了树的深度，递归要终止就要有终止条件，所以必然是一颗高度有限的N叉树。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-08-25T01:36:28.000Z">
-<meta property="article:modified_time" content="2022-11-19T03:47:53.738Z">
+<meta property="article:published_time" content="2023-06-12T14:10:14.000Z">
+<meta property="article:modified_time" content="2023-06-16T12:55:14.800Z">
 <meta property="article:author" content="dpbirder">
-<meta property="article:tag" content="Git">
+<meta property="article:tag" content="个人技术博客">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://zhengzp2019.github.io/2020/08/25/Git%E5%9F%BA%E7%A1%80/">
+<link rel="canonical" href="http://zhengzp2019.github.io/2023/06/12/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/">
 
 
 <script id="page-configurations">
@@ -61,15 +61,15 @@
 </script>
 <script> 
  (function(){
-        if('123456'){
-            if (prompt('请输入文章密码') !== '123456'){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
                 alert('密码错误！');
                 history.back();
             }
         }
     })();
 </script>
-  <title>Git基础 | dpBirder's Blog</title>
+  <title>回溯算法介绍 | dpBirder's Blog</title>
   
 
 
@@ -217,7 +217,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://zhengzp2019.github.io/2020/08/25/Git%E5%9F%BA%E7%A1%80/">
+    <link itemprop="mainEntityOfPage" href="http://zhengzp2019.github.io/2023/06/12/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/boy.jpg">
@@ -230,7 +230,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Git基础
+          回溯算法介绍
         </h1>
 
         <div class="post-meta">
@@ -240,14 +240,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2020-08-25 09:36:28" itemprop="dateCreated datePublished" datetime="2020-08-25T09:36:28+08:00">2020-08-25</time>
+              <time title="创建时间：2023-06-12 22:10:14" itemprop="dateCreated datePublished" datetime="2023-06-12T22:10:14+08:00">2023-06-12</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-19 11:47:53" itemprop="dateModified" datetime="2022-11-19T11:47:53+08:00">2022-11-19</time>
+                <time title="修改时间：2023-06-16 20:55:14" itemprop="dateModified" datetime="2023-06-16T20:55:14+08:00">2023-06-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -255,7 +255,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index"><span itemprop="name">Git</span></a>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%9B%9E%E6%BA%AF/" itemprop="url" rel="index"><span itemprop="name">回溯</span></a>
                 </span>
             </span>
 
@@ -265,7 +269,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
+              <span>1.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -284,7 +288,78 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h2 id="什么是回溯算法"><a class="markdownIt-Anchor" href="#什么是回溯算法"></a> 什么是回溯算法</h2>
+<p>回溯算法是一种通过尝试逐步构建解决方案来递归解决问题的算法，一次一个删除那些在任何时间都无法满足问题约束的解决方案，可以看作是一种高级的暴力算法。</p>
+<h2 id="如何理解回溯算法"><a class="markdownIt-Anchor" href="#如何理解回溯算法"></a> 如何理解回溯算法</h2>
+<p>回溯算法解决的问题都可以抽象成树形结构，因为回溯算法都是在集合中找子集，集合的大小构成了树的宽度，递归的深度构成了树的深度，递归要终止就要有终止条件，所以必然是一颗高度有限的N叉树。</p>
+<a id="more"></a>
+<h2 id="回溯的问题类型"><a class="markdownIt-Anchor" href="#回溯的问题类型"></a> 回溯的问题类型</h2>
+<ul>
+<li>决策问题——需要找到一个可行方案</li>
+<li>最优问题——需要找到最优的可行方案</li>
+<li>枚举问题——需要找到所有的可行方案</li>
+</ul>
+<h2 id="基本术语"><a class="markdownIt-Anchor" href="#基本术语"></a> 基本术语</h2>
+<p>问题P，数据集D，解集S，约束条件集C</p>
+<ul>
+<li>决策向量X：解集S中的一个解</li>
+<li>约束条件C
+<ul>
+<li>隐性约束</li>
+<li>显性约束</li>
+</ul>
+</li>
+<li>解空间S</li>
+<li>状态空间树：以一种树形结构展示解空间</li>
+<li>状态空间：有状态空间树中从根结点道其他节点的所有路径来描述</li>
+<li>问题状态：状态空间树的每个节点描述了一个问题状态</li>
+</ul>
+<h2 id="回溯与递归的区别"><a class="markdownIt-Anchor" href="#回溯与递归的区别"></a> 回溯与递归的区别</h2>
+<p>递归可以没有回溯，但是回溯一定有递归</p>
+<h2 id="回溯的伪代码"><a class="markdownIt-Anchor" href="#回溯的伪代码"></a> 回溯的伪代码</h2>
+<h3 id="回溯的递归写法"><a class="markdownIt-Anchor" href="#回溯的递归写法"></a> 回溯的递归写法</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">findSolutions</span><span class="params">(n, other params)</span> :</span></span><br><span class="line"><span class="function">    <span class="title">if</span> <span class="params">(found a solution)</span> :</span></span><br><span class="line"><span class="function">        solutionsFound </span>= solutionsFound + <span class="number">1</span>;</span><br><span class="line">        displaySolution();</span><br><span class="line">        <span class="keyword">if</span> (solutionsFound &gt;= solutionTarget) : </span><br><span class="line">            System.exit(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (val = first to last) :</span><br><span class="line">        <span class="keyword">if</span> (isValid(val, n)) :</span><br><span class="line">            applyValue(val, n);</span><br><span class="line">            findSolutions(n+<span class="number">1</span>, other params);</span><br><span class="line">            removeValue(val, n);</span><br></pre></td></tr></table></figure>
+<h3 id="查找解决方法是否存在"><a class="markdownIt-Anchor" href="#查找解决方法是否存在"></a> 查找解决方法是否存在</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">findSolutions</span><span class="params">(n, other params)</span> :</span></span><br><span class="line"><span class="function">    <span class="title">if</span> <span class="params">(found a solution)</span> :</span></span><br><span class="line"><span class="function">        <span class="title">displaySolution</span><span class="params">()</span></span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (val = first to last) :</span><br><span class="line">        <span class="keyword">if</span> (isValid(val, n)) :</span><br><span class="line">            applyValue(val, n);</span><br><span class="line">            <span class="keyword">if</span> (findSolutions(n+<span class="number">1</span>, other params))</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            removeValue(val, n);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="回溯问题的模板回溯三部曲学习自代码随想录"><a class="markdownIt-Anchor" href="#回溯问题的模板回溯三部曲学习自代码随想录"></a> 回溯问题的模板——回溯三部曲(学习自代码随想录)</h3>
+<ul>
+<li>
+<p>回溯函数返回值及参数——backtracing</p>
+<blockquote>
+<p>回溯算法一般没有返回值，而输入参数没有那么容易确定下来，一般都先写逻辑，需要什么参数，在加入什么参数</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(参数)</span></span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li>
+<p>回溯函数终止条件</p>
+<blockquote>
+<p>将回溯问题看成状态树，当到达叶子节点时，递归终止，保存答案</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (终止条件) &#123;</span><br><span class="line">    存放结果;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li>
+<p>回溯搜索的遍历过程</p>
+<blockquote>
+<p>回溯一般是在集合中递归搜索，集合的大小构成了树的宽度，递归的深度构成树的深度</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;<span class="keyword">for</span> (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) &#123;</span><br><span class="line">  处理节点;</span><br><span class="line">  backtracking(路径，选择列表); <span class="comment">// 递归</span></span><br><span class="line">  回溯，撤销处理结果</span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
+<p>for循环就是遍历集合区间，一个节点有多少孩子，for循环就执行多少次。</p>
+<p>其中for循环可以理解为树的横向遍历，递归过程可以理解为树的纵向遍历。</p>
+</blockquote>
+</li>
+<li>
+<p>最终的框架如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(参数)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (终止条件) &#123;</span><br><span class="line">        存放结果;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) &#123;</span><br><span class="line">        处理节点;</span><br><span class="line">        backtracking(路径，选择列表); <span class="comment">// 递归</span></span><br><span class="line">        回溯，撤销处理结果</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="回溯算法的应用"><a class="markdownIt-Anchor" href="#回溯算法的应用"></a> 回溯算法的应用</h2>
+<ul>
+<li>组合问题：N个数里面按照一定规则找出k个数的集合</li>
+<li>切割问题：一个字符串按一定规则有多少种切割方式</li>
+<li>子集问题：一个N个数的集合里有多少符合条件的子集</li>
+<li>排列问题：N个数按一定规则全排列，有几种排列方式</li>
+<li>棋盘问题：N皇后，解数独等等</li>
+</ul>
+
     </div>
 
     
@@ -296,9 +371,6 @@
 </div>
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/Git/" rel="tag"># Git</a>
-          </div>
 
         
 
@@ -306,12 +378,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/" rel="prev" title="数据测试之对拍">
-      <i class="fa fa-chevron-left"></i> 数据测试之对拍
+    <a href="/2023/06/06/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%E9%97%AE%E9%A2%98/" rel="prev" title="二叉树公共祖先问题">
+      <i class="fa fa-chevron-left"></i> 二叉树公共祖先问题
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/" rel="next" title="Linux系统安装">
-      Linux系统安装 <i class="fa fa-chevron-right"></i>
+    <a href="/2023/06/13/%E5%9B%9E%E6%BA%AF%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" rel="next" title="回溯相关问题">
+      回溯相关问题 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -371,6 +443,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95"><span class="nav-text"> 什么是回溯算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95"><span class="nav-text"> 如何理解回溯算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E6%BA%AF%E7%9A%84%E9%97%AE%E9%A2%98%E7%B1%BB%E5%9E%8B"><span class="nav-text"> 回溯的问题类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD"><span class="nav-text"> 基本术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E6%BA%AF%E4%B8%8E%E9%80%92%E5%BD%92%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text"> 回溯与递归的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E6%BA%AF%E7%9A%84%E4%BC%AA%E4%BB%A3%E7%A0%81"><span class="nav-text"> 回溯的伪代码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E6%BA%AF%E7%9A%84%E9%80%92%E5%BD%92%E5%86%99%E6%B3%95"><span class="nav-text"> 回溯的递归写法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8"><span class="nav-text"> 查找解决方法是否存在</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E6%BA%AF%E9%97%AE%E9%A2%98%E7%9A%84%E6%A8%A1%E6%9D%BF%E5%9B%9E%E6%BA%AF%E4%B8%89%E9%83%A8%E6%9B%B2%E5%AD%A6%E4%B9%A0%E8%87%AA%E4%BB%A3%E7%A0%81%E9%9A%8F%E6%83%B3%E5%BD%95"><span class="nav-text"> 回溯问题的模板——回溯三部曲(学习自代码随想录)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text"> 回溯算法的应用</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -445,11 +518,11 @@
     </label>
     <select class="lang-select" data-canonical="">
       
-        <option value="zh-CN" data-href="/2020/08/25/Git%E5%9F%BA%E7%A1%80/" selected="">
+        <option value="zh-CN" data-href="/2023/06/12/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/" selected="">
           简体中文
         </option>
       
-        <option value="en" data-href="/en/2020/08/25/Git%E5%9F%BA%E7%A1%80/" selected="">
+        <option value="en" data-href="/en/2023/06/12/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/" selected="">
           English
         </option>
       
