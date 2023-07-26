@@ -34,20 +34,18 @@
         if (d.head) d.head.appendChild(s);
     })(document, window, 'Chatra');
 </script>
-  <meta name="description" content="1、动态规划解题的一般思路   将原问题分解为子问题   确定状态   确定初始状态（边界状态）的值   确定状态转移方程">
-<meta property="og:type" content="article">
-<meta property="og:title" content="动态规划">
-<meta property="og:url" content="http://zhengzp2019.github.io/2020/11/25/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/index.html">
+  <meta name="description" content="目前研一就读于西安电子科技大学">
+<meta property="og:type" content="website">
+<meta property="og:title" content="dpBirder&#39;s Blog">
+<meta property="og:url" content="http://zhengzp2019.github.io/archives/2023/07/index.html">
 <meta property="og:site_name" content="dpBirder&#39;s Blog">
-<meta property="og:description" content="1、动态规划解题的一般思路   将原问题分解为子问题   确定状态   确定初始状态（边界状态）的值   确定状态转移方程">
+<meta property="og:description" content="目前研一就读于西安电子科技大学">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-11-25T08:05:36.000Z">
-<meta property="article:modified_time" content="2023-05-08T03:12:10.728Z">
 <meta property="article:author" content="dpbirder">
 <meta property="article:tag" content="个人技术博客">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://zhengzp2019.github.io/2020/11/25/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
+<link rel="canonical" href="http://zhengzp2019.github.io/archives/2023/07/">
 
 
 <script id="page-configurations">
@@ -55,7 +53,7 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true,
+    isPost : false,
     lang   : 'zh-CN'
   };
 </script>
@@ -69,7 +67,7 @@
         }
     })();
 </script>
-  <title>动态规划 | dpBirder's Blog</title>
+  <title>归档 | dpBirder's Blog</title>
   
 
 
@@ -159,7 +157,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">48</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">49</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -210,173 +208,51 @@
         <div class="content-wrap">
           
 
-          <div class="content post posts-expand">
+          <div class="content archive">
             
 
-    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://zhengzp2019.github.io/2020/11/25/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/boy.jpg">
-      <meta itemprop="name" content="dpbirder">
-      <meta itemprop="description" content="目前研一就读于西安电子科技大学">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="dpBirder's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          动态规划
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2020-11-25 16:05:36" itemprop="dateCreated datePublished" datetime="2020-11-25T16:05:36+08:00">2020-11-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-05-08 11:12:10" itemprop="dateModified" datetime="2023-05-08T11:12:10+08:00">2023-05-08</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/" itemprop="url" rel="index"><span itemprop="name">数组</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index"><span itemprop="name">动态规划</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
+  
+  <div class="post-block">
+    <div class="posts-collapse">
+      <div class="collection-title">
+        
+        <span class="collection-header">还行! 目前共计 49 篇日志。 继续努力。</span>
+      </div>
 
       
-        <h2 id="1-动态规划解题的一般思路"><a class="markdownIt-Anchor" href="#1-动态规划解题的一般思路"></a> 1、动态规划解题的一般思路</h2>
-<ul>
-<li>
-<p>将原问题分解为子问题</p>
-</li>
-<li>
-<p>确定状态</p>
-</li>
-<li>
-<p>确定初始状态（边界状态）的值</p>
-</li>
-<li>
-<p>确定状态转移方程</p>
-</li>
-</ul>
-<a id="more"></a>
-<h2 id="2-例题"><a class="markdownIt-Anchor" href="#2-例题"></a> 2、例题</h2>
-<ul>
-<li><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/">买卖股票的最佳时机</a></li>
-</ul>
-<p>题解：</p>
-<p>DP的思路： 利用原问题与子问题的关系，将其变成 大问题的解 = 小问题的解的函数， 从而将问题变成size的扩展即可，当size到达最大后，原问题解决了</p>
-<p>DP的keypoint</p>
-<ol>
-<li>
-<p>转移方程（大问题与小问题的关系）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1）定义状态：定义一个状态，例如f(i) &#x3D; 到a[i]为止到最小值</span><br><span class="line">2）设计转移方程：根据如上状态方程定义，则有 f(i+1) &#x3D; min(f(i), a[i+1])</span><br><span class="line"></span><br><span class="line">tip:</span><br><span class="line">转移方程的设计完全依赖于状态的定义，并不是什么样的状态定义，都能有状态转移方程，因此，状态定义决定了该DP方法能否实现</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>初始条件的设置： Dp本质还是迭代，总要有一个迭代的初值。</p>
-</li>
-<li>
-<p>特殊处理小size的问题：有些情况，由于size太小，没法带入转移方程中。</p>
-</li>
-</ol>
-<p>根据该问题，依次回答上述问题：</p>
-<ol>
-<li>
-<p>大问题与小问题的关系</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1）状态定义：我们定义max_profit为第i天的最大收益</span><br><span class="line">2）状态转移方程：</span><br><span class="line">第i天的最大收益和第i-1天的最大收益之间的关系：</span><br><span class="line">    i) 最大收益不是第i天抛出的，                        ---最大收益和第i天的价格无关</span><br><span class="line">    ii）最大收益是在第i-1天前某天买入的，并在第i天抛出的，  ---与第i天的价格有关</span><br><span class="line">   </span><br><span class="line">因此第i天的最大收益等于：第i天抛出所造成的最大收益 和 第i-1天之前的最大收益 中的最大值</span><br><span class="line">即：</span><br><span class="line">前i天的最大收益 &#x3D; max&#123;前i-1天的最大收益，第i天的价格-前i-1天中的最小价格&#125;</span><br><span class="line">其中：</span><br><span class="line">前i-1天中的最小价格需时时更新并记录</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>初始条件：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">min 和 max_profit</span><br><span class="line">min可以等于第一天的price</span><br><span class="line">max_profit可以等于0， 因为最大收益的最小值就是0， 用人话叫，最低也不能赔了</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>小于最小问题的特殊情况： 当list的长度为0 和 1 时， 没有办法带入转移公式中，需要特殊处理。</p>
-</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProfit</span>(<span class="params">self, prices</span>) -&gt; int:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> len(prices) &lt;= <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        min_input = prices[<span class="number">0</span>]</span><br><span class="line">        max_profit = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> p <span class="keyword">in</span> prices[<span class="number">1</span>:]:</span><br><span class="line">            min_input = min(p, min_input)</span><br><span class="line">            max_profit = max(max_profit, p - min_input)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max_profit</span><br></pre></td></tr></table></figure>
+    <div class="collection-year">
+      <span class="collection-header">2023</span>
     </div>
 
-    
-    
-    <div>
-    
-        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
-    
-</div>
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
 
-      <footer class="post-footer">
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2023-07-26T20:26:24+08:00"
+              content="2023-07-26">
+          07-26
+        </time>
+      </div>
 
-        
+      <div class="post-title">
+          <a class="post-title-link" href="/2023/07/26/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/" itemprop="url">
+            <span itemprop="name">动态规划相关问题</span>
+          </a>
+      </div>
 
-
-        
-    <div class="post-nav">
-      <div class="post-nav-item">
-    <a href="/2020/09/27/%E9%80%92%E5%BD%92%E5%92%8C%E9%80%92%E6%8E%A8/" rel="prev" title="递归和递推">
-      <i class="fa fa-chevron-left"></i> 递归和递推
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2020/12/14/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" rel="next" title="学生管理系统">
-      学生管理系统 <i class="fa fa-chevron-right"></i>
-    </a></div>
-    </div>
-      </footer>
-    
+    </header>
   </article>
+
+
+    </div>
+  </div>
   
   
+  
+
   
 
 
@@ -429,7 +305,6 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%A7%A3%E9%A2%98%E7%9A%84%E4%B8%80%E8%88%AC%E6%80%9D%E8%B7%AF"><span class="nav-text"> 1、动态规划解题的一般思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BE%8B%E9%A2%98"><span class="nav-text"> 2、例题</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -445,7 +320,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">48</span>
+          <span class="site-state-item-count">49</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -504,11 +379,11 @@
     </label>
     <select class="lang-select" data-canonical="">
       
-        <option value="zh-CN" data-href="/2020/11/25/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" selected="">
+        <option value="zh-CN" data-href="/archives/2023/07/index.html" selected="">
           简体中文
         </option>
       
-        <option value="en" data-href="/en/2020/11/25/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" selected="">
+        <option value="en" data-href="/en/archives/2023/07/index.html" selected="">
           English
         </option>
       
@@ -529,12 +404,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">212k</span>
+    <span title="站点总字数">213k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:12</span>
+    <span title="站点阅读时长">3:14</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

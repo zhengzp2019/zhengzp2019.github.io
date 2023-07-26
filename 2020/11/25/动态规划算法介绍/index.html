@@ -34,20 +34,20 @@
         if (d.head) d.head.appendChild(s);
     })(document, window, 'Chatra');
 </script>
-  <meta name="description" content="vecotr(变长数组，倍增思想)  size()  返回元素个数 empty()  返回是否为空 clear()  清空 front()&#x2F;back() push_back()&#x2F;pop_back() begin()&#x2F;end() [] 支持比较运算，按字典序">
+  <meta name="description" content="什么是动态规划 动态规划，简称dp，如果某一问题有很多重叠子问题，使用动态规划是最有效的。 动规与贪心的区别在于，动态规划中每一个状态一定是由上一个状态推导出来的，这一点就区分于贪心，贪心没有状态推导，而是从局部直接选最优的。  动态规划的解题步骤  确定dp数组(dp table)以及下标的含义，即状态表示‘ 确定递推公式，即状态转移 确定初始状态(边界状态)的值 确定遍历顺序 举例推导dp数">
 <meta property="og:type" content="article">
-<meta property="og:title" content="STL">
-<meta property="og:url" content="http://zhengzp2019.github.io/2021/04/21/STL/index.html">
+<meta property="og:title" content="动态规划算法介绍">
+<meta property="og:url" content="http://zhengzp2019.github.io/2020/11/25/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/index.html">
 <meta property="og:site_name" content="dpBirder&#39;s Blog">
-<meta property="og:description" content="vecotr(变长数组，倍增思想)  size()  返回元素个数 empty()  返回是否为空 clear()  清空 front()&#x2F;back() push_back()&#x2F;pop_back() begin()&#x2F;end() [] 支持比较运算，按字典序">
+<meta property="og:description" content="什么是动态规划 动态规划，简称dp，如果某一问题有很多重叠子问题，使用动态规划是最有效的。 动规与贪心的区别在于，动态规划中每一个状态一定是由上一个状态推导出来的，这一点就区分于贪心，贪心没有状态推导，而是从局部直接选最优的。  动态规划的解题步骤  确定dp数组(dp table)以及下标的含义，即状态表示‘ 确定递推公式，即状态转移 确定初始状态(边界状态)的值 确定遍历顺序 举例推导dp数">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-04-21T05:46:54.000Z">
-<meta property="article:modified_time" content="2022-11-19T03:47:53.745Z">
+<meta property="article:published_time" content="2020-11-25T08:05:36.000Z">
+<meta property="article:modified_time" content="2023-07-26T12:23:39.646Z">
 <meta property="article:author" content="dpbirder">
-<meta property="article:tag" content="数据结构">
+<meta property="article:tag" content="个人技术博客">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://zhengzp2019.github.io/2021/04/21/STL/">
+<link rel="canonical" href="http://zhengzp2019.github.io/2020/11/25/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/">
 
 
 <script id="page-configurations">
@@ -69,7 +69,7 @@
         }
     })();
 </script>
-  <title>STL | dpBirder's Blog</title>
+  <title>动态规划算法介绍 | dpBirder's Blog</title>
   
 
 
@@ -217,7 +217,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://zhengzp2019.github.io/2021/04/21/STL/">
+    <link itemprop="mainEntityOfPage" href="http://zhengzp2019.github.io/2020/11/25/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/boy.jpg">
@@ -230,7 +230,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          STL
+          动态规划算法介绍
         </h1>
 
         <div class="post-meta">
@@ -240,14 +240,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2021-04-21 13:46:54" itemprop="dateCreated datePublished" datetime="2021-04-21T13:46:54+08:00">2021-04-21</time>
+              <time title="创建时间：2020-11-25 16:05:36" itemprop="dateCreated datePublished" datetime="2020-11-25T16:05:36+08:00">2020-11-25</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-11-19 11:47:53" itemprop="dateModified" datetime="2022-11-19T11:47:53+08:00">2022-11-19</time>
+                <time title="修改时间：2023-07-26 20:23:39" itemprop="dateModified" datetime="2023-07-26T20:23:39+08:00">2023-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -257,6 +257,18 @@
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
                 </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/" itemprop="url" rel="index"><span itemprop="name">数组</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" itemprop="url" rel="index"><span itemprop="name">动态规划</span></a>
+                </span>
             </span>
 
           <br>
@@ -265,7 +277,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -284,101 +296,58 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h2 id="vecotr变长数组倍增思想"><a class="markdownIt-Anchor" href="#vecotr变长数组倍增思想"></a> vecotr(变长数组，倍增思想)</h2>
-<blockquote>
-<p>size()  返回元素个数<br>
-empty()  返回是否为空<br>
-clear()  清空<br>
-front()/back()<br>
-push_back()/pop_back()<br>
-begin()/end()<br>
-[]<br>
-支持比较运算，按字典序</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="pairintint"><a class="markdownIt-Anchor" href="#pairintint"></a> pair&lt;int,int&gt;</h2>
-<blockquote>
-<p>first<br>
-second<br>
-支持比较运算，以first为第一个关键字，以second为第二个关键字（字典序）</p>
-</blockquote>
-<h2 id="string字符串"><a class="markdownIt-Anchor" href="#string字符串"></a> string(字符串)</h2>
-<blockquote>
-<p>size()/length()  返回字符串长度<br>
-empty()<br>
-clear()<br>
-substr(起始下标，(子串长度))  返回子串<br>
-c_str()  返回字符串所在字符数组的起始地址</p>
-</blockquote>
-<h2 id="stack栈"><a class="markdownIt-Anchor" href="#stack栈"></a> stack(栈)</h2>
-<blockquote>
-<p>size()<br>
-empty()<br>
-push()  向栈顶插入一个元素<br>
-top()  返回栈顶元素<br>
-pop()  弹出栈顶元素</p>
-</blockquote>
-<h2 id="queue队列"><a class="markdownIt-Anchor" href="#queue队列"></a> queue(队列)</h2>
-<blockquote>
-<p>size()<br>
-empty()<br>
-push()  向队尾插入一个元素<br>
-front()  返回队头元素<br>
-back()  返回队尾元素<br>
-pop()  弹出队头元素</p>
-</blockquote>
-<h2 id="priority_queue优先队列默认时大根堆"><a class="markdownIt-Anchor" href="#priority_queue优先队列默认时大根堆"></a> priority_queue(优先队列,默认时大根堆)</h2>
-<blockquote>
-<p>push()  插入一个元素<br>
-top()  返回堆顶元素<br>
-pop()  弹出堆顶元素<br>
-定义成小根堆的方式：priority_queue&lt;int, vector<int>, greater<int>&gt; q;</int></int></p>
-</blockquote>
-<h2 id="deque双端队列"><a class="markdownIt-Anchor" href="#deque双端队列"></a> deque(双端队列)</h2>
-<blockquote>
-<p>size()<br>
-empty()<br>
-clear()<br>
-front()/back()<br>
-push_back()/pop_back()<br>
-push_front()/pop_front()<br>
-begin()/end()<br>
-[]</p>
-</blockquote>
-<h2 id="set-map-multiset-multimap-基于平衡二叉树红黑树动态维护有序序列"><a class="markdownIt-Anchor" href="#set-map-multiset-multimap-基于平衡二叉树红黑树动态维护有序序列"></a> set, map, multiset, multimap, 基于平衡二叉树（红黑树），动态维护有序序列</h2>
-<blockquote>
-<p>size()<br>
-empty()<br>
-clear()<br>
-begin()/end()<br>
-++, – 返回前驱和后继，时间复杂度 O(logn)</p>
-</blockquote>
-<h3 id="setmultiset"><a class="markdownIt-Anchor" href="#setmultiset"></a> set/multiset</h3>
-<blockquote>
-<p>insert()  插入一个数<br>
-find()  查找一个数<br>
-count()  返回某一个数的个数<br>
-erase()<br>
-(1) 输入是一个数x，删除所有x   O(k + logn)<br>
-(2) 输入一个迭代器，删除这个迭代器<br>
-lower_bound()/upper_bound()<br>
-lower_bound(x)  返回大于等于x的最小的数的迭代器<br>
-upper_bound(x)  返回大于x的最小的数的迭代器</p>
-</blockquote>
-<h3 id="mapmultimap"><a class="markdownIt-Anchor" href="#mapmultimap"></a> map/multimap</h3>
-<blockquote>
-<p>insert()  插入的数是一个pair<br>
-erase()  输入的参数是pair或者迭代器<br>
-find()<br>
-[]   时间复杂度是 O(logn)<br>
-lower_bound()/upper_bound()</p>
-</blockquote>
-<h2 id="unordered_multisetunordered_multimapunordered_setunordered_map基于哈希表动态维护无序序列"><a class="markdownIt-Anchor" href="#unordered_multisetunordered_multimapunordered_setunordered_map基于哈希表动态维护无序序列"></a> unordered_multiset,unordered_multimap,unordered_set,unordered_map,基于哈希表,动态维护无序序列</h2>
-<blockquote>
-<p>和上面类似，增删改查的时间复杂度是 O(1)<br>
-不支持 lower_bound()/upper_bound()， 迭代器的++，- -</p>
-</blockquote>
-
+        <h2 id="什么是动态规划"><a class="markdownIt-Anchor" href="#什么是动态规划"></a> 什么是动态规划</h2>
+<p>动态规划，简称dp，如果某一问题有很多重叠子问题，使用动态规划是最有效的。</p>
+<p>动规与贪心的区别在于，动态规划中每一个状态一定是由上一个状态推导出来的，<strong>这一点就区分于贪心</strong>，贪心没有状态推导，而是从局部直接选最优的。</p>
+<h2 id="动态规划的解题步骤"><a class="markdownIt-Anchor" href="#动态规划的解题步骤"></a> 动态规划的解题步骤</h2>
+<ul>
+<li>确定dp数组(dp table)以及下标的含义，即状态表示‘</li>
+<li>确定递推公式，即状态转移</li>
+<li>确定初始状态(边界状态)的值</li>
+<li>确定遍历顺序</li>
+<li>举例推导dp数组(模拟)<a id="more"></a>
+</li>
+</ul>
+<h2 id="动态规划该如何debug"><a class="markdownIt-Anchor" href="#动态规划该如何debug"></a> 动态规划该如何debug</h2>
+<p><mark>把dp数组打印出来，看看是不是按照自己的思路推导的</mark></p>
+<p><strong>做动规的题目，写代码之前一定要把状态转移在dp数组的上具体情况模拟一遍，心中有数，确定最后推出的是想要的结果</strong>。</p>
+<p>然后再写代码，如果代码没通过就打印dp数组，看看是不是和自己预先推导的哪里不一样。</p>
+<p>如果打印出来和自己预先模拟推导是一样的，那么就是自己的递归公式、初始化或者遍历顺序有问题了。</p>
+<p>如果和自己预先模拟推导的不一样，那么就是代码实现细节有问题。</p>
+<h2 id="2-例题"><a class="markdownIt-Anchor" href="#2-例题"></a> 2、例题</h2>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/">买卖股票的最佳时机</a></li>
+</ul>
+<p>题解：</p>
+<p>DP的思路： 利用原问题与子问题的关系，将其变成 大问题的解 = 小问题的解的函数， 从而将问题变成size的扩展即可，当size到达最大后，原问题解决了</p>
+<p>DP的keypoint</p>
+<ol>
+<li>
+<p>转移方程（大问题与小问题的关系）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1）定义状态：定义一个状态，例如f(i) &#x3D; 到a[i]为止到最小值</span><br><span class="line">2）设计转移方程：根据如上状态方程定义，则有 f(i+1) &#x3D; min(f(i), a[i+1])</span><br><span class="line"></span><br><span class="line">tip:</span><br><span class="line">转移方程的设计完全依赖于状态的定义，并不是什么样的状态定义，都能有状态转移方程，因此，状态定义决定了该DP方法能否实现</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>初始条件的设置： Dp本质还是迭代，总要有一个迭代的初值。</p>
+</li>
+<li>
+<p>特殊处理小size的问题：有些情况，由于size太小，没法带入转移方程中。</p>
+</li>
+</ol>
+<p>根据该问题，依次回答上述问题：</p>
+<ol>
+<li>
+<p>大问题与小问题的关系</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1）状态定义：我们定义max_profit为第i天的最大收益</span><br><span class="line">2）状态转移方程：</span><br><span class="line">第i天的最大收益和第i-1天的最大收益之间的关系：</span><br><span class="line">    i) 最大收益不是第i天抛出的，                        ---最大收益和第i天的价格无关</span><br><span class="line">    ii）最大收益是在第i-1天前某天买入的，并在第i天抛出的，  ---与第i天的价格有关</span><br><span class="line">   </span><br><span class="line">因此第i天的最大收益等于：第i天抛出所造成的最大收益 和 第i-1天之前的最大收益 中的最大值</span><br><span class="line">即：</span><br><span class="line">前i天的最大收益 &#x3D; max&#123;前i-1天的最大收益，第i天的价格-前i-1天中的最小价格&#125;</span><br><span class="line">其中：</span><br><span class="line">前i-1天中的最小价格需时时更新并记录</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>初始条件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">min 和 max_profit</span><br><span class="line">min可以等于第一天的price</span><br><span class="line">max_profit可以等于0， 因为最大收益的最小值就是0， 用人话叫，最低也不能赔了</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>小于最小问题的特殊情况： 当list的长度为0 和 1 时， 没有办法带入转移公式中，需要特殊处理。</p>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProfit</span>(<span class="params">self, prices</span>) -&gt; int:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> len(prices) &lt;= <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        min_input = prices[<span class="number">0</span>]</span><br><span class="line">        max_profit = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> p <span class="keyword">in</span> prices[<span class="number">1</span>:]:</span><br><span class="line">            min_input = min(p, min_input)</span><br><span class="line">            max_profit = max(max_profit, p - min_input)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max_profit</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -390,9 +359,6 @@ lower_bound()/upper_bound()</p>
 </div>
 
       <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" rel="tag"># 数据结构</a>
-          </div>
 
         
 
@@ -400,12 +366,12 @@ lower_bound()/upper_bound()</p>
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2021/04/10/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%9F%BA%E7%A1%80/" rel="prev" title="二叉树基础">
-      <i class="fa fa-chevron-left"></i> 二叉树基础
+    <a href="/2020/09/27/%E9%80%92%E5%BD%92%E5%92%8C%E9%80%92%E6%8E%A8/" rel="prev" title="递归和递推">
+      <i class="fa fa-chevron-left"></i> 递归和递推
     </a></div>
       <div class="post-nav-item">
-    <a href="/2021/07/25/%E5%9B%BE%E8%AE%BA/" rel="next" title="图论">
-      图论 <i class="fa fa-chevron-right"></i>
+    <a href="/2020/12/14/%E5%AD%A6%E7%94%9F%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/" rel="next" title="学生管理系统">
+      学生管理系统 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -465,7 +431,7 @@ lower_bound()/upper_bound()</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vecotr%E5%8F%98%E9%95%BF%E6%95%B0%E7%BB%84%E5%80%8D%E5%A2%9E%E6%80%9D%E6%83%B3"><span class="nav-text"> vecotr(变长数组，倍增思想)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pairintint"><span class="nav-text"> pair&lt;int,int&gt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-text"> string(字符串)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stack%E6%A0%88"><span class="nav-text"> stack(栈)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#queue%E9%98%9F%E5%88%97"><span class="nav-text"> queue(队列)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#priority_queue%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%E9%BB%98%E8%AE%A4%E6%97%B6%E5%A4%A7%E6%A0%B9%E5%A0%86"><span class="nav-text"> priority_queue(优先队列,默认时大根堆)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deque%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97"><span class="nav-text"> deque(双端队列)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-map-multiset-multimap-%E5%9F%BA%E4%BA%8E%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%BA%A2%E9%BB%91%E6%A0%91%E5%8A%A8%E6%80%81%E7%BB%B4%E6%8A%A4%E6%9C%89%E5%BA%8F%E5%BA%8F%E5%88%97"><span class="nav-text"> set, map, multiset, multimap, 基于平衡二叉树（红黑树），动态维护有序序列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#setmultiset"><span class="nav-text"> set&#x2F;multiset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapmultimap"><span class="nav-text"> map&#x2F;multimap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unordered_multisetunordered_multimapunordered_setunordered_map%E5%9F%BA%E4%BA%8E%E5%93%88%E5%B8%8C%E8%A1%A8%E5%8A%A8%E6%80%81%E7%BB%B4%E6%8A%A4%E6%97%A0%E5%BA%8F%E5%BA%8F%E5%88%97"><span class="nav-text"> unordered_multiset,unordered_multimap,unordered_set,unordered_map,基于哈希表,动态维护无序序列</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92"><span class="nav-text"> 什么是动态规划</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%9A%84%E8%A7%A3%E9%A2%98%E6%AD%A5%E9%AA%A4"><span class="nav-text"> 动态规划的解题步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E8%AF%A5%E5%A6%82%E4%BD%95debug"><span class="nav-text"> 动态规划该如何debug</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E4%BE%8B%E9%A2%98"><span class="nav-text"> 2、例题</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -540,11 +506,11 @@ lower_bound()/upper_bound()</p>
     </label>
     <select class="lang-select" data-canonical="">
       
-        <option value="zh-CN" data-href="/2021/04/21/STL/" selected="">
+        <option value="zh-CN" data-href="/2020/11/25/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/" selected="">
           简体中文
         </option>
       
-        <option value="en" data-href="/en/2021/04/21/STL/" selected="">
+        <option value="en" data-href="/en/2020/11/25/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/" selected="">
           English
         </option>
       
