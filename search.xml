@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>01背包相关问题</title>
+    <url>/2023/07/28/01%E8%83%8C%E5%8C%85%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<h2 id="01背包介绍"><a class="markdownIt-Anchor" href="#01背包介绍"></a> 01背包介绍</h2>
+<a id="more"></a>
+<h2 id="01背包相关问题"><a class="markdownIt-Anchor" href="#01背包相关问题"></a> 01背包相关问题</h2>
+]]></content>
+      <categories>
+        <category>算法</category>
+        <category>动态规划</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Git基础</title>
     <url>/2020/08/25/Git%E5%9F%BA%E7%A1%80/</url>
     <content><![CDATA[]]></content>
@@ -655,9 +667,9 @@ lower_bound()/upper_bound()</p>
 <h2 id="栈"><a class="markdownIt-Anchor" href="#栈"></a> 栈</h2>
 ]]></content>
       <categories>
+        <category>算法</category>
         <category>数据结构</category>
         <category>编程语言</category>
-        <category>算法</category>
         <category>java</category>
       </categories>
       <tags>
@@ -2075,91 +2087,6 @@ lower_bound()/upper_bound()</p>
       </tags>
   </entry>
   <entry>
-    <title>二分查找</title>
-    <url>/2020/09/27/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
-    <content><![CDATA[<h1 id="二分查找"><a class="markdownIt-Anchor" href="#二分查找"></a> 二分查找</h1>
-<h2 id="1-什么是二分查找"><a class="markdownIt-Anchor" href="#1-什么是二分查找"></a> 1、什么是二分查找</h2>
-<blockquote>
-<p>​	二分查找对具有指定左索引和右索引的连续序列进行操作。这就是所谓的查找空间。二分查找维护查找空间的左、右和中间指示符，并比较查找目标或将查找条件应用于集合的中间值；如果条件不满足或值不相等，则清除目标不可能存在的那一半，并在剩下的一半上继续查找，直到成功为止。如果查以空的一半结束，则无法满足条件，并且无法找到目标。</p>
-</blockquote>
-<a id="more"></a>
-<blockquote>
-<p>​	二进制搜索可以采用许多替代形式，并且可能并不总是直接搜索特定值。有时您希望应用特定条件或规则来确定接下来要搜索的哪一侧（左侧或右侧）。</p>
-<p>二分法的算法很简单，但在做题的过程中总是出现结果要么漏各一，要么循环条件不等号中少个等号。总的来说二分查找的<strong>思路简单，细节复杂</strong><br>
-<strong>条件:</strong> 二分查找的查找序列必须是有序的，所一般使用之前都会对序列进行排序</p>
-</blockquote>
-<h2 id="2-二分查找的框架"><a class="markdownIt-Anchor" href="#2-二分查找的框架"></a> 2、二分查找的框架</h2>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ****yxc****</span></span><br><span class="line">    <span class="keyword">int</span> l=<span class="number">0</span>,r=n;</span><br><span class="line">    <span class="comment">// 第一种情况，check函数为判断mid性质的函数</span></span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(check(mid)) r=mid;</span><br><span class="line">        <span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 第二种情况</span></span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r+<span class="number">1</span>&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(check(mid)) l=mid;</span><br><span class="line">        <span class="keyword">else</span> r=mid<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>小技巧：不要出现else,所有的分类条件均放在else if后面<br>
-我的一些疑问<br>
-1、为什么使用第二种框架时mid=l+r+1&gt;&gt;1?<br>
-答：因为在C中整数相除是向下取整的，在缩小区间时l=mid这样当l与r很近时,l=mid=l就会造成死循环,故需要+1使得mid向上取整，这样无论在何时，区间都会缩小，循环总会结束。<br>
-2、二分搜索容易出现的错误与解决方式<br>
-a. 死循环：保证每次迭代后搜索区间都会缩小即可，使用第二种模板可以解决问题<br>
-b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜索前仔细思考<mark>我要查找的结果是什么</mark>，观察循环终止条件，考虑清楚循环在何种情况下结束。使用第二种模板，循环的终止条件已经固定在l==r时结束，故每次返回的结果也就很清晰了，所以使用第二种模板的话每次只需要考虑搜索策略就行了。</p>
-</blockquote>
-<h2 id="3-模板例题"><a class="markdownIt-Anchor" href="#3-模板例题"></a> 3、模板&amp;例题</h2>
-<h3 id="1-查找一个数"><a class="markdownIt-Anchor" href="#1-查找一个数"></a> 1、查找一个数</h3>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = nums.length<span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(...) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;<span class="comment">//防止溢出</span></span><br><span class="line">        <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">            right = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>查找空间：[left,right]</p>
-<p>终止条件：left = right + 1</p>
-<p>由于查找空间为左闭右闭，在进行区间划分时，已经判断过该值，故每次区间划分区间变化如下：</p>
-<p>向左查找：right = mid - 1</p>
-<p>向右查找：left = mid + 1</p>
-</blockquote>
-<ol>
-<li>
-<p>为什么终止条件是≤，而不是&lt;</p>
-<blockquote>
-<p>因为初始化 right 的赋值是 nums.length-1，即最后一个元素的索引，而不是 nums.length。前者相当于两端都闭区间 [left, right]，后者相当于左闭右开区间 [left, right],这个算法的搜索区间是 [left, right]，而结束条件是搜索空间为空时结束，若是&lt;，则结束后left==right,在搜索空间里有元素nums[left]没有被搜索</p>
-</blockquote>
-</li>
-</ol>
-<h3 id="2-在一个有序的数组里给定一个数查找比给定数小的最大的数的下标"><a class="markdownIt-Anchor" href="#2-在一个有序的数组里给定一个数查找比给定数小的最大的数的下标"></a> 2、在一个有序的数组里，给定一个数，查找比给定数小的最大的数的下标</h3>
-<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20200927155830822.png" alt="image-20200927155830822"></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LowerBound</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> <span class="built_in">size</span>,<span class="keyword">int</span> p)</span> <span class="comment">//复杂度O(log(n))</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> L = <span class="number">0</span>; <span class="comment">//查找区间的左端点</span></span><br><span class="line">    <span class="keyword">int</span> R = <span class="built_in">size</span> - <span class="number">1</span>; <span class="comment">//查找区间的右端点</span></span><br><span class="line">    <span class="keyword">int</span> lastPos = <span class="number">-1</span>; <span class="comment">//到目前为止找到的最优解</span></span><br><span class="line">    <span class="keyword">while</span>( L &lt;= R) &#123; <span class="comment">//如果查找区间不为空就继续查找</span></span><br><span class="line">        <span class="keyword">int</span> mid = L+(R-L)/<span class="number">2</span>; <span class="comment">//取查找区间正中元素的下标</span></span><br><span class="line">        <span class="keyword">if</span>(a[mid]&gt;= p)</span><br><span class="line">        	R = mid - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            lastPos = mid;</span><br><span class="line">            L = mid+<span class="number">1</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     &#125;</span><br><span class="line">	<span class="keyword">return</span> lastPos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="3-用二分法查找方程的根"><a class="markdownIt-Anchor" href="#3-用二分法查找方程的根"></a> 3、用二分法查找方程的根</h3>
-<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20200927160918618.png" alt="image-20200927160918618"></p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> EPS = <span class="number">1e-6</span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span> </span>&#123; <span class="keyword">return</span> x*x*x - <span class="number">5</span>*x*x + <span class="number">10</span>*x - <span class="number">80</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> root, x1 = <span class="number">0</span>, x2 = <span class="number">100</span>,y;</span><br><span class="line">    root = x1+(x2-x1)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> triedTimes = <span class="number">1</span>; <span class="comment">//记录一共尝试多少次，对求根来说不是必须的</span></span><br><span class="line">    y = f(root);</span><br><span class="line">    <span class="keyword">while</span>( <span class="built_in">fabs</span>(y) &gt; EPS) &#123;</span><br><span class="line">        <span class="keyword">if</span>( y &gt; <span class="number">0</span> ) </span><br><span class="line">            x2 = root;</span><br><span class="line">        <span class="keyword">else</span> x1 = root;</span><br><span class="line">        	root = x1+(x2 - x1)/<span class="number">2</span>;</span><br><span class="line">        y = f(root);</span><br><span class="line">        triedTimes ++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.8f\n&quot;</span>,root);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,triedTimes);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="4-习题"><a class="markdownIt-Anchor" href="#4-习题"></a> 4、习题</h2>
-<table>
-<thead>
-<tr>
-<th>题目</th>
-<th>题解</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof/">查找0~n-1中缺失的数字</a></td>
-<td></td>
-</tr>
-<tr>
-<td>查找一个数</td>
-<td></td>
-</tr>
-<tr>
-<td><a href="https://leetcode-cn.com/problems/sqrtx/">x的平方根</a></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-]]></content>
-      <categories>
-        <category>算法</category>
-        <category>二分查找</category>
-      </categories>
-      <tags>
-        <tag>算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>二叉搜索树的修改与改造</title>
     <url>/2023/06/06/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E4%BF%AE%E6%94%B9%E4%B8%8E%E6%94%B9%E9%80%A0/</url>
     <content><![CDATA[<h2 id="题目汇总"><a class="markdownIt-Anchor" href="#题目汇总"></a> 题目汇总</h2>
@@ -2251,6 +2178,91 @@ b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜�
         <category>数据结构</category>
         <category>树</category>
       </categories>
+  </entry>
+  <entry>
+    <title>二分查找</title>
+    <url>/2020/09/27/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</url>
+    <content><![CDATA[<h1 id="二分查找"><a class="markdownIt-Anchor" href="#二分查找"></a> 二分查找</h1>
+<h2 id="1-什么是二分查找"><a class="markdownIt-Anchor" href="#1-什么是二分查找"></a> 1、什么是二分查找</h2>
+<blockquote>
+<p>​	二分查找对具有指定左索引和右索引的连续序列进行操作。这就是所谓的查找空间。二分查找维护查找空间的左、右和中间指示符，并比较查找目标或将查找条件应用于集合的中间值；如果条件不满足或值不相等，则清除目标不可能存在的那一半，并在剩下的一半上继续查找，直到成功为止。如果查以空的一半结束，则无法满足条件，并且无法找到目标。</p>
+</blockquote>
+<a id="more"></a>
+<blockquote>
+<p>​	二进制搜索可以采用许多替代形式，并且可能并不总是直接搜索特定值。有时您希望应用特定条件或规则来确定接下来要搜索的哪一侧（左侧或右侧）。</p>
+<p>二分法的算法很简单，但在做题的过程中总是出现结果要么漏各一，要么循环条件不等号中少个等号。总的来说二分查找的<strong>思路简单，细节复杂</strong><br>
+<strong>条件:</strong> 二分查找的查找序列必须是有序的，所一般使用之前都会对序列进行排序</p>
+</blockquote>
+<h2 id="2-二分查找的框架"><a class="markdownIt-Anchor" href="#2-二分查找的框架"></a> 2、二分查找的框架</h2>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="comment">// ****yxc****</span></span><br><span class="line">    <span class="keyword">int</span> l=<span class="number">0</span>,r=n;</span><br><span class="line">    <span class="comment">// 第一种情况，check函数为判断mid性质的函数</span></span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(check(mid)) r=mid;</span><br><span class="line">        <span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 第二种情况</span></span><br><span class="line">    <span class="keyword">while</span>(l&lt;r)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> mid=l+r+<span class="number">1</span>&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(check(mid)) l=mid;</span><br><span class="line">        <span class="keyword">else</span> r=mid<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> l;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>小技巧：不要出现else,所有的分类条件均放在else if后面<br>
+我的一些疑问<br>
+1、为什么使用第二种框架时mid=l+r+1&gt;&gt;1?<br>
+答：因为在C中整数相除是向下取整的，在缩小区间时l=mid这样当l与r很近时,l=mid=l就会造成死循环,故需要+1使得mid向上取整，这样无论在何时，区间都会缩小，循环总会结束。<br>
+2、二分搜索容易出现的错误与解决方式<br>
+a. 死循环：保证每次迭代后搜索区间都会缩小即可，使用第二种模板可以解决问题<br>
+b. 查找错误：这个由返回结果和搜索策略共同决定，每次搜索前仔细思考<mark>我要查找的结果是什么</mark>，观察循环终止条件，考虑清楚循环在何种情况下结束。使用第二种模板，循环的终止条件已经固定在l==r时结束，故每次返回的结果也就很清晰了，所以使用第二种模板的话每次只需要考虑搜索策略就行了。</p>
+</blockquote>
+<h2 id="3-模板例题"><a class="markdownIt-Anchor" href="#3-模板例题"></a> 3、模板&amp;例题</h2>
+<h3 id="1-查找一个数"><a class="markdownIt-Anchor" href="#1-查找一个数"></a> 1、查找一个数</h3>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">binarySearch</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> left = <span class="number">0</span>, right = nums.length<span class="number">-1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(...) &#123;</span><br><span class="line">        <span class="keyword">int</span> mid = left + (right - left) / <span class="number">2</span>;<span class="comment">//防止溢出</span></span><br><span class="line">        <span class="keyword">if</span> (nums[mid] == target) &#123;</span><br><span class="line">            <span class="keyword">return</span> mid;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &lt; target) &#123;</span><br><span class="line">            left = mid + <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (nums[mid] &gt; target) &#123;</span><br><span class="line">            right = mid - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>查找空间：[left,right]</p>
+<p>终止条件：left = right + 1</p>
+<p>由于查找空间为左闭右闭，在进行区间划分时，已经判断过该值，故每次区间划分区间变化如下：</p>
+<p>向左查找：right = mid - 1</p>
+<p>向右查找：left = mid + 1</p>
+</blockquote>
+<ol>
+<li>
+<p>为什么终止条件是≤，而不是&lt;</p>
+<blockquote>
+<p>因为初始化 right 的赋值是 nums.length-1，即最后一个元素的索引，而不是 nums.length。前者相当于两端都闭区间 [left, right]，后者相当于左闭右开区间 [left, right],这个算法的搜索区间是 [left, right]，而结束条件是搜索空间为空时结束，若是&lt;，则结束后left==right,在搜索空间里有元素nums[left]没有被搜索</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="2-在一个有序的数组里给定一个数查找比给定数小的最大的数的下标"><a class="markdownIt-Anchor" href="#2-在一个有序的数组里给定一个数查找比给定数小的最大的数的下标"></a> 2、在一个有序的数组里，给定一个数，查找比给定数小的最大的数的下标</h3>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20200927155830822.png" alt="image-20200927155830822"></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">LowerBound</span><span class="params">(<span class="keyword">int</span> a[],<span class="keyword">int</span> <span class="built_in">size</span>,<span class="keyword">int</span> p)</span> <span class="comment">//复杂度O(log(n))</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> L = <span class="number">0</span>; <span class="comment">//查找区间的左端点</span></span><br><span class="line">    <span class="keyword">int</span> R = <span class="built_in">size</span> - <span class="number">1</span>; <span class="comment">//查找区间的右端点</span></span><br><span class="line">    <span class="keyword">int</span> lastPos = <span class="number">-1</span>; <span class="comment">//到目前为止找到的最优解</span></span><br><span class="line">    <span class="keyword">while</span>( L &lt;= R) &#123; <span class="comment">//如果查找区间不为空就继续查找</span></span><br><span class="line">        <span class="keyword">int</span> mid = L+(R-L)/<span class="number">2</span>; <span class="comment">//取查找区间正中元素的下标</span></span><br><span class="line">        <span class="keyword">if</span>(a[mid]&gt;= p)</span><br><span class="line">        	R = mid - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            lastPos = mid;</span><br><span class="line">            L = mid+<span class="number">1</span>;</span><br><span class="line">     &#125;</span><br><span class="line">     &#125;</span><br><span class="line">	<span class="keyword">return</span> lastPos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="3-用二分法查找方程的根"><a class="markdownIt-Anchor" href="#3-用二分法查找方程的根"></a> 3、用二分法查找方程的根</h3>
+<p><img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20200927160918618.png" alt="image-20200927160918618"></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> EPS = <span class="number">1e-6</span>;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">f</span><span class="params">(<span class="keyword">double</span> x)</span> </span>&#123; <span class="keyword">return</span> x*x*x - <span class="number">5</span>*x*x + <span class="number">10</span>*x - <span class="number">80</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">double</span> root, x1 = <span class="number">0</span>, x2 = <span class="number">100</span>,y;</span><br><span class="line">    root = x1+(x2-x1)/<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">int</span> triedTimes = <span class="number">1</span>; <span class="comment">//记录一共尝试多少次，对求根来说不是必须的</span></span><br><span class="line">    y = f(root);</span><br><span class="line">    <span class="keyword">while</span>( <span class="built_in">fabs</span>(y) &gt; EPS) &#123;</span><br><span class="line">        <span class="keyword">if</span>( y &gt; <span class="number">0</span> ) </span><br><span class="line">            x2 = root;</span><br><span class="line">        <span class="keyword">else</span> x1 = root;</span><br><span class="line">        	root = x1+(x2 - x1)/<span class="number">2</span>;</span><br><span class="line">        y = f(root);</span><br><span class="line">        triedTimes ++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%.8f\n&quot;</span>,root);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,triedTimes);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="4-习题"><a class="markdownIt-Anchor" href="#4-习题"></a> 4、习题</h2>
+<table>
+<thead>
+<tr>
+<th>题目</th>
+<th>题解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/que-shi-de-shu-zi-lcof/">查找0~n-1中缺失的数字</a></td>
+<td></td>
+</tr>
+<tr>
+<td>查找一个数</td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://leetcode-cn.com/problems/sqrtx/">x的平方根</a></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+]]></content>
+      <categories>
+        <category>算法</category>
+        <category>二分查找</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title>二叉搜索树相关题目</title>
@@ -3314,6 +3326,18 @@ t_{ikl}\ge P_{ik}-P_{il}
 <td><a href="https://leetcode.cn/problems/min-cost-climbing-stairs/">746. 使用最小花费爬楼梯</a></td>
 <td></td>
 </tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/unique-paths/">62.不同路径</a></td>
+<td><a href="https://leetcode.cn/problems/unique-paths/solutions/2361753/dong-tai-gui-hua-shi-jian-fu-za-du-on2-b-jh8t/">https://leetcode.cn/problems/unique-paths/solutions/2361753/dong-tai-gui-hua-shi-jian-fu-za-du-on2-b-jh8t/</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/integer-break/">343.整数拆分</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/unique-binary-search-trees/">96.不同的二叉搜索树</a></td>
+<td></td>
+</tr>
 </tbody>
 </table>
 <a id="more"></a>
@@ -3330,8 +3354,10 @@ t_{ikl}\ge P_{ik}-P_{il}
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> N = <span class="number">35</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">fib</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[N];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">            dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="70爬楼梯"><a class="markdownIt-Anchor" href="#70爬楼梯"></a> 70.爬楼梯</h2>
 <h3 id="题目描述-2"><a class="markdownIt-Anchor" href="#题目描述-2"></a> 题目描述</h3>
+<p><img src="/2023/07/26/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/image-20230728165636349.png" alt="image-20230728165636349"></p>
 <h3 id="我的思路-2"><a class="markdownIt-Anchor" href="#我的思路-2"></a> 我的思路</h3>
 <p>见代码注释</p>
+<p><strong>完全背包版</strong></p>
 <h3 id="我的代码-2"><a class="markdownIt-Anchor" href="#我的代码-2"></a> 我的代码</h3>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> N = <span class="number">50</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">climbStairs</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// dp[i]:爬i层楼梯具有的不同种方法</span></span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[N];</span><br><span class="line">        <span class="comment">// 状态方程：dp[i] = dp[i-1] + dp[i-2]</span></span><br><span class="line">        <span class="comment">// 初始化</span></span><br><span class="line">        dp[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 循环方向：从前向后</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">            dp[i] = dp[i - <span class="number">1</span>] + dp[i - <span class="number">2</span>];</span><br><span class="line">        <span class="comment">// System.out.println(Arrays.toString(dp));</span></span><br><span class="line">        <span class="keyword">return</span> dp[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="746使用最小花费爬楼梯"><a class="markdownIt-Anchor" href="#746使用最小花费爬楼梯"></a> 746.使用最小花费爬楼梯</h2>
@@ -3340,6 +3366,18 @@ t_{ikl}\ge P_{ik}-P_{il}
 <p>见代码注释</p>
 <h3 id="我的代码-3"><a class="markdownIt-Anchor" href="#我的代码-3"></a> 我的代码</h3>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> N = <span class="number">1010</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minCostClimbingStairs</span><span class="params">(<span class="keyword">int</span>[] cost)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// dp[i]: 爬到第i个楼梯需要的最小代价</span></span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[N];</span><br><span class="line">        <span class="comment">// 状态方程：dp[i] = min(dp[i-1] + cost[i-1], dp[i-2] + cost[i-2])</span></span><br><span class="line">        <span class="comment">// 初始化</span></span><br><span class="line">        <span class="comment">// dp[0] = 0;</span></span><br><span class="line">        <span class="comment">// dp[1] = 0;</span></span><br><span class="line">        <span class="comment">// 遍历方向：从前向后</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= cost.length; i++)</span><br><span class="line">            dp[i] = Math.min(dp[i - <span class="number">1</span>] + cost[i - <span class="number">1</span>], dp[i - <span class="number">2</span>] + cost[i - <span class="number">2</span>]);</span><br><span class="line">        <span class="keyword">return</span> dp[cost.length];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="62不同路径"><a class="markdownIt-Anchor" href="#62不同路径"></a> 62.不同路径</h2>
+<h3 id="题目描述-4"><a class="markdownIt-Anchor" href="#题目描述-4"></a> 题目描述</h3>
+<p><img src="/2023/07/26/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/image-20230727210544933.png" alt="image-20230727210544933"></p>
+<h3 id="我的思路-4"><a class="markdownIt-Anchor" href="#我的思路-4"></a> 我的思路</h3>
+<p>见代码注释</p>
+<h3 id="我的代码-4"><a class="markdownIt-Anchor" href="#我的代码-4"></a> 我的代码</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 二维dp</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">uniquePaths</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// dp[i,j]：机器人移动到[i,j]可能的路径数</span></span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">5</span>][n + <span class="number">5</span>];</span><br><span class="line">        <span class="comment">// 递推公式：dp[i][j] = dp[i-1][j] + dp[i][j-1]</span></span><br><span class="line">        <span class="comment">// 初始条件</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++)</span><br><span class="line">            dp[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; j++)</span><br><span class="line">            dp[<span class="number">0</span>][j] = <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// 遍历顺序：从前向后</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++) &#123;</span><br><span class="line">                dp[i][j] = dp[i - <span class="number">1</span>][j] + dp[i][j - <span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[m - <span class="number">1</span>][n - <span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="96不同的二叉搜索树"><a class="markdownIt-Anchor" href="#96不同的二叉搜索树"></a> 96.不同的二叉搜索树</h2>
+<h3 id="题目描述-5"><a class="markdownIt-Anchor" href="#题目描述-5"></a> 题目描述</h3>
+<p><img src="/2023/07/26/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/image-20230728215337772.png" alt="image-20230728215337772"></p>
+<h3 id="我的思路-5"><a class="markdownIt-Anchor" href="#我的思路-5"></a> 我的思路</h3>
+<h3 id="我的代码-5"><a class="markdownIt-Anchor" href="#我的代码-5"></a> 我的代码</h3>
 ]]></content>
       <categories>
         <category>算法</category>
@@ -3354,7 +3392,7 @@ t_{ikl}\ge P_{ik}-P_{il}
 <p>动规与贪心的区别在于，动态规划中每一个状态一定是由上一个状态推导出来的，<strong>这一点就区分于贪心</strong>，贪心没有状态推导，而是从局部直接选最优的。</p>
 <h2 id="动态规划的解题步骤"><a class="markdownIt-Anchor" href="#动态规划的解题步骤"></a> 动态规划的解题步骤</h2>
 <ul>
-<li>确定dp数组(dp table)以及下标的含义，即状态表示‘</li>
+<li>确定dp数组(dp table)以及下标的含义，即状态表示</li>
 <li>确定递推公式，即状态转移</li>
 <li>确定初始状态(边界状态)的值</li>
 <li>确定遍历顺序</li>
@@ -3402,10 +3440,10 @@ t_{ikl}\ge P_{ik}-P_{il}
 </ol>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxProfit</span>(<span class="params">self, prices</span>) -&gt; int:</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> len(prices) &lt;= <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        min_input = prices[<span class="number">0</span>]</span><br><span class="line">        max_profit = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> p <span class="keyword">in</span> prices[<span class="number">1</span>:]:</span><br><span class="line">            min_input = min(p, min_input)</span><br><span class="line">            max_profit = max(max_profit, p - min_input)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> max_profit</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>数据结构</category>
         <category>算法</category>
-        <category>数组</category>
         <category>动态规划</category>
+        <category>数据结构</category>
+        <category>数组</category>
       </categories>
   </entry>
   <entry>
@@ -3787,6 +3825,86 @@ t_{ikl}\ge P_{ik}-P_{il}
       </categories>
   </entry>
   <entry>
+    <title>回溯算法介绍</title>
+    <url>/2023/06/12/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/</url>
+    <content><![CDATA[<h2 id="什么是回溯算法"><a class="markdownIt-Anchor" href="#什么是回溯算法"></a> 什么是回溯算法</h2>
+<p>回溯算法是一种通过尝试逐步构建解决方案来递归解决问题的算法，一次一个删除那些在任何时间都无法满足问题约束的解决方案，可以看作是一种高级的暴力算法。</p>
+<h2 id="如何理解回溯算法"><a class="markdownIt-Anchor" href="#如何理解回溯算法"></a> 如何理解回溯算法</h2>
+<p>回溯算法解决的问题都可以抽象成树形结构，因为回溯算法都是在集合中找子集，集合的大小构成了树的宽度，递归的深度构成了树的深度，递归要终止就要有终止条件，所以必然是一颗高度有限的N叉树。</p>
+<a id="more"></a>
+<h2 id="回溯的问题类型"><a class="markdownIt-Anchor" href="#回溯的问题类型"></a> 回溯的问题类型</h2>
+<ul>
+<li>决策问题——需要找到一个可行方案</li>
+<li>最优问题——需要找到最优的可行方案</li>
+<li>枚举问题——需要找到所有的可行方案</li>
+</ul>
+<h2 id="基本术语"><a class="markdownIt-Anchor" href="#基本术语"></a> 基本术语</h2>
+<p>问题P，数据集D，解集S，约束条件集C</p>
+<ul>
+<li>决策向量X：解集S中的一个解</li>
+<li>约束条件C
+<ul>
+<li>隐性约束</li>
+<li>显性约束</li>
+</ul>
+</li>
+<li>解空间S</li>
+<li>状态空间树：以一种树形结构展示解空间</li>
+<li>状态空间：有状态空间树中从根结点道其他节点的所有路径来描述</li>
+<li>问题状态：状态空间树的每个节点描述了一个问题状态</li>
+</ul>
+<h2 id="回溯与递归的区别"><a class="markdownIt-Anchor" href="#回溯与递归的区别"></a> 回溯与递归的区别</h2>
+<p>递归可以没有回溯，但是回溯一定有递归</p>
+<h2 id="回溯的伪代码"><a class="markdownIt-Anchor" href="#回溯的伪代码"></a> 回溯的伪代码</h2>
+<h3 id="回溯的递归写法"><a class="markdownIt-Anchor" href="#回溯的递归写法"></a> 回溯的递归写法</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">findSolutions</span><span class="params">(n, other params)</span> :</span></span><br><span class="line"><span class="function">    <span class="title">if</span> <span class="params">(found a solution)</span> :</span></span><br><span class="line"><span class="function">        solutionsFound </span>= solutionsFound + <span class="number">1</span>;</span><br><span class="line">        displaySolution();</span><br><span class="line">        <span class="keyword">if</span> (solutionsFound &gt;= solutionTarget) : </span><br><span class="line">            System.exit(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (val = first to last) :</span><br><span class="line">        <span class="keyword">if</span> (isValid(val, n)) :</span><br><span class="line">            applyValue(val, n);</span><br><span class="line">            findSolutions(n+<span class="number">1</span>, other params);</span><br><span class="line">            removeValue(val, n);</span><br></pre></td></tr></table></figure>
+<h3 id="查找解决方法是否存在"><a class="markdownIt-Anchor" href="#查找解决方法是否存在"></a> 查找解决方法是否存在</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">findSolutions</span><span class="params">(n, other params)</span> :</span></span><br><span class="line"><span class="function">    <span class="title">if</span> <span class="params">(found a solution)</span> :</span></span><br><span class="line"><span class="function">        <span class="title">displaySolution</span><span class="params">()</span></span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (val = first to last) :</span><br><span class="line">        <span class="keyword">if</span> (isValid(val, n)) :</span><br><span class="line">            applyValue(val, n);</span><br><span class="line">            <span class="keyword">if</span> (findSolutions(n+<span class="number">1</span>, other params))</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            removeValue(val, n);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="回溯问题的模板回溯三部曲学习自代码随想录"><a class="markdownIt-Anchor" href="#回溯问题的模板回溯三部曲学习自代码随想录"></a> 回溯问题的模板——回溯三部曲(学习自代码随想录)</h3>
+<ul>
+<li>
+<p>回溯函数返回值及参数——backtracing</p>
+<blockquote>
+<p>回溯算法一般没有返回值，而输入参数没有那么容易确定下来，一般都先写逻辑，需要什么参数，在加入什么参数</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(参数)</span></span></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li>
+<p>回溯函数终止条件</p>
+<blockquote>
+<p>将回溯问题看成状态树，当到达叶子节点时，递归终止，保存答案</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (终止条件) &#123;</span><br><span class="line">    存放结果;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+<li>
+<p>回溯搜索的遍历过程</p>
+<blockquote>
+<p>回溯一般是在集合中递归搜索，集合的大小构成了树的宽度，递归的深度构成树的深度</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&gt;<span class="keyword">for</span> (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) &#123;</span><br><span class="line">  处理节点;</span><br><span class="line">  backtracking(路径，选择列表); <span class="comment">// 递归</span></span><br><span class="line">  回溯，撤销处理结果</span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
+<p>for循环就是遍历集合区间，一个节点有多少孩子，for循环就执行多少次。</p>
+<p>其中for循环可以理解为树的横向遍历，递归过程可以理解为树的纵向遍历。</p>
+</blockquote>
+</li>
+<li>
+<p>最终的框架如下</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(参数)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (终止条件) &#123;</span><br><span class="line">        存放结果;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) &#123;</span><br><span class="line">        处理节点;</span><br><span class="line">        backtracking(路径，选择列表); <span class="comment">// 递归</span></span><br><span class="line">        回溯，撤销处理结果</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="回溯算法的应用"><a class="markdownIt-Anchor" href="#回溯算法的应用"></a> 回溯算法的应用</h2>
+<ul>
+<li>组合问题：N个数里面按照一定规则找出k个数的集合</li>
+<li>切割问题：一个字符串按一定规则有多少种切割方式</li>
+<li>子集问题：一个N个数的集合里有多少符合条件的子集</li>
+<li>排列问题：N个数按一定规则全排列，有几种排列方式</li>
+<li>棋盘问题：N皇后，解数独等等</li>
+</ul>
+]]></content>
+      <categories>
+        <category>算法</category>
+        <category>回溯</category>
+      </categories>
+  </entry>
+  <entry>
     <title>回溯相关问题</title>
     <url>/2023/06/13/%E5%9B%9E%E6%BA%AF%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="题目汇总"><a class="markdownIt-Anchor" href="#题目汇总"></a> 题目汇总</h2>
@@ -4047,86 +4165,6 @@ t_{ikl}\ge P_{ik}-P_{il}
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!used[i] &amp;&amp; isLegal(vec, vec.size() + <span class="number">1</span>, i)) &#123;</span><br><span class="line">        vec.add(i);</span><br><span class="line">        used[i] = <span class="keyword">true</span>;</span><br><span class="line">        backtracing(n, row + <span class="number">1</span>);</span><br><span class="line">        used[i] = <span class="keyword">false</span>;</span><br><span class="line">        vec.removeLast();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="我的代码-11"><a class="markdownIt-Anchor" href="#我的代码-11"></a> 我的代码</h3>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    List&lt;List&lt;String&gt;&gt; ans = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="comment">// 存储每行皇后所处的列数</span></span><br><span class="line">    LinkedList&lt;Integer&gt; vec = <span class="keyword">new</span> LinkedList&lt;&gt;();</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> N = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">boolean</span>[] used = <span class="keyword">new</span> <span class="keyword">boolean</span>[N + <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">isLegal</span><span class="params">(LinkedList&lt;Integer&gt; vec, <span class="keyword">int</span> r, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> xx = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (Integer yy : vec) &#123;</span><br><span class="line">            xx++;</span><br><span class="line">            <span class="keyword">if</span> (Math.abs(r - xx) == Math.abs(c - yy))</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">backtracing</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span> row)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 终止条件</span></span><br><span class="line">        <span class="keyword">if</span> (row == n) &#123;</span><br><span class="line">            List&lt;String&gt; method = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">            <span class="keyword">for</span> (Integer col : vec) &#123;</span><br><span class="line">                <span class="keyword">char</span>[] s_char = <span class="keyword">new</span> <span class="keyword">char</span>[n];</span><br><span class="line">                Arrays.fill(s_char, <span class="string">&#x27;.&#x27;</span>);</span><br><span class="line">                s_char[col - <span class="number">1</span>] = <span class="string">&#x27;Q&#x27;</span>;</span><br><span class="line">                method.add(<span class="keyword">new</span> String(s_char));</span><br><span class="line">            &#125;</span><br><span class="line">            ans.add(method);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 单层逻辑</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (!used[i] &amp;&amp; isLegal(vec, vec.size() + <span class="number">1</span>, i)) &#123;</span><br><span class="line">                vec.add(i);</span><br><span class="line">                used[i] = <span class="keyword">true</span>;</span><br><span class="line">                backtracing(n, row + <span class="number">1</span>);</span><br><span class="line">                used[i] = <span class="keyword">false</span>;</span><br><span class="line">                vec.removeLast();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> List&lt;List&lt;String&gt;&gt; solveNQueens(<span class="keyword">int</span> n) &#123;</span><br><span class="line">        backtracing(n, <span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法</category>
-        <category>回溯</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>回溯算法介绍</title>
-    <url>/2023/06/12/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/</url>
-    <content><![CDATA[<h2 id="什么是回溯算法"><a class="markdownIt-Anchor" href="#什么是回溯算法"></a> 什么是回溯算法</h2>
-<p>回溯算法是一种通过尝试逐步构建解决方案来递归解决问题的算法，一次一个删除那些在任何时间都无法满足问题约束的解决方案，可以看作是一种高级的暴力算法。</p>
-<h2 id="如何理解回溯算法"><a class="markdownIt-Anchor" href="#如何理解回溯算法"></a> 如何理解回溯算法</h2>
-<p>回溯算法解决的问题都可以抽象成树形结构，因为回溯算法都是在集合中找子集，集合的大小构成了树的宽度，递归的深度构成了树的深度，递归要终止就要有终止条件，所以必然是一颗高度有限的N叉树。</p>
-<a id="more"></a>
-<h2 id="回溯的问题类型"><a class="markdownIt-Anchor" href="#回溯的问题类型"></a> 回溯的问题类型</h2>
-<ul>
-<li>决策问题——需要找到一个可行方案</li>
-<li>最优问题——需要找到最优的可行方案</li>
-<li>枚举问题——需要找到所有的可行方案</li>
-</ul>
-<h2 id="基本术语"><a class="markdownIt-Anchor" href="#基本术语"></a> 基本术语</h2>
-<p>问题P，数据集D，解集S，约束条件集C</p>
-<ul>
-<li>决策向量X：解集S中的一个解</li>
-<li>约束条件C
-<ul>
-<li>隐性约束</li>
-<li>显性约束</li>
-</ul>
-</li>
-<li>解空间S</li>
-<li>状态空间树：以一种树形结构展示解空间</li>
-<li>状态空间：有状态空间树中从根结点道其他节点的所有路径来描述</li>
-<li>问题状态：状态空间树的每个节点描述了一个问题状态</li>
-</ul>
-<h2 id="回溯与递归的区别"><a class="markdownIt-Anchor" href="#回溯与递归的区别"></a> 回溯与递归的区别</h2>
-<p>递归可以没有回溯，但是回溯一定有递归</p>
-<h2 id="回溯的伪代码"><a class="markdownIt-Anchor" href="#回溯的伪代码"></a> 回溯的伪代码</h2>
-<h3 id="回溯的递归写法"><a class="markdownIt-Anchor" href="#回溯的递归写法"></a> 回溯的递归写法</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">findSolutions</span><span class="params">(n, other params)</span> :</span></span><br><span class="line"><span class="function">    <span class="title">if</span> <span class="params">(found a solution)</span> :</span></span><br><span class="line"><span class="function">        solutionsFound </span>= solutionsFound + <span class="number">1</span>;</span><br><span class="line">        displaySolution();</span><br><span class="line">        <span class="keyword">if</span> (solutionsFound &gt;= solutionTarget) : </span><br><span class="line">            System.exit(<span class="number">0</span>);</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (val = first to last) :</span><br><span class="line">        <span class="keyword">if</span> (isValid(val, n)) :</span><br><span class="line">            applyValue(val, n);</span><br><span class="line">            findSolutions(n+<span class="number">1</span>, other params);</span><br><span class="line">            removeValue(val, n);</span><br></pre></td></tr></table></figure>
-<h3 id="查找解决方法是否存在"><a class="markdownIt-Anchor" href="#查找解决方法是否存在"></a> 查找解决方法是否存在</h3>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">boolean</span> <span class="title">findSolutions</span><span class="params">(n, other params)</span> :</span></span><br><span class="line"><span class="function">    <span class="title">if</span> <span class="params">(found a solution)</span> :</span></span><br><span class="line"><span class="function">        <span class="title">displaySolution</span><span class="params">()</span></span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (val = first to last) :</span><br><span class="line">        <span class="keyword">if</span> (isValid(val, n)) :</span><br><span class="line">            applyValue(val, n);</span><br><span class="line">            <span class="keyword">if</span> (findSolutions(n+<span class="number">1</span>, other params))</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">            removeValue(val, n);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br></pre></td></tr></table></figure>
-<h3 id="回溯问题的模板回溯三部曲学习自代码随想录"><a class="markdownIt-Anchor" href="#回溯问题的模板回溯三部曲学习自代码随想录"></a> 回溯问题的模板——回溯三部曲(学习自代码随想录)</h3>
-<ul>
-<li>
-<p>回溯函数返回值及参数——backtracing</p>
-<blockquote>
-<p>回溯算法一般没有返回值，而输入参数没有那么容易确定下来，一般都先写逻辑，需要什么参数，在加入什么参数</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(参数)</span></span></span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li>
-<p>回溯函数终止条件</p>
-<blockquote>
-<p>将回溯问题看成状态树，当到达叶子节点时，递归终止，保存答案</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (终止条件) &#123;</span><br><span class="line">    存放结果;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-</li>
-<li>
-<p>回溯搜索的遍历过程</p>
-<blockquote>
-<p>回溯一般是在集合中递归搜索，集合的大小构成了树的宽度，递归的深度构成树的深度</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">&gt;<span class="keyword">for</span> (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) &#123;</span><br><span class="line">  处理节点;</span><br><span class="line">  backtracking(路径，选择列表); <span class="comment">// 递归</span></span><br><span class="line">  回溯，撤销处理结果</span><br><span class="line">&gt;&#125;</span><br></pre></td></tr></table></figure>
-<p>for循环就是遍历集合区间，一个节点有多少孩子，for循环就执行多少次。</p>
-<p>其中for循环可以理解为树的横向遍历，递归过程可以理解为树的纵向遍历。</p>
-</blockquote>
-</li>
-<li>
-<p>最终的框架如下</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">backtracking</span><span class="params">(参数)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (终止条件) &#123;</span><br><span class="line">        存放结果;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (选择：本层集合中元素（树中节点孩子的数量就是集合的大小）) &#123;</span><br><span class="line">        处理节点;</span><br><span class="line">        backtracking(路径，选择列表); <span class="comment">// 递归</span></span><br><span class="line">        回溯，撤销处理结果</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="回溯算法的应用"><a class="markdownIt-Anchor" href="#回溯算法的应用"></a> 回溯算法的应用</h2>
-<ul>
-<li>组合问题：N个数里面按照一定规则找出k个数的集合</li>
-<li>切割问题：一个字符串按一定规则有多少种切割方式</li>
-<li>子集问题：一个N个数的集合里有多少符合条件的子集</li>
-<li>排列问题：N个数按一定规则全排列，有几种排列方式</li>
-<li>棋盘问题：N皇后，解数独等等</li>
-</ul>
 ]]></content>
       <categories>
         <category>算法</category>
@@ -5109,38 +5147,6 @@ t_{ikl}\ge P_{ik}-P_{il}
       </tags>
   </entry>
   <entry>
-    <title>布局管理器</title>
-    <url>/2020/08/08/%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86%E5%99%A8/</url>
-    <content><![CDATA[<h2 id="布局管理器"><a class="markdownIt-Anchor" href="#布局管理器"></a> 布局管理器</h2>
-<blockquote>
-<p><code>GUI</code>：所谓<code>GUI</code>归根揭底就是一堆组建的叠加。我们创建一个窗口，把按钮放在上面，把图标放在上面，这样就能形成一个界面。再放置时，组件的位置尤其重要。我们必须要指定组件放在哪里，以便窗口能够按照我们需要的方式进行渲染。这就涉及到组件定位装置</p>
-</blockquote>
-<blockquote>
-<p>两种组件定位机制：</p>
-<p>绝对定位：给出组件的坐标和长宽值</p>
-<p>布局定位：只需要把组件放入某一种布局中，布局由专门的布局管理器进行管理。</p>
-<ul>
-<li>垂直布局</li>
-<li>水平布局</li>
-<li>网格布局</li>
-</ul>
-</blockquote>
-<p><img src="/2020/08/08/%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86%E5%99%A8/GUI200720(1).png" alt></p>
-<a id="more"></a>
-<p><img src="/2020/08/08/%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86%E5%99%A8/GUI200720(2).png" alt></p>
-<h3 id="1-ui中控件按钮"><a class="markdownIt-Anchor" href="#1-ui中控件按钮"></a> 1、<code>UI</code>中控件按钮</h3>
-<blockquote>
-<p>相对路劲：如果是在qt中运行，代码中的相对路径是<code>makefile</code>，如果手动运行，代码中的相对路径是可执行文件</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;widget.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;ui_widget.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QDebug&gt;</span></span></span><br><span class="line"></span><br><span class="line">Widget::Widget(QWidget *parent)</span><br><span class="line">    : QWidget(parent)</span><br><span class="line">    , ui(<span class="keyword">new</span> Ui::Widget)</span><br><span class="line">&#123;</span><br><span class="line">    ui-&gt;setupUi(<span class="keyword">this</span>);</span><br><span class="line">    <span class="comment">//不需要设置connect连接</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Widget::~Widget()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">delete</span> ui;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Widget::on_pushButton_4_clicked</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    qDebug()&lt;&lt;<span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>Qt学习记录</category>
-      </categories>
-      <tags>
-        <tag>Qt</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>常用控件</title>
     <url>/2020/08/08/%E5%B8%B8%E7%94%A8%E6%8E%A7%E4%BB%B6/</url>
     <content><![CDATA[<h2 id="常用控件"><a class="markdownIt-Anchor" href="#常用控件"></a> 常用控件</h2>
@@ -5186,6 +5192,38 @@ t_{ikl}\ge P_{ik}-P_{il}
 <p>timeout:超时信号</p>
 </blockquote>
 ]]></content>
+      <categories>
+        <category>Qt学习记录</category>
+      </categories>
+      <tags>
+        <tag>Qt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>布局管理器</title>
+    <url>/2020/08/08/%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86%E5%99%A8/</url>
+    <content><![CDATA[<h2 id="布局管理器"><a class="markdownIt-Anchor" href="#布局管理器"></a> 布局管理器</h2>
+<blockquote>
+<p><code>GUI</code>：所谓<code>GUI</code>归根揭底就是一堆组建的叠加。我们创建一个窗口，把按钮放在上面，把图标放在上面，这样就能形成一个界面。再放置时，组件的位置尤其重要。我们必须要指定组件放在哪里，以便窗口能够按照我们需要的方式进行渲染。这就涉及到组件定位装置</p>
+</blockquote>
+<blockquote>
+<p>两种组件定位机制：</p>
+<p>绝对定位：给出组件的坐标和长宽值</p>
+<p>布局定位：只需要把组件放入某一种布局中，布局由专门的布局管理器进行管理。</p>
+<ul>
+<li>垂直布局</li>
+<li>水平布局</li>
+<li>网格布局</li>
+</ul>
+</blockquote>
+<p><img src="/2020/08/08/%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86%E5%99%A8/GUI200720(1).png" alt></p>
+<a id="more"></a>
+<p><img src="/2020/08/08/%E5%B8%83%E5%B1%80%E7%AE%A1%E7%90%86%E5%99%A8/GUI200720(2).png" alt></p>
+<h3 id="1-ui中控件按钮"><a class="markdownIt-Anchor" href="#1-ui中控件按钮"></a> 1、<code>UI</code>中控件按钮</h3>
+<blockquote>
+<p>相对路劲：如果是在qt中运行，代码中的相对路径是<code>makefile</code>，如果手动运行，代码中的相对路径是可执行文件</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;widget.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;ui_widget.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;QDebug&gt;</span></span></span><br><span class="line"></span><br><span class="line">Widget::Widget(QWidget *parent)</span><br><span class="line">    : QWidget(parent)</span><br><span class="line">    , ui(<span class="keyword">new</span> Ui::Widget)</span><br><span class="line">&#123;</span><br><span class="line">    ui-&gt;setupUi(<span class="keyword">this</span>);</span><br><span class="line">    <span class="comment">//不需要设置connect连接</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Widget::~Widget()</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">delete</span> ui;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Widget::on_pushButton_4_clicked</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    qDebug()&lt;&lt;<span class="string">&quot;hello world&quot;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>Qt学习记录</category>
       </categories>
@@ -5247,6 +5285,125 @@ t_{ikl}\ge P_{ik}-P_{il}
       </categories>
       <tags>
         <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据测试之对拍</title>
+    <url>/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/</url>
+    <content><![CDATA[<h2 id="数据测试之对拍"><a class="markdownIt-Anchor" href="#数据测试之对拍"></a> 数据测试之对拍</h2>
+<h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+<blockquote>
+<p>最近在刷<code>OJ</code>，遇到很多题可以通过例题，但是程序仍然报错而且不容易找测试数据，就想看看有没有什么方法可以自动生成随机数字，找了下资料，发现有一种随机函数可以自动生成随机数据。同时一些<code>OJ</code>上的discuss可以找到正确的代码，但是仍然找不到自己程序的bug，那有什么办法可以用同一组数据测试自己的代码和正确的代码呢？于是发现了对拍技巧对，下面做如下总结</p>
+</blockquote>
+<blockquote>
+<p><strong>参考博客：</strong></p>
+<p><a href="https://blog.csdn.net/qq_36294918/article/details/103041906">https://blog.csdn.net/qq_36294918/article/details/103041906</a><br>
+<a href="https://blog.csdn.net/C20190102/article/details/60138907">https://blog.csdn.net/C20190102/article/details/60138907</a><br>
+<a href="https://blog.csdn.net/C20190102/article/details/82944384#_141">https://blog.csdn.net/C20190102/article/details/82944384#_141</a></p>
+</blockquote>
+<h3 id="什么是对拍"><a class="markdownIt-Anchor" href="#什么是对拍"></a> 什么是对拍</h3>
+<blockquote>
+<p>对拍就是将正确的程序与自己的程序在同样的输入文件下跑出的数据进行比较。<br>
+输入文件的要随机，那么产生输入文件就需要使用随机函数写一个数据生成器，因此，需要四个程序，数据生成器，对拍器，正确的程序，你的程序</p>
+</blockquote>
+<a id="more"></a>
+<h3 id="一-数据生成器"><a class="markdownIt-Anchor" href="#一-数据生成器"></a> 一、数据生成器</h3>
+<blockquote>
+<p>生成数据，需要使用随机数生成函数rand( )（包含在头文件<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>s</mi><mi>t</mi><mi>d</mi><mi>l</mi><mi>i</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">cstdlib</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault">b</span></span></span></span>中），这里的随机函数并非真正的随机，而是用使用一种算法，以时间为输入值得到的0~Random_MAX区间内的随机整数</p>
+<p>（注：随机数还可以用来测试模板）</p>
+<p>对于不同的程序需要不同的数据生成器，但对于不同的数据生成器，主要需要做如下三件事：</p>
+<p>1.模板<br>
+2.写出能构造相应数据的代码<br>
+3.按题目格式输出</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//这里主要写一下模板，2和3要根据对应的题目来写</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctime&gt;//time函数的头文件，必写</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;//srand和rand函数的头文件，必写</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    srand(time(<span class="literal">NULL</span>));<span class="comment">//用于初始化随机数种子，time(NULL)是为了初始化时间</span></span><br><span class="line">    <span class="comment">/*以下是你的构造方法*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注：</strong><br>
+构造方法根据题目的格式编写对应的构造代码</p>
+<p><strong>生成其他特殊的数据：</strong></p>
+<ul>
+<li>生成随机排列：先生成1~n，再random_shuffle()</li>
+<li>生成集合：用set</li>
+<li>生成无根树：随生成一条树边，并查集检验连通性，合法的加入，不合法的忽略，如果要限制每个结点的度，可加上deg[ ]数组，统计各点的度</li>
+<li>生成无向图：邻接矩阵存图，随机生成边，加在图上，做至少n*(n-1)/2次</li>
+<li>生成DAG：先生成无向图，再<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mi>F</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">DFS</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span>，输出编号小的结点指向编号大的结点的边</li>
+</ul>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">&#123;</span><br><span class="line">    sort(G[i].begin(), G[i].end());</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; G[i].size(); j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> k = G[i][j];</span><br><span class="line">        <span class="keyword">if</span>(k &gt; i)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>, i, k);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="二-对拍器"><a class="markdownIt-Anchor" href="#二-对拍器"></a> 二、对拍器</h3>
+<p>此处有两种方法：</p>
+<h4 id="第一种用c写"><a class="markdownIt-Anchor" href="#第一种用c写"></a> <strong>第一种</strong>：用C++写</h4>
+<blockquote>
+<p>优点：便于调试与控制对拍的次数，且便于输出结果信息<br>
+缺点：使用不方便，每次使用前需要编译<br>
+代码如下：</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">1000</span>;</span><br><span class="line">    <span class="comment">//注：比较两个文件t次，而不是比较my.exe和other.exe输出结果t次</span></span><br><span class="line">    <span class="keyword">while</span> (--t)</span><br><span class="line">    &#123;</span><br><span class="line">        system(<span class="string">&quot;rand.exe&gt;input&quot;</span>);</span><br><span class="line">        system(<span class="string">&quot;my.exe&lt;input&gt; output_my&quot;</span>);</span><br><span class="line">        system(<span class="string">&quot;other.exe&lt;input&gt; output_other&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (system(<span class="string">&quot;fc output_my output_other&quot;</span>))</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (t == <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;correctly\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;error\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    *   int t = 1000; //两程序对比次数</span></span><br><span class="line"><span class="comment">    *   while (--t)</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       system(&quot;我的程序&lt;输入文件&gt;我的输出文件&quot;);</span></span><br><span class="line"><span class="comment">    *       system(&quot;正确的程序&lt;输入文件&gt;正确的输出文件&quot;);</span></span><br><span class="line"><span class="comment">    *       if (system(&quot;fc 我的输出文件 正确的输出文件&quot;)) //比较两文件，相同返回0，不同返回1</span></span><br><span class="line"><span class="comment">    *           break;</span></span><br><span class="line"><span class="comment">    *   &#125;  </span></span><br><span class="line"><span class="comment">    *   if (t == 0)</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       printf(&quot;你的程序正确\n&quot;);</span></span><br><span class="line"><span class="comment">    *   &#125;</span></span><br><span class="line"><span class="comment">    *   else</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       printf(&quot;你的程序不正确\n&quot;);</span></span><br><span class="line"><span class="comment">    *   &#125;</span></span><br><span class="line"><span class="comment">    *   return 0;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="第二种编写脚本文件"><a class="markdownIt-Anchor" href="#第二种编写脚本文件"></a> <strong>第二种</strong>：编写脚本文件</h4>
+<blockquote>
+<p>优点：便于使用<br>
+缺点：涉及到系统，目前对系统理解的不透彻</p>
+</blockquote>
+<p>自己建立一个txt文件，编写脚本，将后缀名改为bat即可，脚本如下：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">:again</span><br><span class="line">makedata<span class="comment">#.exe &gt; input </span></span><br><span class="line">my.exe &lt; input &gt; output_my</span><br><span class="line">other.exe &lt; input &gt; output_other</span><br><span class="line"><span class="built_in">fc</span> output_my output_other </span><br><span class="line"><span class="keyword">if</span> not errorlevel 1 goto again</span><br><span class="line">pause</span><br><span class="line">@<span class="built_in">echo</span> on</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><strong>注</strong>：</p>
+<p><code>makedata#.exe</code>： 数据生成器</p>
+<p><code>input</code>：由数据生成器生成的输入文件</p>
+<p><code>my.exe</code>：我的程序</p>
+<p><code>output_my</code>: 我的输入文件</p>
+<p><code>other.exe</code>: 正确的程序</p>
+<p><code>output_other</code>: 正确的输入文件</p>
+</blockquote>
+<h3 id="三-使用对拍"><a class="markdownIt-Anchor" href="#三-使用对拍"></a> 三、使用对拍</h3>
+<blockquote>
+<p><strong>举个例子:</strong> 验证选择排序和冒泡排序的结果是否相同</p>
+</blockquote>
+<ol>
+<li>
+<p>数据生成器</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//数据生成器,makedata.cpp</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 100 <span class="comment">//生成的数据范围</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NUM 100   <span class="comment">//生成的数据数目</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    srand(time(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="comment">//构造方法</span></span><br><span class="line">    <span class="keyword">int</span> A;</span><br><span class="line">    <span class="comment">//随机生成100个数据</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= NUM; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        A = rand() % MAXN;</span><br><span class="line">        <span class="comment">//B = rand() % MAXN;</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, A);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>对拍</p>
+<ul>
+<li>
+<p>使用批处理程序</p>
+<blockquote>
+<p>先写好批处理程序，将数据生成器、我的程序、正确的程序，对拍程序放在一个文件夹下，直接运行对拍程序即可，也可使用命令行运行对拍程序，批处理程序如下：</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">:again</span><br><span class="line">makedata<span class="comment">#.exe &gt; input</span></span><br><span class="line">bubble_sort.exe &lt; input &gt; output_my</span><br><span class="line">select_sort.exe &lt;input&gt; output_other</span><br><span class="line"><span class="built_in">fc</span> output_my output_other</span><br><span class="line"><span class="keyword">if</span> not errorlevel 1 goto again</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+<p><img src="/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207214.jpg" alt></p>
+<blockquote>
+<p>因为在对拍程序中未写终止条件，所以只要两个文件内容相同，fc会一直比较下去</p>
+<p><strong>解释：</strong></p>
+<p><strong>注：</strong></p>
+<p>也可在命令行下逐步执行对拍程序中的命令，如下：</p>
+</blockquote>
+<p><img src="/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207213.jpg" alt></p>
+</li>
+<li>
+<p>使用C++对拍</p>
+<blockquote>
+<p>除了将上述的对拍程序用C++来写外，其余相同</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//dp.exe</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">while</span> (--t)</span><br><span class="line">    &#123;</span><br><span class="line">        system(<span class="string">&quot;makedata#.exe&gt;input&quot;</span>);</span><br><span class="line">        system(<span class="string">&quot;bubble_sort.exe&lt;input&gt; output_my&quot;</span>);</span><br><span class="line">        system(<span class="string">&quot;select_sort.exe&lt;input&gt; output_other&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (system(<span class="string">&quot;fc output_my output_other&quot;</span>))</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (t == <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;correctly\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;error\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    *   int t = 1000; //两程序对比次数</span></span><br><span class="line"><span class="comment">    *   while (--t)</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       system(&quot;我的程序&lt;输入文件&gt;我的输出文件&quot;);</span></span><br><span class="line"><span class="comment">    *       system(&quot;正确的程序&lt;输入文件&gt;正确的输出文件&quot;);</span></span><br><span class="line"><span class="comment">    *       if (system(&quot;fc 我的输出文件 正确的输出文件&quot;)) //比较两文件，相同返回0，不同返回1</span></span><br><span class="line"><span class="comment">    *           break;</span></span><br><span class="line"><span class="comment">    *   &#125;  </span></span><br><span class="line"><span class="comment">    *   if (t == 0)</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       printf(&quot;你的程序正确\n&quot;);</span></span><br><span class="line"><span class="comment">    *   &#125;</span></span><br><span class="line"><span class="comment">    *   else</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       printf(&quot;你的程序不正确\n&quot;);</span></span><br><span class="line"><span class="comment">    *   &#125;</span></span><br><span class="line"><span class="comment">    *   return 0;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注：运行dp.exe程序即可开始对拍，这里定义t为100，即比较两文件100次，最终得到结果，两程序运行结果完全一致</p>
+</blockquote>
+<p><img src="/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207215.png" alt></p>
+<p><img src="/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207216.png" alt></p>
+</li>
+</ul>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>测试</category>
+      </categories>
+      <tags>
+        <tag>数据测试</tag>
+        <tag>对拍</tag>
       </tags>
   </entry>
   <entry>
@@ -5399,125 +5556,6 @@ t_{ikl}\ge P_{ik}-P_{il}
         <category>数据结构</category>
         <category>栈</category>
       </categories>
-  </entry>
-  <entry>
-    <title>数据测试之对拍</title>
-    <url>/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/</url>
-    <content><![CDATA[<h2 id="数据测试之对拍"><a class="markdownIt-Anchor" href="#数据测试之对拍"></a> 数据测试之对拍</h2>
-<h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
-<blockquote>
-<p>最近在刷<code>OJ</code>，遇到很多题可以通过例题，但是程序仍然报错而且不容易找测试数据，就想看看有没有什么方法可以自动生成随机数字，找了下资料，发现有一种随机函数可以自动生成随机数据。同时一些<code>OJ</code>上的discuss可以找到正确的代码，但是仍然找不到自己程序的bug，那有什么办法可以用同一组数据测试自己的代码和正确的代码呢？于是发现了对拍技巧对，下面做如下总结</p>
-</blockquote>
-<blockquote>
-<p><strong>参考博客：</strong></p>
-<p><a href="https://blog.csdn.net/qq_36294918/article/details/103041906">https://blog.csdn.net/qq_36294918/article/details/103041906</a><br>
-<a href="https://blog.csdn.net/C20190102/article/details/60138907">https://blog.csdn.net/C20190102/article/details/60138907</a><br>
-<a href="https://blog.csdn.net/C20190102/article/details/82944384#_141">https://blog.csdn.net/C20190102/article/details/82944384#_141</a></p>
-</blockquote>
-<h3 id="什么是对拍"><a class="markdownIt-Anchor" href="#什么是对拍"></a> 什么是对拍</h3>
-<blockquote>
-<p>对拍就是将正确的程序与自己的程序在同样的输入文件下跑出的数据进行比较。<br>
-输入文件的要随机，那么产生输入文件就需要使用随机函数写一个数据生成器，因此，需要四个程序，数据生成器，对拍器，正确的程序，你的程序</p>
-</blockquote>
-<a id="more"></a>
-<h3 id="一-数据生成器"><a class="markdownIt-Anchor" href="#一-数据生成器"></a> 一、数据生成器</h3>
-<blockquote>
-<p>生成数据，需要使用随机数生成函数rand( )（包含在头文件<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>c</mi><mi>s</mi><mi>t</mi><mi>d</mi><mi>l</mi><mi>i</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">cstdlib</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">c</span><span class="mord mathdefault">s</span><span class="mord mathdefault">t</span><span class="mord mathdefault">d</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">i</span><span class="mord mathdefault">b</span></span></span></span>中），这里的随机函数并非真正的随机，而是用使用一种算法，以时间为输入值得到的0~Random_MAX区间内的随机整数</p>
-<p>（注：随机数还可以用来测试模板）</p>
-<p>对于不同的程序需要不同的数据生成器，但对于不同的数据生成器，主要需要做如下三件事：</p>
-<p>1.模板<br>
-2.写出能构造相应数据的代码<br>
-3.按题目格式输出</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//这里主要写一下模板，2和3要根据对应的题目来写</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;ctime&gt;//time函数的头文件，必写</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdlib&gt;//srand和rand函数的头文件，必写</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    srand(time(<span class="literal">NULL</span>));<span class="comment">//用于初始化随机数种子，time(NULL)是为了初始化时间</span></span><br><span class="line">    <span class="comment">/*以下是你的构造方法*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>注：</strong><br>
-构造方法根据题目的格式编写对应的构造代码</p>
-<p><strong>生成其他特殊的数据：</strong></p>
-<ul>
-<li>生成随机排列：先生成1~n，再random_shuffle()</li>
-<li>生成集合：用set</li>
-<li>生成无根树：随生成一条树边，并查集检验连通性，合法的加入，不合法的忽略，如果要限制每个结点的度，可加上deg[ ]数组，统计各点的度</li>
-<li>生成无向图：邻接矩阵存图，随机生成边，加在图上，做至少n*(n-1)/2次</li>
-<li>生成DAG：先生成无向图，再<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>D</mi><mi>F</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">DFS</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault" style="margin-right:0.13889em;">F</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span>，输出编号小的结点指向编号大的结点的边</li>
-</ul>
-</blockquote>
-<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">&#123;</span><br><span class="line">    sort(G[i].begin(), G[i].end());</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; G[i].size(); j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> k = G[i][j];</span><br><span class="line">        <span class="keyword">if</span>(k &gt; i)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>, i, k);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="二-对拍器"><a class="markdownIt-Anchor" href="#二-对拍器"></a> 二、对拍器</h3>
-<p>此处有两种方法：</p>
-<h4 id="第一种用c写"><a class="markdownIt-Anchor" href="#第一种用c写"></a> <strong>第一种</strong>：用C++写</h4>
-<blockquote>
-<p>优点：便于调试与控制对拍的次数，且便于输出结果信息<br>
-缺点：使用不方便，每次使用前需要编译<br>
-代码如下：</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">1000</span>;</span><br><span class="line">    <span class="comment">//注：比较两个文件t次，而不是比较my.exe和other.exe输出结果t次</span></span><br><span class="line">    <span class="keyword">while</span> (--t)</span><br><span class="line">    &#123;</span><br><span class="line">        system(<span class="string">&quot;rand.exe&gt;input&quot;</span>);</span><br><span class="line">        system(<span class="string">&quot;my.exe&lt;input&gt; output_my&quot;</span>);</span><br><span class="line">        system(<span class="string">&quot;other.exe&lt;input&gt; output_other&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (system(<span class="string">&quot;fc output_my output_other&quot;</span>))</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (t == <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;correctly\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;error\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    *   int t = 1000; //两程序对比次数</span></span><br><span class="line"><span class="comment">    *   while (--t)</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       system(&quot;我的程序&lt;输入文件&gt;我的输出文件&quot;);</span></span><br><span class="line"><span class="comment">    *       system(&quot;正确的程序&lt;输入文件&gt;正确的输出文件&quot;);</span></span><br><span class="line"><span class="comment">    *       if (system(&quot;fc 我的输出文件 正确的输出文件&quot;)) //比较两文件，相同返回0，不同返回1</span></span><br><span class="line"><span class="comment">    *           break;</span></span><br><span class="line"><span class="comment">    *   &#125;  </span></span><br><span class="line"><span class="comment">    *   if (t == 0)</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       printf(&quot;你的程序正确\n&quot;);</span></span><br><span class="line"><span class="comment">    *   &#125;</span></span><br><span class="line"><span class="comment">    *   else</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       printf(&quot;你的程序不正确\n&quot;);</span></span><br><span class="line"><span class="comment">    *   &#125;</span></span><br><span class="line"><span class="comment">    *   return 0;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="第二种编写脚本文件"><a class="markdownIt-Anchor" href="#第二种编写脚本文件"></a> <strong>第二种</strong>：编写脚本文件</h4>
-<blockquote>
-<p>优点：便于使用<br>
-缺点：涉及到系统，目前对系统理解的不透彻</p>
-</blockquote>
-<p>自己建立一个txt文件，编写脚本，将后缀名改为bat即可，脚本如下：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">:again</span><br><span class="line">makedata<span class="comment">#.exe &gt; input </span></span><br><span class="line">my.exe &lt; input &gt; output_my</span><br><span class="line">other.exe &lt; input &gt; output_other</span><br><span class="line"><span class="built_in">fc</span> output_my output_other </span><br><span class="line"><span class="keyword">if</span> not errorlevel 1 goto again</span><br><span class="line">pause</span><br><span class="line">@<span class="built_in">echo</span> on</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><strong>注</strong>：</p>
-<p><code>makedata#.exe</code>： 数据生成器</p>
-<p><code>input</code>：由数据生成器生成的输入文件</p>
-<p><code>my.exe</code>：我的程序</p>
-<p><code>output_my</code>: 我的输入文件</p>
-<p><code>other.exe</code>: 正确的程序</p>
-<p><code>output_other</code>: 正确的输入文件</p>
-</blockquote>
-<h3 id="三-使用对拍"><a class="markdownIt-Anchor" href="#三-使用对拍"></a> 三、使用对拍</h3>
-<blockquote>
-<p><strong>举个例子:</strong> 验证选择排序和冒泡排序的结果是否相同</p>
-</blockquote>
-<ol>
-<li>
-<p>数据生成器</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//数据生成器,makedata.cpp</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAXN 100 <span class="comment">//生成的数据范围</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> NUM 100   <span class="comment">//生成的数据数目</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    srand(time(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="comment">//构造方法</span></span><br><span class="line">    <span class="keyword">int</span> A;</span><br><span class="line">    <span class="comment">//随机生成100个数据</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= NUM; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        A = rand() % MAXN;</span><br><span class="line">        <span class="comment">//B = rand() % MAXN;</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, A);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li>
-<p>对拍</p>
-<ul>
-<li>
-<p>使用批处理程序</p>
-<blockquote>
-<p>先写好批处理程序，将数据生成器、我的程序、正确的程序，对拍程序放在一个文件夹下，直接运行对拍程序即可，也可使用命令行运行对拍程序，批处理程序如下：</p>
-</blockquote>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">:again</span><br><span class="line">makedata<span class="comment">#.exe &gt; input</span></span><br><span class="line">bubble_sort.exe &lt; input &gt; output_my</span><br><span class="line">select_sort.exe &lt;input&gt; output_other</span><br><span class="line"><span class="built_in">fc</span> output_my output_other</span><br><span class="line"><span class="keyword">if</span> not errorlevel 1 goto again</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
-<p><img src="/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207214.jpg" alt></p>
-<blockquote>
-<p>因为在对拍程序中未写终止条件，所以只要两个文件内容相同，fc会一直比较下去</p>
-<p><strong>解释：</strong></p>
-<p><strong>注：</strong></p>
-<p>也可在命令行下逐步执行对拍程序中的命令，如下：</p>
-</blockquote>
-<p><img src="/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207213.jpg" alt></p>
-</li>
-<li>
-<p>使用C++对拍</p>
-<blockquote>
-<p>除了将上述的对拍程序用C++来写外，其余相同</p>
-</blockquote>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="comment">//dp.exe</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">while</span> (--t)</span><br><span class="line">    &#123;</span><br><span class="line">        system(<span class="string">&quot;makedata#.exe&gt;input&quot;</span>);</span><br><span class="line">        system(<span class="string">&quot;bubble_sort.exe&lt;input&gt; output_my&quot;</span>);</span><br><span class="line">        system(<span class="string">&quot;select_sort.exe&lt;input&gt; output_other&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (system(<span class="string">&quot;fc output_my output_other&quot;</span>))</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (t == <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;correctly\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;error\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    *   int t = 1000; //两程序对比次数</span></span><br><span class="line"><span class="comment">    *   while (--t)</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       system(&quot;我的程序&lt;输入文件&gt;我的输出文件&quot;);</span></span><br><span class="line"><span class="comment">    *       system(&quot;正确的程序&lt;输入文件&gt;正确的输出文件&quot;);</span></span><br><span class="line"><span class="comment">    *       if (system(&quot;fc 我的输出文件 正确的输出文件&quot;)) //比较两文件，相同返回0，不同返回1</span></span><br><span class="line"><span class="comment">    *           break;</span></span><br><span class="line"><span class="comment">    *   &#125;  </span></span><br><span class="line"><span class="comment">    *   if (t == 0)</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       printf(&quot;你的程序正确\n&quot;);</span></span><br><span class="line"><span class="comment">    *   &#125;</span></span><br><span class="line"><span class="comment">    *   else</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       printf(&quot;你的程序不正确\n&quot;);</span></span><br><span class="line"><span class="comment">    *   &#125;</span></span><br><span class="line"><span class="comment">    *   return 0;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>注：运行dp.exe程序即可开始对拍，这里定义t为100，即比较两文件100次，最终得到结果，两程序运行结果完全一致</p>
-</blockquote>
-<p><img src="/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207215.png" alt></p>
-<p><img src="/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207216.png" alt></p>
-</li>
-</ul>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>测试</category>
-      </categories>
-      <tags>
-        <tag>数据测试</tag>
-        <tag>对拍</tag>
-      </tags>
   </entry>
   <entry>
     <title>栈相关题目</title>
