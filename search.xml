@@ -4,8 +4,177 @@
     <title>01背包相关问题</title>
     <url>/2023/07/28/01%E8%83%8C%E5%8C%85%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<h2 id="01背包介绍"><a class="markdownIt-Anchor" href="#01背包介绍"></a> 01背包介绍</h2>
+<p>有n件物品和一个最多能背重量为w 的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。<strong>每件物品只能用一次</strong>，求解将哪些物品装入背包里物品价值总和最大。</p>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210117175428387.jpg" alt="动态规划-背包问题"></p>
+<h3 id="背包问题整体框图"><a class="markdownIt-Anchor" href="#背包问题整体框图"></a> 背包问题整体框图</h3>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210117171307407.png" alt="416.分割等和子集1"></p>
 <a id="more"></a>
+<h3 id="二维数组实现01背包"><a class="markdownIt-Anchor" href="#二维数组实现01背包"></a> 二维数组实现01背包</h3>
+<p>考虑动规五部曲</p>
+<h4 id="1-状态表示确定dp数组的含义"><a class="markdownIt-Anchor" href="#1-状态表示确定dp数组的含义"></a> 1、状态表示，确定dp数组的含义</h4>
+<p>对于背包问题，有一种写法, 是使用二维数组，即<strong>dp[i,j]表示从下标为[0-i]的物品里任意取，放进容量为j的背包，价值总和最大是多少</strong>。</p>
+<h4 id="2-状态转移确定递推方程"><a class="markdownIt-Anchor" href="#2-状态转移确定递推方程"></a> 2、状态转移，确定递推方程</h4>
+<p>状态dp[i,j]由是否选择i转移而来</p>
+<ul>
+<li>不选i，则dp[i,j] = dp[i-1,j]</li>
+<li>选i，则dp[i,j] = dp[i-1, j-weight[i]] + value[i]</li>
+</ul>
+<p>则状态转移方程为：dp[i,j] = max(dp[i-1. j], dp[i-1, j-weight[i]] + value[i])</p>
+<h4 id="3-dp数组初始化"><a class="markdownIt-Anchor" href="#3-dp数组初始化"></a> 3、dp数组初始化</h4>
+<p>如下图所示，结合状态转移方程，每个状态都是由上面的状态和左上的状态转移而来，所以实现需要初始化第一行和第一列。</p>
+<p>第一行表达的意义是背包容量为0时的最大价值，此时不论可选物品有多少，最大价值都是0；第一列表达的意义是，背包容量为j时，把物品0放入背包的最大价值为多少，此时只有当背包容量大于物品0的重量时，最大价值为物品0的价值，其余为0。</p>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/2021011010304192.png" alt="动态规划-背包问题2"></p>
+<h4 id="4-循环顺序"><a class="markdownIt-Anchor" href="#4-循环顺序"></a> 4、循环顺序</h4>
+<p>对于二维数组的01背包问题往往两重循环，一重循环枚举物品，一重循环枚举背包容量，考虑每个状态的转移方式，先枚举物品和先枚举背包容量的方式都可以</p>
+<h4 id="5-举例验证"><a class="markdownIt-Anchor" href="#5-举例验证"></a> 5、举例验证</h4>
+<p><img src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210110103109140.png" alt="动态规划-背包问题7"></p>
+<h3 id="滚动一维数组实现01背包"><a class="markdownIt-Anchor" href="#滚动一维数组实现01背包"></a> 滚动(一维)数组实现01背包</h3>
+<h4 id="1-状态表示确定dp数组的含义-2"><a class="markdownIt-Anchor" href="#1-状态表示确定dp数组的含义-2"></a> 1、状态表示，确定dp数组的含义</h4>
+<p>dp[j]: 表示背包容量为j时的最大价值</p>
+<h4 id="2-状态转移确定递推方程-2"><a class="markdownIt-Anchor" href="#2-状态转移确定递推方程-2"></a> 2、状态转移，确定递推方程</h4>
+<p>由二维数组的方法中可以看出，每个i行的状态都是由上一行状态转移过来的，所以可以使用一维数组滚动，每次将更新前的一维数组作为上一行状态，更新后的一维数组作为当前行的状态</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 等式右边的作为当前状态，等式左边的作为上一状态</span></span><br><span class="line">dp[j] = max(dp[j], dp[j-weights[i]]) + values[i]);</span><br></pre></td></tr></table></figure>
+<h4 id="3-dp数组初始化-2"><a class="markdownIt-Anchor" href="#3-dp数组初始化-2"></a> 3、dp数组初始化</h4>
+<p>dp[j]表示：容量为j的背包，所背的物品价值可以最大为dp[j]，那么dp[0]就应该是0，因为背包容量为0所背的物品的最大价值就是0。</p>
+<p>那么dp数组除了下标0的位置，初始为0，其他下标应该初始化多少呢？</p>
+<p>看一下递归公式：dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);</p>
+<p>dp数组在推导的时候一定是取价值最大的数，如果题目给的价值都是正整数那么非0下标都初始化为0就可以了。</p>
+<p><strong>这样才能让dp数组在递归公式的过程中取的最大的价值，而不是被初始值覆盖了</strong>。</p>
+<h4 id="4-遍历顺序"><a class="markdownIt-Anchor" href="#4-遍历顺序"></a> 4、遍历顺序</h4>
+<p>只能先遍历物品，在遍历背包容量，且在遍历背包容量的时候要从后向前遍历，为了保证每个物品只能添加一次</p>
 <h2 id="01背包相关问题"><a class="markdownIt-Anchor" href="#01背包相关问题"></a> 01背包相关问题</h2>
+<table>
+<thead>
+<tr>
+<th>题目</th>
+<th>题解</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://leetcode.cn/problems/partition-equal-subset-sum/">416. 分割等和子集</a></td>
+<td><a href="https://leetcode.cn/problems/partition-equal-subset-sum/solutions/2363837/san-chong-fang-fa-jie-jue-wen-ti-hui-su-9a6zt/">https://leetcode.cn/problems/partition-equal-subset-sum/solutions/2363837/san-chong-fang-fa-jie-jue-wen-ti-hui-su-9a6zt/</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/last-stone-weight-ii/">1049.最后一块石头的重量II</a></td>
+<td><a href="https://leetcode.cn/problems/target-sum/solutions/2373127/01bei-bao-shi-jian-fu-za-du-onm-by-dpbir-sxd0/">https://leetcode.cn/problems/target-sum/solutions/2373127/01bei-bao-shi-jian-fu-za-du-onm-by-dpbir-sxd0/</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/target-sum/">494.目标和</a></td>
+<td><a href="https://leetcode.cn/problems/target-sum/solutions/2373127/01bei-bao-shi-jian-fu-za-du-onm-by-dpbir-sxd0/">https://leetcode.cn/problems/target-sum/solutions/2373127/01bei-bao-shi-jian-fu-za-du-onm-by-dpbir-sxd0/</a></td>
+</tr>
+<tr>
+<td><a href="https://leetcode.cn/problems/ones-and-zeroes/">474.一和零</a></td>
+<td><a href="https://leetcode.cn/problems/ones-and-zeroes/solutions/2377351/er-wei-dong-tai-gui-hua-by-dpbirder-wmt4/">https://leetcode.cn/problems/ones-and-zeroes/solutions/2377351/er-wei-dong-tai-gui-hua-by-dpbirder-wmt4/</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="416分割等和子集"><a class="markdownIt-Anchor" href="#416分割等和子集"></a> 416.分割等和子集</h2>
+<h3 id="题目描述"><a class="markdownIt-Anchor" href="#题目描述"></a> 题目描述</h3>
+<p><img src="/2023/07/28/01%E8%83%8C%E5%8C%85%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/image-20230729164555543.png" alt="image-20230729164555543"></p>
+<h3 id="我的思路"><a class="markdownIt-Anchor" href="#我的思路"></a> 我的思路</h3>
+<p>计算出集合的总和，原问题可转化为<strong>能否从nums中选择一个子集和为sum/2</strong></p>
+<h4 id="回溯法"><a class="markdownIt-Anchor" href="#回溯法"></a> 回溯法</h4>
+<h4 id="画出状态树利用回溯三部曲分析问题结果超时"><a class="markdownIt-Anchor" href="#画出状态树利用回溯三部曲分析问题结果超时"></a> 画出状态树，利用回溯三部曲分析问题，结果超时</h4>
+<h4 id="递归法"><a class="markdownIt-Anchor" href="#递归法"></a> 递归法</h4>
+<p>对于集合中每个元素都只有两种状态，选或不选，分别讨论这两种状态，最终的到一个二叉树</p>
+<p>时间复杂度为O(2<sup>N</sup>)，超时</p>
+<h4 id="动态规划法"><a class="markdownIt-Anchor" href="#动态规划法"></a> 动态规划法</h4>
+<p>将本题对应到背包问题</p>
+<ul>
+<li>背包容量大小：sum/2</li>
+<li>背包中要放入的商品(集合里的元素)，重量为元素值，价值也为元素的值</li>
+<li>背包刚好装满，说明找到了总和为sum/2的值</li>
+<li>背包中每一个元素不可重复放入</li>
+</ul>
+<p>所以本题应该套用01背包框架</p>
+<p>见代码注释</p>
+<h3 id="我的代码"><a class="markdownIt-Anchor" href="#我的代码"></a> 我的代码</h3>
+<p><strong>回溯法</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 回溯</span></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">backtracing</span><span class="params">(<span class="keyword">int</span> sum, <span class="keyword">int</span> begin, <span class="keyword">int</span> nums[])</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 终止条件</span></span><br><span class="line">        <span class="keyword">if</span> (sum == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (sum &lt; <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="comment">// 单层逻辑</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = begin; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="comment">// 同一层去重</span></span><br><span class="line">            <span class="keyword">if</span> (i != begin &amp;&amp; nums[i] == nums[i - <span class="number">1</span>])</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            <span class="comment">// 这里只要判断是否存在，而不需要返回路径，所以不需要一个vec向量来保存路径</span></span><br><span class="line">            <span class="keyword">if</span> (backtracing(sum - nums[i], i + <span class="number">1</span>, nums))</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canPartition</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 求和</span></span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> n = nums.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">            sum += nums[i];</span><br><span class="line">        <span class="keyword">if</span> (sum % <span class="number">2</span> != <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        System.out.println(Arrays.toString(nums));</span><br><span class="line">        <span class="comment">// 问题转化：能否从nums中选择一个子集和为sum/2</span></span><br><span class="line">        <span class="keyword">return</span> backtracing(sum / <span class="number">2</span>, <span class="number">0</span>, nums);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>递归法</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 递归, 判断集合[id,nums.length]是否存在和为sum的子集</span></span><br><span class="line">    <span class="function"><span class="keyword">boolean</span> <span class="title">recursion</span><span class="params">(<span class="keyword">int</span> nums[], <span class="keyword">int</span> sum, <span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 终止条件</span></span><br><span class="line">        <span class="keyword">if</span> (sum == <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (sum &lt; <span class="number">0</span> || id == nums.length)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="comment">// 递归逻辑</span></span><br><span class="line">        <span class="keyword">return</span> recursion(nums, sum - nums[id], id + <span class="number">1</span>) || recursion(nums, sum, id + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canPartition</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 求和</span></span><br><span class="line">        Arrays.sort(nums);</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> n = nums.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">            sum += nums[i];</span><br><span class="line">        <span class="keyword">if</span> (sum % <span class="number">2</span> != <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="comment">// System.out.println(Arrays.toString(nums));</span></span><br><span class="line">        <span class="comment">// 问题转化：能否从nums中选择一个子集和为sum/2</span></span><br><span class="line">        <span class="keyword">return</span> recursion(nums, sum / <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>01背包——二维数组解法</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 动态规划</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canPartition</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 求和</span></span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> n = nums.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">            sum += nums[i];</span><br><span class="line">        <span class="keyword">if</span> (sum % <span class="number">2</span> != <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="comment">// 问题转化：能否从nums中选择一个子集和为sum/2</span></span><br><span class="line">        <span class="comment">// 状态定义：dp[i][j]: 能否从[0~i]中找出和为j的子集</span></span><br><span class="line">        <span class="keyword">boolean</span>[][] dp = <span class="keyword">new</span> <span class="keyword">boolean</span>[nums.length + <span class="number">5</span>][sum / <span class="number">2</span> + <span class="number">5</span>];</span><br><span class="line">        <span class="comment">// 递推方程: dp[i][j] = dp[i-1][j] || dp[i-1][j-nums[i]]</span></span><br><span class="line">        <span class="comment">// 前者表示这样的子集中不含元素i，后者表示这样的子集中包含元素i</span></span><br><span class="line">        <span class="comment">// 初始化，第一列全为true，第一行，若nums[0] == j，则为true，反之false</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= sum / <span class="number">2</span>; j++)</span><br><span class="line">            dp[<span class="number">0</span>][j] = (nums[<span class="number">0</span>] == j);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++)</span><br><span class="line">            dp[i][<span class="number">0</span>] = <span class="keyword">true</span>;</span><br><span class="line">        <span class="comment">// print(dp);</span></span><br><span class="line">        <span class="comment">// 循环过程，两种都可以</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= sum / <span class="number">2</span>; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (j &gt;= nums[i])</span><br><span class="line">                    dp[i][j] = dp[i - <span class="number">1</span>][j] || dp[i - <span class="number">1</span>][j - nums[i]];</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    dp[i][j] = dp[i - <span class="number">1</span>][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// print(dp);</span></span><br><span class="line">        <span class="keyword">return</span> dp[nums.length - <span class="number">1</span>][sum / <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// debug</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">print</span><span class="params">(<span class="keyword">boolean</span> nums[][])</span> </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            System.out.println(Arrays.toString(nums[i]));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>01背包——一维数组解法</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 01背包——一维数组</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">canPartition</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 求和</span></span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> n = nums.length;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">            sum += nums[i];</span><br><span class="line">        <span class="keyword">if</span> (sum % <span class="number">2</span> != <span class="number">0</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        <span class="comment">// 问题转化：能否从nums中选择一个子集和为sum/2</span></span><br><span class="line">        <span class="comment">// 状态表示dp[j]: 容量为j的背包能装物品的最大价值</span></span><br><span class="line">        <span class="keyword">int</span> dp[] = <span class="keyword">new</span> <span class="keyword">int</span>[sum / <span class="number">2</span> + <span class="number">1</span>];</span><br><span class="line">        <span class="comment">// 递推公式：dp[j] = max(dp[j], dp[j-nums[i]]+nums[i])</span></span><br><span class="line">        <span class="comment">// 循环顺序</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = sum / <span class="number">2</span>; j &gt;= nums[i]; j--) &#123;</span><br><span class="line">                dp[j] = Math.max(dp[j], dp[j - nums[i]] + nums[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[sum / <span class="number">2</span>] == sum / <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="1049最后一块石头的重量ii"><a class="markdownIt-Anchor" href="#1049最后一块石头的重量ii"></a> 1049.最后一块石头的重量II</h2>
+<h3 id="题目描述-2"><a class="markdownIt-Anchor" href="#题目描述-2"></a> 题目描述</h3>
+<p><img src="/2023/07/28/01%E8%83%8C%E5%8C%85%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/image-20230804164416041.png" alt="image-20230804164416041"></p>
+<h3 id="我的思路-2"><a class="markdownIt-Anchor" href="#我的思路-2"></a> 我的思路</h3>
+<p>将本题转化为背包问题，记石头重量总和为sum，原问题可描述为bag = sum/2的背包所装的石头的最大重量，与剩余石头重量抵消后的剩余石头重量</p>
+<ul>
+<li>背包容量为 bag</li>
+<li>背包中的物品（石头），价值为石头的重量，重量为石头的重量</li>
+<li>背包中每个物品只能取一次</li>
+</ul>
+<p>则该问题为01背包问题，下面用01背包的模板即可</p>
+<h3 id="我的代码-2"><a class="markdownIt-Anchor" href="#我的代码-2"></a> 我的代码</h3>
+<p>01背包——二维数组版</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lastStoneWeightII</span><span class="params">(<span class="keyword">int</span>[] stones)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; stones.length; i++)</span><br><span class="line">            sum += stones[i];</span><br><span class="line">        <span class="comment">// dp[i][j]: 对于物品[0~i]中背包容量为j时所能装的最大物品价值</span></span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[stones.length][sum / <span class="number">2</span> + <span class="number">1</span>];</span><br><span class="line">        <span class="comment">// 递推方程：dp[i][j] = max(dp[i-1][j], dp[i-1][j-stones[i]] + stones[i])</span></span><br><span class="line">        <span class="comment">// 前者表示不包含元素i，后者表示包含元素i</span></span><br><span class="line">        <span class="comment">// 初始化</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = stones[<span class="number">0</span>]; j &lt; dp[<span class="number">0</span>].length; j++)</span><br><span class="line">            dp[<span class="number">0</span>][j] = stones[<span class="number">0</span>];</span><br><span class="line">        <span class="comment">// 遍历顺序： 从前向后</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; stones.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; dp[i].length; j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (j &lt; stones[i])</span><br><span class="line">                    dp[i][j] = dp[i - <span class="number">1</span>][j];</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                    dp[i][j] = Math.max(dp[i - <span class="number">1</span>][j], dp[i - <span class="number">1</span>][j - stones[i]] + stones[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum - dp[stones.length - <span class="number">1</span>][sum / <span class="number">2</span>] - dp[stones.length - <span class="number">1</span>][sum / <span class="number">2</span>];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>01背包——一维数组版</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lastStoneWeightII</span><span class="params">(<span class="keyword">int</span>[] stones)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> stone : stones)</span><br><span class="line">            sum += stone;</span><br><span class="line">        <span class="keyword">int</span> bag = sum / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// dp[j]: 容量为j的背包所能装物品的最大价值</span></span><br><span class="line">        <span class="keyword">int</span> dp[] = <span class="keyword">new</span> <span class="keyword">int</span>[bag + <span class="number">1</span>];</span><br><span class="line">        <span class="comment">// 递推公式：dp[j] = max(dp[j], dp[j-stones[i]] + stones[j])</span></span><br><span class="line">        <span class="comment">// 初始化 省略</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; stones.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = bag; j &gt;= stones[i]; j--)</span><br><span class="line">                dp[j] = Math.max(dp[j], dp[j - stones[i]] + stones[i]);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> sum - dp[bag] - dp[bag];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="494目标和"><a class="markdownIt-Anchor" href="#494目标和"></a> 494.目标和</h2>
+<h3 id="题目描述-3"><a class="markdownIt-Anchor" href="#题目描述-3"></a> 题目描述</h3>
+<p><img src="/2023/07/28/01%E8%83%8C%E5%8C%85%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/image-20230804165751885.png" alt="image-20230804165751885"></p>
+<h3 id="我的思路-3"><a class="markdownIt-Anchor" href="#我的思路-3"></a> 我的思路</h3>
+<p>将本题转化为背包问题，根据题意集合一定可以分为left和right两部分，而</p>
+<p>left+right=sum，要是left-right=target，只需使left = (sum + target)/2</p>
+<p>则原问题可以转化为从集合nums中选择若干个数使其和为left，可以直接使用回溯法解决问题，只不过会超时，这里将其转化为背包问题，转换方法与<a href="https://leetcode.cn/problems/partition-equal-subset-sum/">416. 分割等和子集</a>类似</p>
+<ul>
+<li>背包容量：left</li>
+<li>背包中的物品（nums中的元素），物品价值为元素大小，物品体积为元素大小</li>
+<li>背包中每个物品只能选取一次</li>
+</ul>
+<p>转换后可解释为：装满容量为left的背包有多少种装法，<strong>这里需要使用01背包的方法解决组合问题</strong></p>
+<ol>
+<li>
+<p>状态定义</p>
+<p>dp[j]: 容量为j的背包有dp[j]种组合方法</p>
+</li>
+<li>
+<p>递推方程</p>
+<p>例如：dp[j]，j 为5，</p>
+<ul>
+<li>已经有一个1（nums[i]） 的话，有 dp[4]种方法 凑成 容量为5的背包。</li>
+<li>已经有一个2（nums[i]） 的话，有 dp[3]种方法 凑成 容量为5的背包。</li>
+<li>已经有一个3（nums[i]） 的话，有 dp[2]中方法 凑成 容量为5的背包</li>
+<li>已经有一个4（nums[i]） 的话，有 dp[1]中方法 凑成 容量为5的背包</li>
+<li>已经有一个5 （nums[i]）的话，有 dp[0]中方法 凑成 容量为5的背包</li>
+</ul>
+<p>那么凑整dp[5]就是把所有的dp[j - nums[i]]累加起来</p>
+<p>所以求组合问题的公式，都是类似这种</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 组合问题的递推公式都是这个</span></span><br><span class="line">dp[j] += dp[j-nums[i]]</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>初始化</p>
+<p>dp[0] = 1，从满足答案要求判断如何初始化</p>
+</li>
+<li>
+<p>循环方向</p>
+<p>物品循环从前向后，背包容量循环从后向前</p>
+</li>
+</ol>
+<h3 id="我的代码-3"><a class="markdownIt-Anchor" href="#我的代码-3"></a> 我的代码</h3>
+<p><strong>01背包——一维数组版</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findTargetSumWays</span><span class="params">(<span class="keyword">int</span>[] nums, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 计算背包容量</span></span><br><span class="line">        <span class="keyword">int</span> sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> num : nums)</span><br><span class="line">            sum += num;</span><br><span class="line">        <span class="comment">// bag不存在</span></span><br><span class="line">        <span class="keyword">if</span> ((sum + target) % <span class="number">2</span> == <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="comment">// 问题无解</span></span><br><span class="line">        <span class="keyword">if</span> (Math.abs(target) &gt; sum)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> bag = (sum + target) / <span class="number">2</span>;</span><br><span class="line">        <span class="comment">// dp[j]: 装满容量为j的背包有多少种装法</span></span><br><span class="line">        <span class="keyword">int</span> dp[] = <span class="keyword">new</span> <span class="keyword">int</span>[bag + <span class="number">1</span>];</span><br><span class="line">        dp[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.length; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = bag; j &gt;= nums[i]; j--)</span><br><span class="line">                dp[j] += dp[j - nums[i]];</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dp[bag];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="474一和零"><a class="markdownIt-Anchor" href="#474一和零"></a> 474.一和零</h2>
+<h3 id="题目描述-4"><a class="markdownIt-Anchor" href="#题目描述-4"></a> 题目描述</h3>
+<p><img src="/2023/07/28/01%E8%83%8C%E5%8C%85%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/image-20230804174653790.png" alt="image-20230804174653790"></p>
+<h3 id="我的思路-4"><a class="markdownIt-Anchor" href="#我的思路-4"></a> 我的思路</h3>
+<p>只不过这个背包有两个维度，一个是m 一个是n，而不同长度的字符串就是不同大小的待装物品。下面考虑动规五部曲</p>
+<p>1、状态定义</p>
+<p>dp[i,j]: 子集中最多有i个0和j个1的子集长度</p>
+<p>2、递推公式</p>
+<p>对于字符串str，str中0的次数为zero_times,1的次数为one_times，递推公式如下：</p>
+<p>dp[i,j] = max(dp[i - zero_times, j - one_times]，dp[i,j]) + 1</p>
+<p>3、初始化</p>
+<p>dp[i,j]不为负即可</p>
+<p>4、确定遍历顺序</p>
+<p>外层循环遍历物品，内层循环遍历背包容量</p>
+<p>5、模拟，省略</p>
+<h3 id="我的代码-4"><a class="markdownIt-Anchor" href="#我的代码-4"></a> 我的代码</h3>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">findMaxForm</span><span class="params">(String[] strs, <span class="keyword">int</span> m, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">// dp[i][j]: 最多i个0和j个1的strs的最大子集的大小为dp[i][j]</span></span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m + <span class="number">1</span>][n + <span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span> (String str : strs) &#123;</span><br><span class="line">            <span class="keyword">char</span>[] s_char = str.toCharArray();</span><br><span class="line">            <span class="keyword">int</span> one_num = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">char</span> ch : s_char) &#123;</span><br><span class="line">                <span class="keyword">if</span> (ch == <span class="string">&#x27;1&#x27;</span>)</span><br><span class="line">                    one_num++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">int</span> zero_num = s_char.length - one_num;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = m; i &gt;= zero_num; i--) &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> j = n; j &gt;= one_num; j--)</span><br><span class="line">                    dp[i][j] = Math.max(dp[i][j], dp[i - zero_num][j - one_num] + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> dp[m][n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>算法</category>
@@ -3363,7 +3532,7 @@ t_{ikl}\ge P_{ik}-P_{il}
 <h2 id="746使用最小花费爬楼梯"><a class="markdownIt-Anchor" href="#746使用最小花费爬楼梯"></a> 746.使用最小花费爬楼梯</h2>
 <h3 id="题目描述-3"><a class="markdownIt-Anchor" href="#题目描述-3"></a> 题目描述</h3>
 <h3 id="我的思路-3"><a class="markdownIt-Anchor" href="#我的思路-3"></a> 我的思路</h3>
-<p>见代码注释</p>
+<p>x 1class Solution:2    def maxProfit(self, prices) -&gt; int:3​4​5        if len(prices) &lt;= 1:6            return 07​8        min_input = prices[0]9        max_profit = 010        for p in prices[1:]:11            min_input = min(p, min_input)12            max_profit = max(max_profit, p - min_input)13​14        return max_profitpython</p>
 <h3 id="我的代码-3"><a class="markdownIt-Anchor" href="#我的代码-3"></a> 我的代码</h3>
 <figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">final</span> <span class="keyword">int</span> N = <span class="number">1010</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">minCostClimbingStairs</span><span class="params">(<span class="keyword">int</span>[] cost)</span> </span>&#123;</span><br><span class="line">        <span class="comment">// dp[i]: 爬到第i个楼梯需要的最小代价</span></span><br><span class="line">        <span class="keyword">int</span>[] dp = <span class="keyword">new</span> <span class="keyword">int</span>[N];</span><br><span class="line">        <span class="comment">// 状态方程：dp[i] = min(dp[i-1] + cost[i-1], dp[i-2] + cost[i-2])</span></span><br><span class="line">        <span class="comment">// 初始化</span></span><br><span class="line">        <span class="comment">// dp[0] = 0;</span></span><br><span class="line">        <span class="comment">// dp[1] = 0;</span></span><br><span class="line">        <span class="comment">// 遍历方向：从前向后</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= cost.length; i++)</span><br><span class="line">            dp[i] = Math.min(dp[i - <span class="number">1</span>] + cost[i - <span class="number">1</span>], dp[i - <span class="number">2</span>] + cost[i - <span class="number">2</span>]);</span><br><span class="line">        <span class="keyword">return</span> dp[cost.length];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="62不同路径"><a class="markdownIt-Anchor" href="#62不同路径"></a> 62.不同路径</h2>
