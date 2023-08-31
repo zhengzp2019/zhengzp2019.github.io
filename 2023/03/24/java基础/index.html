@@ -1,0 +1,1742 @@
+<!DOCTYPE html>
+<html lang="zh-CN,en,default">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta http-equiv="Cache-Control" content="no-transform">
+  <meta http-equiv="Cache-Control" content="no-siteapp">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Lobster Two:300,300italic,400,400italic,700,700italic|Amita:300,300italic,400,400italic,700,700italic|Montserrat:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zhengzp2019.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+<script>
+    (function(d, w, c) {
+        w.ChatraID = 'Z8KH5JTPhxGC84tKb';
+        var s = d.createElement('script');
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        s.async = true;
+        s.src = 'https://call.chatra.io/chatra.js';
+        if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+</script>
+  <meta name="description" content="基本术语   类(class)： 类的实例的蓝图，描述实例对象行为和状态的模板   对象(object)： 类的实例化，具有行为和状态。   方法(Method)： 对象的行为   实例变量(instance variable)： 对象的状态 例如： 一辆车的设计图纸——类 具体的一辆车(大众)——对象 车的一些行为(加速，启动，打开车门，打开车窗)——方法 车的具体的部件(发动机，车门，车窗)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java基础">
+<meta property="og:url" content="http://zhengzp2019.github.io/2023/03/24/java%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:site_name" content="dpBirder&#39;s Blog">
+<meta property="og:description" content="基本术语   类(class)： 类的实例的蓝图，描述实例对象行为和状态的模板   对象(object)： 类的实例化，具有行为和状态。   方法(Method)： 对象的行为   实例变量(instance variable)： 对象的状态 例如： 一辆车的设计图纸——类 具体的一辆车(大众)——对象 车的一些行为(加速，启动，打开车门，打开车窗)——方法 车的具体的部件(发动机，车门，车窗)">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191105111644/Data-types-in-Java.jpg">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191105122725/Primitive-Data-Types-in-Java-4.jpg">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/uploads/20191110223008/java-declare.jpeg">
+<meta property="og:image" content="http://media.geeksforgeeks.org/wp-content/uploads/Variables-in-Java.png">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/uploads/20220216012050/variabletypes.png">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200806191733/Wrapper-Class-in-Java.png">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/uploads/20191126171503/println1.png">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/uploads/Arrays1.png">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-13.jpeg">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/uploads/20201202202711/Untitled4-660x306.png">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-11.jpeg">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-12.jpeg">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20220526152255/Collections-in-Java1.png">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200624184403/ArrayList.png">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/uploads/20210908120146/ArrayListIntegerObjecttype-660x268.png">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/uploads/Selection_028.png">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200903183026/Queue-Deque-PriorityQueue-In-Java.png">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/uploads/20200909140302/ArrayDequeinJava.png">
+<meta property="og:image" content="https://media.geeksforgeeks.org/wp-content/uploads/20201119122201/HashMapinJava.png">
+<meta property="article:published_time" content="2023-03-24T08:05:26.000Z">
+<meta property="article:modified_time" content="2023-04-11T11:28:06.934Z">
+<meta property="article:author" content="dpbirder">
+<meta property="article:tag" content="编程">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191105111644/Data-types-in-Java.jpg">
+
+<link rel="canonical" href="http://zhengzp2019.github.io/2023/03/24/java%E5%9F%BA%E7%A1%80/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+<script> 
+ (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+  <title>java基础 | dpBirder's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">dpBirder's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">15</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">26</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">51</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/zhengzp2019" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://zhengzp2019.github.io/2023/03/24/java%E5%9F%BA%E7%A1%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/boy.jpg">
+      <meta itemprop="name" content="dpbirder">
+      <meta itemprop="description" content="目前研一就读于西安电子科技大学">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="dpBirder's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          java基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-03-24 16:05:26" itemprop="dateCreated datePublished" datetime="2023-03-24T16:05:26+08:00">2023-03-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-04-11 19:28:06" itemprop="dateModified" datetime="2023-04-11T19:28:06+08:00">2023-04-11</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">编程语言</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/" itemprop="url" rel="index"><span itemprop="name">java</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>33k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>30 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="基本术语"><a class="markdownIt-Anchor" href="#基本术语"></a> 基本术语</h2>
+<ol>
+<li>
+<p><strong>类(class)：</strong> 类的实例的蓝图，描述实例对象行为和状态的模板</p>
+</li>
+<li>
+<p><strong>对象(object)：</strong> 类的实例化，具有行为和状态。</p>
+</li>
+<li>
+<p><strong>方法(Method)：</strong> 对象的行为</p>
+</li>
+<li>
+<p><strong>实例变量(instance variable)：</strong> 对象的状态</p>
+<p><strong>例如：</strong></p>
+<p>一辆车的设计图纸——类</p>
+<p>具体的一辆车(大众)——对象</p>
+<p>车的一些行为(加速，启动，打开车门，打开车窗)——方法</p>
+<p>车的具体的部件(发动机，车门，车窗)——实例变量</p>
+</li>
+</ol>
+<a id="more"></a>
+<h2 id="注释与命名规范"><a class="markdownIt-Anchor" href="#注释与命名规范"></a> 注释与命名规范</h2>
+<p><strong>注释</strong>：</p>
+<ul>
+<li>单行注释——//</li>
+<li>多行注释——/*  */</li>
+<li>文档注释——/** */</li>
+</ul>
+<p><strong>源文件名：</strong> 源文件名要与源文件中的公有类名完全相同，若源文件中无公有类，则两者可以不同</p>
+<p><strong>大小写敏感：</strong> Java中大小写字母视为不同的字符，Student与student视为不同的标识符</p>
+<p><strong>类名：</strong> 一般首字母大写，若有多个单词则每个单词的首字母都要大写</p>
+<h2 id="hello-world程序解释"><a class="markdownIt-Anchor" href="#hello-world程序解释"></a> Hello world程序解释</h2>
+<p><strong>public static void main(String []args)：</strong></p>
+<ul>
+<li>public：方法作用域</li>
+<li>static：方法属性</li>
+<li>void：方法返回值</li>
+<li>main：方法名，Java程序的进入点，Java程序从这里开始，类似于C/C++中main函数</li>
+<li>String []args：操作系统传递给Java程序的参数</li>
+</ul>
+<p><strong>方法名：</strong> 一般首字母小写，若有多个单词，则处第一个单词外其余单词首字母大写</p>
+<h2 id="java标识符命名规则"><a class="markdownIt-Anchor" href="#java标识符命名规则"></a> Java标识符命名规则</h2>
+<p><strong>Java标识符：</strong> 包括局部变量，实例，类变量，标签，类名，包名，模块，方法。所有的标识符中的字符都可以以字母，$，下划线，数字定义，但是首字符不可以是数字。下划线一般不推荐使用（这里与python规范不同）</p>
+<ul>
+<li>不能以数字开头</li>
+<li>大小写敏感</li>
+<li>无长度要求，但不推荐过长</li>
+<li>保留字不能作为标识符</li>
+</ul>
+<h2 id="java数据类型"><a class="markdownIt-Anchor" href="#java数据类型"></a> Java数据类型</h2>
+<p>数据类型可以根据语言特性分为静态数据类型和动态数据类型。</p>
+<ul>
+<li>
+<p>静态数据类型：在编译时已经知道变量和表达式类型，变量一旦被声明为一种数据类型，就不能被在被声明为其他数据类型，例如C，C++，Java</p>
+</li>
+<li>
+<p>动态数据类型：变量可以不同时间接受不同的数据类型，例如Ruby，Python</p>
+</li>
+</ul>
+<p>Java是静态类型的，并且是一种强类型的语言。在Java中每中数据类型在使用前都必须预先定义，并且所有的常量或变量都必须使用一种数据类型描述。</p>
+<p>Java中有两种数据类型，一种是原始数据类型一种是非原始数据类型也叫引用数据类型。类型示意图如下：</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191105111644/Data-types-in-Java.jpg" alt="Java Data Types"></p>
+<p><strong>原始数据类型：</strong> 一共有八类，在Java中预定义好的数据类型，具体类型以及每种类型的一些描述和字长如下：</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191105122725/Primitive-Data-Types-in-Java-4.jpg" alt="Java Primitive Data Type"></p>
+<p><strong>非原始数据类型或引用数据类型：</strong> 包含变量的内存地址，并且引用类型在内存中不直接存储变量的值。下面列出一些常用的引用数据类型</p>
+<ul>
+<li>
+<p>String</p>
+<blockquote>
+<p>类似于字符数组，但是String类型不以空字符结尾</p>
+<p>声明String的语法：</p>
+<p>&lt;String_type&gt; &lt;string_variable&gt; = “sequence_of_string”;</p>
+</blockquote>
+</li>
+<li>
+<p>Class</p>
+<blockquote>
+<p>类的声明包括如下内容：</p>
+<p>修饰符：一个类可以是public或者default的</p>
+<p>类名：</p>
+<p>父类，超类：可有可无</p>
+<p>接口：可有可无</p>
+<p>主体：由{}包含</p>
+</blockquote>
+</li>
+<li>
+<p>Object</p>
+<blockquote>
+<p>类的实体部分，一个对象包含如下内容：</p>
+<p>状态，行为，标识符</p>
+</blockquote>
+</li>
+<li>
+<p>Interface</p>
+<blockquote>
+<p>像类一样，接口有自己的方法和变量，方法声明在接口内部但不定义，即接口内部的方法事抽象的</p>
+</blockquote>
+</li>
+<li>
+<p>Array</p>
+<blockquote>
+<p>数组是一组相似类型的变量，数组在Java中的工作方式与c，cpp是不同的</p>
+<ul>
+<li>java中所有数组是动态分配的</li>
+<li>Array在java中是一个对象，所以可以直接获得成员长度（这里与c，cpp不一样）</li>
+<li>Java数组对象也可以在其他数据类型后面加[]的方式声明</li>
+<li>索引从0开始</li>
+<li>数组可以被当作静态变量，局部变量或者方法参数使用</li>
+<li>数组长度必须使用int值指定，而不能是long或者short的</li>
+<li>数组的直接超类是Object</li>
+<li>每个数组都实现了接口Cloneable</li>
+</ul>
+</blockquote>
+</li>
+</ul>
+<h2 id="java变量"><a class="markdownIt-Anchor" href="#java变量"></a> Java变量</h2>
+<h3 id="声明一个变量"><a class="markdownIt-Anchor" href="#声明一个变量"></a> 声明一个变量</h3>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20191110223008/java-declare.jpeg" alt="img"></p>
+<h3 id="初始化变量"><a class="markdownIt-Anchor" href="#初始化变量"></a> 初始化变量</h3>
+<p><img src="http://media.geeksforgeeks.org/wp-content/uploads/Variables-in-Java.png" alt="img"></p>
+<h3 id="java中的变量类型"><a class="markdownIt-Anchor" href="#java中的变量类型"></a> Java中的变量类型</h3>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20220216012050/variabletypes.png" alt="img"></p>
+<ul>
+<li>局部变量：定义在块，方法或者构造函数中，作用域也在这些范围内</li>
+<li>实例变量：非静态变量，声明在类内，块，方法或者构造函数之外</li>
+<li>静态变量：也叫做类变量，声明方式与实例变量形似，需要用static关键字声明，每个类只有一个静态变量的拷贝，不论有多少对象被创建，如果使用对象名访问静态变量，则编译器会自动把对象名替换为类名</li>
+</ul>
+<h3 id="静态变量在java和cpp中的不同与相同"><a class="markdownIt-Anchor" href="#静态变量在java和cpp中的不同与相同"></a> 静态变量在java和cpp中的不同与相同</h3>
+<p><strong>相同点</strong></p>
+<ul>
+<li>二者都可以声明静态变量</li>
+<li>二者都可以声明静态方法</li>
+<li>访问静态成员都不需要创建对象，而可以直接使用类名访问</li>
+</ul>
+<p><strong>不同点</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">C++</th>
+<th style="text-align:center">java</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">不支持静态块</td>
+<td style="text-align:center">支持静态块，一般用于静态初始化类</td>
+</tr>
+<tr>
+<td style="text-align:center">可以声明静态局部变量</td>
+<td style="text-align:center">不支持静态局部变量</td>
+</tr>
+</tbody>
+</table>
+<h2 id="java中的wrapper类"><a class="markdownIt-Anchor" href="#java中的wrapper类"></a> Java中的Wrapper类</h2>
+<p>Wrapper是在java中是其对象包装的类或者包含原始数据类型。当我们为Wrapper类创建一个对象时，它包含一个字段，我峨嵋你可以存储原始数据类型。也就是我们可以将原始数据类型包装到Wrapper类对象中。</p>
+<h3 id="需要wrapper类的场景"><a class="markdownIt-Anchor" href="#需要wrapper类的场景"></a> 需要Wrapper类的场景</h3>
+<ul>
+<li>将原始数据类型转换为对象时</li>
+<li>一些集合框架中的数据结构，例如ArrayLsit和Vector中只存储对象，而不存储原始数据类型</li>
+<li>java.util中包含一些只处理对象的类</li>
+<li>在多线程中需要支持同步的对象</li>
+</ul>
+<h3 id="原始数据与相应的wrapper类"><a class="markdownIt-Anchor" href="#原始数据与相应的wrapper类"></a> 原始数据与相应的Wrapper类</h3>
+<p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200806191733/Wrapper-Class-in-Java.png" alt="Wrapper-Class-in-Java"></p>
+<h3 id="自动包装autoboxing与解包unboxing"><a class="markdownIt-Anchor" href="#自动包装autoboxing与解包unboxing"></a> 自动包装(autoboxing)与解包(unboxing)</h3>
+<p><strong>Autoboxing：</strong> 将原始数据类型自动转化为Wrapper类型</p>
+<p>示例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java program to demonstrate Autoboxing</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Autoboxing</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">char</span> ch = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Autoboxing- primitive to Character object</span></span><br><span class="line">		<span class="comment">// conversion</span></span><br><span class="line">		Character a = ch;</span><br><span class="line"></span><br><span class="line">		ArrayList&lt;Integer&gt; arrayList</span><br><span class="line">			= <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Autoboxing because ArrayList stores only objects</span></span><br><span class="line">		arrayList.add(<span class="number">25</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// printing the values from object</span></span><br><span class="line">		System.out.println(arrayList.get(<span class="number">0</span>));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>unboxing：</strong> <code>autoboxing</code>的逆过程，将Wrapper类型自动转换为原始数据类型</p>
+<p>示例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java program to demonstrate Unboxing</span></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Unboxing</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		Character ch = <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// unboxing - Character object to primitive</span></span><br><span class="line">		<span class="comment">// conversion</span></span><br><span class="line">		<span class="keyword">char</span> a = ch;</span><br><span class="line"></span><br><span class="line">		ArrayList&lt;Integer&gt; arrayList</span><br><span class="line">			= <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">		arrayList.add(<span class="number">24</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// unboxing because get method returns an Integer</span></span><br><span class="line">		<span class="comment">// object</span></span><br><span class="line">		<span class="keyword">int</span> num = arrayList.get(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// printing the values from primitive data types</span></span><br><span class="line">		System.out.println(num);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="变量的作用域"><a class="markdownIt-Anchor" href="#变量的作用域"></a> 变量的作用域</h2>
+<h3 id="成员变量类层次的作用域"><a class="markdownIt-Anchor" href="#成员变量类层次的作用域"></a> 成员变量（类层次的作用域）</h3>
+<p>这些变量声明在类内方法外，他们可以在类内任何地方声明和访问，只需要保证在访问前声明即可</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="comment">// All variables defined directly inside a class </span></span><br><span class="line">    <span class="comment">// are member variables</span></span><br><span class="line">    <span class="keyword">int</span> a;</span><br><span class="line">    <span class="keyword">private</span> String b;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">method1</span><span class="params">()</span> </span>&#123;....&#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">method2</span><span class="params">()</span> </span>&#123;....&#125;</span><br><span class="line">    <span class="keyword">char</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>成员变量的访问权限不影响类内的作用域</li>
+<li>成员变量在类外可以按照如下规则访问</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">修饰符</th>
+<th style="text-align:center">包内</th>
+<th style="text-align:center">子类</th>
+<th style="text-align:center">全局</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">public</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+</tr>
+<tr>
+<td style="text-align:center">protected</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">N</td>
+</tr>
+<tr>
+<td style="text-align:center">Default(无修饰符)</td>
+<td style="text-align:center">Y</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+</tr>
+<tr>
+<td style="text-align:center">private</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+<td style="text-align:center">N</td>
+</tr>
+</tbody>
+</table>
+<h3 id="局部变量方法层次的作用域"><a class="markdownIt-Anchor" href="#局部变量方法层次的作用域"></a> 局部变量(方法层次的作用域)</h3>
+<p>变量声明在方法内，具有方法层次的作用域，不可以在方法外访问</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> x;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setX</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.x = x;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里使用this关键字区别局部变量和成员变量</p>
+<h3 id="循环变量块层级的作用域"><a class="markdownIt-Anchor" href="#循环变量块层级的作用域"></a> 循环变量(块层级的作用域)</h3>
+<p>声明在一对大括号内部的变量，其作用域在大括号内部，不可在括号外部访问，如下错误实例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> x = <span class="number">0</span>; x &lt; <span class="number">4</span>; x++)</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(x);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Will produce error</span></span><br><span class="line">		System.out.println(x);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但是下述代码就是成立的</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">			System.out.println(i);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> i = <span class="number">20</span>;</span><br><span class="line">		System.out.println(i);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Java与cpp的关于循环变量的区别</strong></p>
+<p>在cpp中外部作用域和内部作用域可以声明同名的变量，但是在java中外部作用域和内部作用域不可以声明同名的变量。<s>这种区别来自于Java和cpp存储变量的方式不同。</s></p>
+<h2 id="java标准输入输出"><a class="markdownIt-Anchor" href="#java标准输入输出"></a> Java标准输入输出</h2>
+<h3 id="输入"><a class="markdownIt-Anchor" href="#输入"></a> 输入</h3>
+<p>Java标准I/O包中提供两种用于读取用户输入的类：BufferReader，Scanner</p>
+<p><strong>BufferReader</strong></p>
+<p>该类可以用于读取字符序列，它包含一些读取字符和字符行的方法，<strong>read</strong>和<strong>readline</strong>。<strong>InputStreamReader</strong>是一个将字节流转化为字符流的函数，以至于它的输出可以被<strong>BufferReader</strong>类读取，并且<strong>BufferReader</strong>可以抛出异常。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java Program for taking user</span></span><br><span class="line"><span class="comment">// input using BufferedReader Class</span></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Main Method</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">		<span class="keyword">throws</span> IOException</span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">// Creating BufferedReader Object</span></span><br><span class="line">		<span class="comment">// InputStreamReader converts bytes to</span></span><br><span class="line">		<span class="comment">// stream of character</span></span><br><span class="line">		BufferedReader bfn = <span class="keyword">new</span> BufferedReader(</span><br><span class="line">			<span class="keyword">new</span> InputStreamReader(System.in));</span><br><span class="line"></span><br><span class="line">		<span class="comment">// String reading internally</span></span><br><span class="line">		String str = bfn.readLine();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Integer reading internally</span></span><br><span class="line">		<span class="keyword">int</span> it = Integer.parseInt(bfn.readLine());</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Printing String</span></span><br><span class="line">		System.out.println(<span class="string">&quot;Entered String : &quot;</span> + str);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Printing Integer</span></span><br><span class="line">		System.out.println(<span class="string">&quot;Entered Integer : &quot;</span> + it);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Scanner</strong></p>
+<p>这是BufferReader的高级版本，可以读取格式化输入，其针对于不同的数据格式有不同的读取函数</p>
+<ul>
+<li>整型：nextInt()</li>
+<li>浮点型：nextFloat()</li>
+<li>字符型：next()或nextLine()</li>
+</ul>
+<p>代码实例如下</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java Program to show how to take</span></span><br><span class="line"><span class="comment">// input from user using Scanner Class</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">// Scanner definition</span></span><br><span class="line">		Scanner scn = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// input is a string ( one word )</span></span><br><span class="line">		<span class="comment">// read by next() function</span></span><br><span class="line">		String str1 = scn.next();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// print String</span></span><br><span class="line">		System.out.println(<span class="string">&quot;Entered String str1 : &quot;</span> + str1);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// input is a String ( complete Sentence )</span></span><br><span class="line">		<span class="comment">// read by nextLine()function</span></span><br><span class="line">		String str2 = scn.nextLine();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// print string</span></span><br><span class="line">		System.out.println(<span class="string">&quot;Entered String str2 : &quot;</span> + str2);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// input is an Integer</span></span><br><span class="line">		<span class="comment">// read by nextInt() function</span></span><br><span class="line">		<span class="keyword">int</span> x = scn.nextInt();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// print integer</span></span><br><span class="line">		System.out.println(<span class="string">&quot;Entered Integer : &quot;</span> + x);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// input is a floatingValue</span></span><br><span class="line">		<span class="comment">// read by nextFloat() function</span></span><br><span class="line">		<span class="keyword">float</span> f = scn.nextFloat();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// print floating value</span></span><br><span class="line">		System.out.println(<span class="string">&quot;Entered FloatValue : &quot;</span> + f);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>BufferReader与Scanner的区别</strong></p>
+<ul>
+<li>BufferReader是读取字符流最基本的一种形式，它比BufferReader读取速度更快，因为Scanner在读取前做了很多预处理内容</li>
+<li>BufferReader更灵活，可以指定读取的字节数，通常BufferReader用于读取大量的数据</li>
+<li>BufferReader的同步性更好，更适合处理多线程问题</li>
+<li>Scanner的输入代码量和可读性方面更好</li>
+</ul>
+<h3 id="输出"><a class="markdownIt-Anchor" href="#输出"></a> 输出</h3>
+<p>Java中使用常用System.out.println()和System.out.print()输出用户想要输出的信息，该函数可以被分解为如下三个部分，如图所示</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20191126171503/println1.png" alt="img"></p>
+<p>其中println()和print()的区别如下:</p>
+<ul>
+<li>println()是同步方法，当传递多个线程时可能导致低性能问题</li>
+<li>println()是较高层次的IO函数，性能较低</li>
+</ul>
+<h2 id="java中的字符串string"><a class="markdownIt-Anchor" href="#java中的字符串string"></a> Java中的字符串——String</h2>
+<h2 id="java中的数组array"><a class="markdownIt-Anchor" href="#java中的数组array"></a> Java中的数组——Array</h2>
+<p>Java数组的一些特性：</p>
+<ul>
+<li>Java中，数组是动态分配的</li>
+<li>数组存储在一片连续的内存中</li>
+<li>数组在java中作为对象存在，所以可以直接使用length属性返回数组长度</li>
+<li>索引从0开始</li>
+<li>数组长度必须指定为int或者short而不能式long</li>
+<li>直接子类式Object</li>
+<li>数组的长度不能被改变，但是引用可以指向其他数组</li>
+<li>数组可以作为函数传入参数，也可以作为输出参数</li>
+</ul>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/Arrays1.png" alt="Arrays"></p>
+<h3 id="数组的声明初始化存取"><a class="markdownIt-Anchor" href="#数组的声明初始化存取"></a> 数组的声明，初始化，存取</h3>
+<p><strong>声明</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type <span class="keyword">var</span>-name[];</span><br><span class="line">OR</span><br><span class="line">type[] <span class="keyword">var</span>-name;</span><br></pre></td></tr></table></figure>
+<p><strong>type:</strong> 定义了数组中存储元素的类型，可以式原始数据类型，也可以是引用数据类型</p>
+<p><strong>实例化</strong></p>
+<p>当数组被声明时，只有数组的引用被创建，为了给数组分配内存，需要使用new关键字，如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span>-name = <span class="keyword">new</span> type [size];</span><br><span class="line"><span class="keyword">int</span>[] intArray = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">20</span>]; <span class="comment">// combining both statements in one</span></span><br></pre></td></tr></table></figure>
+<p><strong>存取</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// accessing the elements of the specified array</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++)</span><br><span class="line">  System.out.println(<span class="string">&quot;Element at index &quot;</span> + i + </span><br><span class="line">                                <span class="string">&quot; : &quot;</span>+ arr[i]);</span><br></pre></td></tr></table></figure>
+<p><strong>对象数组</strong></p>
+<p>声明一个Student对象数组，此时数组中每个元素存储的为对象的引用</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Student[] arr = <span class="keyword">new</span> Student[<span class="number">5</span>]; <span class="comment">//student is a user-defined class</span></span><br></pre></td></tr></table></figure>
+<p>为对象数组分类内存</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java program to illustrate creating</span></span><br><span class="line"><span class="comment">// an array of objects</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">int</span> roll_no;</span><br><span class="line">	<span class="keyword">public</span> String name;</span><br><span class="line">	Student(<span class="keyword">int</span> roll_no, String name)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">this</span>.roll_no = roll_no;</span><br><span class="line">		<span class="keyword">this</span>.name = name;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Elements of the array are objects of a class Student.</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">// declares an Array of integers.</span></span><br><span class="line">		Student[] arr;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// allocating memory for 5 objects of type Student.</span></span><br><span class="line">		arr = <span class="keyword">new</span> Student[<span class="number">5</span>];</span><br><span class="line"></span><br><span class="line">		<span class="comment">// initialize the first elements of the array</span></span><br><span class="line">		arr[<span class="number">0</span>] = <span class="keyword">new</span> Student(<span class="number">1</span>, <span class="string">&quot;aman&quot;</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// initialize the second elements of the array</span></span><br><span class="line">		arr[<span class="number">1</span>] = <span class="keyword">new</span> Student(<span class="number">2</span>, <span class="string">&quot;vaibhav&quot;</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// so on...</span></span><br><span class="line">		arr[<span class="number">2</span>] = <span class="keyword">new</span> Student(<span class="number">3</span>, <span class="string">&quot;shikar&quot;</span>);</span><br><span class="line">		arr[<span class="number">3</span>] = <span class="keyword">new</span> Student(<span class="number">4</span>, <span class="string">&quot;dharmesh&quot;</span>);</span><br><span class="line">		arr[<span class="number">4</span>] = <span class="keyword">new</span> Student(<span class="number">5</span>, <span class="string">&quot;mohit&quot;</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// accessing the elements of the specified array</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++)</span><br><span class="line">			System.out.println(<span class="string">&quot;Element at &quot;</span> + i + <span class="string">&quot; : &quot;</span></span><br><span class="line">							+ arr[i].roll_no + <span class="string">&quot; &quot;</span></span><br><span class="line">							+ arr[i].name);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="多维数组"><a class="markdownIt-Anchor" href="#多维数组"></a> 多维数组</h3>
+<p><strong>声明</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 声明语法：</span></span><br><span class="line"><span class="comment">// datatype [][] arrayrefvariable;</span></span><br><span class="line"><span class="comment">// datatype arrayrefvariable[][];</span></span><br><span class="line"><span class="comment">// 三维数组的声明</span></span><br><span class="line"><span class="comment">// int[][][] intArray = new int[10][20][10];</span></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line">  </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">      <span class="comment">// Syntax </span></span><br><span class="line">       <span class="keyword">int</span> [][] arr= <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>][<span class="number">3</span>];</span><br><span class="line">      <span class="comment">// 3 row and 3 column</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>多维数组也叫数组的数组，在内存中的存储如下所示</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-13.jpeg" alt="Blank Diagram - Page 1 (13)"></p>
+<p><strong>锯齿形数组(Jagged array)</strong></p>
+<p>这是一个二维数组，只是每一维的数组长度都不是固定的，如下图</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20201202202711/Untitled4-660x306.png" alt="img"></p>
+<p>声明方法</p>
+<p>结构与二维数组相同，不指定列数，在后续动态指定。下例展示了一个锯齿形创建，初始化和存取的实例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Another Java program to demonstrate 2-D jagged</span></span><br><span class="line"><span class="comment">// array such that first row has 1 element, second</span></span><br><span class="line"><span class="comment">// row has two elements and so on.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> r = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Declaring 2-D array with 5 rows</span></span><br><span class="line">		<span class="keyword">int</span> arr[][] = <span class="keyword">new</span> <span class="keyword">int</span>[r][];</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Creating a 2D array such that first row</span></span><br><span class="line">		<span class="comment">// has 1 element, second row has two</span></span><br><span class="line">		<span class="comment">// elements and so on.</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++)</span><br><span class="line">			arr[i] = <span class="keyword">new</span> <span class="keyword">int</span>[i + <span class="number">1</span>];</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Initializing array</span></span><br><span class="line">		<span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++)</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr[i].length; j++)</span><br><span class="line">				arr[i][j] = count++;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Displaying the values of 2D Jagged array</span></span><br><span class="line">		System.out.println(<span class="string">&quot;Contents of 2D Jagged Array&quot;</span>);</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; arr[i].length; j++)</span><br><span class="line">				System.out.print(arr[i][j] + <span class="string">&quot; &quot;</span>);</span><br><span class="line">			System.out.println();</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果如下</p>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Contents of <span class="number">2</span><span class="keyword">D</span> Jagged <span class="keyword">Array</span></span><br><span class="line"><span class="number">0</span> </span><br><span class="line"><span class="number">1</span> <span class="number">2</span> </span><br><span class="line"><span class="number">3</span> <span class="number">4</span> <span class="number">5</span> </span><br><span class="line"><span class="number">6</span> <span class="number">7</span> <span class="number">8</span> <span class="number">9</span> </span><br><span class="line"><span class="number">10</span> <span class="number">11</span> <span class="number">12</span> <span class="number">13</span> <span class="number">14</span> </span><br></pre></td></tr></table></figure>
+<p>锯齿形数组的一些优点</p>
+<ul>
+<li>可以动态分类内存，使用起来更加灵活</li>
+<li>空间利用率高</li>
+<li>提高存取性能，锯齿形数组在内存中排列更加紧凑，存取性能比矩阵更高</li>
+</ul>
+<h3 id="数组的成员"><a class="markdownIt-Anchor" href="#数组的成员"></a> 数组的成员</h3>
+<ul>
+<li>length：数组长度</li>
+<li>所有的数组都继承自Object类，除了clone方法没有继承</li>
+<li>clone()方法重载了Object类</li>
+</ul>
+<h3 id="数组的拷贝"><a class="markdownIt-Anchor" href="#数组的拷贝"></a> 数组的拷贝</h3>
+<p><strong>一维数组的拷贝</strong></p>
+<p>一维数组使用clone()拷贝时，进行的时深拷贝(deep copy)，不仅复制引用，还分配了新的内存，如下例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java program to demonstrate</span></span><br><span class="line"><span class="comment">// cloning of one-dimensional arrays</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> intArray[] = &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> cloneArray[] = intArray.clone();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// will print false as deep copy is created</span></span><br><span class="line">		<span class="comment">// for one-dimensional array</span></span><br><span class="line">		System.out.println(intArray == cloneArray);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; cloneArray.length; i++) &#123;</span><br><span class="line">			System.out.print(cloneArray[i] + <span class="string">&quot; &quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// 输出</span><br><span class="line">false</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> </span><br></pre></td></tr></table></figure>
+<p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-11.jpeg" alt="Blank Diagram - Page 1 (11)"></p>
+<p><strong>多维数组的拷贝</strong></p>
+<p>多维数组的拷贝是浅拷贝(shallow copy)，只为每个数组创建了数组的索引，子数组任然共享内存，如下例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java program to demonstrate</span></span><br><span class="line"><span class="comment">// cloning of multi-dimensional arrays</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="keyword">int</span> intArray[][] = &#123; &#123; <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span> &#125;, &#123; <span class="number">4</span>, <span class="number">5</span> &#125; &#125;;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> cloneArray[][] = intArray.clone();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// will print false</span></span><br><span class="line">		System.out.println(intArray == cloneArray);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// will print true as shallow copy is created</span></span><br><span class="line">		<span class="comment">// i.e. sub-arrays are shared</span></span><br><span class="line">		System.out.println(intArray[<span class="number">0</span>] == cloneArray[<span class="number">0</span>]);</span><br><span class="line">		System.out.println(intArray[<span class="number">1</span>] == cloneArray[<span class="number">1</span>]);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\\ 输出</span><br><span class="line">false</span><br><span class="line">true</span><br><span class="line">true</span><br></pre></td></tr></table></figure>
+<p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-12.jpeg" alt="Blank Diagram - Page 1 (12)"></p>
+<h3 id="arrays类"><a class="markdownIt-Anchor" href="#arrays类"></a> Arrays类</h3>
+<p><code>java.util</code>包中的Arrays数组是Java Collection框架中的一部分，该类提供了一些静态方法动态的创建和存储java数组。该类由一些静态方法和一些Object类中的方法构成，并且类中的方法全为静态的。</p>
+<p><strong>Arrays类中的一些方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>Methods</th>
+<th>Action Performed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>asList()</td>
+<td>Returns a fixed-size list backed by the specified Arrays</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/array-class-in-java/">fill(originalArray, fillValue)</a></td>
+<td>Assigns this fill value to each index of this arrays.</td>
+</tr>
+<tr>
+<td>binarySearch()</td>
+<td>Searches for the specified element in the array with the help of the Binary Search Algorithm</td>
+</tr>
+<tr>
+<td>binarySearch(array, fromIndex, toIndex, key, Comparator)</td>
+<td>Searches a range of the specified array for the specified object using the Binary Search Algorithm</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/array-class-in-java/">sort(T[] a, Comparator&lt; super T&gt; c)</a></td>
+<td>Sorts the specified array of objects according to the order induced by the specified comparator.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>排序和二分示例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java Program to Demonstrate Arrays Class</span></span><br><span class="line"><span class="comment">// Via binarySearch() method</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Importing Arrays utility class</span></span><br><span class="line"><span class="comment">// from java.util package</span></span><br><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Main class</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Main driver method</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Get the Array</span></span><br><span class="line">		<span class="keyword">int</span> intArr[] = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">15</span>, <span class="number">22</span>, <span class="number">35</span> &#125;;</span><br><span class="line"></span><br><span class="line">		Arrays.sort(intArr);</span><br><span class="line"></span><br><span class="line">		<span class="keyword">int</span> intKey = <span class="number">22</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Print the key and corresponding index</span></span><br><span class="line">		System.out.println(</span><br><span class="line">			intKey + <span class="string">&quot; found at index = &quot;</span></span><br><span class="line">			+ Arrays.binarySearch(intArr, intKey));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="java文件操作"><a class="markdownIt-Anchor" href="#java文件操作"></a> Java文件操作</h2>
+<h3 id="file类"><a class="markdownIt-Anchor" href="#file类"></a> File类</h3>
+<p>File类在java实现了文件和目录名。File包含了诸多操作文件和目录的方法，其中包括删除，重命名，创建目录，列出包含的子目录以及一些文件和目录相关的属性等等。</p>
+<ul>
+<li>File是文件和目录的抽象表示</li>
+<li>路径名即可以是相对路径，也可以是绝对路径，父目录可以通过<code>getParent()</code>方法获得</li>
+<li>首先我们需要传递目录名和文件名来创建一个文件类，文件系统还实现了在真实系统中对于文件的一些存取权限，例如读、写、执行等等</li>
+<li>File类的实例时固定的，文件引用一旦实例化，将不可改变</li>
+</ul>
+<p><strong>创建一个文件对象</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">File a = <span class="keyword">new</span> File(<span class="string">&quot;/usr/local/bin/geeks&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p><strong>其他的构造函数</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">File(File parent,String child);<span class="comment">// 提供父目录对象，和子文件名</span></span><br><span class="line">File(String pathname);<span class="comment">// 提供路径名</span></span><br><span class="line">File(String parent,String child);<span class="comment">// 提供父目录名</span></span><br><span class="line">File(URL url);<span class="comment">// 提供一个url</span></span><br></pre></td></tr></table></figure>
+<p><strong>File类的一些方法</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法</th>
+<th>描述</th>
+<th>返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-canexecute-method-in-java-with-examples/"><strong>canExecute()</strong></a></td>
+<td>Tests whether the application can execute the file denoted by this abstract pathname.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-canread-method-in-java-with-examples/"><strong>canRead()</strong></a></td>
+<td>Tests whether the application can read the file denoted by this abstract pathname.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-canwrite-method-in-java-with-examples/"><strong>canWrite()</strong></a></td>
+<td>Tests whether the application can modify the file denoted by this abstract pathname.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>compareTo(File pathname)</strong></td>
+<td>Compares two abstract pathnames lexicographically.</td>
+<td>int</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-createnewfile-method-in-java-with-examples/"><strong>createNewFile()</strong></a></td>
+<td>Atomically creates a new, empty file named by this abstract pathname.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-createtempfile-method-in-java-with-examples/"><strong>createTempFile(String prefix, String suffix)</strong></a></td>
+<td>Creates an empty file in the default temporary-file directory.</td>
+<td>File</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/files-delete-method-in-java-with-examples/"><strong>delete()</strong></a></td>
+<td>Deletes the file or directory denoted by this abstract pathname.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>equals(Object obj)</strong></td>
+<td>Tests this abstract pathname for equality with the given object.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-exists-method-in-java-with-examples/"><strong>exists()</strong></a></td>
+<td>Tests whether the file or directory denoted by this abstract pathname exists.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-getabsolutepath-method-in-java-with-examples/"><strong>getAbsolutePath()</strong></a></td>
+<td>Returns the absolute pathname string of this abstract pathname.</td>
+<td>String</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-list-method-in-java-with-examples/"><strong>list()</strong></a></td>
+<td>Returns an array of strings naming the files and directories in the directory.</td>
+<td>String[]</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-getfreespace-method-in-java-with-examples/"><strong>getFreeSpace()</strong></a></td>
+<td>Returns the number of unallocated bytes in the partition.</td>
+<td>long</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-getname-method-in-java-with-examples/"><strong>getName()</strong></a></td>
+<td>Returns the name of the file or directory denoted by this abstract pathname.</td>
+<td>String</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-getparent-method-in-java-with-examples/"><strong>getParent()</strong></a></td>
+<td>Returns the pathname string of this abstract pathname’s parent.</td>
+<td>String</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-getparentfile-method-in-java-with-examples/"><strong>getParentFile()</strong></a></td>
+<td>Returns the abstract pathname of this abstract pathname’s parent.</td>
+<td>File</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-getpath-method-in-java-with-examples/"><strong>getPath()</strong></a></td>
+<td>Converts this abstract pathname into a pathname string.</td>
+<td>String</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-setreadonly-method-in-java-with-examples/"><strong>setReadOnly()</strong></a></td>
+<td>Marks the file or directory named so that only read operations are allowed.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-isdirectory-method-in-java-with-examples/"><strong>isDirectory()</strong></a></td>
+<td>Tests whether the file denoted by this pathname is a directory.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-isfile-method-in-java-with-examples/"><strong>isFile()</strong></a></td>
+<td>Tests whether the file denoted by this abstract pathname is a normal file.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-ishidden-method-in-java-with-examples/"><strong>isHidden()</strong></a></td>
+<td>Tests whether the file named by this abstract pathname is a hidden file.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-length-method-in-java-with-examples/"><strong>length()</strong></a></td>
+<td>Returns the length of the file denoted by this abstract pathname.</td>
+<td>long</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-listfiles-method-in-java-with-examples/"><strong>listFiles()</strong></a></td>
+<td>Returns an array of abstract pathnames denoting the files in the directory.</td>
+<td>File[]</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-mkdir-method-in-java-with-examples/"><strong>mkdir()</strong></a></td>
+<td>Creates the directory named by this abstract pathname.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-renameto-method-in-java-with-examples/"><strong>renameTo(File dest)</strong></a></td>
+<td>Renames the file denoted by this abstract pathname.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-setexecutable-method-in-java-with-examples/"><strong>setExecutable(boolean executable)</strong></a></td>
+<td>A convenience method to set the owner’s execute permission.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-setreadable-function-in-java-with-examples/"><strong>setReadable(boolean readable)</strong></a></td>
+<td>A convenience method to set the owner’s read permission.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-setreadable-function-in-java-with-examples/"><strong>setReadable(boolean readable, boolean ownerOnly)</strong></a></td>
+<td>Sets the owner’s or everybody’s read permission.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td style="text-align:left"><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/file-setwritable-method-in-java-with-examples/"><strong>setWritable(boolean writable)</strong></a></td>
+<td>A convenience method to set the owner’s write permission.</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>toString()</strong></td>
+<td>Returns the pathname string of this abstract pathname.</td>
+<td>String</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>toURI()</strong></td>
+<td>Constructs a file URI that represents this abstract pathname.</td>
+<td>URI</td>
+</tr>
+</tbody>
+</table>
+<p>下面的实例展示了检查文件或目录是否存在</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// In this Java program, we accepts a file or directory name from</span></span><br><span class="line"><span class="comment">// command line arguments. Then the program will check if</span></span><br><span class="line"><span class="comment">// that file or directory physically exist or not and</span></span><br><span class="line"><span class="comment">// it displays the property of that file or directory.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Displaying file property</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">fileProperty</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// accept file name or directory name through</span></span><br><span class="line">		<span class="comment">// command line args</span></span><br><span class="line">		String fname = args[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">		<span class="comment">// pass the filename or directory name to File</span></span><br><span class="line">		<span class="comment">// object</span></span><br><span class="line">		File f = <span class="keyword">new</span> File(fname);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// apply File class methods on File object</span></span><br><span class="line">		System.out.println(<span class="string">&quot;File name :&quot;</span> + f.getName());</span><br><span class="line">		System.out.println(<span class="string">&quot;Path: &quot;</span> + f.getPath());</span><br><span class="line">		System.out.println(<span class="string">&quot;Absolute path:&quot;</span></span><br><span class="line">						+ f.getAbsolutePath());</span><br><span class="line">		System.out.println(<span class="string">&quot;Parent:&quot;</span> + f.getParent());</span><br><span class="line">		System.out.println(<span class="string">&quot;Exists :&quot;</span> + f.exists());</span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (f.exists()) &#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;Is writable:&quot;</span></span><br><span class="line">							+ f.canWrite());</span><br><span class="line">			System.out.println(<span class="string">&quot;Is readable&quot;</span> + f.canRead());</span><br><span class="line">			System.out.println(<span class="string">&quot;Is a directory:&quot;</span></span><br><span class="line">							+ f.isDirectory());</span><br><span class="line">			System.out.println(<span class="string">&quot;File Size in bytes &quot;</span></span><br><span class="line">							+ f.length());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="写文件操作"><a class="markdownIt-Anchor" href="#写文件操作"></a> 写文件操作</h3>
+<p><strong>FileWrite:</strong> 创建一个文件，并向内写入字符</p>
+<ul>
+<li>继承自<code>OutputStream</code>类</li>
+<li>此构造函数假定默认字符编码和默认字节缓冲区大小是可以接受的</li>
+<li>该类以字符流的方式写入数据</li>
+<li>若文件不存在则创建一个新文件</li>
+</ul>
+<p>FileWrite的一些构造函数如下：</p>
+<ul>
+<li><strong>FileWriter(File file)</strong></li>
+<li><strong>FileWriter (File file, boolean append)</strong></li>
+<li><strong>FileWriter (FileDescriptor fd)</strong></li>
+<li><strong>FileWriter (String fileName)</strong></li>
+<li><strong>FileWriter (String fileName, Boolean append)</strong></li>
+</ul>
+<p>该类提供的一些方法如下：</p>
+<ul>
+<li><strong>public void write (int c) throws IOException</strong>：写入一个字符</li>
+<li><strong>public void write (char [] stir) throws IOException</strong>：写入一个字符数组</li>
+<li><strong>public void write(String str)throws IOException</strong>：写入一个字符串数据</li>
+<li><strong>public void write(String str,</strong> <strong>int off,</strong> <strong>int len)throws IOException</strong>：从str的off位置开始，写入len长度的字符</li>
+<li><strong>public void flush() throws IOException</strong>：清空写入流</li>
+<li><strong>public void close() throws IOException</strong>：清空写入流，并关闭文件</li>
+</ul>
+<p>使用示例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Creating a text File using FileWriter</span></span><br><span class="line"><span class="keyword">import</span> java.io.FileWriter;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CreateFile</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException</span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">// Accept a string</span></span><br><span class="line">		String str = <span class="string">&quot;File Handling in Java using &quot;</span>+</span><br><span class="line">				<span class="string">&quot; FileWriter and FileReader&quot;</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// attach a file to FileWriter</span></span><br><span class="line">		FileWriter fw=<span class="keyword">new</span> FileWriter(<span class="string">&quot;output.txt&quot;</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// read character wise from string and write</span></span><br><span class="line">		<span class="comment">// into FileWriter</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str.length(); i++)</span><br><span class="line">			fw.write(str.charAt(i));</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">&quot;Writing successful&quot;</span>);</span><br><span class="line">		<span class="comment">//close the file</span></span><br><span class="line">		fw.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="读文件操作"><a class="markdownIt-Anchor" href="#读文件操作"></a> 读文件操作</h3>
+<p><strong>FileReader:</strong> 用于从文件中读取数据，</p>
+<ul>
+<li>继承自<code>InputStreamReader</code>类</li>
+<li>此构造函数假定默认字符编码和默认字节缓冲区大小是可以接受的</li>
+<li>以字符流的方式从文件中读取数据</li>
+</ul>
+<p>该类的一些构造函数如下：</p>
+<ul>
+<li><strong>FileReader(File file)</strong></li>
+<li><strong>FileReader(FileDescripter fd)</strong></li>
+<li><strong>FileReader(String fileName)</strong></li>
+</ul>
+<p>该类的一些方法如下：</p>
+<ul>
+<li><strong>public int read () throws IOException</strong>：读取一个字符</li>
+<li><strong>public int read(char[] cbuff) throws IOException</strong>：将字符读入到array</li>
+<li><strong>public abstract int read(char[] buff, int off, int len) throws IOException</strong></li>
+<li><strong>public void close() throws IOException</strong>：关闭文件</li>
+<li><strong>public long skip(long n) throws IOException</strong></li>
+</ul>
+<p>示例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Reading data from a file using FileReader</span></span><br><span class="line"><span class="keyword">import</span> java.io.FileNotFoundException;</span><br><span class="line"><span class="keyword">import</span> java.io.FileReader;</span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ReadFile</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> IOException</span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">// variable declaration</span></span><br><span class="line">		<span class="keyword">int</span> ch;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// check if File exists or not</span></span><br><span class="line">		FileReader fr=<span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">try</span></span><br><span class="line">		&#123;</span><br><span class="line">			fr = <span class="keyword">new</span> FileReader(<span class="string">&quot;text&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">catch</span> (FileNotFoundException fe)</span><br><span class="line">		&#123;</span><br><span class="line">			System.out.println(<span class="string">&quot;File not found&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// read from FileReader till the end of file</span></span><br><span class="line">		<span class="keyword">while</span> ((ch=fr.read())!=-<span class="number">1</span>)</span><br><span class="line">			System.out.print((<span class="keyword">char</span>)ch);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// close the file</span></span><br><span class="line">		fr.close();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Scanner:</strong></p>
+<p>使用文件对象构造一个Scanner对象，即可类似从标准输入读数据的方式从文件对象中读取数据</p>
+<p>示例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java Program to illustrate</span></span><br><span class="line"><span class="comment">// reading from Text File</span></span><br><span class="line"><span class="comment">// using Scanner Class</span></span><br><span class="line"><span class="keyword">import</span> java.io.File;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ReadFromFileUsingScanner</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> <span class="keyword">throws</span> Exception</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">// pass the path to the file as a parameter</span></span><br><span class="line">        File file = <span class="keyword">new</span> File(<span class="string">&quot;C:\\Users\\pankaj\\Desktop\\test.txt&quot;</span>);</span><br><span class="line">        Scanner sc = <span class="keyword">new</span> Scanner(file);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (sc.hasNextLine())</span><br><span class="line">        System.out.println(sc.nextLine());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="java集合类collection"><a class="markdownIt-Anchor" href="#java集合类collection"></a> Java集合类(Collection)</h2>
+<p>在java中任何一组单独的对象称为对象的集合，集合接口(<strong>java.util.Collection</strong>)和Map接口(<strong>java.util.Map</strong>)是java集合两个主要的&quot;根&quot;接口。</p>
+<p>所谓的框架(framework)就是提供一组现成体系结构的类和接口，其设计目的是为了方便不同的类执行相同类型的任务具有相同的接口。</p>
+<p><strong>集合框架的一些优点：</strong></p>
+<ul>
+<li>不同集合具有一致的API</li>
+<li>减少编程难度</li>
+<li>提高编程质量和效率</li>
+</ul>
+<h3 id="集合框架的层次结构图"><a class="markdownIt-Anchor" href="#集合框架的层次结构图"></a> 集合框架的层次结构图</h3>
+<p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20220526152255/Collections-in-Java1.png" alt="Hierarchy of the Collection Framework"></p>
+<p><strong>集合的一些公共方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/collection-add-method-in-java-with-examples/"><strong>add(Object)</strong></a></td>
+<td>This method is used to add an object to the collection.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/collections-addall-method-in-java-with-examples/"><strong>addAll(Collection c)</strong></a></td>
+<td>This method adds all the elements in the given collection to this collection.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/collection-clear-method-in-java-with-examples/"><strong>clear()</strong></a></td>
+<td>This method removes all of the elements from this collection.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/collection-contains-method-in-java-with-examples/"><strong>contains(Object o)</strong></a></td>
+<td>This method returns true if the collection contains the specified element.</td>
+</tr>
+<tr>
+<td><strong>containsAll(Collection c)</strong></td>
+<td>This method returns true if the collection contains all of the elements in the given collection.</td>
+</tr>
+<tr>
+<td><strong>equals(Object o)</strong></td>
+<td>This method compares the specified object with this collection for equality.</td>
+</tr>
+<tr>
+<td><strong>hashCode()</strong></td>
+<td>This method is used to return the hash code value for this collection.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/collection-isempty-method-in-java-with-examples/"><strong>isEmpty()</strong></a></td>
+<td>This method returns true if this collection contains no elements.</td>
+</tr>
+<tr>
+<td><strong>iterator()</strong></td>
+<td>This method returns an iterator over the elements in this collection.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/collections-max-method-in-java-with-examples/"><strong>max()</strong></a></td>
+<td>This method is used to return the maximum value present in the collection.</td>
+</tr>
+<tr>
+<td><strong>parallelStream()</strong></td>
+<td>This method returns a parallel Stream with this collection as its source.</td>
+</tr>
+<tr>
+<td><strong>remove(Object o)</strong></td>
+<td>This method is used to remove the given object from the collection. If there are duplicate values, then this method removes the first occurrence of the object.</td>
+</tr>
+<tr>
+<td><strong>removeAll(Collection c)</strong></td>
+<td>This method is used to remove all the objects mentioned in the given collection from the collection.</td>
+</tr>
+<tr>
+<td><strong>removeIf(Predicate filter)</strong></td>
+<td>This method is used to remove all the elements of this collection that satisfy the given <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/mathematic-logic-predicates-quantifiers/">predicate</a>.</td>
+</tr>
+<tr>
+<td><strong>retainAll(Collection c)</strong></td>
+<td>This method is used to retain only the elements in this collection that are contained in the specified collection.</td>
+</tr>
+<tr>
+<td><strong>size()</strong></td>
+<td>This method is used to return the number of elements in the collection.</td>
+</tr>
+<tr>
+<td><strong>spliterator()</strong></td>
+<td>This method is used to create a <a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-program-to-convert-iterator-to-spliterator/">Spliterator</a> over the elements in this collection.</td>
+</tr>
+<tr>
+<td><strong>stream()</strong></td>
+<td>This method is used to return a sequential Stream with this collection as its source.</td>
+</tr>
+<tr>
+<td><strong>toArray()</strong></td>
+<td>This method is used to return an array containing all of the elements in this collection.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="集合中的一些接口"><a class="markdownIt-Anchor" href="#集合中的一些接口"></a> 集合中的一些接口</h3>
+<p><strong>迭代器(Iterable)接口：</strong> 集合框架的根节点，collection接口扩展了该接口，所有的集合类和接口都实现了该接口。该接口的主要功能是给每一个集合提供一个迭代器。</p>
+<p><strong>集合(collection)接口：</strong> 这个接口扩展了迭代器接口，并且由所有的集合类实现。这个接口包含了集合类的一些常用方法，例如<code>add,remove,size</code>等。</p>
+<p><strong>链表(List)接口：</strong> 这是集合接口的子接口，这个接口声明了一种列表类型的数据，可以用来存储有序的对象集合，该接口被一些具体的类实现，例如<code>ArrayList,Vector,stack</code>等，由于所有的子类实现了链表，所有可以引用这些类的任何一个实例来实例化链表对象。</p>
+<h3 id="arraylist"><a class="markdownIt-Anchor" href="#arraylist"></a> ArrayList</h3>
+<p>Java中的动态数组，可动态改变数组的长度</p>
+<p><strong>ArrayList的一些特点</strong></p>
+<ul>
+<li>比标准数组的速度慢，同样支持随机存储</li>
+<li>使用起来比标准数组更方便，灵活</li>
+<li>不支持原始数据类型，因此需要使用Wrapper类将原始数据类型转换为引用数据类型</li>
+<li>初始化不需要指定数组长度</li>
+<li>不是线程同步的，Vector是线程同步的</li>
+<li>类似与cpp中的vector</li>
+</ul>
+<p><strong>ArrayList的一些要点</strong></p>
+<ul>
+<li>支持重复元素存储</li>
+<li>支持有序的插入</li>
+<li>允许异构对象</li>
+<li>允许插入空元素</li>
+</ul>
+<p><strong>类层次图</strong></p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200624184403/ArrayList.png" alt="ArrayList in Java"></p>
+<p><strong>存储实例</strong></p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20210908120146/ArrayListIntegerObjecttype-660x268.png" alt="ArrayList in Java"></p>
+<p><strong>解释：ArrayList是如何实现动态特性的</strong></p>
+<p>当数组满时，从堆内存中创建一个更大的内存，将当前内存元素复制到新的内存空间，将新加入的元素加入到更大的数组中，销毁原来的内存空间</p>
+<p><strong>ArratList构造函数</strong></p>
+<ul>
+<li>ArrayList()</li>
+<li>ArrayList(Collection c)</li>
+<li>ArrayList(int capacity)</li>
+</ul>
+<p><strong>ArrayList的一些方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-arraylist-add-method-java/">add(int index, Object element)</a></td>
+<td>This method is used to insert a specific element at a specific position index in a list.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-arraylist-add-method-java/">add(Object o)</a></td>
+<td>This method is used to append a specific element to the end of a list.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-arraylist-addall-method-java/">addAll(Collection C)</a></td>
+<td>This method is used to append all the elements from a specific collection to the end of the mentioned list, in such an order that the values are returned by the specified collection’s iterator.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-arraylist-addall-method-java/">addAll(int index, Collection C)</a></td>
+<td>Used to insert all of the elements starting at the specified position from a specific collection into the mentioned list.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/clone-method-in-java-2/">clone()</a></td>
+<td>This method is used to return a shallow copy of an ArrayList.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-contains-java/">contains(Object o)</a></td>
+<td>Returns true if this list contains the specified element.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-foreach-method-in-java/">forEach(Consumer action)</a></td>
+<td>Performs the given action for each element of the Iterable until all elements have been processed or the action throws an exception.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-get-method-java-examples/">get(int index)</a></td>
+<td>Returns the element at the specified position in this list.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-arraylist-indexof-java/">indexOf(Object O)</a></td>
+<td>The index the first occurrence of a specific element is either returned, or -1 in case the element is not in the list.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-isempty-java-example/">isEmpty()</a></td>
+<td>Returns true if this list contains no elements.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-array-conversion-java-toarray-methods/">toArray()</a></td>
+<td>This method is used to return an array containing all of the elements in the list in the correct order.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-array-conversion-java-toarray-methods/">toArrayObject(O)</a></td>
+<td>It is also used to return an array containing all of the elements in this list in the correct order same as the previous method.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraylist-trimtosize-java-example/">trimToSize()</a></td>
+<td>This method is used to trim the capacity of the instance of the ArrayList to the list’s current size.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>使用动态二维ArrayList</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//        声明一个动态二维ArrayList</span></span><br><span class="line">ArrayList&lt;ArrayList&lt;Integer&gt;&gt; nums = <span class="keyword">new</span> ArrayList&lt;&gt;(<span class="number">5</span>);</span><br><span class="line"><span class="comment">//        定义行数和列数</span></span><br><span class="line"><span class="keyword">int</span> row = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> col = <span class="number">5</span>;</span><br><span class="line"><span class="comment">//        初始化nums</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; row; i++) &#123;</span><br><span class="line">    ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    nums.add(list);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; col; j++)</span><br><span class="line">        nums.get(i).add(j + <span class="number">10</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//        打印二维ArrayList</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++) &#123;</span><br><span class="line">    System.out.println(nums.get(i));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>使用size创建和访问ArrayList实例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java program to demonstrate the</span></span><br><span class="line"><span class="comment">// working of ArrayList in Java</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ArrayListExample</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">// Size of the</span></span><br><span class="line">		<span class="comment">// ArrayList</span></span><br><span class="line">		<span class="keyword">int</span> n = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Declaring the ArrayList with</span></span><br><span class="line">		<span class="comment">// initial size n</span></span><br><span class="line">		ArrayList&lt;Integer&gt; arrli</span><br><span class="line">			= <span class="keyword">new</span> ArrayList&lt;Integer&gt;(n);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Appending new elements at</span></span><br><span class="line">		<span class="comment">// the end of the list</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">			arrli.add(i);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Printing elements</span></span><br><span class="line">		System.out.println(arrli);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Remove element at index 3</span></span><br><span class="line">		arrli.remove(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Displaying the ArrayList</span></span><br><span class="line">		<span class="comment">// after deletion</span></span><br><span class="line">		System.out.println(arrli);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Printing elements one by one</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arrli.size(); i++)</span><br><span class="line">			System.out.print(arrli.get(i) + <span class="string">&quot; &quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>使用迭代器迭代元素</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java program to Iterate the elements</span></span><br><span class="line"><span class="comment">// in an ArrayList</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Importing all utility classes</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Main class</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Main driver method</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">// Creating an Arraylist of string type</span></span><br><span class="line">		ArrayList&lt;String&gt; al = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Adding elements to ArrayList</span></span><br><span class="line">		<span class="comment">// using standard add() method</span></span><br><span class="line">		al.add(<span class="string">&quot;Geeks&quot;</span>);</span><br><span class="line">		al.add(<span class="string">&quot;Geeks&quot;</span>);</span><br><span class="line">		al.add(<span class="number">1</span>, <span class="string">&quot;For&quot;</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Using the Get method and the</span></span><br><span class="line">		<span class="comment">// for loop</span></span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; al.size(); i++) &#123;</span><br><span class="line"></span><br><span class="line">			System.out.print(al.get(i) + <span class="string">&quot; &quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		System.out.println();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Using the for each loop</span></span><br><span class="line">		<span class="keyword">for</span> (String str : al)</span><br><span class="line">			System.out.print(str + <span class="string">&quot; &quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>在两数之间添加元素</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">		list.add(<span class="number">1</span>);</span><br><span class="line">		list.add(<span class="number">2</span>);</span><br><span class="line">		list.add(<span class="number">4</span>);</span><br><span class="line">		System.out.println(list);</span><br><span class="line">		<span class="comment">// insert missing element 3</span></span><br><span class="line">		list.add(<span class="number">2</span>, <span class="number">3</span>);</span><br><span class="line">		System.out.println(list);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>元素排序</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList();</span><br><span class="line">		list.add(<span class="number">2</span>);</span><br><span class="line">		list.add(<span class="number">4</span>);</span><br><span class="line">		list.add(<span class="number">3</span>);</span><br><span class="line">		list.add(<span class="number">1</span>);</span><br><span class="line">		System.out.println(<span class="string">&quot;Before sorting list:&quot;</span>);</span><br><span class="line">		System.out.println(list);</span><br><span class="line">		Collections.sort(list);</span><br><span class="line">		System.out.println(<span class="string">&quot;after sorting list:&quot;</span>);</span><br><span class="line">		System.out.println(list);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="vector"><a class="markdownIt-Anchor" href="#vector"></a> Vector</h3>
+<p>与<code>ArrayList</code>大致相同，主要区别在于Vector是线程同步的</p>
+<h3 id="stack"><a class="markdownIt-Anchor" href="#stack"></a> Stack</h3>
+<p>提供了一种栈数据结构，除了push和pop基础操作外，该类还提供了其他三种函数，empty,search,peek，Stack类扩展了Vector类，是Vector的子类，Stack的层次结构图如下：</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/Selection_028.png" alt="Stack Class in Java"></p>
+<p><strong>构造一个栈</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stack&lt;E&gt; stack = <span class="keyword">new</span> Stack&lt;E&gt;();</span><br></pre></td></tr></table></figure>
+<p><strong>Stack的一些方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>METHOD</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/stack-empty-method-in-java/">empty()</a></td>
+<td>It returns true if nothing is on the top of the stack. Else, returns false.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/stack-peek-method-in-java/">peek()</a></td>
+<td>Returns the element on the top of the stack, but does not remove it.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/stack-pop-method-in-java/">pop()</a></td>
+<td>Removes and returns the top element of the stack. An ‘EmptyStackException’ An exception is thrown if we call pop() when the invoking stack is empty.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/stack-push-method-in-java/">push(Object element)</a></td>
+<td>Pushes an element on the top of the stack.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/stack-search-method-in-java/">search(Object element)</a></td>
+<td>It determines whether an object exists in the stack. If the element is found,It returns the position of the element from the top of the stack. Else, it returns -1.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>使用ArrayList代替Stack</strong></p>
+<p>java中更推荐使用ArrayDeque作为Stack的实现，因为ArrayDeque具有更好的性能，实例如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// A Java Program to show implementation</span></span><br><span class="line"><span class="comment">// of Stack using ArrayDeque</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span> <span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		Deque&lt;Character&gt; stack = <span class="keyword">new</span> ArrayDeque&lt;Character&gt;();</span><br><span class="line">		stack.push(<span class="string">&#x27;A&#x27;</span>);</span><br><span class="line">		stack.push(<span class="string">&#x27;B&#x27;</span>);</span><br><span class="line">		System.out.println(stack.peek());</span><br><span class="line">		System.out.println(stack.pop());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="linkedlist"><a class="markdownIt-Anchor" href="#linkedlist"></a> LinkedList</h3>
+<p>该类实现的链表数据结构，这是一个线性数据结构，每个元素之间的存储时不连续的，并且每个元素存储数据和地址部分，元素与元素之间由指针和地址链接，每个元素称之为节点(node)</p>
+<p>由于链表的动态性，相对于数组其更容易删除和插入，但链表不支持随机访问</p>
+<p><strong>LinkedList构造函数</strong></p>
+<ul>
+<li><strong>LinkedList()</strong>：创建一个空链表</li>
+<li><strong>LinkedList(Collection C)</strong>：从集合中船舰一个链表</li>
+</ul>
+<p><strong>LinkedList中的一些常用方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/linkedlist-addfirst-method-in-java/">addFirst(E e)</a></td>
+<td>This method Inserts the specified element at the beginning of this list.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/linkedlist-addlast-method-in-java/">addLast(E e)</a></td>
+<td>This method Appends the specified element to the end of this list.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-get-getfirst-getlast-java/">getFirst()</a></td>
+<td>This method returns the first element in this list.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/linkedlist-getlast-method-in-java/">getLast()</a></td>
+<td>This method returns the last element in this list.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-offer-offerfirst-offerlast-java/">offer(E e)</a></td>
+<td>This method Adds the specified element as the tail (last element) of this list.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-offer-offerfirst-offerlast-java/">offerFirst(E e)</a></td>
+<td>This method Inserts the specified element at the front of this list.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-offer-offerfirst-offerlast-java/">offerLast(E e)</a></td>
+<td>This method Inserts the specified element at the end of this list.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-peek-peekfirst-peeklast-java/">peek()</a></td>
+<td>This method retrieves but does not remove, the head (first element) of this list.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-peek-peekfirst-peeklast-java/">peekFirst()</a></td>
+<td>This method retrieves, but does not remove, the first element of this list, or returns null if this list is empty.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-peek-peekfirst-peeklast-java/">peekLast()</a></td>
+<td>This method retrieves, but does not remove, the last element of this list, or returns null if this list is empty.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-examples-java/">poll()</a></td>
+<td>This method retrieves and removes the head (first element) of this list.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-examples-java/">pollFirst()</a></td>
+<td>This method retrieves and removes the first element of this list, or returns null if this list is empty.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/java-util-linkedlist-poll-pollfirst-polllast-examples-java/">pollLast()</a></td>
+<td>This method retrieves and removes the last element of this list, or returns null if this list is empty.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/linkedlist-pop-method-in-java/">pop()</a></td>
+<td>This method Pops an element from the stack represented by this list.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/linkedlist-push-method-in-java/">push(E e)</a></td>
+<td>This method pushes an element onto the stack represented by this list.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>实例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java Program to Demonstrate</span></span><br><span class="line"><span class="comment">// Implementation of LinkedList</span></span><br><span class="line"><span class="comment">// class</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Importing required classes</span></span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Main class</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Driver code</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">// Creating object of the</span></span><br><span class="line">		<span class="comment">// class linked list</span></span><br><span class="line">		LinkedList&lt;String&gt; ll = <span class="keyword">new</span> LinkedList&lt;String&gt;();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Adding elements to the linked list</span></span><br><span class="line">		ll.add(<span class="string">&quot;A&quot;</span>);</span><br><span class="line">		ll.add(<span class="string">&quot;B&quot;</span>);</span><br><span class="line">		ll.addLast(<span class="string">&quot;C&quot;</span>);</span><br><span class="line">		ll.addFirst(<span class="string">&quot;D&quot;</span>);</span><br><span class="line">		ll.add(<span class="number">2</span>, <span class="string">&quot;E&quot;</span>);</span><br><span class="line"></span><br><span class="line">		System.out.println(ll);</span><br><span class="line"></span><br><span class="line">		ll.remove(<span class="string">&quot;B&quot;</span>);</span><br><span class="line">		ll.remove(<span class="number">3</span>);</span><br><span class="line">		ll.removeFirst();</span><br><span class="line">		ll.removeLast();</span><br><span class="line"></span><br><span class="line">		System.out.println(ll);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Queue是一个接口，实现了先入先出的一种顺序，其被PriorityQueue和ArrayDeque</p>
+<p>实现，在java中没有单独提供队列类，想要使用queue类时可以使用优先队列或者双端队列代替，下面详细介绍PriorityQueue和ArrayDeque</p>
+<h3 id="priorityqueue"><a class="markdownIt-Anchor" href="#priorityqueue"></a> PriorityQueue</h3>
+<p>优先队列除了具有队列的性质外，还为每一元素定义了优先级，优先级大的位于队头，默认情况下，元素优先级由常规优先顺序定义，若用户需要自定义优先级，可实例化<code>Comparator</code>，内部由堆实现，优先队列类结构图如下</p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/20200903183026/Queue-Deque-PriorityQueue-In-Java.png" alt="Queue-Deque-PriorityQueue-In-Java"></p>
+<p><strong>优先队列的构造函数</strong></p>
+<ul>
+<li><strong>PriorityQueue()</strong></li>
+<li><strong>PriorityQueue(Collection<E> c)</E></strong></li>
+<li><strong>PriorityQueue(int initialCapacity)</strong></li>
+<li><strong>PriorityQueue(int initialCapacity, Comparator<E> comparator)</E></strong>：定义一个指定比较器的优先队列</li>
+<li><strong>PriorityQueue(PriorityQueue<E> c)</E></strong></li>
+<li><strong>PriorityQueue(SortedSet<E> c)</E></strong></li>
+</ul>
+<p><strong>优先队列常用的方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/priorityqueue-add-method-in-java/">boolean add(E element)</a></td>
+<td>This method inserts the specified element into this priority queue.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/queue-peek-method-in-java/">public peek()</a></td>
+<td>This method retrieves, but does not remove, the head of this queue, or returns null if this queue is empty.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/queue-poll-method-in-java/">public poll()</a></td>
+<td>This method retrieves and removes the head of this queue, or returns null if this queue is empty.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>实例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.PriorityQueue;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PriorityQueueExample</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// Create a priority queue with initial capacity 10</span></span><br><span class="line">		PriorityQueue&lt;Integer&gt; pq = <span class="keyword">new</span> PriorityQueue&lt;&gt;(<span class="number">10</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// Add elements to the queue</span></span><br><span class="line">		pq.add(<span class="number">3</span>);</span><br><span class="line">		pq.add(<span class="number">1</span>);</span><br><span class="line">		pq.add(<span class="number">2</span>);</span><br><span class="line">		pq.add(<span class="number">5</span>);</span><br><span class="line">		pq.add(<span class="number">4</span>);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// Print the queue</span></span><br><span class="line">		System.out.println(<span class="string">&quot;Priority queue: &quot;</span> + pq);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// Peek at the top element of the queue</span></span><br><span class="line">		System.out.println(<span class="string">&quot;Peek: &quot;</span> + pq.peek());</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// Remove the top element of the queue</span></span><br><span class="line">		pq.poll();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// Print the queue again</span></span><br><span class="line">		System.out.println(<span class="string">&quot;Priority queue after removing top element: &quot;</span> + pq);</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// Check if the queue contains a specific element</span></span><br><span class="line">		System.out.println(<span class="string">&quot;Does the queue contain 3? &quot;</span> + pq.contains(<span class="number">3</span>));</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// Get the size of the queue</span></span><br><span class="line">		System.out.println(<span class="string">&quot;Size of queue: &quot;</span> + pq.size());</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// Remove all elements from the queue</span></span><br><span class="line">		pq.clear();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// Check if the queue is empty</span></span><br><span class="line">		System.out.println(<span class="string">&quot;Is the queue empty? &quot;</span> + pq.isEmpty());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>优先队列的一些实际应用</strong></p>
+<ul>
+<li>任务调度</li>
+<li>急症室</li>
+<li>网络路由</li>
+<li>运输</li>
+<li>作业调度</li>
+<li>在线市场</li>
+</ul>
+<h3 id="arraydeque"><a class="markdownIt-Anchor" href="#arraydeque"></a> ArrayDeque</h3>
+<p>ArrayDeque应用可变长数组实现了Deque接口，该类提供了数组的双端操作，也就是所谓的双端队列，既可以当作栈使用也可以当作数组使用，在性能上比Stack效率更高。</p>
+<p><strong>ArrayDeque的一些优点</strong></p>
+<ul>
+<li>高性能，该类对于从两端插入元素和删除元素提供了常量时间性能的操作</li>
+<li>长度可变，该类的长度是可以随着元素的操作而改变的</li>
+<li>轻量的，该类是一种轻量型数据结构，不需要额外的开销，例如链表</li>
+<li>线程安全，该类不是线程安全的，但是可以使用<code>Collections.synchronizedDeque</code>方法创建一个线程安全版本的类</li>
+</ul>
+<p><strong>ArrayDeque的一些缺点</strong></p>
+<ul>
+<li>不支持同步，该类是不支持线程同步的，即多个线程可同时访问该类中的数据，这就造成了潜在的数据损坏的可能</li>
+<li>该类的容量是有限的</li>
+</ul>
+<p><strong>ArrayDeque类层次图</strong></p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20200909140302/ArrayDequeinJava.png" alt="ArrayDeque in Java"></p>
+<p><strong>构造函数</strong></p>
+<ul>
+<li><strong>ArrayDeque()</strong></li>
+<li><strong>ArrayDeque(Collection&lt;? extends E&gt; c)</strong></li>
+<li><strong>ArrayDeque(int numofElements)</strong></li>
+</ul>
+<p><strong>ArrayDeque中的一些方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>METHOD</th>
+<th>DESCRIPTION</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-addfirst-method-in-java/">addFirst(Element e)</a></td>
+<td>The method inserts particular element at the start of the deque.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-addlast-method-in-java/">addLast(Element e) </a></td>
+<td>The method inserts a particular element at the end of the deque. It is similar to the add() method</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-getfirst-method-in-java/">getFirst()</a></td>
+<td>The method returns first element of the deque</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-getlast-method-in-java/">getLast()</a></td>
+<td>The method returns last element of the deque</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-offer-method-in-java/">offer(Element e)</a></td>
+<td>The method inserts element at the end of deque.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-offerfirst-method-in-java/">offerFirst(Element e) </a></td>
+<td>The method inserts element at the front of deque.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-offerlast-method-in-java/">offerLast(Element e)</a></td>
+<td>The method inserts element at the end of the deque.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-peek-method-in-java/">peek()</a></td>
+<td>The method returns head element without removing it.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-poll-method-in-java/">poll()</a></td>
+<td>The method returns head element and also removes it</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-pop-method-in-java/">pop()</a></td>
+<td>The method pops out an element for stack represented by deque</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/arraydeque-push-method-in-java/">push(Element e)</a></td>
+<td>The method pushes an element onto stack represented by deque</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hashmap"><a class="markdownIt-Anchor" href="#hashmap"></a> HashMap</h3>
+<p>该类存在于<code>java.util</code>，其实现了Map接口，在内存中以(key,value)的方式存储数据，如果插入重复的键，则会替换相应的键对应的值。与HashTable的不同在于，HashTbale支持同步而HashMap不支持同步。</p>
+<p><strong>HashMap层次结构图</strong></p>
+<p><img src="https://media.geeksforgeeks.org/wp-content/uploads/20201119122201/HashMapinJava.png" alt="Hierarchy of HashMap in Java"></p>
+<p><strong>HashMap的一些优点</strong></p>
+<ul>
+<li>快速的存储，提供常量的时间复杂度检索和插入元素</li>
+<li>支持空键和空值</li>
+<li>HashMap是无序的</li>
+<li>允许值的重复而不允许键的重复</li>
+</ul>
+<p><strong>构造函数</strong></p>
+<ul>
+<li>HashMap()</li>
+<li>HashMap(int initialCapacity)</li>
+<li>HashMap(int initialCapacity, float loadFactor)</li>
+<li>HashMap(Map map)</li>
+</ul>
+<p>构造一个HashMap实例</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">HashMap&lt;Integer, ArrayList&lt;Integer&gt;&gt; map = <span class="keyword">new</span> HashMap&lt;Integer, ArrayList&lt;Integer&gt;&gt;();</span><br></pre></td></tr></table></figure>
+<p><strong>常用的一些方法</strong></p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Descripition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/hashmap-containskey-method-in-java/">containsKey(Object key)</a></td>
+<td>Returns true if this map contains a mapping for the specified key.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/hashmap-containsvalue-method-in-java/">containsValue(Object value)</a></td>
+<td>Returns true if this map maps one or more keys to the specified value.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/hashmap-get-method-in-java/">get(Object key)</a></td>
+<td>Returns the value to which the specified key is mapped, or null if this map contains no mapping for the key.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/hashmap-put-method-in-java/">put(K key, V value)</a></td>
+<td>Associates the specified value with the specified key in this map.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/hashmap-values-method-in-java/">values()</a></td>
+<td>Returns a Collection view of the values contained in this map.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="hashset"><a class="markdownIt-Anchor" href="#hashset"></a> HashSet</h3>
+<h3 id="java中的collections类"><a class="markdownIt-Anchor" href="#java中的collections类"></a> Java中的Collections类</h3>
+<p>Collections是Java集合框架中的通用类，位于<code>java.util</code>包中，该类中使用静态方法操作和返回集合，所有的方法抛出<code>NullPointerException</code>若操作的集合为空的话</p>
+<p><strong>Collections中的一些方法</strong></p>
+<table>
+<thead>
+<tr>
+<th><strong>Methods</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.google.com/url?client=internal-element-cse&amp;cx=009682134359037907028:tj6eafkv_be&amp;q=https://www.geeksforgeeks.org/collections-binarysearch-java-examples/&amp;sa=U&amp;ved=2ahUKEwi6uP_199nsAhXj73MBHZbDDPMQFjAJegQIBRAC&amp;usg=AOvVaw3Z6NwOyP0de-c-hRasRUsf">binarySearch(List list, T key)</a></td>
+<td>This method searches the key using binary search in the specified list.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.google.com/url?client=internal-element-cse&amp;cx=009682134359037907028:tj6eafkv_be&amp;q=https://www.geeksforgeeks.org/collections-binarysearch-java-examples/&amp;sa=U&amp;ved=2ahUKEwi6uP_199nsAhXj73MBHZbDDPMQFjAJegQIBRAC&amp;usg=AOvVaw3Z6NwOyP0de-c-hRasRUsf">binarySearch(List list, T key, Comparator c)</a></td>
+<td>This method searches the specified list for the specified object using the binary search algorithm.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.google.com/url?client=internal-element-cse&amp;cx=009682134359037907028:tj6eafkv_be&amp;q=https://www.geeksforgeeks.org/collections-enumeration-method-in-java-with-examples/&amp;sa=U&amp;ved=2ahUKEwjKuPOa-NnsAhWF6XMBHV52Bxg4ChAWMAl6BAgAEAI&amp;usg=AOvVaw2zQdzpk5s0qYfnqwiTKmSC">enumeration(Collection c)</a></td>
+<td>This method returns an enumeration over the specified collection.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.google.com/url?client=internal-element-cse&amp;cx=009682134359037907028:tj6eafkv_be&amp;q=https://www.geeksforgeeks.org/collections-fill-method-in-java-with-examples/&amp;sa=U&amp;ved=2ahUKEwi2_5_3-NnsAhWCheYKHZBvD4E4MhAWMAZ6BAgGEAI&amp;usg=AOvVaw1xqIqDpotyXSl0SNNWLwsG">fill(List list, T obj)</a></td>
+<td>This method replaces all of the elements of the specified list with the specified element.</td>
+</tr>
+<tr>
+<td><a target="_blank" rel="noopener" href="https://www.google.com/url?client=internal-element-cse&amp;cx=009682134359037907028:tj6eafkv_be&amp;q=https://www.geeksforgeeks.org/collections-sort-java-examples/&amp;sa=U&amp;ved=2ahUKEwi6uP_199nsAhXj73MBHZbDDPMQFjADegQIBxAC&amp;usg=AOvVaw3LK6ysEznNr0ARFYCFDvYh">sort(List list)</a></td>
+<td>This method sorts the specified list into ascending order, according to the natural ordering of its elements.</td>
+</tr>
+<tr>
+<td>sort(List<T> list, Comparator<super t> c)</super></T></td>
+<td>This method sorts the specified list according to the order induced by the specified comparator.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>排序和二分示例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Java Program to Demonstrate Binary Search</span></span><br><span class="line"><span class="comment">// Using Collections.binarySearch()</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Importing required classes</span></span><br><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Main class</span></span><br><span class="line"><span class="comment">// BinarySearchOnACollection</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GFG</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// Main driver method</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span></span><br><span class="line"><span class="function">	</span>&#123;</span><br><span class="line">		<span class="comment">// Creating a List</span></span><br><span class="line">		<span class="comment">// Declaring object of string type</span></span><br><span class="line">		List&lt;String&gt; items = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Adding elements to object</span></span><br><span class="line">		<span class="comment">// using add() method</span></span><br><span class="line">		items.add(<span class="string">&quot;Shoes&quot;</span>);</span><br><span class="line">		items.add(<span class="string">&quot;Toys&quot;</span>);</span><br><span class="line">		items.add(<span class="string">&quot;Horse&quot;</span>);</span><br><span class="line">		items.add(<span class="string">&quot;Ball&quot;</span>);</span><br><span class="line">		items.add(<span class="string">&quot;Grapes&quot;</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// Sort the List</span></span><br><span class="line">		Collections.sort(items);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// BinarySearch on the List</span></span><br><span class="line">		System.out.println(</span><br><span class="line">			<span class="string">&quot;The index of Horse is &quot;</span></span><br><span class="line">			+ Collections.binarySearch(items, <span class="string">&quot;Horse&quot;</span>));</span><br><span class="line"></span><br><span class="line">		<span class="comment">// BinarySearch on the List</span></span><br><span class="line">		System.out.println(</span><br><span class="line">			<span class="string">&quot;The index of Dog is &quot;</span></span><br><span class="line">			+ Collections.binarySearch(items, <span class="string">&quot;Dog&quot;</span>));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="java中的comparator接口"><a class="markdownIt-Anchor" href="#java中的comparator接口"></a> Java中的Comparator接口</h3>
+<p>该接口方便用户对于自定义类的排序，比较器对象能够比较两个相同类的对象。该类存在于<code>java.util</code>包中，包含两个方法：compare(Object obj1, Object obj2)和equals(Object element)，其中compare()方法返回值为-1，0和1，若想基于compare()方法对给定集合排序，则必须实现Comparator接口</p>
+<p><strong>二维数组排序示例</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">sort_array</span><span class="params">(<span class="keyword">int</span> [][]nums)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 使用lambda表达式</span></span><br><span class="line">    Arrays.sort(nums,(v1,v2)-&gt;&#123;</span><br><span class="line">        <span class="keyword">return</span> v1[<span class="number">0</span>]-v2[<span class="number">0</span>];</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A8%8B/" rel="tag"># 编程</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/02/27/PML-SDM%E7%AE%97%E6%B3%95%E5%A4%8D%E7%8E%B0%E8%BF%87%E7%A8%8B/" rel="prev" title="PML_SDM算法复现过程">
+      <i class="fa fa-chevron-left"></i> PML_SDM算法复现过程
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/03/24/java%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="next" title="java虚拟机">
+      java虚拟机 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%9C%AF%E8%AF%AD"><span class="nav-text"> 基本术语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A%E4%B8%8E%E5%91%BD%E5%90%8D%E8%A7%84%E8%8C%83"><span class="nav-text"> 注释与命名规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hello-world%E7%A8%8B%E5%BA%8F%E8%A7%A3%E9%87%8A"><span class="nav-text"> Hello world程序解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E6%A0%87%E8%AF%86%E7%AC%A6%E5%91%BD%E5%90%8D%E8%A7%84%E5%88%99"><span class="nav-text"> Java标识符命名规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="nav-text"> Java数据类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E5%8F%98%E9%87%8F"><span class="nav-text"> Java变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A3%B0%E6%98%8E%E4%B8%80%E4%B8%AA%E5%8F%98%E9%87%8F"><span class="nav-text"> 声明一个变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%98%E9%87%8F"><span class="nav-text"> 初始化变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84%E5%8F%98%E9%87%8F%E7%B1%BB%E5%9E%8B"><span class="nav-text"> Java中的变量类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%99%E6%80%81%E5%8F%98%E9%87%8F%E5%9C%A8java%E5%92%8Ccpp%E4%B8%AD%E7%9A%84%E4%B8%8D%E5%90%8C%E4%B8%8E%E7%9B%B8%E5%90%8C"><span class="nav-text"> 静态变量在java和cpp中的不同与相同</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84wrapper%E7%B1%BB"><span class="nav-text"> Java中的Wrapper类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9C%80%E8%A6%81wrapper%E7%B1%BB%E7%9A%84%E5%9C%BA%E6%99%AF"><span class="nav-text"> 需要Wrapper类的场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8E%9F%E5%A7%8B%E6%95%B0%E6%8D%AE%E4%B8%8E%E7%9B%B8%E5%BA%94%E7%9A%84wrapper%E7%B1%BB"><span class="nav-text"> 原始数据与相应的Wrapper类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%8A%A8%E5%8C%85%E8%A3%85autoboxing%E4%B8%8E%E8%A7%A3%E5%8C%85unboxing"><span class="nav-text"> 自动包装(autoboxing)与解包(unboxing)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text"> 变量的作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%90%E5%91%98%E5%8F%98%E9%87%8F%E7%B1%BB%E5%B1%82%E6%AC%A1%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text"> 成员变量（类层次的作用域）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E6%96%B9%E6%B3%95%E5%B1%82%E6%AC%A1%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text"> 局部变量(方法层次的作用域)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E5%8F%98%E9%87%8F%E5%9D%97%E5%B1%82%E7%BA%A7%E7%9A%84%E4%BD%9C%E7%94%A8%E5%9F%9F"><span class="nav-text"> 循环变量(块层级的作用域)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E6%A0%87%E5%87%86%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-text"> Java标准输入输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5"><span class="nav-text"> 输入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%87%BA"><span class="nav-text"> 输出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84%E5%AD%97%E7%AC%A6%E4%B8%B2string"><span class="nav-text"> Java中的字符串——String</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84%E6%95%B0%E7%BB%84array"><span class="nav-text"> Java中的数组——Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E5%A3%B0%E6%98%8E%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AD%98%E5%8F%96"><span class="nav-text"> 数组的声明，初始化，存取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="nav-text"> 多维数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E6%88%90%E5%91%98"><span class="nav-text"> 数组的成员</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E7%9A%84%E6%8B%B7%E8%B4%9D"><span class="nav-text"> 数组的拷贝</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arrays%E7%B1%BB"><span class="nav-text"> Arrays类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-text"> Java文件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#file%E7%B1%BB"><span class="nav-text"> File类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%86%99%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-text"> 写文件操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BB%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C"><span class="nav-text"> 读文件操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#java%E9%9B%86%E5%90%88%E7%B1%BBcollection"><span class="nav-text"> Java集合类(Collection)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6%E7%9A%84%E5%B1%82%E6%AC%A1%E7%BB%93%E6%9E%84%E5%9B%BE"><span class="nav-text"> 集合框架的层次结构图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E6%8E%A5%E5%8F%A3"><span class="nav-text"> 集合中的一些接口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arraylist"><span class="nav-text"> ArrayList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vector"><span class="nav-text"> Vector</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stack"><span class="nav-text"> Stack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linkedlist"><span class="nav-text"> LinkedList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#priorityqueue"><span class="nav-text"> PriorityQueue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#arraydeque"><span class="nav-text"> ArrayDeque</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hashmap"><span class="nav-text"> HashMap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hashset"><span class="nav-text"> HashSet</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84collections%E7%B1%BB"><span class="nav-text"> Java中的Collections类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#java%E4%B8%AD%E7%9A%84comparator%E6%8E%A5%E5%8F%A3"><span class="nav-text"> Java中的Comparator接口</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="dpbirder"
+      src="/images/boy.jpg">
+  <p class="site-author-name" itemprop="name">dpbirder</p>
+  <div class="site-description" itemprop="description">目前研一就读于西安电子科技大学</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">51</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">26</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button motion-element">
+    <a onclick="Chatra('openChat', true);"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zhengzp2019" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zhengzp2019" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://mail.qq.com/" title="E-Mail → https:&#x2F;&#x2F;mail.qq.com&#x2F;" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+  <div class="languages">
+    <label class="lang-select-label">
+      <i class="fa fa-language"></i>
+      <span>简体中文</span>
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </label>
+    <select class="lang-select" data-canonical="">
+      
+        <option value="zh-CN" data-href="/2023/03/24/java%E5%9F%BA%E7%A1%80/" selected="">
+          简体中文
+        </option>
+      
+        <option value="en" data-href="/en/2023/03/24/java%E5%9F%BA%E7%A1%80/" selected="">
+          English
+        </option>
+      
+    </select>
+  </div>
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">dpbirder</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">225k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:24</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  <script defer src="/lib/three/three.min.js"></script>
+    <script defer src="/lib/three/three-waves.min.js"></script>
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+  <script>
+    (function(d, w, c) {
+      w.ChatraID = 'Z8KH5JTPhxGC84tKb';
+      var s = d.createElement('script');
+      w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments);
+      };
+      s.async = true;
+      s.src = 'https://call.chatra.io/chatra.js';
+      if (d.head) d.head.appendChild(s);
+    })(document, window, 'Chatra');
+  </script>
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
+<!-- 页面点击小红心 -->
+<script type="text/javascript" src="/js/src/love.js"></script>
