@@ -19,7 +19,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"zhengzp2019.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"dpbirder.gitee.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":true,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
 <script>
@@ -37,13 +37,13 @@
   <meta name="description" content="最近两天终于完成了想了很久的事情，终于将之前又丑又难用的Ubuntu给换掉了。但是换什么呢？事先听室友的建议，安装了cestos，但是安装好后发现这完全是命令行界面啊，想用图形界面还需要自己安装，而且这个系统主要是面向服务器的，而且他的软件支持也比较少，吓得我又重新装了manjaro（这个系统也是咨询了一下我的同学，也是看了他装了这个系统，才促使我将想了很久的想法给做了），manjaro对个人笔">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux系统安装">
-<meta property="og:url" content="http://zhengzp2019.github.io/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/index.html">
+<meta property="og:url" content="http://dpbirder.gitee.io/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/index.html">
 <meta property="og:site_name" content="dpBirder&#39;s Blog">
 <meta property="og:description" content="最近两天终于完成了想了很久的事情，终于将之前又丑又难用的Ubuntu给换掉了。但是换什么呢？事先听室友的建议，安装了cestos，但是安装好后发现这完全是命令行界面啊，想用图形界面还需要自己安装，而且这个系统主要是面向服务器的，而且他的软件支持也比较少，吓得我又重新装了manjaro（这个系统也是咨询了一下我的同学，也是看了他装了这个系统，才促使我将想了很久的想法给做了），manjaro对个人笔">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://zhengzp2019.github.io/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829232219467.png">
-<meta property="og:image" content="http://zhengzp2019.github.io/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829230957699.png">
-<meta property="og:image" content="http://zhengzp2019.github.io/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829231110060.png">
+<meta property="og:image" content="http://dpbirder.gitee.io/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829232219467.png">
+<meta property="og:image" content="http://dpbirder.gitee.io/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829230957699.png">
+<meta property="og:image" content="http://dpbirder.gitee.io/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829231110060.png">
 <meta property="article:published_time" content="2020-08-29T13:53:25.000Z">
 <meta property="article:modified_time" content="2022-11-19T03:47:53.738Z">
 <meta property="article:author" content="dpbirder">
@@ -52,9 +52,9 @@
 <meta property="article:tag" content="manjaro">
 <meta property="article:tag" content="cestos">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://zhengzp2019.github.io/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829232219467.png">
+<meta name="twitter:image" content="http://dpbirder.gitee.io/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/image-20200829232219467.png">
 
-<link rel="canonical" href="http://zhengzp2019.github.io/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/">
+<link rel="canonical" href="http://dpbirder.gitee.io/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/">
 
 
 <script id="page-configurations">
@@ -224,7 +224,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://zhengzp2019.github.io/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/">
+    <link itemprop="mainEntityOfPage" href="http://dpbirder.gitee.io/2020/08/29/Linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/boy.jpg">
