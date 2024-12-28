@@ -11,8 +11,9 @@ tags:
 - 多标签
 - 数据增强
 - 噪声标签
+- 2024
 ---
-{% pdf D:\BigBird\blog\source\_posts\Toward-Robustness-in-Multi-Label-Classification-A-Data-Augmentation-Strategy-against-Imbalance-and-Noise.md %}
+[原文](https://zhengzp2019.github.io/Toward Robustness in Multi-Label Classification: A Data Augmentation Strategy against Imbalance and Noise/original.pdf)
 <!-- more -->
 
 # 摘要&相关工作
