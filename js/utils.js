@@ -449,6 +449,7 @@ NexT.utils = {
       condition = false,
       attributes: {
         id = '',
+        async = false,
         defer = false,
         crossOrigin = '',
         dataset = {},
@@ -456,7 +457,6 @@ NexT.utils = {
       } = {},
       parentNode = null
     } = options;
-    const async = options.async ?? false;
     return new Promise((resolve, reject) => {
       if (condition) {
         resolve();
