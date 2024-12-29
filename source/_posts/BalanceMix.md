@@ -26,32 +26,42 @@ BalanceMix 方法: BalanceMix 通过以下两个主要组件来解决这些问�
 ## Minority-augmented Mixing（少数类增强混合）
 ### Confidence-based Minority Sampling（基于置信度的少量采样）
 ![](./BalanceMix/image2.png)
+
 传统的过采样方法都是基于正标签的频率解决样本不平衡问题的。但是由于多标签问题的复杂性，具有少量正标签的类别组并不一定总是具有较低的分类中准确性，本文基于实例的预测置信度解决样本不平衡问题。
 首先计算样本的预测置信度f与mAP关联性，抽取出预测置信度低的实例，这一类实例可以认为对mAP影响较大的实例。本文作者对特定的标签k定义了两种置信度分数。
 ![alt text](BalanceMix/image3.png)
+
 其中P为存在标签k的实例的置信度，A为缺失标签k的实例的置信度。则对于每个实例的置信度分数可以表示如下：
 ![alt text](BalanceMix/image4.png)
+
 则实例的采样率可表示为实例置信度分数的倒数：
 ![alt text](BalanceMix/image5.png)
+
 在训练开始阶段，少数实例被较高概率过采样，但是随着不平衡问题被缓解这类实例被过采样的程度应该降低。
 ### Mixing Augmentation（混合增强）
 对于实例$(x_r,y_r)$和$(x_m,y_m)$混合后的结果如下：
 ![alt text](BalanceMix/image6.png)
+
 通过随机采样保证样本的多样性，但是可能会产生样本不平衡问题，通过少量过采样缓解样本不平衡问题，但是由于缺少样本的多样性可能产生过拟合问题。为了在平衡场景下维持样本的多样性，$\lambda$需要大于等于0.5。
 
 ## Fine-grained Label-wise Management （细粒度的标签管理）
 ### Clean Labels（干净标签）
 本文对每一个类别的BCE使用双峰单变量高斯混合模型（bi-model univariate Gaussian mixture model, GMM），使用期望最大化算法，返回2xK个GMM模型，如下式所示：
 ![alt text](BalanceMix/image7.png)
+
 给定实例x标签k的BCE损失，干净标签概率可以通过相应的GMM模型后验概率得到：
 ![alt text](BalanceMix/image8.png)
+
 其中g表示干净标签的模态。$p_G\gt0.5$的标记为干净标签。
 ### Re-labeled Labels （重标记标签）
 在对噪声标签过拟合之前，如果给定标签没有被选为干净标签，但是模型在预测中标签出较高的置信度，则修改该标签。文中对基于原始实例x增强后的两个实例进行集成，则第k类可以按照如下方式进行重标记：
 ![alt text](BalanceMix/image9.png)
+
 其中$\epsilon$为用于重标记的置信度阈值。
 ### Ambiguous Labels （模糊标签）
 对于非干净标签和非重标记标签，视为模糊标签。这一类标签可能是不正确的，为了利用这类标签的信息，同时减少潜在的风险，文中基于干净标签概率估计的损失重要性进行加权。
 ## Optimization with BalanceMix（优化过程）
 从随机采样器和少数类采样器中获取两个实例，首先对他们进行细粒度标签管理，将干净标签、重标记标签和模糊标签分别存储在C、R和U集合中。然后通过带有混合多标签的MixUp方法生成少数类增强的实例。BalanceMix损失函数定义如下：
 ![alt text](BalanceMix/image10.png)
+
+[原文](BalanceMix/original.pdf)
