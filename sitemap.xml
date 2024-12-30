@@ -497,6 +497,13 @@
 
   
   <url>
+    <loc>http://zhengzp2019.github.io/tags/Git/</loc>
+    <lastmod>2024-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://zhengzp2019.github.io/tags/%E5%A4%9A%E6%A0%87%E7%AD%BE/</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -519,13 +526,6 @@
   
   <url>
     <loc>http://zhengzp2019.github.io/tags/2024/</loc>
-    <lastmod>2024-12-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://zhengzp2019.github.io/tags/Git/</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -646,14 +646,14 @@
   </url>
   
   <url>
-    <loc>http://zhengzp2019.github.io/categories/%E5%A4%9A%E6%A0%87%E7%AD%BE/</loc>
+    <loc>http://zhengzp2019.github.io/categories/Git/</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://zhengzp2019.github.io/categories/Git/</loc>
+    <loc>http://zhengzp2019.github.io/categories/%E5%A4%9A%E6%A0%87%E7%AD%BE/</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -681,14 +681,14 @@
   </url>
   
   <url>
-    <loc>http://zhengzp2019.github.io/categories/%E5%A4%9A%E6%A0%87%E7%AD%BE/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA/</loc>
+    <loc>http://zhengzp2019.github.io/categories/Qt%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://zhengzp2019.github.io/categories/Qt%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
+    <loc>http://zhengzp2019.github.io/categories/%E5%A4%9A%E6%A0%87%E7%AD%BE/%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA/</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -709,14 +709,14 @@
   </url>
   
   <url>
-    <loc>http://zhengzp2019.github.io/categories/Linux/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</loc>
+    <loc>http://zhengzp2019.github.io/categories/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://zhengzp2019.github.io/categories/%E7%AE%97%E6%B3%95/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE/</loc>
+    <loc>http://zhengzp2019.github.io/categories/Linux/%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85/</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -730,21 +730,7 @@
   </url>
   
   <url>
-    <loc>http://zhengzp2019.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/</loc>
-    <lastmod>2024-12-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://zhengzp2019.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%88/</loc>
-    <lastmod>2024-12-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://zhengzp2019.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -765,7 +751,7 @@
   </url>
   
   <url>
-    <loc>http://zhengzp2019.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
+    <loc>http://zhengzp2019.github.io/categories/%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80/java/</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -779,7 +765,7 @@
   </url>
   
   <url>
-    <loc>http://zhengzp2019.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/</loc>
+    <loc>http://zhengzp2019.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E5%AD%97%E7%AC%A6%E4%B8%B2/</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -807,7 +793,14 @@
   </url>
   
   <url>
-    <loc>http://zhengzp2019.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/</loc>
+    <loc>http://zhengzp2019.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%A0%91/</loc>
+    <lastmod>2024-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zhengzp2019.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E6%95%B0%E7%BB%84/</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -815,6 +808,13 @@
   
   <url>
     <loc>http://zhengzp2019.github.io/categories/%E7%AE%97%E6%B3%95/%E9%80%92%E6%8E%A8%E5%92%8C%E9%80%92%E5%BD%92/</loc>
+    <lastmod>2024-12-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://zhengzp2019.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%93%BE%E8%A1%A8/</loc>
     <lastmod>2024-12-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
