@@ -5,20 +5,20 @@ date: 2022-11-18 10:26:08
 categories: 数学
 tags:
 - 数学
-mathjax: True
 ---
 
 # 什么是Jordan标准型？
 
 任何方阵都可通过某一相似变换转化为如下Jordan标准型:
 $$
-J=\ \left[ \begin{matrix}
-	J_1\left( \lambda _1 \right)&		&		&		\\
-	&		J_2\left( \lambda _2 \right)&		&		\\
-	&		&		\ddots&		\\
-	&		&		&		J_s\left( \lambda _s \right)\\
-\end{matrix} \right]
+J=\begin{pmatrix}
+J_1(\lambda_1) & & & \\
+& J_2(\lambda_2) & & \\
+& & \ddots & \\
+& & & J_s(\lambda_s) \\
+\end{pmatrix}
 $$
+
 其中Jordan块如下，$\lambda_1,\lambda_2,\cdots,\lambda_s$为A的特征值，可以是多重的。
 $$
 J_i\left( \lambda _i \right) \ =\ \left[ \begin{matrix}
