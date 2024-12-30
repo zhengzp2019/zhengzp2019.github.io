@@ -20,12 +20,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"zhengzp2019.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="一、图的存储 所有的内容以有向图为例，无向图可以理解为一种特殊的有向图，在存储时只需要以按照对称矩阵存储  1、稠密图（邻接矩阵法） g[a][b] &#x3D; eage;  2、稀疏图（邻接表法） 类似于哈希表的拉链法  二、图的遍历">
+    <meta name="description" content="一、图的存储  所有的内容以有向图为例，无向图可以理解为一种特殊的有向图，在存储时只需要以按照对称矩阵存储   1、稠密图（邻接矩阵法）  g[a][b] &#x3D; eage;   2、稀疏图（邻接表法）  类似于哈希表的拉链法   二、图的遍历">
 <meta property="og:type" content="article">
 <meta property="og:title" content="图论">
 <meta property="og:url" content="http://zhengzp2019.github.io/2021/07/25/%E5%9B%BE%E8%AE%BA/index.html">
 <meta property="og:site_name" content="dpBirder&#39;s Blog">
-<meta property="og:description" content="一、图的存储 所有的内容以有向图为例，无向图可以理解为一种特殊的有向图，在存储时只需要以按照对称矩阵存储  1、稠密图（邻接矩阵法） g[a][b] &#x3D; eage;  2、稀疏图（邻接表法） 类似于哈希表的拉链法  二、图的遍历">
+<meta property="og:description" content="一、图的存储  所有的内容以有向图为例，无向图可以理解为一种特殊的有向图，在存储时只需要以按照对称矩阵存储   1、稠密图（邻接矩阵法）  g[a][b] &#x3D; eage;   2、稀疏图（邻接表法）  类似于哈希表的拉链法   二、图的遍历">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-07-25T08:40:26.000Z">
 <meta property="article:modified_time" content="2022-11-19T03:47:53.749Z">
@@ -139,7 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8"><span class="nav-number">1.</span> <span class="nav-text">一、图的存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E7%A8%A0%E5%AF%86%E5%9B%BE%EF%BC%88%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E6%B3%95%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">1、稠密图（邻接矩阵法）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E7%A8%80%E7%96%8F%E5%9B%BE%EF%BC%88%E9%82%BB%E6%8E%A5%E8%A1%A8%E6%B3%95%EF%BC%89"><span class="nav-number">1.2.</span> <span class="nav-text">2、稀疏图（邻接表法）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86"><span class="nav-number">2.</span> <span class="nav-text">二、图的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%EF%BC%88dfs%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">1、深度优先遍历（dfs）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86%EF%BC%88bfs%EF%BC%89"><span class="nav-number">2.2.</span> <span class="nav-text">2、广度优先遍历（bfs）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%9C%80%E7%9F%AD%E8%B7%AF%E7%AE%97%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text">三、最短路算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E6%9C%B4%E7%B4%A0Dijkstra%E7%AE%97%E6%B3%95%E2%80%93O-n-2"><span class="nav-number">3.1.</span> <span class="nav-text">1、朴素Dijkstra算法–O(n^2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%A0%86%E4%BC%98%E5%8C%96Dijkstra%E7%AE%97%E6%B3%95%E2%80%93O-mlogm"><span class="nav-number">3.2.</span> <span class="nav-text">2、堆优化Dijkstra算法–O(mlogm)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81spfa%E7%AE%97%E6%B3%95%E2%80%93O-mlogm"><span class="nav-number">3.3.</span> <span class="nav-text">3、spfa算法–O(mlogm)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">四、最小生成树算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81prim%E7%AE%97%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">1、prim算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81kruskal%E7%AE%97%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">2、kruskal算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E4%BA%8C%E5%88%86%E5%9B%BE%E7%AE%97%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text">五、二分图算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E6%9F%93%E8%89%B2%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text">1、染色法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95"><span class="nav-number">5.2.</span> <span class="nav-text">2、匈牙利算法</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80-%E5%9B%BE%E7%9A%84%E5%AD%98%E5%82%A8"><span class="nav-number">1.</span> <span class="nav-text"> 一、图的存储</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E7%A8%A0%E5%AF%86%E5%9B%BE%E9%82%BB%E6%8E%A5%E7%9F%A9%E9%98%B5%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text"> 1、稠密图（邻接矩阵法）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E7%A8%80%E7%96%8F%E5%9B%BE%E9%82%BB%E6%8E%A5%E8%A1%A8%E6%B3%95"><span class="nav-number">1.2.</span> <span class="nav-text"> 2、稀疏图（邻接表法）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%8C-%E5%9B%BE%E7%9A%84%E9%81%8D%E5%8E%86"><span class="nav-number">2.</span> <span class="nav-text"> 二、图的遍历</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86dfs"><span class="nav-number">2.1.</span> <span class="nav-text"> 1、深度优先遍历（dfs）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E9%81%8D%E5%8E%86bfs"><span class="nav-number">2.2.</span> <span class="nav-text"> 2、广度优先遍历（bfs）</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89-%E6%9C%80%E7%9F%AD%E8%B7%AF%E7%AE%97%E6%B3%95"><span class="nav-number">3.</span> <span class="nav-text"> 三、最短路算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%9C%B4%E7%B4%A0dijkstra%E7%AE%97%E6%B3%95on2"><span class="nav-number">3.1.</span> <span class="nav-text"> 1、朴素Dijkstra算法–O(n^2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%A0%86%E4%BC%98%E5%8C%96dijkstra%E7%AE%97%E6%B3%95omlogm"><span class="nav-number">3.2.</span> <span class="nav-text"> 2、堆优化Dijkstra算法–O(mlogm)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-spfa%E7%AE%97%E6%B3%95omlogm"><span class="nav-number">3.3.</span> <span class="nav-text"> 3、spfa算法–O(mlogm)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B-%E6%9C%80%E5%B0%8F%E7%94%9F%E6%88%90%E6%A0%91%E7%AE%97%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text"> 四、最小生成树算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-prim%E7%AE%97%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text"> 1、prim算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-kruskal%E7%AE%97%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text"> 2、kruskal算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BA%94-%E4%BA%8C%E5%88%86%E5%9B%BE%E7%AE%97%E6%B3%95"><span class="nav-number">5.</span> <span class="nav-text"> 五、二分图算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E6%9F%93%E8%89%B2%E6%B3%95"><span class="nav-number">5.1.</span> <span class="nav-text"> 1、染色法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95"><span class="nav-number">5.2.</span> <span class="nav-text"> 2、匈牙利算法</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -259,7 +259,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>250</span>
+      <span>245</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -276,17 +276,33 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="一、图的存储"><a href="#一、图的存储" class="headerlink" title="一、图的存储"></a>一、图的存储</h1><blockquote>
+    <div class="post-body" itemprop="articleBody"><h1 id="一-图的存储"><a class="markdownIt-Anchor" href="#一-图的存储"></a> 一、图的存储</h1>
+<blockquote>
 <p>所有的内容以有向图为例，无向图可以理解为一种特殊的有向图，在存储时只需要以按照对称矩阵存储</p>
 </blockquote>
-<h2 id="1、稠密图（邻接矩阵法）"><a href="#1、稠密图（邻接矩阵法）" class="headerlink" title="1、稠密图（邻接矩阵法）"></a>1、稠密图（邻接矩阵法）</h2><blockquote>
-<p>g[a][b] &#x3D; eage;</p>
+<h2 id="1-稠密图邻接矩阵法"><a class="markdownIt-Anchor" href="#1-稠密图邻接矩阵法"></a> 1、稠密图（邻接矩阵法）</h2>
+<blockquote>
+<p>g[a][b] = eage;</p>
 </blockquote>
-<h2 id="2、稀疏图（邻接表法）"><a href="#2、稀疏图（邻接表法）" class="headerlink" title="2、稀疏图（邻接表法）"></a>2、稀疏图（邻接表法）</h2><blockquote>
+<h2 id="2-稀疏图邻接表法"><a class="markdownIt-Anchor" href="#2-稀疏图邻接表法"></a> 2、稀疏图（邻接表法）</h2>
+<blockquote>
 <p>类似于哈希表的拉链法</p>
 </blockquote>
-<h1 id="二、图的遍历"><a href="#二、图的遍历" class="headerlink" title="二、图的遍历"></a>二、图的遍历</h1><span id="more"></span>
-<h2 id="1、深度优先遍历（dfs）"><a href="#1、深度优先遍历（dfs）" class="headerlink" title="1、深度优先遍历（dfs）"></a>1、深度优先遍历（dfs）</h2><h2 id="2、广度优先遍历（bfs）"><a href="#2、广度优先遍历（bfs）" class="headerlink" title="2、广度优先遍历（bfs）"></a>2、广度优先遍历（bfs）</h2><h1 id="三、最短路算法"><a href="#三、最短路算法" class="headerlink" title="三、最短路算法"></a>三、最短路算法</h1><h2 id="1、朴素Dijkstra算法–O-n-2"><a href="#1、朴素Dijkstra算法–O-n-2" class="headerlink" title="1、朴素Dijkstra算法–O(n^2)"></a>1、朴素Dijkstra算法–O(n^2)</h2><h2 id="2、堆优化Dijkstra算法–O-mlogm"><a href="#2、堆优化Dijkstra算法–O-mlogm" class="headerlink" title="2、堆优化Dijkstra算法–O(mlogm)"></a>2、堆优化Dijkstra算法–O(mlogm)</h2><h2 id="3、spfa算法–O-mlogm"><a href="#3、spfa算法–O-mlogm" class="headerlink" title="3、spfa算法–O(mlogm)"></a>3、spfa算法–O(mlogm)</h2><h1 id="四、最小生成树算法"><a href="#四、最小生成树算法" class="headerlink" title="四、最小生成树算法"></a>四、最小生成树算法</h1><h2 id="1、prim算法"><a href="#1、prim算法" class="headerlink" title="1、prim算法"></a>1、prim算法</h2><h2 id="2、kruskal算法"><a href="#2、kruskal算法" class="headerlink" title="2、kruskal算法"></a>2、kruskal算法</h2><h1 id="五、二分图算法"><a href="#五、二分图算法" class="headerlink" title="五、二分图算法"></a>五、二分图算法</h1><h2 id="1、染色法"><a href="#1、染色法" class="headerlink" title="1、染色法"></a>1、染色法</h2><h2 id="2、匈牙利算法"><a href="#2、匈牙利算法" class="headerlink" title="2、匈牙利算法"></a>2、匈牙利算法</h2>
+<h1 id="二-图的遍历"><a class="markdownIt-Anchor" href="#二-图的遍历"></a> 二、图的遍历</h1>
+<span id="more"></span>
+<h2 id="1-深度优先遍历dfs"><a class="markdownIt-Anchor" href="#1-深度优先遍历dfs"></a> 1、深度优先遍历（dfs）</h2>
+<h2 id="2-广度优先遍历bfs"><a class="markdownIt-Anchor" href="#2-广度优先遍历bfs"></a> 2、广度优先遍历（bfs）</h2>
+<h1 id="三-最短路算法"><a class="markdownIt-Anchor" href="#三-最短路算法"></a> 三、最短路算法</h1>
+<h2 id="1-朴素dijkstra算法on2"><a class="markdownIt-Anchor" href="#1-朴素dijkstra算法on2"></a> 1、朴素Dijkstra算法–O(n^2)</h2>
+<h2 id="2-堆优化dijkstra算法omlogm"><a class="markdownIt-Anchor" href="#2-堆优化dijkstra算法omlogm"></a> 2、堆优化Dijkstra算法–O(mlogm)</h2>
+<h2 id="3-spfa算法omlogm"><a class="markdownIt-Anchor" href="#3-spfa算法omlogm"></a> 3、spfa算法–O(mlogm)</h2>
+<h1 id="四-最小生成树算法"><a class="markdownIt-Anchor" href="#四-最小生成树算法"></a> 四、最小生成树算法</h1>
+<h2 id="1-prim算法"><a class="markdownIt-Anchor" href="#1-prim算法"></a> 1、prim算法</h2>
+<h2 id="2-kruskal算法"><a class="markdownIt-Anchor" href="#2-kruskal算法"></a> 2、kruskal算法</h2>
+<h1 id="五-二分图算法"><a class="markdownIt-Anchor" href="#五-二分图算法"></a> 五、二分图算法</h1>
+<h2 id="1-染色法"><a class="markdownIt-Anchor" href="#1-染色法"></a> 1、染色法</h2>
+<h2 id="2-匈牙利算法"><a class="markdownIt-Anchor" href="#2-匈牙利算法"></a> 2、匈牙利算法</h2>
+
     </div>
 
     
@@ -358,13 +374,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">224k</span>
+    <span title="站点总字数">227k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:24</span>
+    <span title="站点阅读时长">3:27</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
@@ -412,8 +428,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
 
 
 

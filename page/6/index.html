@@ -274,12 +274,14 @@
     
     <div class="post-body" itemprop="articleBody">
           <p><a target="_blank" rel="noopener" href="http://c.biancheng.net/view/1823.html">参考文档</a></p>
-<h2 id="信号与槽机制"><a href="#信号与槽机制" class="headerlink" title="信号与槽机制"></a>信号与槽机制</h2><h3 id="1、概念"><a href="#1、概念" class="headerlink" title="1、概念"></a>1、概念</h3><p><strong>信号（Signal）</strong> 就是在特定情况下被发射的事件，例如<code>PushButton</code>最常见的信号就是鼠标单击时发射的 clicked()信号，一个<code>ComboBox</code>最常见的信号是选择的列表项变化时发射的<code>CurrentIndexChanged()</code>信号。</p>
-<p>&#x3D;&#x3D;可以理解为发出一个事件的命令&#x3D;&#x3D;</p>
+<h2 id="信号与槽机制"><a class="markdownIt-Anchor" href="#信号与槽机制"></a> 信号与槽机制</h2>
+<h3 id="1-概念"><a class="markdownIt-Anchor" href="#1-概念"></a> 1、概念</h3>
+<p><strong>信号（Signal）</strong> 就是在特定情况下被发射的事件，例如<code>PushButton</code>最常见的信号就是鼠标单击时发射的 clicked()信号，一个<code>ComboBox</code>最常见的信号是选择的列表项变化时发射的<code>CurrentIndexChanged()</code>信号。</p>
+<p><mark>可以理解为发出一个事件的命令</mark></p>
 <p>GUI 程序设计的主要内容就是对界面上各组件的信号的响应，只需要知道什么情况下发射哪些信号，合理地去响应和处理这些信号就可以了。</p>
-<p> <strong>槽(Slot)</strong> 就是对信号响应的函数。槽就是一个函数，与一般的<code>C++</code>函数是一样的，可以定义在类的任何部分（public、private 或 protected），可以具有任何参数，也可以被直接调用。槽函数与一般的函数不同的是：槽函数可以与一个信号关联，当信号被发射时，关联的槽函数被自动执行。&#x3D;&#x3D;可以理解为用来处理信号返回事件的结果&#x3D;&#x3D;</p>
+<p><strong>槽(Slot)</strong> 就是对信号响应的函数。槽就是一个函数，与一般的<code>C++</code>函数是一样的，可以定义在类的任何部分（public、private 或 protected），可以具有任何参数，也可以被直接调用。槽函数与一般的函数不同的是：槽函数可以与一个信号关联，当信号被发射时，关联的槽函数被自动执行。<mark>可以理解为用来处理信号返回事件的结果</mark></p>
 <p><strong>信号与槽（Signal &amp; Slot）</strong> 当一个事件发生时，会产生相应的信号，如果有对象对这个信号感兴趣，他就会使用连接函数（connect）将想要处理的信号和自己的一个函数（称为槽（slot））绑定来处理这个信号。当信号发出时连接的槽函数会自动被回调</p>
-<p><img data-src="/2020/08/06/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E6%A7%BD%E6%9C%BA%E5%88%B6/logo.JPG"></p>
+<p><img data-src="logo.JPG" alt="" /></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/08/06/%E4%BF%A1%E5%8F%B7%E4%B8%8E%E6%A7%BD%E6%9C%BA%E5%88%B6/#more" rel="contents">
@@ -386,7 +388,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="QT入门"><a href="#QT入门" class="headerlink" title="QT入门"></a>QT入门</h1><h3 id="1、程序运行框架"><a href="#1、程序运行框架" class="headerlink" title="1、程序运行框架"></a>1、程序运行框架</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QApplication&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//创建一个应用类的对象</span></span><br><span class="line">    <span class="comment">//有且仅有一个应用类的对象</span></span><br><span class="line">    <span class="function">QApplication <span class="title">a</span><span class="params">(argc, argv)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//创建一个窗口对象</span></span><br><span class="line">    QWidget w;</span><br><span class="line">    <span class="comment">//窗口默认是隐藏的，需要用户手动显示</span></span><br><span class="line">    w.<span class="built_in">show</span>();</span><br><span class="line">    <span class="comment">//让程序一直执行下去，等待用户操作</span></span><br><span class="line">    <span class="comment">//即，等待事件的发生</span></span><br><span class="line">    <span class="keyword">return</span> a.<span class="built_in">exec</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+          <h1 id="qt入门"><a class="markdownIt-Anchor" href="#qt入门"></a> QT入门</h1>
+<h3 id="1-程序运行框架"><a class="markdownIt-Anchor" href="#1-程序运行框架"></a> 1、程序运行框架</h3>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;QApplication&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">(<span class="type">int</span> argc, <span class="type">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//创建一个应用类的对象</span></span><br><span class="line">    <span class="comment">//有且仅有一个应用类的对象</span></span><br><span class="line">    <span class="function">QApplication <span class="title">a</span><span class="params">(argc, argv)</span></span>;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//创建一个窗口对象</span></span><br><span class="line">    QWidget w;</span><br><span class="line">    <span class="comment">//窗口默认是隐藏的，需要用户手动显示</span></span><br><span class="line">    w.<span class="built_in">show</span>();</span><br><span class="line">    <span class="comment">//让程序一直执行下去，等待用户操作</span></span><br><span class="line">    <span class="comment">//即，等待事件的发生</span></span><br><span class="line">    <span class="keyword">return</span> a.<span class="built_in">exec</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2020/08/06/Qt%E5%85%A5%E9%97%A8/#more" rel="contents">
@@ -453,13 +457,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">224k</span>
+    <span title="站点总字数">227k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:24</span>
+    <span title="站点阅读时长">3:27</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
@@ -507,8 +511,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
 
 
 

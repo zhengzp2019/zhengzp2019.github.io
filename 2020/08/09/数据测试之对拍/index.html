@@ -20,12 +20,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"zhengzp2019.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="数据测试之对拍前言 最近在刷OJ，遇到很多题可以通过例题，但是程序仍然报错而且不容易找测试数据，就想看看有没有什么方法可以自动生成随机数字，找了下资料，发现有一种随机函数可以自动生成随机数据。同时一些OJ上的discuss可以找到正确的代码，但是仍然找不到自己程序的bug，那有什么办法可以用同一组数据测试自己的代码和正确的代码呢？于是发现了对拍技巧对，下面做如下总结   参考博客： https:&#x2F;">
+    <meta name="description" content="数据测试之对拍  前言  最近在刷OJ，遇到很多题可以通过例题，但是程序仍然报错而且不容易找测试数据，就想看看有没有什么方法可以自动生成随机数字，找了下资料，发现有一种随机函数可以自动生成随机数据。同时一些OJ上的discuss可以找到正确的代码，但是仍然找不到自己程序的bug，那有什么办法可以用同一组数据测试自己的代码和正确的代码呢？于是发现了对拍技巧对，下面做如下总结   参考博客： htt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据测试之对拍">
 <meta property="og:url" content="http://zhengzp2019.github.io/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/index.html">
 <meta property="og:site_name" content="dpBirder&#39;s Blog">
-<meta property="og:description" content="数据测试之对拍前言 最近在刷OJ，遇到很多题可以通过例题，但是程序仍然报错而且不容易找测试数据，就想看看有没有什么方法可以自动生成随机数字，找了下资料，发现有一种随机函数可以自动生成随机数据。同时一些OJ上的discuss可以找到正确的代码，但是仍然找不到自己程序的bug，那有什么办法可以用同一组数据测试自己的代码和正确的代码呢？于是发现了对拍技巧对，下面做如下总结   参考博客： https:&#x2F;">
+<meta property="og:description" content="数据测试之对拍  前言  最近在刷OJ，遇到很多题可以通过例题，但是程序仍然报错而且不容易找测试数据，就想看看有没有什么方法可以自动生成随机数字，找了下资料，发现有一种随机函数可以自动生成随机数据。同时一些OJ上的discuss可以找到正确的代码，但是仍然找不到自己程序的bug，那有什么办法可以用同一组数据测试自己的代码和正确的代码呢？于是发现了对拍技巧对，下面做如下总结   参考博客： htt">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://zhengzp2019.github.io/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207214.jpg">
 <meta property="og:image" content="http://zhengzp2019.github.io/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207213.jpg">
@@ -145,7 +145,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D"><span class="nav-number">1.</span> <span class="nav-text">数据测试之对拍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E6%8B%8D"><span class="nav-number">1.2.</span> <span class="nav-text">什么是对拍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-number">1.3.</span> <span class="nav-text">一、数据生成器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%AF%B9%E6%8B%8D%E5%99%A8"><span class="nav-number">1.4.</span> <span class="nav-text">二、对拍器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%EF%BC%9A%E7%94%A8C-%E5%86%99"><span class="nav-number">1.4.1.</span> <span class="nav-text">第一种：用C++写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%EF%BC%9A%E7%BC%96%E5%86%99%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.2.</span> <span class="nav-text">第二种：编写脚本文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E4%BD%BF%E7%94%A8%E5%AF%B9%E6%8B%8D"><span class="nav-number">1.5.</span> <span class="nav-text">三、使用对拍</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D"><span class="nav-number">1.</span> <span class="nav-text"> 数据测试之对拍</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-number">1.1.</span> <span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%AF%B9%E6%8B%8D"><span class="nav-number">1.2.</span> <span class="nav-text"> 什么是对拍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80-%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90%E5%99%A8"><span class="nav-number">1.3.</span> <span class="nav-text"> 一、数据生成器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C-%E5%AF%B9%E6%8B%8D%E5%99%A8"><span class="nav-number">1.4.</span> <span class="nav-text"> 二、对拍器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%A7%8D%E7%94%A8c%E5%86%99"><span class="nav-number">1.4.1.</span> <span class="nav-text"> 第一种：用C++写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%A7%8D%E7%BC%96%E5%86%99%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6"><span class="nav-number">1.4.2.</span> <span class="nav-text"> 第二种：编写脚本文件</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89-%E4%BD%BF%E7%94%A8%E5%AF%B9%E6%8B%8D"><span class="nav-number">1.5.</span> <span class="nav-text"> 三、使用对拍</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -282,50 +282,62 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="数据测试之对拍"><a href="#数据测试之对拍" class="headerlink" title="数据测试之对拍"></a>数据测试之对拍</h2><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><blockquote>
+    <div class="post-body" itemprop="articleBody"><h2 id="数据测试之对拍"><a class="markdownIt-Anchor" href="#数据测试之对拍"></a> 数据测试之对拍</h2>
+<h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+<blockquote>
 <p>最近在刷<code>OJ</code>，遇到很多题可以通过例题，但是程序仍然报错而且不容易找测试数据，就想看看有没有什么方法可以自动生成随机数字，找了下资料，发现有一种随机函数可以自动生成随机数据。同时一些<code>OJ</code>上的discuss可以找到正确的代码，但是仍然找不到自己程序的bug，那有什么办法可以用同一组数据测试自己的代码和正确的代码呢？于是发现了对拍技巧对，下面做如下总结</p>
 </blockquote>
 <blockquote>
 <p><strong>参考博客：</strong></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36294918/article/details/103041906">https://blog.csdn.net/qq_36294918/article/details/103041906</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/C20190102/article/details/60138907">https://blog.csdn.net/C20190102/article/details/60138907</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/C20190102/article/details/82944384#_141">https://blog.csdn.net/C20190102/article/details/82944384#_141</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_36294918/article/details/103041906">https://blog.csdn.net/qq_36294918/article/details/103041906</a><br />
+<a target="_blank" rel="noopener" href="https://blog.csdn.net/C20190102/article/details/60138907">https://blog.csdn.net/C20190102/article/details/60138907</a><br />
+<a target="_blank" rel="noopener" href="https://blog.csdn.net/C20190102/article/details/82944384#_141">https://blog.csdn.net/C20190102/article/details/82944384#_141</a></p>
 </blockquote>
-<h3 id="什么是对拍"><a href="#什么是对拍" class="headerlink" title="什么是对拍"></a>什么是对拍</h3><blockquote>
-<p>对拍就是将正确的程序与自己的程序在同样的输入文件下跑出的数据进行比较。<br>输入文件的要随机，那么产生输入文件就需要使用随机函数写一个数据生成器，因此，需要四个程序，数据生成器，对拍器，正确的程序，你的程序</p>
+<h3 id="什么是对拍"><a class="markdownIt-Anchor" href="#什么是对拍"></a> 什么是对拍</h3>
+<blockquote>
+<p>对拍就是将正确的程序与自己的程序在同样的输入文件下跑出的数据进行比较。<br />
+输入文件的要随机，那么产生输入文件就需要使用随机函数写一个数据生成器，因此，需要四个程序，数据生成器，对拍器，正确的程序，你的程序</p>
 </blockquote>
 <span id="more"></span>
-<h3 id="一、数据生成器"><a href="#一、数据生成器" class="headerlink" title="一、数据生成器"></a>一、数据生成器</h3><blockquote>
-<p>生成数据，需要使用随机数生成函数rand( )（包含在头文件$cstdlib$中），这里的随机函数并非真正的随机，而是用使用一种算法，以时间为输入值得到的0~Random_MAX区间内的随机整数</p>
+<h3 id="一-数据生成器"><a class="markdownIt-Anchor" href="#一-数据生成器"></a> 一、数据生成器</h3>
+<blockquote>
+<p>生成数据，需要使用随机数生成函数rand( )（包含在头文件<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>c</mi><mi>s</mi><mi>t</mi><mi>d</mi><mi>l</mi><mi>i</mi><mi>b</mi></mrow><annotation encoding="application/x-tex">cstdlib</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">c</span><span class="mord mathnormal">s</span><span class="mord mathnormal">t</span><span class="mord mathnormal">d</span><span class="mord mathnormal" style="margin-right:0.01968em;">l</span><span class="mord mathnormal">i</span><span class="mord mathnormal">b</span></span></span></span>中），这里的随机函数并非真正的随机，而是用使用一种算法，以时间为输入值得到的0~Random_MAX区间内的随机整数</p>
 <p>（注：随机数还可以用来测试模板）</p>
 <p>对于不同的程序需要不同的数据生成器，但对于不同的数据生成器，主要需要做如下三件事：</p>
-<p>1.模板<br>2.写出能构造相应数据的代码<br>3.按题目格式输出</p>
+<p>1.模板<br />
+2.写出能构造相应数据的代码<br />
+3.按题目格式输出</p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这里主要写一下模板，2和3要根据对应的题目来写</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;ctime&gt;</span><span class="comment">//time函数的头文件，必写</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cstdlib&gt;</span><span class="comment">//srand和rand函数的头文件，必写</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">srand</span>(<span class="built_in">time</span>(<span class="literal">NULL</span>));<span class="comment">//用于初始化随机数种子，time(NULL)是为了初始化时间</span></span><br><span class="line">    <span class="comment">/*以下是你的构造方法*/</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
-<p><strong>注：</strong><br>构造方法根据题目的格式编写对应的构造代码</p>
+<p><strong>注：</strong><br />
+构造方法根据题目的格式编写对应的构造代码</p>
 <p><strong>生成其他特殊的数据：</strong></p>
 <ul>
 <li>生成随机排列：先生成1~n，再random_shuffle()</li>
 <li>生成集合：用set</li>
 <li>生成无根树：随生成一条树边，并查集检验连通性，合法的加入，不合法的忽略，如果要限制每个结点的度，可加上deg[ ]数组，统计各点的度</li>
-<li>生成无向图：邻接矩阵存图，随机生成边，加在图上，做至少n*(n-1)&#x2F;2次</li>
-<li>生成DAG：先生成无向图，再$DFS$，输出编号小的结点指向编号大的结点的边</li>
+<li>生成无向图：邻接矩阵存图，随机生成边，加在图上，做至少n*(n-1)/2次</li>
+<li>生成DAG：先生成无向图，再<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>D</mi><mi>F</mi><mi>S</mi></mrow><annotation encoding="application/x-tex">DFS</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.02778em;">D</span><span class="mord mathnormal" style="margin-right:0.13889em;">F</span><span class="mord mathnormal" style="margin-right:0.05764em;">S</span></span></span></span>，输出编号小的结点指向编号大的结点的边</li>
 </ul>
 </blockquote>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">&#123;</span><br><span class="line">    sort(G[i].begin(), G[i].end());</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; G[i].size(); j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> k = G[i][j];</span><br><span class="line">        <span class="keyword">if</span>(k &gt; i)</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>, i, k);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="二、对拍器"><a href="#二、对拍器" class="headerlink" title="二、对拍器"></a>二、对拍器</h3><p>此处有两种方法：</p>
-<h4 id="第一种：用C-写"><a href="#第一种：用C-写" class="headerlink" title="第一种：用C++写"></a><strong>第一种</strong>：用C++写</h4><blockquote>
-<p>优点：便于调试与控制对拍的次数，且便于输出结果信息<br>缺点：使用不方便，每次使用前需要编译<br>代码如下：</p>
+<h3 id="二-对拍器"><a class="markdownIt-Anchor" href="#二-对拍器"></a> 二、对拍器</h3>
+<p>此处有两种方法：</p>
+<h4 id="第一种用c写"><a class="markdownIt-Anchor" href="#第一种用c写"></a> <strong>第一种</strong>：用C++写</h4>
+<blockquote>
+<p>优点：便于调试与控制对拍的次数，且便于输出结果信息<br />
+缺点：使用不方便，每次使用前需要编译<br />
+代码如下：</p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> t = <span class="number">1000</span>;</span><br><span class="line">    <span class="comment">//注：比较两个文件t次，而不是比较my.exe和other.exe输出结果t次</span></span><br><span class="line">    <span class="keyword">while</span> (--t)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">system</span>(<span class="string">&quot;rand.exe&gt;input&quot;</span>);</span><br><span class="line">        <span class="built_in">system</span>(<span class="string">&quot;my.exe&lt;input&gt; output_my&quot;</span>);</span><br><span class="line">        <span class="built_in">system</span>(<span class="string">&quot;other.exe&lt;input&gt; output_other&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">system</span>(<span class="string">&quot;fc output_my output_other&quot;</span>))</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (t == <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;correctly\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;error\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    *   int t = 1000; //两程序对比次数</span></span><br><span class="line"><span class="comment">    *   while (--t)</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       system(&quot;我的程序&lt;输入文件&gt;我的输出文件&quot;);</span></span><br><span class="line"><span class="comment">    *       system(&quot;正确的程序&lt;输入文件&gt;正确的输出文件&quot;);</span></span><br><span class="line"><span class="comment">    *       if (system(&quot;fc 我的输出文件 正确的输出文件&quot;)) //比较两文件，相同返回0，不同返回1</span></span><br><span class="line"><span class="comment">    *           break;</span></span><br><span class="line"><span class="comment">    *   &#125;  </span></span><br><span class="line"><span class="comment">    *   if (t == 0)</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       printf(&quot;你的程序正确\n&quot;);</span></span><br><span class="line"><span class="comment">    *   &#125;</span></span><br><span class="line"><span class="comment">    *   else</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       printf(&quot;你的程序不正确\n&quot;);</span></span><br><span class="line"><span class="comment">    *   &#125;</span></span><br><span class="line"><span class="comment">    *   return 0;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="第二种：编写脚本文件"><a href="#第二种：编写脚本文件" class="headerlink" title="第二种：编写脚本文件"></a><strong>第二种</strong>：编写脚本文件</h4><blockquote>
-<p>优点：便于使用<br>缺点：涉及到系统，目前对系统理解的不透彻</p>
+<h4 id="第二种编写脚本文件"><a class="markdownIt-Anchor" href="#第二种编写脚本文件"></a> <strong>第二种</strong>：编写脚本文件</h4>
+<blockquote>
+<p>优点：便于使用<br />
+缺点：涉及到系统，目前对系统理解的不透彻</p>
 </blockquote>
 <p>自己建立一个txt文件，编写脚本，将后缀名改为bat即可，脚本如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">:again</span><br><span class="line">makedata#.exe &gt; input </span><br><span class="line">my.exe &lt; input &gt; output_my</span><br><span class="line">other.exe &lt; input &gt; output_other</span><br><span class="line"><span class="built_in">fc</span> output_my output_other </span><br><span class="line"><span class="keyword">if</span> not errorlevel 1 goto again</span><br><span class="line">pause</span><br><span class="line">@<span class="built_in">echo</span> on</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p><strong>注</strong>：</p>
 <p><code>makedata#.exe</code>： 数据生成器</p>
@@ -335,43 +347,44 @@
 <p><code>other.exe</code>: 正确的程序</p>
 <p><code>output_other</code>: 正确的输入文件</p>
 </blockquote>
-<h3 id="三、使用对拍"><a href="#三、使用对拍" class="headerlink" title="三、使用对拍"></a>三、使用对拍</h3><blockquote>
+<h3 id="三-使用对拍"><a class="markdownIt-Anchor" href="#三-使用对拍"></a> 三、使用对拍</h3>
+<blockquote>
 <p><strong>举个例子:</strong> 验证选择排序和冒泡排序的结果是否相同</p>
 </blockquote>
 <ol>
-<li><p>数据生成器</p>
+<li>
+<p>数据生成器</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//数据生成器,makedata.cpp</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ctime&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> MAXN 100 <span class="comment">//生成的数据范围</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> NUM 100   <span class="comment">//生成的数据数目</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">srand</span>(<span class="built_in">time</span>(<span class="literal">NULL</span>));</span><br><span class="line">    <span class="comment">//构造方法</span></span><br><span class="line">    <span class="type">int</span> A;</span><br><span class="line">    <span class="comment">//随机生成100个数据</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= NUM; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        A = <span class="built_in">rand</span>() % MAXN;</span><br><span class="line">        <span class="comment">//B = rand() % MAXN;</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, A);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
 </li>
-<li><p>对拍</p>
+<li>
+<p>对拍</p>
 <ul>
-<li><p>使用批处理程序</p>
+<li>
+<p>使用批处理程序</p>
 <blockquote>
 <p>先写好批处理程序，将数据生成器、我的程序、正确的程序，对拍程序放在一个文件夹下，直接运行对拍程序即可，也可使用命令行运行对拍程序，批处理程序如下：</p>
 </blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line">:again</span><br><span class="line">makedata#.exe &gt; input</span><br><span class="line">bubble_sort.exe &lt; input &gt; output_my</span><br><span class="line">select_sort.exe &lt;input&gt; output_other</span><br><span class="line"><span class="built_in">fc</span> output_my output_other</span><br><span class="line"><span class="keyword">if</span> not errorlevel 1 goto again</span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
-
-<p><img data-src="/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207214.jpg"></p>
+<p><img data-src="207214.jpg" alt="" /></p>
 <blockquote>
 <p>因为在对拍程序中未写终止条件，所以只要两个文件内容相同，fc会一直比较下去</p>
 <p><strong>解释：</strong></p>
 <p><strong>注：</strong></p>
 <p>也可在命令行下逐步执行对拍程序中的命令，如下：</p>
 </blockquote>
-<p><img data-src="/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207213.jpg"></p>
+<p><img data-src="207213.jpg" alt="" /></p>
 </li>
-<li><p>使用C++对拍</p>
+<li>
+<p>使用C++对拍</p>
 <blockquote>
 <p>除了将上述的对拍程序用C++来写外，其余相同</p>
 </blockquote>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//dp.exe</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> t = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">while</span> (--t)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">system</span>(<span class="string">&quot;makedata#.exe&gt;input&quot;</span>);</span><br><span class="line">        <span class="built_in">system</span>(<span class="string">&quot;bubble_sort.exe&lt;input&gt; output_my&quot;</span>);</span><br><span class="line">        <span class="built_in">system</span>(<span class="string">&quot;select_sort.exe&lt;input&gt; output_other&quot;</span>);</span><br><span class="line">        <span class="keyword">if</span> (<span class="built_in">system</span>(<span class="string">&quot;fc output_my output_other&quot;</span>))</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (t == <span class="number">0</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;correctly\n&quot;</span>);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;error\n&quot;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/*</span></span><br><span class="line"><span class="comment">    *   int t = 1000; //两程序对比次数</span></span><br><span class="line"><span class="comment">    *   while (--t)</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       system(&quot;我的程序&lt;输入文件&gt;我的输出文件&quot;);</span></span><br><span class="line"><span class="comment">    *       system(&quot;正确的程序&lt;输入文件&gt;正确的输出文件&quot;);</span></span><br><span class="line"><span class="comment">    *       if (system(&quot;fc 我的输出文件 正确的输出文件&quot;)) //比较两文件，相同返回0，不同返回1</span></span><br><span class="line"><span class="comment">    *           break;</span></span><br><span class="line"><span class="comment">    *   &#125;  </span></span><br><span class="line"><span class="comment">    *   if (t == 0)</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       printf(&quot;你的程序正确\n&quot;);</span></span><br><span class="line"><span class="comment">    *   &#125;</span></span><br><span class="line"><span class="comment">    *   else</span></span><br><span class="line"><span class="comment">    *   &#123;</span></span><br><span class="line"><span class="comment">    *       printf(&quot;你的程序不正确\n&quot;);</span></span><br><span class="line"><span class="comment">    *   &#125;</span></span><br><span class="line"><span class="comment">    *   return 0;</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <blockquote>
 <p>注：运行dp.exe程序即可开始对拍，这里定义t为100，即比较两文件100次，最终得到结果，两程序运行结果完全一致</p>
 </blockquote>
-<p><img data-src="/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207215.png"></p>
-<p><img data-src="/2020/08/09/%E6%95%B0%E6%8D%AE%E6%B5%8B%E8%AF%95%E4%B9%8B%E5%AF%B9%E6%8B%8D/207216.png"></p>
+<p><img data-src="207215.png" alt="" /></p>
+<p><img data-src="207216.png" alt="" /></p>
 </li>
 </ul>
 </li>
@@ -449,13 +462,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">224k</span>
+    <span title="站点总字数">227k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:24</span>
+    <span title="站点阅读时长">3:27</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
@@ -503,8 +516,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
 
 
 

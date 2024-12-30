@@ -236,7 +236,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-29 17:34:17" itemprop="dateModified" datetime="2024-12-29T17:34:17+08:00">2024-12-29</time>
+      <time title="修改时间：2024-12-30 17:20:45" itemprop="dateModified" datetime="2024-12-30T17:20:45+08:00">2024-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -263,7 +263,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.8k</span>
+      <span>1.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -281,7 +281,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="摘要-相关工作"><a href="#摘要-相关工作" class="headerlink" title="摘要&amp;相关工作"></a>摘要&amp;相关工作</h1><p>多标签分类由于训练数据中标签的不平衡和噪声而面临挑战。我们提出了一种名为 BalanceMix 的统一数据增强方法来应对这些挑战。我们的方法包括两种针对不平衡标签的采样器，生成具有高度多样性的少数类增强实例。它还在标签粒度上细化多标签，将噪声标签分类为干净、重新标记或模糊的标签，以进行鲁棒的优化。在三个基准数据集上的大量实验表明，BalanceMix 优于现有的最先进方法。<br>问题: 多标签分类面临着训练数据中标签不平衡（某些类别标签远多于其他类别）和噪声（标签错误）的挑战。这些问题会影响模型的鲁棒性。现有方法通常分别处理标签不平衡和噪声问题，且假设数据要么干净要么假设平衡。</p>
+          <h1 id="摘要相关工作"><a class="markdownIt-Anchor" href="#摘要相关工作"></a> 摘要&amp;相关工作</h1>
+<p>多标签分类由于训练数据中标签的不平衡和噪声而面临挑战。我们提出了一种名为 BalanceMix 的统一数据增强方法来应对这些挑战。我们的方法包括两种针对不平衡标签的采样器，生成具有高度多样性的少数类增强实例。它还在标签粒度上细化多标签，将噪声标签分类为干净、重新标记或模糊的标签，以进行鲁棒的优化。在三个基准数据集上的大量实验表明，BalanceMix 优于现有的最先进方法。<br />
+问题: 多标签分类面临着训练数据中标签不平衡（某些类别标签远多于其他类别）和噪声（标签错误）的挑战。这些问题会影响模型的鲁棒性。现有方法通常分别处理标签不平衡和噪声问题，且假设数据要么干净要么假设平衡。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2024/12/28/BalanceMix/#more" rel="contents">
@@ -392,9 +394,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="完全背包介绍"><a href="#完全背包介绍" class="headerlink" title="完全背包介绍"></a>完全背包介绍</h2><h3 id="1、问题描述"><a href="#1、问题描述" class="headerlink" title="1、问题描述"></a>1、问题描述</h3><p>有N件物品和一个最多能背重量为W的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。<strong>每件物品都有无限个（也就是可以放入背包多次）</strong>，求解将哪些物品装入背包里物品价值总和最大。</p>
+          <h2 id="完全背包介绍"><a class="markdownIt-Anchor" href="#完全背包介绍"></a> 完全背包介绍</h2>
+<h3 id="1-问题描述"><a class="markdownIt-Anchor" href="#1-问题描述"></a> 1、问题描述</h3>
+<p>有N件物品和一个最多能背重量为W的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。<strong>每件物品都有无限个（也就是可以放入背包多次）</strong>，求解将哪些物品装入背包里物品价值总和最大。</p>
 <p><strong>完全背包和01背包问题唯一不同的地方就是，每种物品有无限件</strong>。</p>
-<h3 id="2、核心代码"><a href="#2、核心代码" class="headerlink" title="2、核心代码"></a>2、核心代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 先遍历物品，再遍历背包</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; weight.size(); i++) &#123; <span class="comment">// 遍历物品</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> weight[i]; j &lt;= bagWeight ; j++) &#123; <span class="comment">// 遍历背包容量</span></span><br><span class="line">        dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-核心代码"><a class="markdownIt-Anchor" href="#2-核心代码"></a> 2、核心代码</h3>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 先遍历物品，再遍历背包</span></span><br><span class="line"><span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; weight.size(); i++) &#123; <span class="comment">// 遍历物品</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> weight[i]; j &lt;= bagWeight ; j++) &#123; <span class="comment">// 遍历背包容量</span></span><br><span class="line">        dp[j] = max(dp[j], dp[j - weight[i]] + value[i]);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/08/16/%E5%AE%8C%E5%85%A8%E8%83%8C%E5%8C%85%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/#more" rel="contents">
@@ -487,7 +492,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>7.8k</span>
+      <span>7.7k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -505,9 +510,11 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="01背包介绍"><a href="#01背包介绍" class="headerlink" title="01背包介绍"></a>01背包介绍</h2><p>有n件物品和一个最多能背重量为w 的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。<strong>每件物品只能用一次</strong>，求解将哪些物品装入背包里物品价值总和最大。</p>
-<p><img data-src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210117175428387.jpg" alt="动态规划-背包问题"></p>
-<h3 id="背包问题整体框图"><a href="#背包问题整体框图" class="headerlink" title="背包问题整体框图"></a>背包问题整体框图</h3><p><img data-src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210117171307407.png" alt="416.分割等和子集1"></p>
+          <h2 id="01背包介绍"><a class="markdownIt-Anchor" href="#01背包介绍"></a> 01背包介绍</h2>
+<p>有n件物品和一个最多能背重量为w 的背包。第i件物品的重量是weight[i]，得到的价值是value[i] 。<strong>每件物品只能用一次</strong>，求解将哪些物品装入背包里物品价值总和最大。</p>
+<p><img data-src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210117175428387.jpg" alt="动态规划-背包问题" /></p>
+<h3 id="背包问题整体框图"><a class="markdownIt-Anchor" href="#背包问题整体框图"></a> 背包问题整体框图</h3>
+<p><img data-src="https://code-thinking-1253855093.file.myqcloud.com/pics/20210117171307407.png" alt="416.分割等和子集1" /></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/07/28/01%E8%83%8C%E5%8C%85%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/#more" rel="contents">
@@ -618,14 +625,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目汇总"><a href="#题目汇总" class="headerlink" title="题目汇总"></a>题目汇总</h2><table>
+          <h2 id="题目汇总"><a class="markdownIt-Anchor" href="#题目汇总"></a> 题目汇总</h2>
+<table>
 <thead>
 <tr>
 <th>题目</th>
 <th>题解</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/fibonacci-number/">509. 斐波那契数</a></td>
 <td></td>
 </tr>
@@ -753,7 +762,8 @@
 <td></td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/07/26/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/#more" rel="contents">
@@ -864,14 +874,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目汇总"><a href="#题目汇总" class="headerlink" title="题目汇总"></a>题目汇总</h2><table>
+          <h2 id="题目汇总"><a class="markdownIt-Anchor" href="#题目汇总"></a> 题目汇总</h2>
+<table>
 <thead>
 <tr>
 <th>题目</th>
 <th>题解</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>组合问题</td>
 <td>收集状态树中所有的叶子节点</td>
 </tr>
@@ -943,7 +955,8 @@
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/sudoku-solver/">37.解数独</a></td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/06/13/%E5%9B%9E%E6%BA%AF%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98/#more" rel="contents">
@@ -1054,8 +1067,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="什么是回溯算法"><a href="#什么是回溯算法" class="headerlink" title="什么是回溯算法"></a>什么是回溯算法</h2><p>回溯算法是一种通过尝试逐步构建解决方案来递归解决问题的算法，一次一个删除那些在任何时间都无法满足问题约束的解决方案，可以看作是一种高级的暴力算法。</p>
-<h2 id="如何理解回溯算法"><a href="#如何理解回溯算法" class="headerlink" title="如何理解回溯算法"></a>如何理解回溯算法</h2><p>回溯算法解决的问题都可以抽象成树形结构，因为回溯算法都是在集合中找子集，集合的大小构成了树的宽度，递归的深度构成了树的深度，递归要终止就要有终止条件，所以必然是一颗高度有限的N叉树。</p>
+          <h2 id="什么是回溯算法"><a class="markdownIt-Anchor" href="#什么是回溯算法"></a> 什么是回溯算法</h2>
+<p>回溯算法是一种通过尝试逐步构建解决方案来递归解决问题的算法，一次一个删除那些在任何时间都无法满足问题约束的解决方案，可以看作是一种高级的暴力算法。</p>
+<h2 id="如何理解回溯算法"><a class="markdownIt-Anchor" href="#如何理解回溯算法"></a> 如何理解回溯算法</h2>
+<p>回溯算法解决的问题都可以抽象成树形结构，因为回溯算法都是在集合中找子集，集合的大小构成了树的宽度，递归的深度构成了树的深度，递归要终止就要有终止条件，所以必然是一颗高度有限的N叉树。</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/06/12/%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/#more" rel="contents">
@@ -1166,14 +1181,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目汇总"><a href="#题目汇总" class="headerlink" title="题目汇总"></a>题目汇总</h2><table>
+          <h2 id="题目汇总"><a class="markdownIt-Anchor" href="#题目汇总"></a> 题目汇总</h2>
+<table>
 <thead>
 <tr>
 <th>题目</th>
 <th>题解</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/">236. 二叉树的最近公共祖先</a></td>
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/solutions/2303133/hou-xu-bian-li-hui-su-shi-jian-fu-za-du-x54ok/">https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/solutions/2303133/hou-xu-bian-li-hui-su-shi-jian-fu-za-du-x54ok/</a></td>
 </tr>
@@ -1181,7 +1198,8 @@
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/">235. 二叉搜索树的最近公共祖先</a></td>
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/solutions/2306710/li-yong-bstde-you-xu-xing-shi-yong-zhong-me9y/">https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/solutions/2306710/li-yong-bstde-you-xu-xing-shi-yong-zhong-me9y/</a></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/06/06/%E4%BA%8C%E5%8F%89%E6%A0%91%E5%85%AC%E5%85%B1%E7%A5%96%E5%85%88%E9%97%AE%E9%A2%98/#more" rel="contents">
@@ -1292,14 +1310,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目汇总"><a href="#题目汇总" class="headerlink" title="题目汇总"></a>题目汇总</h2><table>
+          <h2 id="题目汇总"><a class="markdownIt-Anchor" href="#题目汇总"></a> 题目汇总</h2>
+<table>
 <thead>
 <tr>
 <th>题目</th>
 <th>题解</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/insert-into-a-binary-search-tree/">701.二叉搜索树中的插入操作</a></td>
 <td></td>
 </tr>
@@ -1319,7 +1339,8 @@
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/convert-bst-to-greater-tree/">538.把二叉搜索树转换为累加树</a></td>
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/convert-bst-to-greater-tree/solutions/2300969/you-zhong-zuo-bian-li-lei-zhong-xu-bian-d969n/">https://leetcode.cn/problems/convert-bst-to-greater-tree/solutions/2300969/you-zhong-zuo-bian-li-lei-zhong-xu-bian-d969n/</a></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/06/06/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9A%84%E4%BF%AE%E6%94%B9%E4%B8%8E%E6%94%B9%E9%80%A0/#more" rel="contents">
@@ -1430,14 +1451,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目汇总"><a href="#题目汇总" class="headerlink" title="题目汇总"></a>题目汇总</h2><table>
+          <h2 id="题目汇总"><a class="markdownIt-Anchor" href="#题目汇总"></a> 题目汇总</h2>
+<table>
 <thead>
 <tr>
 <th>题目</th>
 <th>题解</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/search-in-a-binary-search-tree/">700.二叉搜索树中的搜索</a></td>
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/search-in-a-binary-search-tree/solutions/2295076/di-gui-die-dai-cha-zhao-bstde-zhi-shi-ji-mz2m/">https://leetcode.cn/problems/search-in-a-binary-search-tree/solutions/2295076/di-gui-die-dai-cha-zhao-bstde-zhi-shi-ji-mz2m/</a></td>
 </tr>
@@ -1453,7 +1476,8 @@
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-mode-in-binary-search-tree/">501.二叉搜索树中的众数</a></td>
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-mode-in-binary-search-tree/solutions/2298603/li-yong-bstyou-xu-xing-yi-ci-bian-li-cha-o0ox/">https://leetcode.cn/problems/find-mode-in-binary-search-tree/solutions/2298603/li-yong-bstyou-xu-xing-yi-ci-bian-li-cha-o0ox/</a></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/06/01/%E4%BA%8C%E5%8F%89%E6%90%9C%E7%B4%A2%E6%A0%91%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/#more" rel="contents">
@@ -1564,14 +1588,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h2 id="题目汇总"><a href="#题目汇总" class="headerlink" title="题目汇总"></a>题目汇总</h2><table>
+          <h2 id="题目汇总"><a class="markdownIt-Anchor" href="#题目汇总"></a> 题目汇总</h2>
+<table>
 <thead>
 <tr>
 <th>题目</th>
 <th>题解</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/symmetric-tree/">101. 对称二叉树</a></td>
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/symmetric-tree/solutions/2291747/san-chong-fang-fa-jie-jue-shi-jian-fu-za-0xas/">https://leetcode.cn/problems/symmetric-tree/solutions/2291747/san-chong-fang-fa-jie-jue-shi-jian-fu-za-0xas/</a></td>
 </tr>
@@ -1623,7 +1649,8 @@
 <td><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-binary-tree-from-inorder-and-postorder-traversal/">106.从中序与后序遍历序列构造二叉树</a></td>
 <td></td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/05/31/%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E7%9B%B8%E5%85%B3%E9%A2%98%E7%9B%AE/#more" rel="contents">
@@ -1690,13 +1717,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">224k</span>
+    <span title="站点总字数">227k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:24</span>
+    <span title="站点阅读时长">3:27</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
@@ -1744,8 +1771,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
 
 
 

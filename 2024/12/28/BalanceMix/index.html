@@ -20,12 +20,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"zhengzp2019.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="摘要&amp;相关工作多标签分类由于训练数据中标签的不平衡和噪声而面临挑战。我们提出了一种名为 BalanceMix 的统一数据增强方法来应对这些挑战。我们的方法包括两种针对不平衡标签的采样器，生成具有高度多样性的少数类增强实例。它还在标签粒度上细化多标签，将噪声标签分类为干净、重新标记或模糊的标签，以进行鲁棒的优化。在三个基准数据集上的大量实验表明，BalanceMix 优于现有的最先进方法。问">
+    <meta name="description" content="摘要&amp;相关工作 多标签分类由于训练数据中标签的不平衡和噪声而面临挑战。我们提出了一种名为 BalanceMix 的统一数据增强方法来应对这些挑战。我们的方法包括两种针对不平衡标签的采样器，生成具有高度多样性的少数类增强实例。它还在标签粒度上细化多标签，将噪声标签分类为干净、重新标记或模糊的标签，以进行鲁棒的优化。在三个基准数据集上的大量实验表明，BalanceMix 优于现有的最先进方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="BalanceMix">
 <meta property="og:url" content="http://zhengzp2019.github.io/2024/12/28/BalanceMix/index.html">
 <meta property="og:site_name" content="dpBirder&#39;s Blog">
-<meta property="og:description" content="摘要&amp;相关工作多标签分类由于训练数据中标签的不平衡和噪声而面临挑战。我们提出了一种名为 BalanceMix 的统一数据增强方法来应对这些挑战。我们的方法包括两种针对不平衡标签的采样器，生成具有高度多样性的少数类增强实例。它还在标签粒度上细化多标签，将噪声标签分类为干净、重新标记或模糊的标签，以进行鲁棒的优化。在三个基准数据集上的大量实验表明，BalanceMix 优于现有的最先进方法。问">
+<meta property="og:description" content="摘要&amp;相关工作 多标签分类由于训练数据中标签的不平衡和噪声而面临挑战。我们提出了一种名为 BalanceMix 的统一数据增强方法来应对这些挑战。我们的方法包括两种针对不平衡标签的采样器，生成具有高度多样性的少数类增强实例。它还在标签粒度上细化多标签，将噪声标签分类为干净、重新标记或模糊的标签，以进行鲁棒的优化。在三个基准数据集上的大量实验表明，BalanceMix 优于现有的最先进方法">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://zhengzp2019.github.io/2024/12/28/BalanceMix/image1.png">
 <meta property="og:image" content="http://zhengzp2019.github.io/2024/12/28/BalanceMix/image2.png">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="http://zhengzp2019.github.io/2024/12/28/BalanceMix/image9.png">
 <meta property="og:image" content="http://zhengzp2019.github.io/2024/12/28/BalanceMix/image10.png">
 <meta property="article:published_time" content="2024-12-28T15:12:39.000Z">
-<meta property="article:modified_time" content="2024-12-29T09:34:17.476Z">
+<meta property="article:modified_time" content="2024-12-30T09:20:45.416Z">
 <meta property="article:author" content="dpbirder">
 <meta property="article:tag" content="多标签">
 <meta property="article:tag" content="数据增强">
@@ -153,7 +153,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81-%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">摘要&amp;相关工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">具体方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Minority-augmented-Mixing%EF%BC%88%E5%B0%91%E6%95%B0%E7%B1%BB%E5%A2%9E%E5%BC%BA%E6%B7%B7%E5%90%88%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">Minority-augmented Mixing（少数类增强混合）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Confidence-based-Minority-Sampling%EF%BC%88%E5%9F%BA%E4%BA%8E%E7%BD%AE%E4%BF%A1%E5%BA%A6%E7%9A%84%E5%B0%91%E9%87%8F%E9%87%87%E6%A0%B7%EF%BC%89"><span class="nav-number">2.1.1.</span> <span class="nav-text">Confidence-based Minority Sampling（基于置信度的少量采样）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mixing-Augmentation%EF%BC%88%E6%B7%B7%E5%90%88%E5%A2%9E%E5%BC%BA%EF%BC%89"><span class="nav-number">2.1.2.</span> <span class="nav-text">Mixing Augmentation（混合增强）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fine-grained-Label-wise-Management-%EF%BC%88%E7%BB%86%E7%B2%92%E5%BA%A6%E7%9A%84%E6%A0%87%E7%AD%BE%E7%AE%A1%E7%90%86%EF%BC%89"><span class="nav-number">2.2.</span> <span class="nav-text">Fine-grained Label-wise Management （细粒度的标签管理）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Clean-Labels%EF%BC%88%E5%B9%B2%E5%87%80%E6%A0%87%E7%AD%BE%EF%BC%89"><span class="nav-number">2.2.1.</span> <span class="nav-text">Clean Labels（干净标签）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Re-labeled-Labels-%EF%BC%88%E9%87%8D%E6%A0%87%E8%AE%B0%E6%A0%87%E7%AD%BE%EF%BC%89"><span class="nav-number">2.2.2.</span> <span class="nav-text">Re-labeled Labels （重标记标签）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ambiguous-Labels-%EF%BC%88%E6%A8%A1%E7%B3%8A%E6%A0%87%E7%AD%BE%EF%BC%89"><span class="nav-number">2.2.3.</span> <span class="nav-text">Ambiguous Labels （模糊标签）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optimization-with-BalanceMix%EF%BC%88%E4%BC%98%E5%8C%96%E8%BF%87%E7%A8%8B%EF%BC%89"><span class="nav-number">2.3.</span> <span class="nav-text">Optimization with BalanceMix（优化过程）</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%91%98%E8%A6%81%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text"> 摘要&amp;相关工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text"> 具体方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#minority-augmented-mixing%E5%B0%91%E6%95%B0%E7%B1%BB%E5%A2%9E%E5%BC%BA%E6%B7%B7%E5%90%88"><span class="nav-number">2.1.</span> <span class="nav-text"> Minority-augmented Mixing（少数类增强混合）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#confidence-based-minority-sampling%E5%9F%BA%E4%BA%8E%E7%BD%AE%E4%BF%A1%E5%BA%A6%E7%9A%84%E5%B0%91%E9%87%8F%E9%87%87%E6%A0%B7"><span class="nav-number">2.1.1.</span> <span class="nav-text"> Confidence-based Minority Sampling（基于置信度的少量采样）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mixing-augmentation%E6%B7%B7%E5%90%88%E5%A2%9E%E5%BC%BA"><span class="nav-number">2.1.2.</span> <span class="nav-text"> Mixing Augmentation（混合增强）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#fine-grained-label-wise-management-%E7%BB%86%E7%B2%92%E5%BA%A6%E7%9A%84%E6%A0%87%E7%AD%BE%E7%AE%A1%E7%90%86"><span class="nav-number">2.2.</span> <span class="nav-text"> Fine-grained Label-wise Management （细粒度的标签管理）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#clean-labels%E5%B9%B2%E5%87%80%E6%A0%87%E7%AD%BE"><span class="nav-number">2.2.1.</span> <span class="nav-text"> Clean Labels（干净标签）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#re-labeled-labels-%E9%87%8D%E6%A0%87%E8%AE%B0%E6%A0%87%E7%AD%BE"><span class="nav-number">2.2.2.</span> <span class="nav-text"> Re-labeled Labels （重标记标签）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ambiguous-labels-%E6%A8%A1%E7%B3%8A%E6%A0%87%E7%AD%BE"><span class="nav-number">2.2.3.</span> <span class="nav-text"> Ambiguous Labels （模糊标签）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#optimization-with-balancemix%E4%BC%98%E5%8C%96%E8%BF%87%E7%A8%8B"><span class="nav-number">2.3.</span> <span class="nav-text"> Optimization with BalanceMix（优化过程）</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -254,7 +254,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2024-12-29 17:34:17" itemprop="dateModified" datetime="2024-12-29T17:34:17+08:00">2024-12-29</time>
+      <time title="修改时间：2024-12-30 17:20:45" itemprop="dateModified" datetime="2024-12-30T17:20:45+08:00">2024-12-30</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -281,7 +281,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.8k</span>
+      <span>1.9k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -298,28 +298,48 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="摘要-相关工作"><a href="#摘要-相关工作" class="headerlink" title="摘要&amp;相关工作"></a>摘要&amp;相关工作</h1><p>多标签分类由于训练数据中标签的不平衡和噪声而面临挑战。我们提出了一种名为 BalanceMix 的统一数据增强方法来应对这些挑战。我们的方法包括两种针对不平衡标签的采样器，生成具有高度多样性的少数类增强实例。它还在标签粒度上细化多标签，将噪声标签分类为干净、重新标记或模糊的标签，以进行鲁棒的优化。在三个基准数据集上的大量实验表明，BalanceMix 优于现有的最先进方法。<br>问题: 多标签分类面临着训练数据中标签不平衡（某些类别标签远多于其他类别）和噪声（标签错误）的挑战。这些问题会影响模型的鲁棒性。现有方法通常分别处理标签不平衡和噪声问题，且假设数据要么干净要么假设平衡。</p>
+    <div class="post-body" itemprop="articleBody"><h1 id="摘要相关工作"><a class="markdownIt-Anchor" href="#摘要相关工作"></a> 摘要&amp;相关工作</h1>
+<p>多标签分类由于训练数据中标签的不平衡和噪声而面临挑战。我们提出了一种名为 BalanceMix 的统一数据增强方法来应对这些挑战。我们的方法包括两种针对不平衡标签的采样器，生成具有高度多样性的少数类增强实例。它还在标签粒度上细化多标签，将噪声标签分类为干净、重新标记或模糊的标签，以进行鲁棒的优化。在三个基准数据集上的大量实验表明，BalanceMix 优于现有的最先进方法。<br />
+问题: 多标签分类面临着训练数据中标签不平衡（某些类别标签远多于其他类别）和噪声（标签错误）的挑战。这些问题会影响模型的鲁棒性。现有方法通常分别处理标签不平衡和噪声问题，且假设数据要么干净要么假设平衡。</p>
 <span id="more"></span>
 <p>BalanceMix 方法: BalanceMix 通过以下两个主要组件来解决这些问题：</p>
 <ol>
 <li>少数类增强混合 (Minority-augmented Mixing): 为了解决类别不平衡问题，BalanceMix 使用两个采样器：一个少数类采样器，以高概率采样包含少数类标签的实例；一个随机采样器。然后，使用 Mixup 方法将少数类采样器采样的实例与随机采样器采样的实例进行插值混合，从而增加少数类实例的多样性，避免过度拟合。</li>
 <li>细粒度标签管理 (Fine-grained Label-wise Management): 为了处理噪声标签，BalanceMix 对每个标签进行细粒度分析，将其分为三类：干净标签（置信度高）、重新标记标签（模型预测置信度高，可以纠正错误标签）、模糊标签（置信度低）。 该方法利用高斯混合模型(GMM)估计每个标签的清洁概率，并根据此概率对损失函数进行加权。</li>
 </ol>
-<h1 id="具体方法"><a href="#具体方法" class="headerlink" title="具体方法"></a>具体方法</h1><p><img data-src="/2024/12/28/BalanceMix/image1.png"></p>
-<h2 id="Minority-augmented-Mixing（少数类增强混合）"><a href="#Minority-augmented-Mixing（少数类增强混合）" class="headerlink" title="Minority-augmented Mixing（少数类增强混合）"></a>Minority-augmented Mixing（少数类增强混合）</h2><h3 id="Confidence-based-Minority-Sampling（基于置信度的少量采样）"><a href="#Confidence-based-Minority-Sampling（基于置信度的少量采样）" class="headerlink" title="Confidence-based Minority Sampling（基于置信度的少量采样）"></a>Confidence-based Minority Sampling（基于置信度的少量采样）</h3><p><img data-src="/2024/12/28/BalanceMix/image2.png"></p>
-<p>传统的过采样方法都是基于正标签的频率解决样本不平衡问题的。但是由于多标签问题的复杂性，具有少量正标签的类别组并不一定总是具有较低的分类中准确性，本文基于实例的预测置信度解决样本不平衡问题。<br>首先计算样本的预测置信度f与mAP关联性，抽取出预测置信度低的实例，这一类实例可以认为对mAP影响较大的实例。本文作者对特定的标签k定义了两种置信度分数。<br><img data-src="/2024/12/28/BalanceMix/image3.png" alt="alt text"></p>
-<p>其中P为存在标签k的实例的置信度，A为缺失标签k的实例的置信度。则对于每个实例的置信度分数可以表示如下：<br><img data-src="/2024/12/28/BalanceMix/image4.png" alt="alt text"></p>
-<p>则实例的采样率可表示为实例置信度分数的倒数：<br><img data-src="/2024/12/28/BalanceMix/image5.png" alt="alt text"></p>
+<h1 id="具体方法"><a class="markdownIt-Anchor" href="#具体方法"></a> 具体方法</h1>
+<p><img data-src="/2024/12/28/BalanceMix/image1.png" alt="" /></p>
+<h2 id="minority-augmented-mixing少数类增强混合"><a class="markdownIt-Anchor" href="#minority-augmented-mixing少数类增强混合"></a> Minority-augmented Mixing（少数类增强混合）</h2>
+<h3 id="confidence-based-minority-sampling基于置信度的少量采样"><a class="markdownIt-Anchor" href="#confidence-based-minority-sampling基于置信度的少量采样"></a> Confidence-based Minority Sampling（基于置信度的少量采样）</h3>
+<p><img data-src="/2024/12/28/BalanceMix/image2.png" alt="" /></p>
+<p>传统的过采样方法都是基于正标签的频率解决样本不平衡问题的。但是由于多标签问题的复杂性，具有少量正标签的类别组并不一定总是具有较低的分类中准确性，本文基于实例的预测置信度解决样本不平衡问题。<br />
+首先计算样本的预测置信度f与mAP关联性，抽取出预测置信度低的实例，这一类实例可以认为对mAP影响较大的实例。本文作者对特定的标签k定义了两种置信度分数。<br />
+<img data-src="/2024/12/28/BalanceMix/image3.png" alt="alt text" /></p>
+<p>其中P为存在标签k的实例的置信度，A为缺失标签k的实例的置信度。则对于每个实例的置信度分数可以表示如下：<br />
+<img data-src="/2024/12/28/BalanceMix/image4.png" alt="alt text" /></p>
+<p>则实例的采样率可表示为实例置信度分数的倒数：<br />
+<img data-src="/2024/12/28/BalanceMix/image5.png" alt="alt text" /></p>
 <p>在训练开始阶段，少数实例被较高概率过采样，但是随着不平衡问题被缓解这类实例被过采样的程度应该降低。</p>
-<h3 id="Mixing-Augmentation（混合增强）"><a href="#Mixing-Augmentation（混合增强）" class="headerlink" title="Mixing Augmentation（混合增强）"></a>Mixing Augmentation（混合增强）</h3><p>对于实例$(x_r,y_r)$和$(x_m,y_m)$混合后的结果如下：<br><img data-src="/2024/12/28/BalanceMix/image6.png" alt="alt text"></p>
-<p>通过随机采样保证样本的多样性，但是可能会产生样本不平衡问题，通过少量过采样缓解样本不平衡问题，但是由于缺少样本的多样性可能产生过拟合问题。为了在平衡场景下维持样本的多样性，$\lambda$需要大于等于0.5。</p>
-<h2 id="Fine-grained-Label-wise-Management-（细粒度的标签管理）"><a href="#Fine-grained-Label-wise-Management-（细粒度的标签管理）" class="headerlink" title="Fine-grained Label-wise Management （细粒度的标签管理）"></a>Fine-grained Label-wise Management （细粒度的标签管理）</h2><h3 id="Clean-Labels（干净标签）"><a href="#Clean-Labels（干净标签）" class="headerlink" title="Clean Labels（干净标签）"></a>Clean Labels（干净标签）</h3><p>本文对每一个类别的BCE使用双峰单变量高斯混合模型（bi-model univariate Gaussian mixture model, GMM），使用期望最大化算法，返回2xK个GMM模型，如下式所示：<br><img data-src="/2024/12/28/BalanceMix/image7.png" alt="alt text"></p>
-<p>给定实例x标签k的BCE损失，干净标签概率可以通过相应的GMM模型后验概率得到：<br><img data-src="/2024/12/28/BalanceMix/image8.png" alt="alt text"></p>
-<p>其中g表示干净标签的模态。$p_G\gt0.5$的标记为干净标签。</p>
-<h3 id="Re-labeled-Labels-（重标记标签）"><a href="#Re-labeled-Labels-（重标记标签）" class="headerlink" title="Re-labeled Labels （重标记标签）"></a>Re-labeled Labels （重标记标签）</h3><p>在对噪声标签过拟合之前，如果给定标签没有被选为干净标签，但是模型在预测中标签出较高的置信度，则修改该标签。文中对基于原始实例x增强后的两个实例进行集成，则第k类可以按照如下方式进行重标记：<br><img data-src="/2024/12/28/BalanceMix/image9.png" alt="alt text"></p>
-<p>其中$\epsilon$为用于重标记的置信度阈值。</p>
-<h3 id="Ambiguous-Labels-（模糊标签）"><a href="#Ambiguous-Labels-（模糊标签）" class="headerlink" title="Ambiguous Labels （模糊标签）"></a>Ambiguous Labels （模糊标签）</h3><p>对于非干净标签和非重标记标签，视为模糊标签。这一类标签可能是不正确的，为了利用这类标签的信息，同时减少潜在的风险，文中基于干净标签概率估计的损失重要性进行加权。</p>
-<h2 id="Optimization-with-BalanceMix（优化过程）"><a href="#Optimization-with-BalanceMix（优化过程）" class="headerlink" title="Optimization with BalanceMix（优化过程）"></a>Optimization with BalanceMix（优化过程）</h2><p>从随机采样器和少数类采样器中获取两个实例，首先对他们进行细粒度标签管理，将干净标签、重标记标签和模糊标签分别存储在C、R和U集合中。然后通过带有混合多标签的MixUp方法生成少数类增强的实例。BalanceMix损失函数定义如下：<br><img data-src="/2024/12/28/BalanceMix/image10.png" alt="alt text"></p>
+<h3 id="mixing-augmentation混合增强"><a class="markdownIt-Anchor" href="#mixing-augmentation混合增强"></a> Mixing Augmentation（混合增强）</h3>
+<p>对于实例<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>r</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>r</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(x_r,y_r)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>和<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>m</mi></msub><mo separator="true">,</mo><msub><mi>y</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">(x_m,y_m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">y</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.03588em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">m</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>混合后的结果如下：<br />
+<img data-src="/2024/12/28/BalanceMix/image6.png" alt="alt text" /></p>
+<p>通过随机采样保证样本的多样性，但是可能会产生样本不平衡问题，通过少量过采样缓解样本不平衡问题，但是由于缺少样本的多样性可能产生过拟合问题。为了在平衡场景下维持样本的多样性，<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>λ</mi></mrow><annotation encoding="application/x-tex">\lambda</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">λ</span></span></span></span>需要大于等于0.5。</p>
+<h2 id="fine-grained-label-wise-management-细粒度的标签管理"><a class="markdownIt-Anchor" href="#fine-grained-label-wise-management-细粒度的标签管理"></a> Fine-grained Label-wise Management （细粒度的标签管理）</h2>
+<h3 id="clean-labels干净标签"><a class="markdownIt-Anchor" href="#clean-labels干净标签"></a> Clean Labels（干净标签）</h3>
+<p>本文对每一个类别的BCE使用双峰单变量高斯混合模型（bi-model univariate Gaussian mixture model, GMM），使用期望最大化算法，返回2xK个GMM模型，如下式所示：<br />
+<img data-src="/2024/12/28/BalanceMix/image7.png" alt="alt text" /></p>
+<p>给定实例x标签k的BCE损失，干净标签概率可以通过相应的GMM模型后验概率得到：<br />
+<img data-src="/2024/12/28/BalanceMix/image8.png" alt="alt text" /></p>
+<p>其中g表示干净标签的模态。<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>G</mi></msub><mo>&gt;</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">p_G\gt0.5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.7335400000000001em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">G</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&gt;</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">5</span></span></span></span>的标记为干净标签。</p>
+<h3 id="re-labeled-labels-重标记标签"><a class="markdownIt-Anchor" href="#re-labeled-labels-重标记标签"></a> Re-labeled Labels （重标记标签）</h3>
+<p>在对噪声标签过拟合之前，如果给定标签没有被选为干净标签，但是模型在预测中标签出较高的置信度，则修改该标签。文中对基于原始实例x增强后的两个实例进行集成，则第k类可以按照如下方式进行重标记：<br />
+<img data-src="/2024/12/28/BalanceMix/image9.png" alt="alt text" /></p>
+<p>其中<span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>ϵ</mi></mrow><annotation encoding="application/x-tex">\epsilon</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">ϵ</span></span></span></span>为用于重标记的置信度阈值。</p>
+<h3 id="ambiguous-labels-模糊标签"><a class="markdownIt-Anchor" href="#ambiguous-labels-模糊标签"></a> Ambiguous Labels （模糊标签）</h3>
+<p>对于非干净标签和非重标记标签，视为模糊标签。这一类标签可能是不正确的，为了利用这类标签的信息，同时减少潜在的风险，文中基于干净标签概率估计的损失重要性进行加权。</p>
+<h2 id="optimization-with-balancemix优化过程"><a class="markdownIt-Anchor" href="#optimization-with-balancemix优化过程"></a> Optimization with BalanceMix（优化过程）</h2>
+<p>从随机采样器和少数类采样器中获取两个实例，首先对他们进行细粒度标签管理，将干净标签、重标记标签和模糊标签分别存储在C、R和U集合中。然后通过带有混合多标签的MixUp方法生成少数类增强的实例。BalanceMix损失函数定义如下：<br />
+<img data-src="/2024/12/28/BalanceMix/image10.png" alt="alt text" /></p>
 <p><a href="/2024/12/28/BalanceMix/original.pdf">原文</a></p>
 
     </div>
@@ -393,13 +413,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">224k</span>
+    <span title="站点总字数">227k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:24</span>
+    <span title="站点阅读时长">3:27</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
@@ -447,8 +467,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
 
 
 

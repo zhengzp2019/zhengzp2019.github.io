@@ -20,12 +20,12 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"zhengzp2019.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.21.1","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="vecotr(变长数组，倍增思想) size()  返回元素个数empty()  返回是否为空clear()  清空front()&#x2F;back()push_back()&#x2F;pop_back()begin()&#x2F;end()[]支持比较运算，按字典序">
+    <meta name="description" content="vecotr(变长数组，倍增思想)  size()  返回元素个数 empty()  返回是否为空 clear()  清空 front()&#x2F;back() push_back()&#x2F;pop_back() begin()&#x2F;end() [] 支持比较运算，按字典序">
 <meta property="og:type" content="article">
 <meta property="og:title" content="STL">
 <meta property="og:url" content="http://zhengzp2019.github.io/2021/04/21/STL/index.html">
 <meta property="og:site_name" content="dpBirder&#39;s Blog">
-<meta property="og:description" content="vecotr(变长数组，倍增思想) size()  返回元素个数empty()  返回是否为空clear()  清空front()&#x2F;back()push_back()&#x2F;pop_back()begin()&#x2F;end()[]支持比较运算，按字典序">
+<meta property="og:description" content="vecotr(变长数组，倍增思想)  size()  返回元素个数 empty()  返回是否为空 clear()  清空 front()&#x2F;back() push_back()&#x2F;pop_back() begin()&#x2F;end() [] 支持比较运算，按字典序">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2021-04-21T05:46:54.000Z">
 <meta property="article:modified_time" content="2022-11-19T03:47:53.745Z">
@@ -139,7 +139,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vecotr-%E5%8F%98%E9%95%BF%E6%95%B0%E7%BB%84%EF%BC%8C%E5%80%8D%E5%A2%9E%E6%80%9D%E6%83%B3"><span class="nav-number">1.</span> <span class="nav-text">vecotr(变长数组，倍增思想)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pair"><span class="nav-number">2.</span> <span class="nav-text">pair&lt;int,int&gt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string-%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">3.</span> <span class="nav-text">string(字符串)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stack-%E6%A0%88"><span class="nav-number">4.</span> <span class="nav-text">stack(栈)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#queue-%E9%98%9F%E5%88%97"><span class="nav-number">5.</span> <span class="nav-text">queue(队列)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#priority-queue-%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97-%E9%BB%98%E8%AE%A4%E6%97%B6%E5%A4%A7%E6%A0%B9%E5%A0%86"><span class="nav-number">6.</span> <span class="nav-text">priority_queue(优先队列,默认时大根堆)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deque-%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97"><span class="nav-number">7.</span> <span class="nav-text">deque(双端队列)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-map-multiset-multimap-%E5%9F%BA%E4%BA%8E%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%EF%BC%88%E7%BA%A2%E9%BB%91%E6%A0%91%EF%BC%89%EF%BC%8C%E5%8A%A8%E6%80%81%E7%BB%B4%E6%8A%A4%E6%9C%89%E5%BA%8F%E5%BA%8F%E5%88%97"><span class="nav-number">8.</span> <span class="nav-text">set, map, multiset, multimap, 基于平衡二叉树（红黑树），动态维护有序序列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#set-multiset"><span class="nav-number">8.1.</span> <span class="nav-text">set&#x2F;multiset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map-multimap"><span class="nav-number">8.2.</span> <span class="nav-text">map&#x2F;multimap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unordered-multiset-unordered-multimap-unordered-set-unordered-map-%E5%9F%BA%E4%BA%8E%E5%93%88%E5%B8%8C%E8%A1%A8-%E5%8A%A8%E6%80%81%E7%BB%B4%E6%8A%A4%E6%97%A0%E5%BA%8F%E5%BA%8F%E5%88%97"><span class="nav-number">9.</span> <span class="nav-text">unordered_multiset,unordered_multimap,unordered_set,unordered_map,基于哈希表,动态维护无序序列</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#vecotr%E5%8F%98%E9%95%BF%E6%95%B0%E7%BB%84%E5%80%8D%E5%A2%9E%E6%80%9D%E6%83%B3"><span class="nav-number">1.</span> <span class="nav-text"> vecotr(变长数组，倍增思想)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pairintint"><span class="nav-number">2.</span> <span class="nav-text"> pair&lt;int,int&gt;</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#string%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">3.</span> <span class="nav-text"> string(字符串)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stack%E6%A0%88"><span class="nav-number">4.</span> <span class="nav-text"> stack(栈)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#queue%E9%98%9F%E5%88%97"><span class="nav-number">5.</span> <span class="nav-text"> queue(队列)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#priority_queue%E4%BC%98%E5%85%88%E9%98%9F%E5%88%97%E9%BB%98%E8%AE%A4%E6%97%B6%E5%A4%A7%E6%A0%B9%E5%A0%86"><span class="nav-number">6.</span> <span class="nav-text"> priority_queue(优先队列,默认时大根堆)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#deque%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97"><span class="nav-number">7.</span> <span class="nav-text"> deque(双端队列)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set-map-multiset-multimap-%E5%9F%BA%E4%BA%8E%E5%B9%B3%E8%A1%A1%E4%BA%8C%E5%8F%89%E6%A0%91%E7%BA%A2%E9%BB%91%E6%A0%91%E5%8A%A8%E6%80%81%E7%BB%B4%E6%8A%A4%E6%9C%89%E5%BA%8F%E5%BA%8F%E5%88%97"><span class="nav-number">8.</span> <span class="nav-text"> set, map, multiset, multimap, 基于平衡二叉树（红黑树），动态维护有序序列</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#setmultiset"><span class="nav-number">8.1.</span> <span class="nav-text"> set&#x2F;multiset</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mapmultimap"><span class="nav-number">8.2.</span> <span class="nav-text"> map&#x2F;multimap</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#unordered_multisetunordered_multimapunordered_setunordered_map%E5%9F%BA%E4%BA%8E%E5%93%88%E5%B8%8C%E8%A1%A8%E5%8A%A8%E6%80%81%E7%BB%B4%E6%8A%A4%E6%97%A0%E5%BA%8F%E5%BA%8F%E5%88%97"><span class="nav-number">9.</span> <span class="nav-text"> unordered_multiset,unordered_multimap,unordered_set,unordered_map,基于哈希表,动态维护无序序列</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -276,39 +276,99 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h2 id="vecotr-变长数组，倍增思想"><a href="#vecotr-变长数组，倍增思想" class="headerlink" title="vecotr(变长数组，倍增思想)"></a>vecotr(变长数组，倍增思想)</h2><blockquote>
-<p>size()  返回元素个数<br>empty()  返回是否为空<br>clear()  清空<br>front()&#x2F;back()<br>push_back()&#x2F;pop_back()<br>begin()&#x2F;end()<br>[]<br>支持比较运算，按字典序</p>
+    <div class="post-body" itemprop="articleBody"><h2 id="vecotr变长数组倍增思想"><a class="markdownIt-Anchor" href="#vecotr变长数组倍增思想"></a> vecotr(变长数组，倍增思想)</h2>
+<blockquote>
+<p>size()  返回元素个数<br />
+empty()  返回是否为空<br />
+clear()  清空<br />
+front()/back()<br />
+push_back()/pop_back()<br />
+begin()/end()<br />
+[]<br />
+支持比较运算，按字典序</p>
 </blockquote>
 <span id="more"></span>
-<h2 id="pair"><a href="#pair" class="headerlink" title="pair&lt;int,int&gt;"></a>pair&lt;int,int&gt;</h2><blockquote>
-<p>first<br>second<br>支持比较运算，以first为第一个关键字，以second为第二个关键字（字典序）</p>
+<h2 id="pairintint"><a class="markdownIt-Anchor" href="#pairintint"></a> pair&lt;int,int&gt;</h2>
+<blockquote>
+<p>first<br />
+second<br />
+支持比较运算，以first为第一个关键字，以second为第二个关键字（字典序）</p>
 </blockquote>
-<h2 id="string-字符串"><a href="#string-字符串" class="headerlink" title="string(字符串)"></a>string(字符串)</h2><blockquote>
-<p>size()&#x2F;length()  返回字符串长度<br>empty()<br>clear()<br>substr(起始下标，(子串长度))  返回子串<br>c_str()  返回字符串所在字符数组的起始地址</p>
+<h2 id="string字符串"><a class="markdownIt-Anchor" href="#string字符串"></a> string(字符串)</h2>
+<blockquote>
+<p>size()/length()  返回字符串长度<br />
+empty()<br />
+clear()<br />
+substr(起始下标，(子串长度))  返回子串<br />
+c_str()  返回字符串所在字符数组的起始地址</p>
 </blockquote>
-<h2 id="stack-栈"><a href="#stack-栈" class="headerlink" title="stack(栈)"></a>stack(栈)</h2><blockquote>
-<p>size()<br>empty()<br>push()  向栈顶插入一个元素<br>top()  返回栈顶元素<br>pop()  弹出栈顶元素</p>
+<h2 id="stack栈"><a class="markdownIt-Anchor" href="#stack栈"></a> stack(栈)</h2>
+<blockquote>
+<p>size()<br />
+empty()<br />
+push()  向栈顶插入一个元素<br />
+top()  返回栈顶元素<br />
+pop()  弹出栈顶元素</p>
 </blockquote>
-<h2 id="queue-队列"><a href="#queue-队列" class="headerlink" title="queue(队列)"></a>queue(队列)</h2><blockquote>
-<p>size()<br>empty()<br>push()  向队尾插入一个元素<br>front()  返回队头元素<br>back()  返回队尾元素<br>pop()  弹出队头元素</p>
+<h2 id="queue队列"><a class="markdownIt-Anchor" href="#queue队列"></a> queue(队列)</h2>
+<blockquote>
+<p>size()<br />
+empty()<br />
+push()  向队尾插入一个元素<br />
+front()  返回队头元素<br />
+back()  返回队尾元素<br />
+pop()  弹出队头元素</p>
 </blockquote>
-<h2 id="priority-queue-优先队列-默认时大根堆"><a href="#priority-queue-优先队列-默认时大根堆" class="headerlink" title="priority_queue(优先队列,默认时大根堆)"></a>priority_queue(优先队列,默认时大根堆)</h2><blockquote>
-<p>push()  插入一个元素<br>top()  返回堆顶元素<br>pop()  弹出堆顶元素<br>定义成小根堆的方式：priority_queue&lt;int, vector<int>, greater<int>&gt; q;</p>
+<h2 id="priority_queue优先队列默认时大根堆"><a class="markdownIt-Anchor" href="#priority_queue优先队列默认时大根堆"></a> priority_queue(优先队列,默认时大根堆)</h2>
+<blockquote>
+<p>push()  插入一个元素<br />
+top()  返回堆顶元素<br />
+pop()  弹出堆顶元素<br />
+定义成小根堆的方式：priority_queue&lt;int, vector<int>, greater<int>&gt; q;</p>
 </blockquote>
-<h2 id="deque-双端队列"><a href="#deque-双端队列" class="headerlink" title="deque(双端队列)"></a>deque(双端队列)</h2><blockquote>
-<p>size()<br>empty()<br>clear()<br>front()&#x2F;back()<br>push_back()&#x2F;pop_back()<br>push_front()&#x2F;pop_front()<br>begin()&#x2F;end()<br>[]</p>
+<h2 id="deque双端队列"><a class="markdownIt-Anchor" href="#deque双端队列"></a> deque(双端队列)</h2>
+<blockquote>
+<p>size()<br />
+empty()<br />
+clear()<br />
+front()/back()<br />
+push_back()/pop_back()<br />
+push_front()/pop_front()<br />
+begin()/end()<br />
+[]</p>
 </blockquote>
-<h2 id="set-map-multiset-multimap-基于平衡二叉树（红黑树），动态维护有序序列"><a href="#set-map-multiset-multimap-基于平衡二叉树（红黑树），动态维护有序序列" class="headerlink" title="set, map, multiset, multimap, 基于平衡二叉树（红黑树），动态维护有序序列"></a>set, map, multiset, multimap, 基于平衡二叉树（红黑树），动态维护有序序列</h2><blockquote>
-<p>size()<br>empty()<br>clear()<br>begin()&#x2F;end()<br>++, – 返回前驱和后继，时间复杂度 O(logn)</p>
+<h2 id="set-map-multiset-multimap-基于平衡二叉树红黑树动态维护有序序列"><a class="markdownIt-Anchor" href="#set-map-multiset-multimap-基于平衡二叉树红黑树动态维护有序序列"></a> set, map, multiset, multimap, 基于平衡二叉树（红黑树），动态维护有序序列</h2>
+<blockquote>
+<p>size()<br />
+empty()<br />
+clear()<br />
+begin()/end()<br />
+++, – 返回前驱和后继，时间复杂度 O(logn)</p>
 </blockquote>
-<h3 id="set-multiset"><a href="#set-multiset" class="headerlink" title="set&#x2F;multiset"></a>set&#x2F;multiset</h3><blockquote>
-<p>insert()  插入一个数<br>find()  查找一个数<br>count()  返回某一个数的个数<br>erase()<br>    (1) 输入是一个数x，删除所有x   O(k + logn)<br>    (2) 输入一个迭代器，删除这个迭代器<br>lower_bound()&#x2F;upper_bound()<br>    lower_bound(x)  返回大于等于x的最小的数的迭代器<br>    upper_bound(x)  返回大于x的最小的数的迭代器</p>
+<h3 id="setmultiset"><a class="markdownIt-Anchor" href="#setmultiset"></a> set/multiset</h3>
+<blockquote>
+<p>insert()  插入一个数<br />
+find()  查找一个数<br />
+count()  返回某一个数的个数<br />
+erase()<br />
+(1) 输入是一个数x，删除所有x   O(k + logn)<br />
+(2) 输入一个迭代器，删除这个迭代器<br />
+lower_bound()/upper_bound()<br />
+lower_bound(x)  返回大于等于x的最小的数的迭代器<br />
+upper_bound(x)  返回大于x的最小的数的迭代器</p>
 </blockquote>
-<h3 id="map-multimap"><a href="#map-multimap" class="headerlink" title="map&#x2F;multimap"></a>map&#x2F;multimap</h3><blockquote>
-<p>insert()  插入的数是一个pair<br>erase()  输入的参数是pair或者迭代器<br>find()<br>[]   时间复杂度是 O(logn)<br>lower_bound()&#x2F;upper_bound()</p>
+<h3 id="mapmultimap"><a class="markdownIt-Anchor" href="#mapmultimap"></a> map/multimap</h3>
+<blockquote>
+<p>insert()  插入的数是一个pair<br />
+erase()  输入的参数是pair或者迭代器<br />
+find()<br />
+[]   时间复杂度是 O(logn)<br />
+lower_bound()/upper_bound()</p>
 </blockquote>
-<h2 id="unordered-multiset-unordered-multimap-unordered-set-unordered-map-基于哈希表-动态维护无序序列"><a href="#unordered-multiset-unordered-multimap-unordered-set-unordered-map-基于哈希表-动态维护无序序列" class="headerlink" title="unordered_multiset,unordered_multimap,unordered_set,unordered_map,基于哈希表,动态维护无序序列"></a>unordered_multiset,unordered_multimap,unordered_set,unordered_map,基于哈希表,动态维护无序序列</h2><blockquote>
-<p>和上面类似，增删改查的时间复杂度是 O(1)<br>不支持 lower_bound()&#x2F;upper_bound()， 迭代器的++，- -</p>
+<h2 id="unordered_multisetunordered_multimapunordered_setunordered_map基于哈希表动态维护无序序列"><a class="markdownIt-Anchor" href="#unordered_multisetunordered_multimapunordered_setunordered_map基于哈希表动态维护无序序列"></a> unordered_multiset,unordered_multimap,unordered_set,unordered_map,基于哈希表,动态维护无序序列</h2>
+<blockquote>
+<p>和上面类似，增删改查的时间复杂度是 O(1)<br />
+不支持 lower_bound()/upper_bound()， 迭代器的++，- -</p>
 </blockquote>
 
     </div>
@@ -382,13 +442,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">224k</span>
+    <span title="站点总字数">227k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:24</span>
+    <span title="站点阅读时长">3:27</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
@@ -436,8 +496,7 @@
 
   
 
-  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
-<script src="/js/third-party/math/mathjax.js"></script>
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css" integrity="sha256-UF1fgpAiu3tPJN/uCqEUHNe7pnr+QR0SQDNfgglgtcM=" crossorigin="anonymous">
 
 
 
