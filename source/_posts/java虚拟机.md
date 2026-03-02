@@ -11,14 +11,14 @@ tags:
 
 ## JDK介绍
 
-![Lightbox](https://raw.githubusercontent.com/zhengzp2019/Image/main/gfgjdk-660x423.jpg)
+![Lightbox](gfgjdk-660x423.jpg)
 
 - javac
 - jar
 <!-- more -->
 ### JVM组成
 
-![jvm](https://raw.githubusercontent.com/zhengzp2019/Image/main/jvm-3.jpg)
+![jvm](jvm-3.jpg)
 
 ### 类装载器(Class Loader Subsystem)
 
@@ -54,7 +54,7 @@ tags:
 
 5. **本地方法区**
 
-![jvm2](https://raw.githubusercontent.com/zhengzp2019/Image/main/jvm-memory-2.jpg)
+![jvm2](jvm-memory-2.jpg)
 
 ### 执行引擎(Execution Engine)
 
@@ -76,7 +76,7 @@ tags:
 
 源码->字节码->机器码
 
-![img](https://raw.githubusercontent.com/zhengzp2019/Image/main/java-platform-independent.png)
+![img](java-platform-independent.png)
 
 ### JAVA是如何实现与平台无关的特性的？
 

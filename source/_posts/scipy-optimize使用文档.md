@@ -278,8 +278,8 @@ print(res)
 
 输出结果如下
 
-![image-20221126154809402](https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20221126154809402.png)
+![image-20221126154809402](image-20221126154809402.png)
 
 结果中显示该问题是不可行的，这种情况是存在的，可能的原因是决策变量的约束条件太苛刻，将`x1`的边界放松成(0,6)即可得到如下结果
 
-<img src="https://raw.githubusercontent.com/zhengzp2019/Image/main/image-20221126155131738.png" alt="image-20221126155131738" style="zoom:80%;" />
+<img src="image-20221126155131738.png" alt="image-20221126155131738" style="zoom:80%;" />
