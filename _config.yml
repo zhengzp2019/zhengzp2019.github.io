@@ -17,7 +17,7 @@ timezone: Asia/Shanghai
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 # url: http://dpbirder.gitee.io
-url: http://zhengzp2019.github.io
+url: https://zhengzp2019.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -134,8 +134,6 @@ baidusitemap:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  # repo: git@gitee.com:dpbirder/dpbirder.git
-  # repo: https://github.com/zhengzp2019/zhengzp2019.github.io.git
   repo: git@github.com:zhengzp2019/zhengzp2019.github.io.git
   branch: main
   # branch: master
